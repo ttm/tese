@@ -1,0 +1,169 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thin Sectioned Essay
+% LaTeX Template
+% Version 1.0 (3/8/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original Author:
+% Nicolas Diaz (nsdiaz@uc.cl) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper, 11pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+
+\usepackage{hyperref}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images
+
+\usepackage{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Required for accented characters
+\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
+\begin{flushright} % Right align
+{\LARGE\@title} % Increase the font size of the title
+
+\vspace{50pt} % Some vertical space between the title and author name
+
+{\large\@author} % Author name
+\\\@date % Date
+
+\vspace{40pt} % Some vertical space between the author block and abstract
+\end{flushright}
+}
+
+%----------------------------------------------------------------------------------------
+%   TITLE
+%----------------------------------------------------------------------------------------
+
+\title{\textbf{Ensaio sobre o Auto-Aproveitamento}\\ % Title
+um relato de investidas naturais na participação social} % Subtitle
+
+\author{\textsc{Renato Fabbri} % Author
+\\{\textit{IFSC/USP, Participa.br/SG-PR, labMacambira.sf.net}}} % Institution
+
+\date{\today} % Date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title section
+
+%----------------------------------------------------------------------------------------
+%   ABSTRACT AND KEYWORDS
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\abstractname}{Summary} % Uncomment to change the name of the abstract to something else
+
+\begin{abstract}
+O aproveitamento de nossos rastros digitais de estruturas e atividades sociais é uma realidade para empresas e governos. O aproveitamento de nossos dados pelo indivídulo e pela sociedade como um todo ainda é incipiente. Este escrito é um breve relato de uma imersão para adiantar este empoderamento civil, começando por experimentos de coleta e difusão de informação, passando por \emph{streaming} de estruturas sociais, recomendação de recursos via redes complexas e processamento de linguagem natural, dados ligados e organizações ontológicas de estruturas sociais e participativas.
+\end{abstract}
+
+\hspace*{3,6mm}\textit{Keywords:} redes complexas, processamento de linguagem natural, dados ligados, participação social, física antropológica % Keywords
+
+\vspace{30pt} % Some vertical space between the abstract and first section
+
+%----------------------------------------------------------------------------------------
+%   ESSAY BODY
+%----------------------------------------------------------------------------------------
+
+\section*{Abertura: fim do mundo}
+
+Ao final de 2012, foi-me proposto pelo grupo Mutgamb/Metareciclagem, e pelos parceiros Glerm Soares e Simone Bitencourt, a participação  um trabalho sobre o fim do mundo. Esta ocasião mostrou-se propícia para experimentos em rede, com o propósito de difundir uma prática transformadora, capaz de modificar substancialmente a nossa realidade, de forma a manifestar um ``fim do mundo''. A prática difundida nas redes era sobre o aproveitamento das próprias redes, com ferramentais de redes complexas e processamento de linguagem natural. Os ciclos de difusão são por vezes chamados de ``vaca do fim do mundo'' e relacionados com as passeatas de junho de 2013. Estes primeiros momentos desta pesquisa assegurou fertilização por diversos atores de uma rede de amizades com ao menos uma década de explícito ativismo. Diversos escritos, galerias de imagens e páginas são remanescentes deste primeiro momento~\cite{ciberiun,ars,rc1,rc2}, assim como articulações e amadurecimentos que desembocaram no objeto deste ensaio.
+
+Ao final dos ciclos de coleta e difusão de informação, minha rede (meu eu-rede) havia se rearranjado para acolher o trabalho proposto. Dada a pertinência do assunto e dedicação à absorção e geração de materiais, meu doutorado na física computacional (IFSC/USP) foi alinhado e em simbióse foi conquistado suporte das estruturas federal (SNAS/SGPR) e internacional (PNUD/ONU). Era dezembro/2013 e o ano até o dia de hoje possibilitou o discurso que segue.
+
+
+
+\section*{Streaming de estruturas sociais}
+
+Uma conclusão forte que pude tirar com os ciclos de coleta e difusão de informação é a apropriação tímida de suas estruturas sociais. Algumas pessoas se encantam com as figuras, outras com os conceitos e com a percepção do aspecto social de si, por vezes chamado de ``ser-rede'' ou ``eu-rede'' por interessados durante as difusões.
+
+\begin{wrapfigure}{l}{0.4\textwidth} % Inline image example
+\begin{center}
+\includegraphics[width=0.38\textwidth]{fish.png}
+\end{center}
+\caption{Fish}\label{fig:telao}
+\end{wrapfigure}
+
+Neste contexto, para difundir sobre como os nossos rastros podem ser observados e aproveitados, foram feitos telões de streaming de estruturas sociais confome a Figura ~\ref{fig:telao}. Apenas o Twitter foi utilizado, e as redes de retweet e de relacionamento via vocabulário e hashtags eram contempladas. O telão também podia exibir tweets recentes, palavras mais ocorrentes, co-ocorrentes, e outras informações simples de texto, conforme Figura~\ref{fig:telao2}.
+
+\begin{figure}{l}
+\begin{center}
+\includegraphics[width=0.38\textwidth]{fish.png}
+\end{center}
+\caption{Fish}\label{fig:telao2}
+\end{figure}
+
+Os telões ficaram operantes durantes períodos de diversas horas no evento \#arenaNETmundial, alguns dias. Eram atualizados a cada 10 segundos com os tweets mais recentes que possuiam as hashtags acompanhadas pelo evento. Instâncias online são~\cite{ocupagov,outrotelao}, o código está em~\cite{codTelao}, integrado à uma instância mais ampla~\cite{MMISSA}. Diversas conversas com comunicadores e programadores ajudaram a entender os potenciais de transparência e de conscientização das nossas estruturas em rede.
+Mas os aproveitamentos de nossas estruturas em rede são os mais diversos, apontando para uma multiplicidade de métodos e aplicações. A reflexão por fim nos levou aos mecanimos de recomendação e navegação de recursos.
+
+\section*{Recomendação de recursos, navegação}
+A solução encontrada foi a de providenciar métodos diferentes de recomendação de recursos para usos diferentes. As características ideias deste sistema de recomendação, que é um enriquecimento da navegação semântica, como explicitado a seguir, são:
+
+
+\begin{itemize}
+    \item Utilização de quaisquer recursos (artigos, comentários, perfis de usuários) de referência para recomendar outros recursos.
+    \item Recomendação por similaridade e dissimilaridade.
+    \item Uso de critérios de redes complexas, provenientes ao menos de redes de amizade e de interação entre os participantes.
+    \item Uso de critérios linguísticos, provenientes dos conteúdos textuais, ao menos \emph{Bag of Words}.
+    \item Explicitação dos critérios usados para cada recomendação.
+    \item Sugestão de aproveitamentos para o método usado.
+    \item Disponibilização de interface para testes do usuário com o algorítmo usado em cada recomendação.
+    \item Recomendações sob demanda: o usuário requisita que tipo de recursos quer recomendado a partir de que recurso de referência, via quais métodos preferir.
+    \item Parametrização pelo usuário.
+\end{itemize}
+
+
+Nestes termos, foi feito um sistema de recomendação de participantes e de recursos~\cite{pnud4}. A recomendação de participantes para um usuário pode ser por similaridade, uma típica sugestão de amigos, ou diferença, uma sugestão de uma pessoa potencialmente de outro ambiente ou outros interesses, talvez um político opositor ou um bom contato para expandir a mobilização por ser de ambiente diferente.
+
+Análises informativas de recursos e tipos de recursos são parte deste sistema de recomendação/priorização de recursos~\cite{pnud3}.
+
+
+\section*{Dados linkados e ontologias}
+
+A associação de recursos via recomendações reverbera com associações via critérios ontológicos. Nesta direção, foi revisado o VCPS (Vocabuário Comum de Participação Social), dando origem à OPS (Ontologia de Participação Social)~\cite{artOPS}. A OPa (Ontologia do Participa.br) foi levantada com os conceitos da equipe do Participa.br~\cite{pnud1} e recebeu um módulo posterior, dedicado aos dados do Participa.br~\cite{pnud5}~\footnote{Trabalhos recentemente utilizados diretamente pelos Profs. Drs. Francisco Cruz e Paulo Meirelles, da UnB, no trabalho~\cite{paulo6}.}. Foi feita a OCD (Ontologia do Cidade Democrática), com um método dedicado aos dados, e a OntologiAA (Ontologia do AA), relacionado classes e propriedades a conceitos mais gerais via \texttt{rdfs:subClassOf} e \texttt{rdfs:subPropertyOf} para testes com inferências com o Jena/Fuseki. Foram feitas rotinas para representação dos dadosdo Participa.br, Cidade Democrática e AA, em RDF (rotinas de triplificação de dados).
+
+A investida maior, porém, foi com a Biblioteca (Digital e Semântica de Participação) Social, gerando a OBS (Ontologia da Biblioteca Social) e VBS (Vocabulário da Biblioteca Social). A OBS formaliza em OWL e a VBS em SKOS conceitualizações de cada mecanismo e instância de participação social que consta no Decreto 8.243: conferências, conselhos, comissões, ouvidorias, mesas de diálogo, fóruns interconselhos, consultas e audiências públicas. Além disso, contempla documentações produzidas para estas instâncias ou através destas instâncias, e conceitos relevantes, como a PNPS (Política Nacional de Participação Social), SNPS (Sistema Nacional de Participação Social) e a mesa de monitoramento. Os recursos foram publicados no Webprotege da Stanford, em um endpoint Sparql Fuseki/Jena e no pubby para derreferenciar com redirecionamento do purl.prg~\cite{pnud5}.
+
+
+
+%------------------------------------------------
+
+\section*{Conclusão e trabalhos futuros}
+
+Dados de instâncias participativas estão integrados via critérios semânticos. Direções para nosso aproveitamento estão dadas com 
+
+Dados estão integrados via critérios semânticos. Efetivação da navegação. Integração dos dados ao GGG da LOD. Publicação dos resultados. Aprofundamento dos métodos e exploração das redes complexas e estruturas linguísticas.
+Disponibilização para parceiros, DIG/MIT, SGPR, IFSC/USP.
+
+%----------------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\bibliographystyle{unsrt}
+
+\bibliography{ensaio}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
