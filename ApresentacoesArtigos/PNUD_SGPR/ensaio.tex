@@ -28,15 +28,18 @@
 \usepackage[protrusion=true,expansion=true]{microtype} % Better typography
 \usepackage{graphicx} % Required for including pictures
 \usepackage{wrapfig} % Allows in-line images
+\usepackage{tocloft}
+\addtocontents{toc}{\cftpagenumbersoff{section}}
 
 \usepackage{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Required for accented characters
 \linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
-
+\usepackage{etoolbox}
 \makeatletter
 \renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
 \renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
-
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\addvspace{5\p@}}}{}{}
+\pretocmd{\section}{\addtocontents{toc}{\protect\vspace{-4mm}}}{}{}
 \renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
 \begin{flushright} % Right align
 {\LARGE\@title} % Increase the font size of the title
@@ -75,87 +78,132 @@ um relato de investidas naturais na participação social} % Subtitle
 %\renewcommand{\abstractname}{Summary} % Uncomment to change the name of the abstract to something else
 
 \begin{abstract}
-O aproveitamento de nossos rastros digitais de estruturas e atividades sociais é uma realidade para empresas e governos. O aproveitamento de nossos dados pelo indivídulo e pela sociedade como um todo ainda é incipiente. Este escrito é um breve relato de uma imersão para adiantar este empoderamento civil, começando por experimentos de coleta e difusão de informação, passando por \emph{streaming} de estruturas sociais, recomendação de recursos via redes complexas e processamento de linguagem natural, dados ligados e organizações ontológicas de estruturas sociais e participativas.
+O aproveitamento de nossos rastros digitais de estruturas e atividades sociais é uma realidade para empresas e algumas instâncias do Estado. O aproveitamento de nossos dados pelo indivídulo e pela Sociedade ainda é incipiente. Este escrito é um breve relato de uma imersão para adiantar este empoderamento civil, começando por experimentos de coleta e difusão de informação, passando por \emph{streaming} de estruturas sociais, recomendação de recursos via redes complexas e processamento de linguagem natural, dados ligados e organizações ontológicas de estruturas sociais e participativas.
 \end{abstract}
 
 \hspace*{3,6mm}\textit{Keywords:} redes complexas, processamento de linguagem natural, dados ligados, participação social, física antropológica % Keywords
 
-\vspace{30pt} % Some vertical space between the abstract and first section
+%\vspace{30pt} % Some vertical space between the abstract and first section
 
 %----------------------------------------------------------------------------------------
 %   ESSAY BODY
 %----------------------------------------------------------------------------------------
+\tableofcontents
 
-\section*{Abertura: fim do mundo}
 
-Ao final de 2012, foi-me proposto pelo grupo Mutgamb/Metareciclagem, e pelos parceiros Glerm Soares e Simone Bitencourt, a participação  um trabalho sobre o fim do mundo. Esta ocasião mostrou-se propícia para experimentos em rede, com o propósito de difundir uma prática transformadora, capaz de modificar substancialmente a nossa realidade, de forma a manifestar um ``fim do mundo''. A prática difundida nas redes era sobre o aproveitamento das próprias redes, com ferramentais de redes complexas e processamento de linguagem natural. Os ciclos de difusão são por vezes chamados de ``vaca do fim do mundo'' e relacionados com as passeatas de junho de 2013. Estes primeiros momentos desta pesquisa assegurou fertilização por diversos atores de uma rede de amizades com ao menos uma década de explícito ativismo. Diversos escritos, galerias de imagens e páginas são remanescentes deste primeiro momento~\cite{ciberiun,ars,rc1,rc2}, assim como articulações e amadurecimentos que desembocaram no objeto deste ensaio.
+\section*{Abertura no fim do mundo}
+\addcontentsline{toc}{section}{Abertura no fim do mundo}
 
-Ao final dos ciclos de coleta e difusão de informação, minha rede (meu eu-rede) havia se rearranjado para acolher o trabalho proposto. Dada a pertinência do assunto e dedicação à absorção e geração de materiais, meu doutorado na física computacional (IFSC/USP) foi alinhado e em simbióse foi conquistado suporte das estruturas federal (SNAS/SGPR) e internacional (PNUD/ONU). Era dezembro/2013 e o ano até o dia de hoje possibilitou o discurso que segue.
+Ao final de 2012, foi-me proposto pelo grupo Mutgamb/Metareciclagem, e pelos parceiros Glerm Soares e Simone Bittencourt, a participação  em um trabalho sobre o fim do mundo. Esta ocasião mostrou-se propícia para experimentos em rede, com o propósito de difundir uma prática transformadora, capaz de modificar substancialmente a nossa realidade, de forma a manifestar um ``fim do mundo''. A prática difundida nas redes era sobre o aproveitamento das próprias redes sociais, com ferramentais de redes complexas e processamento de linguagem natural. Os ciclos de difusão são por vezes chamados de ``vaca do fim do mundo'' e relacionados com as passeatas de junho de 2013, pois eram previstas como uma das hipóteses iniciais deste experimento percolatório de \emph{física antropológica}. Estes primeiros momentos desta pesquisa assegurou fertilização por diversos atores de uma rede de amizades com ao menos uma década de explícito ativismo nas áreas de software e mídia livre. Diversos escritos, galerias de imagens e páginas são remanescentes deste primeiro momento~\cite{ciberiun,ars,rc1,rc2}, assim como articulações e amadurecimentos que desembocaram no objeto deste ensaio.
+
+Ao final dos ciclos de coleta e difusão de informação, minha rede (meu eu-rede) havia se rearranjado para acolher o trabalho proposto. Dada a pertinência do assunto e dedicação à absorção e geração de materiais, meu doutorado na física computacional (IFSC/USP) foi alinhado e em simbióse foi aproximado suporte das estruturas federal (SNAS/SGPR) e internacional (PNUD/ONU). Era dezembro/2013 e o ano até o dia de hoje possibilitou o discurso que segue.
 
 
 
 \section*{Streaming de estruturas sociais}
+\addcontentsline{toc}{section}{Streaming de estruturas sociais}
+%\begin{wrapfigure}{l}{0.4\textwidth} % Inline image example
+%\begin{center}
+%\includegraphics[width=0.38\textwidth]{telao1.png}
+%\end{center}
+%\caption{\small Telão para streaming de estruturas sociais, usado no \#arenaNETmundial, \#ocupaGOV e outras ocasiões. Tela com rede de retweets e relacionamento via hashtag e vocabulário. Atualizada a cada 10 segundos com os relacionamentos implicados pelos dos tweets mais recentes.}\label{fig:telao}
+%\end{wrapfigure}
 
-Uma conclusão forte que pude tirar com os ciclos de coleta e difusão de informação é a apropriação tímida de suas estruturas sociais. Algumas pessoas se encantam com as figuras, outras com os conceitos e com a percepção do aspecto social de si, por vezes chamado de ``ser-rede'' ou ``eu-rede'' por interessados durante as difusões.
 
-\begin{wrapfigure}{l}{0.4\textwidth} % Inline image example
-\begin{center}
-\includegraphics[width=0.38\textwidth]{fish.png}
-\end{center}
-\caption{Fish}\label{fig:telao}
-\end{wrapfigure}
+Uma traço forte que pude observar com os ciclos de coleta e difusão de informação é a apropriação tímida que as pessoas apresentam de suas estruturas sociais. Algumas pessoas se encantam com as figuras, outras com os conceitos e com a percepção do aspecto social de si, por vezes chamado de ``ser-rede'' ou ``eu-rede'' por interessados durante as difusões. Nestes contextos, teorias academicas, como TAR (Teoria Ator Rede, Latour), raramente eram puxadas diretamente, mesmo por especialistas. A eficiência do discurso intuitivo para comunicar sobre os interesses é impressionante. O impulso em relatar as impressões assemelha-se ao impulso de relatar sonhos, com vislumbres de estruturas sutis e inconscientes e sequencial esquecimento.
 
-Neste contexto, para difundir sobre como os nossos rastros podem ser observados e aproveitados, foram feitos telões de streaming de estruturas sociais confome a Figura ~\ref{fig:telao}. Apenas o Twitter foi utilizado, e as redes de retweet e de relacionamento via vocabulário e hashtags eram contempladas. O telão também podia exibir tweets recentes, palavras mais ocorrentes, co-ocorrentes, e outras informações simples de texto, conforme Figura~\ref{fig:telao2}.
-
-\begin{figure}{l}
-\begin{center}
-\includegraphics[width=0.38\textwidth]{fish.png}
-\end{center}
-\caption{Fish}\label{fig:telao2}
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=.7\textwidth]{telao1.png}
+  \caption{\small Telão para streaming de estruturas sociais, usado no \#arenaNETmundial, \#ocupaGOV e outras ocasiões. Tela com rede de retweets e relacionamento via hashtag e vocabulário. Atualizada a cada 10 segundos com os relacionamentos implicados pelos dos tweets mais recentes.}\label{fig:telao1}
 \end{figure}
 
-Os telões ficaram operantes durantes períodos de diversas horas no evento \#arenaNETmundial, alguns dias. Eram atualizados a cada 10 segundos com os tweets mais recentes que possuiam as hashtags acompanhadas pelo evento. Instâncias online são~\cite{ocupagov,outrotelao}, o código está em~\cite{codTelao}, integrado à uma instância mais ampla~\cite{MMISSA}. Diversas conversas com comunicadores e programadores ajudaram a entender os potenciais de transparência e de conscientização das nossas estruturas em rede.
-Mas os aproveitamentos de nossas estruturas em rede são os mais diversos, apontando para uma multiplicidade de métodos e aplicações. A reflexão por fim nos levou aos mecanimos de recomendação e navegação de recursos.
 
-\section*{Recomendação de recursos, navegação}
-A solução encontrada foi a de providenciar métodos diferentes de recomendação de recursos para usos diferentes. As características ideias deste sistema de recomendação, que é um enriquecimento da navegação semântica, como explicitado a seguir, são:
+%\newpage
+%\begin{wrapfigure}{l}{0.55\textwidth} % Inline image example
+%\begin{center}
+%\includegraphics[width=0.5\textwidth]{telao2.png}
+%\end{center}
+%\caption{\small Telão para streaming de estruturas sociais, usado no \#arenaNETmundial, \#ocupaGOV e outras ocasiões. Tela com rede de retweets e relacionamento via hashtag e vocabulário. Atualizada a cada 10 segundos com os relacionamentos implicados pelos dos tweets mais recentes.}\label{fig:telao2}
+%\end{wrapfigure}
+Neste contexto, para difundir sobre como os nossos rastros podem ser observados e aproveitados, foram feitos telões de streaming de estruturas sociais em páginas HTML confome a Figura ~\ref{fig:telao1}. Apenas o Twitter foi utilizado, e as redes de retweet e de relacionamento via vocabulário e hashtags eram contempladas. O telão também podia exibir tweets recentes, palavras mais ocorrentes, co-ocorrentes, e outras informações simples de texto, conforme a Figura~\ref{fig:telao2}.
+
+
+
+%\begin{figure}{l}
+%\begin{center}
+%\includegraphics[width=0.38\textwidth]{fish.png}
+%\end{center}
+%\caption{Fish}\label{fig:telao2}
+%\end{figure}
+
+De início, os telões ficaram operantes durante horas no evento \#arenaNETmundial, isso se manteve por $\approx 3$ dias. Eram atualizados a cada 10 segundos com os tweets mais recentes que possuiam as hashtags acompanhadas pelo evento. Instâncias online são~\cite{ocupagov,mmissa,mmissa2}, o código está em~\cite{codTelao}, integrado à uma instância mais ampla~\cite{mmissa2}. Diversas trocas com comunicadores e programadores ajudaram a entender os potenciais de transparência e de conscientização das nossas estruturas em rede. Alguns experimentos a mais foram feitos com streaming de dados, em especial o MyNSA~\cite{mynsa}, parte do conjunto de ferramentas idealizadas para o AARS (Análise e Ação em Redes Sociais).
+
+Ainda assim, os aproveitamentos de nossas estruturas em rede são os mais diversos, apontando para uma multiplicidade de métodos e aplicações. A reflexão por fim nos levou aos mecanimos de recomendação e navegação de recursos.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=.7\textwidth]{telao2.png}
+  \caption{\small Telão para streaming de estruturas sociais, usado no \#arenaNETmundial, \#ocupaGOV e outras ocasiões. Tela com relacionamentos de hashtags e vocabulário. Atualizada a cada 10 segundos com conteúdo dos tweets mais recentes.}\label{fig:telao2}
+\end{figure}
+
+
+\section*{Recomendação de recursos e navegação}
+\addcontentsline{toc}{section}{Recomendação de recursos e navegação}
+A solução encontrada foi a de providenciar métodos diferentes de recomendação de recursos para usos diferentes. As características ideais deste sistema de recomendação, que é um enriquecimento da navegação semântica de recursos (dados linkados, desenvolvido abaixo), são:
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=.7\textwidth]{sr.png}
+  \caption{\small Uma das concepções de implementação do sistema de recomendação e suas relações principais com o frontend (Participa.br) e base de dados semanticamente enriquecidos (endpoint SparQL fuseki/jena).}\label{fig:rec}
+\end{figure}
+
 
 
 \begin{itemize}
-    \item Utilização de quaisquer recursos (artigos, comentários, perfis de usuários) de referência para recomendar outros recursos.
-    \item Recomendação por similaridade e dissimilaridade.
+    \item Utilização de quaisquer recursos de referência (artigos, comentários, perfis de usuários) para recomendar outros recursos.
+    \item Recomendação por similaridade e dissimilaridade, para os diferentes usos. Por exemplo: pessoas proximas nas redes e com vocabulário similar são potenciais amigos. Pessoas distantes na rede e/ou com vocabulários díspares são potencialmente de outros nichos, opositores políticos ou ideológicos ou pontes para expansão de mobilizações.
     \item Uso de critérios de redes complexas, provenientes ao menos de redes de amizade e de interação entre os participantes.
     \item Uso de critérios linguísticos, provenientes dos conteúdos textuais, ao menos \emph{Bag of Words}.
     \item Explicitação dos critérios usados para cada recomendação.
-    \item Sugestão de aproveitamentos para o método usado.
+    \item Sugestão de aproveitamentos para o método usado e para os resultados obtidos (outliers, quantidade, etc).
     \item Disponibilização de interface para testes do usuário com o algorítmo usado em cada recomendação.
-    \item Recomendações sob demanda: o usuário requisita que tipo de recursos quer recomendado a partir de que recurso de referência, via quais métodos preferir.
-    \item Parametrização pelo usuário.
+    \item Recomendações sob demanda: o usuário requisita que tipo de recursos quer recomendado a partir de que recurso de referência, via quais métodos preferir. Os resultados e estruturas auxiliares são armazenados para otimizar recomendações posteriores e como sugestão para outros usuários.
+    \item Navegação ativa, nas quais o usuário faz anotações, ativa recomendações e registra navegação para otimizar usos posteriores.
+    \item Permissibilidade para parametrização pelo usuário, transparência nos resultados da recomendação.
 \end{itemize}
 
 
-Nestes termos, foi feito um sistema de recomendação de participantes e de recursos~\cite{pnud4}. A recomendação de participantes para um usuário pode ser por similaridade, uma típica sugestão de amigos, ou diferença, uma sugestão de uma pessoa potencialmente de outro ambiente ou outros interesses, talvez um político opositor ou um bom contato para expandir a mobilização por ser de ambiente diferente.
+Nestes termos, foi feito um sistema de recomendação de participantes e de recursos~\cite{pnud4}. Análises informativas de recursos e tipos de recursos são parte deste sistema de recomendação/priorização de recursos~\cite{pnud3}. Estes métodos de análise, baseados nas estruturas em rede e no processamento de texto, não estão explorados neste ensaio mas são idealizados para realizar análises da nuvem participativa via critérios intuitivos e úteis.
+ Uma das implementações concebidas deste sistema de recomendação, para funcionar junto ao Noosfero/Participa.br, está delineada na Figura~\ref{fig:rec}.
 
-Análises informativas de recursos e tipos de recursos são parte deste sistema de recomendação/priorização de recursos~\cite{pnud3}.
 
 
 \section*{Dados linkados e ontologias}
+\addcontentsline{toc}{section}{Dados linkados e ontologias}
+A associação de recursos via recomendações amplia associações via critérios ontológicos. Nesta direção, foi revisado o VCPS (Vocabuário Comum de Participação Social), dando origem à OPS (Ontologia de Participação Social)~\cite{OPS}. A OPa (Ontologia do Participa.br) foi levantada com os conceitos da equipe do Participa.br~\cite{OPA} e recebeu um módulo posterior, dedicado aos dados do Participa.br~\cite{pnud5}. Foi feita a OCD (Ontologia do Cidade Democrática), com um método dedicado aos dados, e a OntologiAA (Ontologia do AA), relacionado classes e propriedades a conceitos mais gerais via \texttt{rdfs:subClassOf} e \texttt{rdfs:subPropertyOf} para testes com inferências com o Jena/Fuseki. Foram feitas rotinas para representação dos dadosdo Participa.br, Cidade Democrática e AA, em RDF (rotinas de triplificação de dados)~\cite{pnud5}.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=1.\textwidth]{ontologiaa.png}
+  \caption{\small Ontologia do AA, com suas classes, propriedades, literais e entidades externas usadas para vincular os dados do AA aos do Participa.br, Cidade Democrática e de toda nuvem LOD.}\label{fig:ontologiaa}
+\end{figure}
 
-A associação de recursos via recomendações reverbera com associações via critérios ontológicos. Nesta direção, foi revisado o VCPS (Vocabuário Comum de Participação Social), dando origem à OPS (Ontologia de Participação Social)~\cite{artOPS}. A OPa (Ontologia do Participa.br) foi levantada com os conceitos da equipe do Participa.br~\cite{pnud1} e recebeu um módulo posterior, dedicado aos dados do Participa.br~\cite{pnud5}~\footnote{Trabalhos recentemente utilizados diretamente pelos Profs. Drs. Francisco Cruz e Paulo Meirelles, da UnB, no trabalho~\cite{paulo6}.}. Foi feita a OCD (Ontologia do Cidade Democrática), com um método dedicado aos dados, e a OntologiAA (Ontologia do AA), relacionado classes e propriedades a conceitos mais gerais via \texttt{rdfs:subClassOf} e \texttt{rdfs:subPropertyOf} para testes com inferências com o Jena/Fuseki. Foram feitas rotinas para representação dos dadosdo Participa.br, Cidade Democrática e AA, em RDF (rotinas de triplificação de dados).
-
-A investida maior, porém, foi com a Biblioteca (Digital e Semântica de Participação) Social, gerando a OBS (Ontologia da Biblioteca Social) e VBS (Vocabulário da Biblioteca Social). A OBS formaliza em OWL e a VBS em SKOS conceitualizações de cada mecanismo e instância de participação social que consta no Decreto 8.243: conferências, conselhos, comissões, ouvidorias, mesas de diálogo, fóruns interconselhos, consultas e audiências públicas. Além disso, contempla documentações produzidas para estas instâncias ou através destas instâncias, e conceitos relevantes, como a PNPS (Política Nacional de Participação Social), SNPS (Sistema Nacional de Participação Social) e a mesa de monitoramento. Os recursos foram publicados no Webprotege da Stanford, em um endpoint Sparql Fuseki/Jena e no pubby para derreferenciar com redirecionamento do purl.prg~\cite{pnud5}.
-
+A investida maior, porém, foi na Biblioteca (Digital e Semântica de Participação) Social, gerando a OBS (Ontologia da Biblioteca Social) e VBS (Vocabulário da Biblioteca Social). A OBS formaliza em OWL, e a VBS em SKOS, conceitualizações de cada mecanismo e instância de participação social que consta no Decreto 8.243: conferências, conselhos, comissões, ouvidorias, mesas de diálogo, fóruns interconselhos, consultas e audiências públicas. Além disso, contempla documentações produzidas para estas instâncias ou através destas instâncias, e conceitos relevantes, como a PNPS (Política Nacional de Participação Social), SNPS (Sistema Nacional de Participação Social) e a mesa de monitoramento. Os recursos foram publicados no Webprotege da Stanford, em um endpoint Sparql Fuseki/Jena e no pubby para derreferenciar com redirecionamento do purl.org~\cite{pnud5}. Duas das menores estruturas ontológicas estão nas Figuras~\ref{fig:ontologiaa} e~\cite{fig:consulta}, pois a quantidade de conceitos e relacionamentos implica em uma visualização melhor da figura isoladamente.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=1.\textwidth]{obsConsulta.png}
+  \caption{\small Diagrama de uma ontologia simples de consulta pública (ou um embrião de uma ontologia mais complexa). URI passível de derreferenciamento: \url{http://purl.org/socialparticipation/obs/PublicConsultation}, acesse em um browser comum, como Firefox ou Chromium.}\label{fig:consulta}
+\end{figure}
 
 
 %------------------------------------------------
 
-\section*{Conclusão e trabalhos futuros}
+\section*{Conclusão e próximos passos}
+\addcontentsline{toc}{section}{Conclusão e próximos passos}
 
 Direções para nosso aproveitamento estão dadas com os sistemas de recomendação de recursos, seus métodos, polaridades e explicitações~\cite{pnud4}. Como estrutura básica, dados de instâncias participativas estão integrados via critérios semânticos: AA, Cidade Democrática, Participa.br. Ontologias dos mecanismos e instâncias de participação social estão formalizadas em OWL, com vocabulários em SKOS~\cite{pnud5}.
 
 Próximos passos devem incluir a disponibilização para usuários finais a navegação semântica enriquecida com as recomendações via redes complexas e processamento de linguagem natural. Também a integração dos dados linkados ao ``grafo gigante e global'', da LOD (linked open data), um legado humano de dados conectados.
 
-A etapa atual é de escrita de documentos como este, expondo o que está feito, mas nas diferentes áreas da física e computação. O aprofundamento dos métodos de redes e linguísticos deve se seguir com parceiros do IFSC/USP e acompanhamento da SGPR. Talvez sejam acionadas comunidades relacionadas ao trabalho, como o DIG/MIT (responsáveis por tecnologias e protocolos usados para os dados ligados/web semântica) ou a W3C.
+A etapa atual é de escrita de documentos como este, expondo o que está feito nas áreas da física, da computação, da participação social e das artes. O aprofundamento dos métodos de redes e linguísticos deve se seguir com parceiros do IFSC/USP e acompanhamento da SGPR. Talvez sejam acionadas comunidades relacionadas ao trabalho, como o DIG/MIT (responsáveis por tecnologias e protocolos usados para os dados ligados/web semântica) ou a W3C. A simbióse deve continuar com os grupos da UFSCar, IPRJ/UERJ, CCNH/UFABC, IEA/USP e labMacambira.sf.net, que apoiam estas investidas.
 
 Outras linhas iniciadas e em andamento são:
 \begin{itemize}
@@ -165,16 +213,17 @@ Outras linhas iniciadas e em andamento são:
 \item Métodos de interação na própria rede. Métodos de ativação da rede como os explicitados no começo deste texto.
 \item Métodos participativos, por exemplo para construção coletiva de textos por etapas e grupos definidos por critérios conectivos (periféricos citam substantivos e conceitos principais, hubs qualificam, intermediários montam texto).
 \item Gamificação de processos de observação de nossas estruturas em rede, com a navegação nos dados ligados.
+\item Interfaces para análise de estruturas sociais em evolução temporal, com ênfase em rede e texto .
 \end{itemize}
 
 O trabalho já rendeu algumas implementações, ações e documentações de parceiros e terceiros, como as citações diretas no produto PNUD dos Profs. Drs. Paulo Meirelles e Fernando Cruz~\cite{paulo6}, na tese de doutorado da Dra Chandra Viegas Wood~\cite{chandra} e nos objetos artísticos de Pedro Paulo Rocha~\cite{pedro}. Este escrito é o primeiro resumo escrito, para sintonizar os mais imediatamente envolvidos.
-
+~\footnote{Trabalhos recentemente utilizados diretamente pelos Profs. Drs. Francisco Cruz e Paulo Meirelles, da UnB, no trabalho~\cite{paulo6}.}
 %----------------------------------------------------------------------------------------
 %   BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\bibliographystyle{unsrt}
-
+%\bibliographystyle{unsrt}
+\bibliographystyle{plain}
 \bibliography{ensaio}
 
 %----------------------------------------------------------------------------------------
