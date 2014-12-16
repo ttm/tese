@@ -95,8 +95,14 @@ O aproveitamento de nossos rastros digitais de estruturas e atividades sociais �
 \addcontentsline{toc}{section}{Abertura no fim do mundo}
 
 Ao final de 2012, foi-me proposto pelo grupo Mutgamb/Metareciclagem, e pelos parceiros Glerm Soares e Simone Bittencourt, a participação  em um trabalho sobre o fim do mundo. Esta ocasião mostrou-se propícia para experimentos em rede, com o propósito de difundir uma prática transformadora, capaz de modificar substancialmente a nossa realidade, de forma a manifestar um ``fim do mundo''. A prática difundida nas redes era sobre o aproveitamento das próprias redes sociais, com ferramentais de redes complexas e processamento de linguagem natural. Os ciclos de difusão são por vezes chamados de ``vaca do fim do mundo'' e relacionados com as passeatas de junho de 2013, pois eram previstas como uma das hipóteses iniciais deste experimento percolatório de \emph{física antropológica}. Estes primeiros momentos desta pesquisa assegurou fertilização por diversos atores de uma rede de amizades com ao menos uma década de explícito ativismo nas áreas de software e mídia livre. Diversos escritos, galerias de imagens e páginas são remanescentes deste primeiro momento~\cite{ciberiun,ars,rc1,rc2}, assim como articulações e amadurecimentos que desembocaram no objeto deste ensaio.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=.9\textwidth]{rederf.png}
+  \caption{\small Minha rede de amizades do Facebook em Fevereiro de 2012: cada vértice corresponde a um amigo, cada aresta a uma amizade entre os vértices nas extremidades. Em 1 estão os amigos da igreja da esposas; em 2, amigos de graduação e relacionados; em 3, família por parte de pai e mãe; em 4, conhecidos do IFSC/USP; em 5, conhecidos através do trabalho com tecnologias sociais, artísticas e livres. Em `a' está minha esposa, em `b' meu irmão.}\label{fig:redem}
+\end{figure}
 
-Ao final dos ciclos de coleta e difusão de informação, minha rede (meu eu-rede) havia se rearranjado para acolher o trabalho proposto. Dada a pertinência do assunto e dedicação à absorção e geração de materiais, meu doutorado na física computacional (IFSC/USP) foi alinhado e em simbióse foi aproximado suporte das estruturas federal (SNAS/SGPR) e internacional (PNUD/ONU). Era dezembro/2013 e o ano até o dia de hoje possibilitou o discurso que segue.
+
+Ao final dos ciclos de coleta e difusão de informação, minha rede (meu eu-rede, ilustrada na Figura~\ref{fig:redem}) havia se rearranjado para acolher o trabalho proposto. Dada a pertinência do assunto e dedicação à absorção e geração de materiais, meu doutorado na física computacional (IFSC/USP) foi alinhado e em simbióse foi aproximado suporte das estruturas federal (SNAS/SGPR) e internacional (PNUD/ONU). Era dezembro/2013 e o ano até o dia de hoje possibilitou o discurso que segue.
 
 
 
@@ -150,12 +156,6 @@ Ainda assim, os aproveitamentos de nossas estruturas em rede são os mais divers
 \section*{Recomendação de recursos e navegação}
 \addcontentsline{toc}{section}{Recomendação de recursos e navegação}
 A solução encontrada foi a de providenciar métodos diferentes de recomendação de recursos para usos diferentes. As características ideais deste sistema de recomendação, que é um enriquecimento da navegação semântica de recursos (dados linkados, desenvolvido abaixo), são:
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=.7\textwidth]{sr.png}
-  \caption{\small Uma das concepções de implementação do sistema de recomendação e suas relações principais com o frontend (Participa.br) e base de dados semanticamente enriquecidos (endpoint SparQL fuseki/jena).}\label{fig:rec}
-\end{figure}
-
 
 
 \begin{itemize}
@@ -170,6 +170,12 @@ A solução encontrada foi a de providenciar métodos diferentes de recomendaç�
     \item Navegação ativa, nas quais o usuário faz anotações, ativa recomendações e registra navegação para otimizar usos posteriores.
     \item Permissibilidade para parametrização pelo usuário, transparência nos resultados da recomendação.
 \end{itemize}
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=.7\textwidth]{sr.png}
+  \caption{\small Uma das concepções de implementação do sistema de recomendação e suas relações principais com o frontend (Participa.br) e base de dados semanticamente enriquecidos (endpoint SparQL fuseki/jena).}\label{fig:rec}
+\end{figure}
+
 
 
 Nestes termos, foi feito um sistema de recomendação de participantes e de recursos~\cite{pnud4}. Análises informativas de recursos e tipos de recursos são parte deste sistema de recomendação/priorização de recursos~\cite{pnud3}. Estes métodos de análise, baseados nas estruturas em rede e no processamento de texto, não estão explorados neste ensaio mas são idealizados para realizar análises da nuvem participativa via critérios intuitivos e úteis.
@@ -187,12 +193,6 @@ A associação de recursos via recomendações amplia associações via critéri
 \end{figure}
 
 A investida maior, porém, foi na Biblioteca (Digital e Semântica de Participação) Social, gerando a OBS (Ontologia da Biblioteca Social) e VBS (Vocabulário da Biblioteca Social). A OBS formaliza em OWL, e a VBS em SKOS, conceitualizações de cada mecanismo e instância de participação social que consta no Decreto 8.243: conferências, conselhos, comissões, ouvidorias, mesas de diálogo, fóruns interconselhos, consultas e audiências públicas. Além disso, contempla documentações produzidas para estas instâncias ou através destas instâncias, e conceitos relevantes, como a PNPS (Política Nacional de Participação Social), SNPS (Sistema Nacional de Participação Social) e a mesa de monitoramento. Os recursos foram publicados no Webprotege da Stanford, em um endpoint Sparql Fuseki/Jena e no pubby para derreferenciar com redirecionamento do purl.org~\cite{pnud5}. Duas das menores estruturas ontológicas estão nas Figuras~\ref{fig:ontologiaa} e~\ref{fig:consulta}, pois a quantidade de conceitos e relacionamentos implica em uma visualização melhor da figura isoladamente.
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=1.\textwidth]{obsConsulta.png}
-  \caption{\small Diagrama de uma ontologia simples de consulta pública (ou um embrião de uma ontologia mais complexa). URI passível de derreferenciamento: \url{http://purl.org/socialparticipation/obs/PublicConsultation}, acesse em um browser comum, como Firefox ou Chromium.}\label{fig:consulta}
-\end{figure}
-
 
 %------------------------------------------------
 
@@ -200,6 +200,12 @@ A investida maior, porém, foi na Biblioteca (Digital e Semântica de Participa�
 \addcontentsline{toc}{section}{Conclusão e próximos passos}
 
 Direções para nosso aproveitamento estão dadas com os sistemas de recomendação de recursos, seus métodos, polaridades e explicitações~\cite{pnud4}. Como estrutura básica, dados de instâncias participativas estão integrados via critérios semânticos: AA, Cidade Democrática, Participa.br. Ontologias dos mecanismos e instâncias de participação social estão formalizadas em OWL, com vocabulários em SKOS~\cite{pnud5}.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=1.\textwidth]{obsConsulta.png}
+  \caption{\small Diagrama de uma ontologia simples de consulta pública (ou um embrião de uma ontologia mais complexa). URI passível de derreferenciamento: \url{http://purl.org/socialparticipation/obs/PublicConsultation}, acesse em um browser comum, como Firefox ou Chromium.}\label{fig:consulta}
+\end{figure}
+
 
 Próximos passos devem incluir a disponibilização para usuários finais a navegação semântica enriquecida com as recomendações via redes complexas e processamento de linguagem natural. Também a integração dos dados linkados ao ``grafo gigante e global'', da LOD (Linked Open Data), um legado humano de dados conectados.
 
