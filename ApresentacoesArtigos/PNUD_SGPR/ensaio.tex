@@ -24,6 +24,7 @@
 \usepackage{hyperref}
 \usepackage[english,portuguese]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{float}
 
 \usepackage[protrusion=true,expansion=true]{microtype} % Better typography
 \usepackage{graphicx} % Required for including pictures
@@ -103,6 +104,7 @@ O aproveitamento de nossos rastros digitais de estruturas e atividades sociais �
 %----------------------------------------------------------------------------------------
 %   ESSAY BODY
 %----------------------------------------------------------------------------------------
+\newpage
 \tableofcontents
 
 
@@ -110,7 +112,7 @@ O aproveitamento de nossos rastros digitais de estruturas e atividades sociais �
 \addcontentsline{toc}{section}{Abertura no fim do mundo}
 
 Ao final de 2012, foi-me proposto pelo grupo Mutgamb/Metareciclagem, e pelos parceiros Glerm Soares e Simone Bittencourt, a participação  em um trabalho sobre o fim do mundo. Esta ocasião mostrou-se propícia para experimentos em rede, com o propósito de difundir uma prática transformadora, capaz de modificar substancialmente a nossa realidade, de forma a manifestar um ``fim do mundo''. A prática difundida nas redes era sobre o aproveitamento das próprias redes sociais, com ferramentais de redes complexas e processamento de linguagem natural. Os ciclos de difusão são por vezes chamados de ``vaca do fim do mundo'' e relacionados com as passeatas de junho de 2013, pois eram previstas como uma das hipóteses iniciais deste experimento percolatório de \emph{física antropológica}. Estes primeiros momentos desta pesquisa assegurou fertilização por diversos atores de uma rede de amizades com ao menos uma década de explícito ativismo nas áreas de software e mídia livre. Diversos escritos, galerias de imagens e páginas são remanescentes deste primeiro momento~\cite{ciberiun,ars,rc1,rc2}, assim como articulações e amadurecimentos que desembocaram no objeto deste ensaio.
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
     \includegraphics[width=.9\textwidth]{rederf.png}
   \caption{\small Minha rede de amizades do Facebook em Fevereiro de 2012: cada vértice corresponde a um amigo, cada aresta a uma amizade entre os amigos correspondentes aos vértices nas extremidades. Em 1 estão os amigos da igreja da esposa; em 2, amigos de graduação e relacionados; em 3, família por parte de pai e mãe; em 4, conhecidos do IFSC/USP; em 5, conhecidos através do trabalho com tecnologias sociais, artísticas e livres. Em `a' está minha esposa, em `b' meu irmão. Na ``vaca do fim do mundo'', esta rede foi estimulada com 3 ciclos em que cada membro era acionado individualmente, dos menos conectados aos mais conectados.}\label{fig:redem}
@@ -133,7 +135,7 @@ Ao final dos ciclos de coleta e difusão de informação, minha rede (meu eu-red
 
 Uma traço forte que pude observar com os ciclos de coleta e difusão de informação é a apropriação tímida que as pessoas apresentam de suas estruturas sociais. Algumas pessoas se encantam com as figuras, outras com os conceitos e com a percepção do aspecto social de si, por vezes chamado de ``ser-rede'' ou ``eu-rede'' por interessados durante as difusões. Nestes contextos, teorias academicas, como TAR (Teoria Ator Rede, Latour), raramente eram puxadas diretamente, mesmo por especialistas. A eficiência do discurso intuitivo para comunicar sobre os interesses é impressionante. O impulso em relatar as impressões assemelha-se ao impulso de relatar sonhos, com vislumbres de estruturas sutis e inconscientes e sequencial esquecimento.
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
     \includegraphics[width=.7\textwidth]{telao1.png}
   \caption{\small Telão para streaming de estruturas sociais, usado no \#arenaNETmundial, \#ocupaGOV e outras ocasiões. Tela com rede de retweets e relacionamento via hashtag e vocabulário. Atualizada a cada 10 segundos com os relacionamentos implicados pelos dos tweets mais recentes.}\label{fig:telao1}
@@ -161,7 +163,7 @@ Neste contexto, para difundir sobre como os nossos rastros podem ser observados 
 De início, os telões ficaram operantes durante horas no evento \#arenaNETmundial, isso se manteve por $\approx 3$ dias. Eram atualizados a cada 10 segundos com os tweets mais recentes que possuiam as hashtags acompanhadas pelo evento. Instâncias online são~\cite{ocupagov,mmissa,mmissa2}, o código está em~\cite{codTelao}, integrado à uma instância mais ampla~\cite{mmissa2}. Diversas trocas com comunicadores e programadores ajudaram a entender os potenciais de transparência e de conscientização das nossas estruturas em rede. Alguns experimentos a mais foram feitos com streaming de dados, em especial o MyNSA~\cite{mynsa}, parte do conjunto de ferramentas idealizadas para o AARS (Análise e Ação em Redes Sociais).
 
 Ainda assim, os aproveitamentos de nossas estruturas em rede são os mais diversos, apontando para uma multiplicidade de métodos e aplicações. A reflexão por fim nos levou aos mecanimos de recomendação e navegação de recursos.
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
     \includegraphics[width=.7\textwidth]{telao2.png}
   \caption{\small Telão para streaming de estruturas sociais, usado no \#arenaNETmundial, \#ocupaGOV e outras ocasiões. Tela com relacionamentos de hashtags e vocabulário. Atualizada a cada 10 segundos com conteúdo dos tweets mais recentes.}\label{fig:telao2}
@@ -185,7 +187,7 @@ A solução encontrada foi a de providenciar métodos diferentes de recomendaç�
     \item Navegação ativa, nas quais o usuário faz anotações, ativa recomendações e registra navegação para otimizar usos posteriores.
     \item Permissibilidade para parametrização pelo usuário, transparência nos resultados da recomendação.
 \end{itemize}
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
     \includegraphics[width=.7\textwidth]{sr.png}
   \caption{\small Uma das concepções de implementação do sistema de recomendação e suas relações principais com o frontend (Participa.br) e base de dados semanticamente enriquecidos (endpoint SparQL fuseki/jena).}\label{fig:rec}
@@ -201,7 +203,7 @@ Nestes termos, foi feito um sistema de recomendação de participantes e de recu
 \section*{Dados linkados e ontologias}
 \addcontentsline{toc}{section}{Dados linkados e ontologias}
 A associação de recursos via recomendações amplia associações via critérios ontológicos. Nesta direção, foi revisado o VCPS (Vocabuário Comum de Participação Social), dando origem à OPS (Ontologia de Participação Social)~\cite{OPS}. A OPa (Ontologia do Participa.br) foi levantada com os conceitos da equipe do Participa.br~\cite{OPA} e recebeu um módulo posterior, dedicado aos dados do Participa.br~\cite{pnud5}. Foi feita a OCD (Ontologia do Cidade Democrática), com um método dedicado aos dados, e a OntologiAA (Ontologia do AA), relacionado classes e propriedades a conceitos mais gerais via \texttt{rdfs:subClassOf} e \texttt{rdfs:subPropertyOf} para testes com inferências com o Jena/Fuseki. Foram feitas rotinas para representação em RDF dos dados do Participa.br, Cidade Democrática e AA (rotinas de triplificação de dados)~\cite{pnud5}.
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
     \includegraphics[width=1.\textwidth]{ontologiaa.png}
   \caption{\small Ontologia do AA, com suas classes, propriedades, literais e entidades externas usadas para vincular os dados do AA aos do Participa.br, Cidade Democrática e de toda nuvem LOD.}\label{fig:ontologiaa}
@@ -215,7 +217,7 @@ A investida maior, porém, foi na Biblioteca (Digital e Semântica de Participa�
 \addcontentsline{toc}{section}{Conclusão e próximos passos}
 
 Direções para nosso aproveitamento estão dadas com os sistemas de recomendação de recursos, seus métodos, polaridades e explicitações~\cite{pnud4}. Como estrutura básica, dados de instâncias participativas estão integrados via critérios semânticos: AA, Cidade Democrática, Participa.br. Ontologias dos mecanismos e instâncias de participação social estão formalizadas em OWL, com vocabulários em SKOS~\cite{pnud5}.
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
     \includegraphics[width=1.\textwidth]{obsConsulta.png}
   \caption{\small Diagrama de uma ontologia simples de consulta pública (ou um embrião de uma ontologia mais complexa). URI passível de derreferenciamento: \url{http://purl.org/socialparticipation/obs/PublicConsultation}, acesse em um browser comum, como Firefox ou Chromium.}\label{fig:consulta}
