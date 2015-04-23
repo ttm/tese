@@ -122,7 +122,7 @@
 %	TITLE AND AUTHORS
 %----------------------------------------------------------------------------------------
 
-\title{Approval and participation index for ternary voting (approve, disapprove, indifferent) adequate to random proposal entry. } % For titles, only capitalize the first letter
+\title{Approval and participation index for a voting process} % For titles, only capitalize the first letter
 
 %------------------------------------------------
 
@@ -150,7 +150,7 @@
 %% Javier de Ruiz Garcia\affil{2}{Universidad de Murcia, Bioquimica y Biologia
 %% Molecular, Murcia, Spain}, \and Franklin Sonnery\affil{2}{}}
 
-\author{Participa.br\affil{1}{SNAS/SG-PR, labMacambira.sf.net}
+\author{Renato Fabbri\affil{1}{IFSC/USP, Participa.br, labMacambira.sf.net}
 %James Smith\affil{2}{University of Oregon}
 %\and
 %Jane Smith\affil{1}{}
@@ -170,9 +170,9 @@
 %----------------------------------------------------------------------------------------
 
 \begin{abstract}
-In finding the adequate way to prioritize proposals, given they are voted \emph{approved}, \emph{disapprove} and \emph{no opinion}, the Brazilian participation community agreed about a approval index and a participation index.
-Both practice and literature is constantly handled by the experts involved, and the formalization of such model seems novel, maybe because of its triviality.
-Even so, the relevance of this report relies in the nearby use of these indexes to raise and prioritize proposals about public health care by the Brazilian Federal Portal of Social Participation.
+In finding the adequate way to prioritize proposals, the Brazilian participation community agreed about a approval index and a participation index.
+Both practice and literature is constantly handled by the experts involved, and the formalization of such model and indexes seem novel.
+Beyond innovation, the relevance of this report relies in the nearby use of these indexes to raise and prioritize proposals about public health care in open processes and assist public managers.
 \end{abstract}
 
 %------------------------------------------------
@@ -205,20 +205,21 @@ processes regarding validity, security and the adequate indicators. Indeed,
 the processes themselves vary, and the fact that the ranking indexes presented here seems not to be
 formalized and published is an evidence that such online decision is very recent phenomena.
 
-This incidence of online voting has the following characteristics:
+The main contribution of this report is the indexes for
+an online voting process~\cite{issue1,issue2,tabRonald} with the following characteristics:
 \begin{itemize}
-	\item Proposals might be inserted by voters after the voting phase started.
+    \item proposals might be inserted by voters after the voting phase started.
     \item A proposal is presented to a voter one by one as random outcomes of all proposals.
-    \item Votes might be ``approve'', ``disapprove'' and ``indifferent''.
+    \item Each vote might be of one and only type among: ``approve'', ``disapprove'' and ``indifferent''.
     \item Voters vote without authentication.
 \end{itemize}
 
 This setting requires care about security and validity.
 Some of which are:
 \begin{itemize}
-	\item Adequate estimates of threshold for statistical validity of ranking.
-    \item Keeping the IP of voters to detect automated and other fraudulent efforts.
-    \item The use of the outcomes. This requires probing the survey being conducted and its purposes. Current indexes are being used to deliver indicatives for the Brazilian federal government of most important proposals about health care. As these are not authenticated voting, they might be regarded as a reference document if data is minimally shared and checked for inadequate data entry.
+	\item adequate estimates of threshold for statistical validity of ranking.
+    \item Keeping the IP of voters to ease detection of automated and other fraudulent efforts.
+    \item The use of the outcomes from the voting process. This requires probing the survey being conducted and its purposes. Current indexes are being used to deliver indicatives for the Brazilian federal government of most important proposals about health care. As these are not authenticated voting, they might be regarded as a reference document if data is minimally shared and checked for inadequate data entry (such as voting by automated scripts or one persistent participant).
 \end{itemize}
 
 % limiares
@@ -231,7 +232,7 @@ Some of which are:
 \subsection{Approval and participation indexes}
 % equations of each participation index.
 
-The approval index $\alpha_i$ and the participation index $\gamma_i$ of the proposal $i$ is defined as:
+The approval index $\alpha_i$ and the participation index $\gamma_i$ of the proposal $i$ was defined as:
 \begin{equation}
 \begin{split}
 \alpha_i=\frac{v^+_i-v^-_i}{\eta_i} \\
@@ -243,21 +244,21 @@ where $v^+_i$, $v^-_i$ and $\eta_i$ are approval count, disapproval count and ex
 
 \subsection{Selected decision framework examples}
 
-Many of the online decision processes conceived and practiced resemble our model and have related indexes. This section presents a collection of models more familiar to the Brazilian participatory community, with focus on the mechanisms not on historical notes.
+Many of the online decision processes conceived and practiced resemble our model and have similar measurements to the $\alpha_i$ and $\gamma_i$ indexes. This section presents a collection of models more familiar to the Brazilian participatory community, with focus on the mechanisms not on historical notes.
 
-Pairwise is part of the tackled paradigm: the raking procedure accepts new proposals while the voting occurs. Pairwise voting is comparative, voter chooses between two proposals, and this does not fit proposed procedure.
+Pairwise is part of the tackled paradigm: the raking procedure accepts new proposals while the voting occurs~\cite{pairwise}. Even so, pairwise voting is comparative, voter chooses between two proposals at each vote, and this does not fit proposed procedure.
 
-Appgree software ranks voting by sampling voters in cycles each with fewer proposals. This is
-adequate for decision making and showcases statistical estimates utility. The system relies on an organized group engagement and identities, which also does not fit current needs. 
+Appgree software ranks voting by sampling voters in cycles each with fewer proposals~\cite{appgree}. This is
+adequate for decision making and showcases statistical estimates utility. The system has a separate proposition phase, and relies on an organized group engagement and identities, which also does not fit current needs. 
 
-Liquid Feedback is a very renowned and bleeding edge solution for collective decision making.
+Liquid Feedback is a very renowned and bleeding edge solution for collective decision making~\cite{liquid}.
 It relies on delegating your voting count on specific subjects to other people you know or trust.
 Therefore, it does not fit current needs. This framework have precious considerations for our case, such as about raking and presenting proposals to voters in the most useful ways.
 
-A Brazilian solution, used in diverse software and specially important as the output as a nation-wide decision making need, is the Agora Algorithm. It presents a decision procedure based on agenda with steps (proposition, argumentation, voting) and posting types (comment, proposal).
+A Brazilian solution, used in diverse software and specially important as the output of a nation-wide decision making need, is the Agora Algorithm~\cite{agora}. It presents a decision procedure based on agenda with steps (proposition, argumentation, voting) and posting types (comment, proposal, resolution).
 Although coherent, this framework requires authentication and might need experimentation and tuning so to achieve desired use to more than dozens or hundreds of participants.
 
-There is a number of solutions for online collaborative prioritization, such as IdeaScale, Kidling, or any flavor of an Analytic Hierarchy Process (AHP). Authors hope to better formalize possible solutions (and which are found implemented), maybe through recommendation systems theory~\cite{coursera}.
+There is a number of other solutions for online collaborative prioritization, such as IdeaScale, Kidling, or any flavor of an Analytic Hierarchy Process (AHP). Authors hope to better formalize possible solutions (and found implementations), maybe through recommendation systems theory~\cite{coursera}.
 
 % Pairwise, LiquidFeedback, Agora Communs/Delibera/Agora Algorithm. Apgree.
 % IdeaScale, Kidling, AHP Methodology, Priorization methods,
@@ -266,12 +267,12 @@ There is a number of solutions for online collaborative prioritization, such as 
 
 \section{Discussion}
 These are the best estimates the researchers designed,
-which were more suitable for current needs than solutions found in literature.
+suitable for current needs and not found (yet) in literature.
 The following questions should be answered in near future:
 \begin{itemize}
 	\item Are there more adequate measures for ranking proposals in the given setting?
     \item What are strong and weak aspects of the approach for collective recommendation?
-    \item Are there really no previous formalized solution to this problem in the exact setting? If there is, what comparisons can we make from design and outcomes?
+    \item Are there really no previous formalized solution to this problem in the exact setting? If there is, what comparisons can we make on design and outcomes?
     \item To which extent will participation community and public managers legitimize this approach?
 \end{itemize}
 
