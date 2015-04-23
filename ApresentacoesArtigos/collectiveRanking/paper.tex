@@ -172,8 +172,8 @@
 
 \begin{abstract}
 In finding the adequate way to prioritize proposals, the Brazilian participation community agreed about an approval index and a participation index.
-Both practice and literature is constantly handled by the experts involved, and the formalization of such model and indexes seem novel.
-Beyond innovation, the relevance of this report relies in the nearby use of these indexes to raise and prioritize proposals about public health care in open processes and assist public managers in federal initiatives.
+Both practice and literature is constantly handled by the experts involved, and the formalization of such model and indexes seems novel.
+Also, the relevance of this report is strengthened by the nearby use of these indexes, by the Brazilian General Secretariat of the Republic, to raise and prioritize proposals about public health care in open processes and assist federal public managers.
 \end{abstract}
 
 %------------------------------------------------
@@ -201,9 +201,9 @@ Beyond innovation, the relevance of this report relies in the nearby use of thes
 \section{}
 %------------------------------------------------
 % aqui já mando toda intro com as infos que cavei ontem.
-Online decision making is a kind of recommendation system with special appeal for online participation and electronic governments. This poses challenges on the design of such
+Online decision making is a kind of recommendation system with special appeal for online social participation and electronic governments. This poses challenges on the design of such
 processes regarding validity, security and the adequate indicators. Indeed,
-the processes themselves vary, and the fact that the ranking indexes presented here seems not to be
+the processes themselves vary, and the fact that the ranking indexes presented here seem not to be
 formalized and published is an evidence that such online decision is very recent phenomena.
 
 The main contribution of this report is the indexes for
@@ -218,9 +218,9 @@ an online voting process~\cite{issue1,issue2,tabRonald} with the following chara
 This setting requires care about security and validity.
 Some of which are:
 \begin{itemize}
-	\item adequate estimates of threshold for statistical validity of ranking.
+	\item adequate estimates of threshold for statistical validity of the ranking.
     \item Keeping the IP of voters to ease detection of automated and other fraudulent efforts.
-    \item The use of the outcomes from the voting process. This requires probing the survey being conducted and its purposes. Current indexes are being used to deliver indicatives for the Brazilian federal government of most important proposals about health care. As these are not authenticated voting, they might be regarded as a reference document if data is minimally shared and checked for inadequate data entry (such as voting by automated scripts or one persistent participant).
+    \item The use of the outcomes from the voting process. This requires probing the survey being conducted and its purposes. The indexes here presented targets the deliverance of indicatives for the Brazilian federal government about the most important health care proposals. Given the unauthenticated voting, the outcomes might be regarded as a reference rankings if data is minimally shared and checked for inadequate data entry (such as voting by automated scripts or one persistent participant).
 \end{itemize}
 
 % limiares
@@ -240,24 +240,23 @@ The approval index $\alpha_i$ and the participation index $\gamma_i$ of the prop
 \gamma_i=\frac{v^+_i+v^-_i}{\eta_i}
 \end{split}
 \end{equation}
-where $v^+_i$, $v^-_i$ and $\eta_i$ are approval count, disapproval count and exhibition count, respectively. Note that $\eta_i-v^+_i-v^-_i$ is the count of the ``indifferent'' manifestations received by proposal $i$. Also, note that accepted sampling estimates error, such indexes are expected to be constant above a minimum threshold.
-
+where $v^+_i$, $v^-_i$ and $\eta_i$ are approval count, disapproval count and exhibition count, respectively. Note that $\eta_i-v^+_i-v^-_i$ is the count of the ``indifferent'' manifestations received by proposal $i$. Also, such $\alpha_i$ and $\gamma_i$ indexes are expected to be constant plus a sampling estimate error. This error is thought to be acceptable if $\eta_i$ is above a threshold established by the participation community and public managers.
 
 \subsection{Selected decision framework examples}
 
-Many of the online decision processes conceived and practiced resemble our model and have similar measurements to the $\alpha_i$ and $\gamma_i$ indexes. This section presents a collection of models more familiar to the Brazilian participatory community, with focus on the mechanisms not on historical notes.
+Many of the online decision processes conceived and practiced resemble our model and have similar measurements to the $\alpha_i$ and $\gamma_i$ indexes. This section presents a collection of models more familiar to the Brazilian participatory community, with focus on the mechanisms, not on historical notes.
 
-Pairwise is part of the tackled paradigm: the raking procedure accepts new proposals while the voting occurs~\cite{pairwise}. Even so, pairwise voting is comparative, voter chooses between two proposals at each vote, and this does not fit proposed procedure.
+Pairwise~\cite{pairwise} is part of the tackled paradigm: the ranking procedure accepts new proposals while the voting occurs. Even so, pairwise voting is comparative, voter chooses between two proposals at each vote, and this does not fit proposed procedure.
 
-Appgree software ranks voting by sampling voters in cycles each with fewer proposals~\cite{appgree}. This is
-adequate for decision making and showcases statistical estimates utility. The system has a separate proposition phase, and relies on an organized group engagement and identities, which also does not fit current needs. 
+Appgree software~\cite{appgree} ranks proposals by sampling voters in cycles, each with fewer proposals. This is
+adequate for a range of decision making cases and showcases statistical estimates utility. The system has a separate proposition phase, and relies on an organized group engagement and user identities, which also does not fit current needs. 
 
-Liquid Feedback is a very renowned and bleeding edge solution for collective decision making~\cite{liquid}.
+Liquid Feedback~\cite{liquid} is a very renowned and bleeding edge solution for collective decision making.
 It relies on delegating your voting count on specific subjects to other people you know or trust.
-Therefore, it does not fit current needs. This framework have precious considerations for our case, such as about raking and presenting proposals to voters in the most useful ways.
+Therefore, it does not fit current needs. Even so, this framework have precious considerations for our case, such as about ranking and presenting proposals to voters in the most useful ways.
 
-A Brazilian solution, used in diverse software and specially important as the output of a nation-wide decision making need, is the Agora Algorithm~\cite{agora}. It presents a decision procedure based on agenda with steps (proposition, argumentation, voting) and posting types (comment, proposal, resolution).
-Although coherent, this framework requires authentication and might need experimentation and tuning so to achieve desired use to more than dozens or hundreds of participants.
+A Brazilian solution, used in diverse software and specially important as the output of a nation-wide decision making need, is the Agora Algorithm~\cite{agora}. It presents a decision procedure in phases (agenda proposition, deliberations proposition and commenting, voting) based on agendas with posting and voting and posting types (comment or proposal, the last can become a resolution).
+Although coherent, this framework requires authentication and might need experimentation and tuning so to achieve the desired use with more than dozens or a few hundreds of participants.
 
 There is a number of other solutions for online collaborative prioritization, such as IdeaScale, Kidling, or any flavor of an Analytic Hierarchy Process (AHP). Authors hope to better formalize possible solutions (and found implementations), maybe through recommender systems theory~\cite{coursera}.
 
@@ -277,7 +276,7 @@ The following questions should be answered in near future:
     \item To which extent will participation community and public managers legitimize this approach?
 \end{itemize}
 
-Most importantly, this report is being delivered to the civil society and scientific community for consideration. Given the large number of possibilities for the collective ranking procedure, and the proliferation of solutions, research efforts might aim the classification of such procedures.
+Most importantly, this report is being delivered to the civil society and scientific community for consideration. Given the large number of possibilities for the collective ranking procedure, and the proliferation of solutions, research efforts might aim the organization of such procedures.
 
 
 
