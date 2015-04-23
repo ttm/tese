@@ -1,0 +1,505 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Proceedings of the National Academy of Sciences (PNAS)
+% LaTeX Template
+% Version 1.0 (19/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% The PNAStwo class was created and is owned by PNAS:
+% http://www.pnas.org/site/authors/LaTex.xhtml
+% This template has been modified from the blank PNAS template to include
+% examples of how to insert content and drastically change commenting. The
+% structural integrity is maintained as in the original blank template.
+%
+% Original header:
+%% PNAStmpl.tex
+%% Template file to use for PNAS articles prepared in LaTeX
+%% Version: Apr 14, 2008
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+% BASIC CLASS FILE
+%------------------------------------------------
+
+%% PNAStwo for two column articles is called by default.
+%% Uncomment PNASone for single column articles. One column class
+%% and style files are available upon request from pnas@nas.edu.
+
+%\documentclass{pnasone}
+\documentclass{pnastwo}
+
+%------------------------------------------------
+% POSITION OF TEXT
+%------------------------------------------------
+
+%% Changing position of text on physical page:
+%% Since not all printers position
+%% the printed page in the same place on the physical page,
+%% you can change the position yourself here, if you need to:
+
+% \advance\voffset -.5in % Minus dimension will raise the printed page on the 
+                         %  physical page; positive dimension will lower it.
+
+%% You may set the dimension to the size that you need.
+
+%------------------------------------------------
+% GRAPHICS STYLE FILE
+%------------------------------------------------
+
+%% Requires graphics style file (graphicx.sty), used for inserting
+%% .eps/image files into LaTeX articles.
+%% Note that inclusion of .eps files is for your reference only;
+%% when submitting to PNAS please submit figures separately.
+
+%% Type into the square brackets the name of the driver program 
+%% that you are using. If you don't know, try dvips, which is the
+%% most common PC driver, or textures for the Mac. These are the options:
+
+% [dvips], [xdvi], [dvipdf], [dvipdfm], [dvipdfmx], [pdftex], [dvipsone],
+% [dviwindo], [emtex], [dviwin], [pctexps], [pctexwin], [pctexhp], [pctex32],
+% [truetex], [tcidvi], [vtex], [oztex], [textures], [xetex]
+
+\usepackage{graphicx}
+
+%------------------------------------------------
+% OPTIONAL POSTSCRIPT FONT FILES
+%------------------------------------------------
+
+%% PostScript font files: You may need to edit the PNASoneF.sty
+%% or PNAStwoF.sty file to make the font names match those on your system. 
+%% Alternatively, you can leave the font style file commands commented out
+%% and typeset your article using the default Computer Modern 
+%% fonts (recommended). If accepted, your article will be typeset
+%% at PNAS using PostScript fonts.
+
+% Choose PNASoneF for one column; PNAStwoF for two column:
+%\usepackage{PNASoneF}
+%\usepackage{PNAStwoF}
+
+%------------------------------------------------
+% ADDITIONAL OPTIONAL STYLE FILES
+%------------------------------------------------
+
+%% The AMS math files are commonly used to gain access to useful features
+%% like extended math fonts and math commands.
+
+\usepackage{amssymb,amsfonts,amsmath}
+
+%------------------------------------------------
+% OPTIONAL MACRO FILES
+%------------------------------------------------
+
+%% Insert self-defined macros here.
+%% \newcommand definitions are recommended; \def definitions are supported
+
+%\newcommand{\mfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+%\def\s{\sigma}
+
+%------------------------------------------------
+% DO NOT EDIT THIS SECTION
+%------------------------------------------------
+
+%% For PNAS Only:
+%\contributor{Submitted to Proceedings of the National Academy of Sciences of the United States of America}
+%\url{www.pnas.org/cgi/doi/10.1073/pnas.0709640104}
+\copyrightyear{2015}
+%\issuedate{Issue Date}
+%\volume{Volume}
+%\issuenumber{Issue Number}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND AUTHORS
+%----------------------------------------------------------------------------------------
+
+\title{Approval and participation index for ternary voting (approve, disapprove, indifferent) adequate to random proposal entry. } % For titles, only capitalize the first letter
+
+%------------------------------------------------
+
+%% Enter authors via the \author command.  
+%% Use \affil to define affiliations.
+%% (Leave no spaces between author name and \affil command)
+
+%% Note that the \thanks{} command has been disabled in favor of
+%% a generic, reserved space for PNAS publication footnotes.
+
+%% \author{<author name>
+%% \affil{<number>}{<Institution>}} One number for each institution.
+%% The same number should be used for authors that
+%% are affiliated with the same institution, after the first time
+%% only the number is needed, ie, \affil{number}{text}, \affil{number}{}
+%% Then, before last author ...
+%% \and
+%% \author{<author name>
+%% \affil{<number>}{}}
+
+%% For example, assuming Garcia and Sonnery are both affiliated with
+%% Universidad de Murcia:
+%% \author{Roberta Graff\affil{1}{University of Cambridge, Cambridge,
+%% United Kingdom},
+%% Javier de Ruiz Garcia\affil{2}{Universidad de Murcia, Bioquimica y Biologia
+%% Molecular, Murcia, Spain}, \and Franklin Sonnery\affil{2}{}}
+
+\author{Participa.br\affil{1}{SNAS/SG-PR, labMacambira.sf.net}
+%James Smith\affil{2}{University of Oregon}
+%\and
+%Jane Smith\affil{1}{}
+}
+
+\contributor{Draft}% to Proceedings of the National Academy of Sciences
+%of the United States of America}
+
+%----------------------------------------------------------------------------------------
+
+\maketitle % The \maketitle command is necessary to build the title page
+
+\begin{article}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT, KEYWORDS AND ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+In finding the adequate way to prioritize proposals, given they are voted \emph{approved}, \emph{disapprove} and \emph{no opinion}, the Brazilian participation community agreed about a approval index and a participation index.
+Both practice and literature is constantly handled by the experts involved, and the formalization of such model seems novel, maybe because of its triviality.
+Even so, the relevance of this report relies in the nearby use of these indexes to raise and prioritize proposals about public health care by the Brazilian Federal Portal of Social Participation.
+\end{abstract}
+
+%------------------------------------------------
+
+\keywords{social participation | recommendation systems | online voting | statistics} % When adding keywords, separate each term with a straight line: |
+
+%------------------------------------------------
+
+%% Optional for entering abbreviations, separate the abbreviation from
+%% its definition with a comma, separate each pair with a semicolon:
+%% for example:
+%% \abbreviations{SAM, self-assembled monolayer; OTS,
+%% octadecyltrichlorosilane}
+
+% \abbreviations{}
+\abbreviations{PyPI, python package index}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATION CONTENT
+%----------------------------------------------------------------------------------------
+
+%% The first letter of the article should be drop cap: \dropcap{} e.g.,
+%\dropcap{I}n this article we study the evolution of ''almost-sharp'' fronts
+
+\section{}
+%------------------------------------------------
+% aqui já mando toda intro com as infos que cavei ontem.
+Online decision making is a kind of recommendation system with special appeal for online participation and electronic governments. This poses challenges on the design of such
+processes regarding validity, security and the adequate indicators. Indeed,
+the processes themselves vary, and the fact that the ranking indexes presented here seems not to be
+formalized and published is an evidence that such online decision is very recent phenomena.
+
+This incidence of online voting has the following characteristics:
+\begin{itemize}
+	\item Proposals might be inserted by voters after the voting phase started.
+    \item A proposal is presented to a voter one by one as random outcomes of all proposals.
+    \item Votes might be ``approve'', ``disapprove'' and ``indifferent''.
+    \item Voters vote without authentication.
+\end{itemize}
+
+This setting requires care about security and validity.
+Some of which are:
+\begin{itemize}
+	\item Adequate estimates of threshold for statistical validity of ranking.
+    \item Keeping the IP of voters to detect automated and other fraudulent efforts.
+    \item The use of the outcomes. This requires probing the survey being conducted and its purposes. Current indexes are being used to deliver indicatives for the Brazilian federal government of most important proposals about health care. As these are not authenticated voting, they might be regarded as a reference document if data is minimally shared and checked for inadequate data entry.
+\end{itemize}
+
+% limiares
+% PPA
+% rastreando IP
+
+\section{}
+
+
+\subsection{Approval and participation indexes}
+% equations of each participation index.
+
+The approval index $\alpha_i$ and the participation index $\gamma_i$ of the proposal $i$ is defined as:
+\begin{equation}
+\begin{split}
+\alpha_i=\frac{v^+_i-v^-_i}{\eta_i} \\
+\gamma_i=\frac{v^+_i+v^-_i}{\eta_i}
+\end{split}
+\end{equation}
+where $v^+_i$, $v^-_i$ and $\eta_i$ are approval count, disapproval count and exhibition count, respectively. Note that $\eta_i-v^+_i-v^-_i$ is the count the ``indifferent'' manifestations received by proposal $i$. Also, note that accepted sampling estimates error, $\eta_i$ is expected to be constant above a minimum threshold.
+
+
+\subsection{Selected decision framework examples}
+
+Many of the online decision processes conceived and practiced resemble our model and have related indexes. This section presents a collection of models more familiar to the Brazilian participatory community, with focus on the mechanisms not on historical notes.
+
+Pairwise is part of the tackled paradigm: the raking procedure accepts new proposals while the voting occurs. Pairwise voting is comparative, voter chooses between two proposals, and this does not fit proposed procedure.
+
+Appgree software ranks voting by sampling voters in cycles each with fewer proposals. This is
+adequate for decision making and showcases statistical estimates utility. The system relies on an organized group engagement and identities, which also does not fit current needs. 
+
+Liquid Feedback is a very renowned and bleeding edge solution for collective decision making.
+It relies on delegating your voting count on specific subjects to other people you know or trust.
+Therefore, it does not fit current needs. This framework have precious considerations for our case, such as about raking and presenting proposals to voters in the most useful ways.
+
+A Brazilian solution, used in diverse software and specially important as the output as a nation-wide decision making need, is the Agora Algorithm. It presents a decision procedure based on agenda with steps (proposition, argumentation, voting) and posting types (comment, proposal).
+Although coherent, this framework requires authentication and might need experimentation and tuning so to achieve desired use to more than dozens or hundreds of participants.
+
+There is a number of solutions for online collaborative prioritization, such as IdeaScale, Kidling, or any flavor of an Analytic Hierarchy Process (AHP). Authors hope to better formalize possible solutions (and which are found implemented), maybe through recommendation systems theory~\cite{coursera}.
+
+% Pairwise, LiquidFeedback, Agora Communs/Delibera/Agora Algorithm. Apgree.
+% IdeaScale, Kidling, AHP Methodology, Priorization methods,
+
+% 
+
+\section{Discussion}
+These are the best estimates the researchers designed,
+which were more suitable for current needs than solutions found in literature.
+The following questions should be answered in near future:
+\begin{itemize}
+	\item Are there more adequate measures for ranking proposals in the given setting?
+    \item What are strong and weak aspects of the approach for collective recommendation?
+    \item Are there really no previous formalized solution to this problem in the exact setting? If there is, what comparisons can we make from design and outcomes?
+    \item To which extent will participation community and public managers legitimize this approach?
+\end{itemize}
+
+Most importantly, this report is being delivered to the civil society and scientific community for consideration. Given the large number of possibilities for the collective ranking procedure, and the proliferation of solutions, research efforts might aim the classification of such procedures.
+
+
+
+%\begin{materials}
+%\begin{theorem}
+%with $|Error|\leq C\, \delta | log\delta| $ where $C$ depends only
+%on $\|\theta\|_{L^{\infty}}$ and $\|
+%\nabla\varphi\|_{L^{\infty}}$.
+%\end{theorem}
+
+%\end{materials}
+
+%----------------------------------------------------------------------------------------
+%	APPENDICES (OPTIONAL)
+%----------------------------------------------------------------------------------------
+
+%\appendix
+%An appendix without a title.
+%
+%\appendix[Erd\"os sectors]
+%An appendix with a title.
+%\begin{definition}
+%	The Erd\"os Sectors S of the network N are defined as the three sectors provenient from the comperrisson of
+%	N to an Erd\"os-Renyi network with the same number of nodes and adges.
+%\begin{eqnarray}
+%equations
+%\end{eqnarray}
+%\end{definition}
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgments}
+	Author is grateful to CNPq (process
+	140860/2013-4, project 870336/1997-5), UNDP
+	(contract 2013/00056, project BRA/12/018), SNAS/SGPR,
+	and the Postgraduate Committee of the IFSC/USP.
+\end{acknowledgments}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%% PNAS does not support submission of supporting .tex files such as BibTeX.
+%% Instead all references must be included in the article .tex document. 
+%% If you currently use BibTeX, your bibliography is formed because the 
+%% command \verb+\bibliography{}+ brings the <filename>.bbl file into your
+%% .tex document. To conform to PNAS requirements, copy the reference listings
+%% from your .bbl file and add them to the article .tex file, using the
+%% bibliography environment described above.  
+
+%%  Contact pnas@nas.edu if you need assistance with your
+%%  bibliography.
+
+% Sample bibliography item in PNAS format:
+%% \bibitem{in-text reference} comma-separated author names up to 5,
+%% for more than 5 authors use first author last name et al. (year published)
+%% article title  {\it Journal Name} volume #: start page-end page.
+%% ie,
+% \bibitem{Neuhaus} Neuhaus J-M, Sitcher L, Meins F, Jr, Boller T (1991) 
+% A short C-terminal sequence is necessary and sufficient for the
+% targeting of chitinases to the plant vacuole. 
+% {\it Proc Natl Acad Sci USA} 88:10362-10366.
+
+
+%% Enter the largest bibliography number in the facing curly brackets
+%% following \begin{thebibliography}
+
+\begin{thebibliography}{10}
+
+\bibitem{Versinus}
+Fabbri, Renato. "Versinus: a visualization method for graphs in evolution." arXiv preprint arXiv:1412.7311 (2014).
+
+\bibitem{musicArticle}
+Fabbri, Renato, et al. "Psychophysics of musical elements in the discrete-time representation of sound." arXiv preprint arXiv:1412.6853 (2014).
+%\bibitem{BN}
+%M.~Belkin and P.~Niyogi, {\em Using manifold structure for partially
+%  labelled classification}, Advances in NIPS, 15 (2003).
+%
+%\bibitem{BBG:EmbeddingRiemannianManifoldHeatKernel}
+%P.~B\'erard, G.~Besson, and S.~Gallot, {\em Embedding {R}iemannian
+%  manifolds by their heat kernel}, Geom. and Fun. Anal., 4 (1994),
+%  pp.~374--398.
+%
+%\bibitem{CLAcha1}
+%R.R.~Coifman and S.~Lafon, {\em Diffusion maps}, Appl. Comp. Harm. Anal.,
+%  21 (2006), pp.~5--30.
+%
+%\bibitem{DiffusionPNAS}
+%R.R.~Coifman, S.~Lafon, A.~Lee, M.~Maggioni, B.~Nadler, F.~Warner, and
+%  S.~Zucker, {\em Geometric diffusions as a tool for harmonic analysis and
+%  structure definition of data. {P}art {I}: Diffusion maps}, Proc. of Nat.
+%  Acad. Sci.,  (2005), pp.~7426--7431.
+%
+%\bibitem{Clementi:LowDimensionaFreeEnergyLandscapesProteinFolding}
+%P.~Das, M.~Moll, H.~Stamati, L.~Kavraki, and C.~Clementi, {\em
+%  Low-dimensional, free-energy landscapes of protein-folding reactions by
+%  nonlinear dimensionality reduction}, P.N.A.S., 103 (2006), pp.~9885--9890.
+%
+%\bibitem{DoGri}
+%D.~Donoho and C.~Grimes, {\em Hessian eigenmaps: new locally linear
+%  embedding techniques for high-dimensional data}, Proceedings of the National
+%  Academy of Sciences, 100 (2003), pp.~5591--5596.
+%
+%\bibitem{DoGri:WhenDoesIsoMap}
+%D.~L. Donoho and C.~Grimes, {\em When does isomap recover natural
+%  parameterization of families of articulated images?}, Tech. Report Tech. Rep.
+%  2002-27, Department of Statistics, Stanford University, August 2002.
+%
+%\bibitem{GruterWidman:GreenFunction}
+%M.~Gr\"uter and K.-O. Widman, {\em The {G}reen function for uniformly
+%  elliptic equations}, Man. Math., 37 (1982), pp.~303--342.
+%
+%\bibitem{Simon:NeumannEssentialSpectrum}
+%R.~Hempel, L.~Seco, and B.~Simon, {\em The essential spectrum of neumann
+%  laplacians on some bounded singular domains}, 1991.
+%
+%\bibitem{1}
+%Kadison, R.\ V.\ and Singer, I.\ M.\ (1959)
+%Extensions of pure states, {\it Amer.\ J.\ Math.\ \bf
+%81}, 383-400.
+%
+%\bibitem{2}
+%Anderson, J.\ (1981) A conjecture concerning the pure states of
+%$B(H)$ and a related theorem. in {\it Topics in Modern Operator
+%Theory}, Birkha\"user, pp.\ 27-43.
+%
+%\bibitem{3}
+%Anderson, J.\ (1979) Extreme points in sets of
+%positive linear maps on $B(H)$. {\it J.\ Funct.\
+%Anal.\
+%\bf 31}, 195-217.
+%
+%\bibitem{4}
+%Anderson, J.\ (1979) Pathology in the Calkin algebra. {\it J.\
+%Operator Theory \bf 2}, 159-167.
+%
+%\bibitem{5}
+%Johnson, B.\ E.\ and Parrott, S.\ K.\ (1972) Operators commuting
+%with a von Neumann algebra modulo the set of compact operators.
+%{\it J.\ Funct.\ Anal.\ \bf 11}, 39-61.
+%
+%\bibitem{6}
+%Akemann, C.\ and Weaver, N.\ (2004) Consistency of a
+%counterexample to Naimark's problem. {\it Proc.\ Nat.\ Acad.\
+%Sci.\ USA \bf 101}, 7522-7525.
+%
+%\bibitem{TSL}
+%J.~Tenenbaum, V.~de~Silva, and J.~Langford, {\em A global geometric
+%  framework for nonlinear dimensionality reduction}, Science, 290 (2000),
+%  pp.~2319--2323.
+%
+%\bibitem{ZhaZha}
+%Z.~Zhang and H.~Zha, {\em Principal manifolds and nonlinear dimension
+%  reduction via local tangent space alignement}, Tech. Report CSE-02-019,
+%  Department of computer science and engineering, Pennsylvania State
+%  University, 2002.
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{article}
+
+%----------------------------------------------------------------------------------------
+%	FIGURES AND TABLES
+%----------------------------------------------------------------------------------------
+
+%% Adding Figure and Table References
+%% Be sure to add figures and tables after \end{article}
+%% and before \end{document}
+
+%% For figures, put the caption below the illustration.
+%%
+%% \begin{figure}
+%% \caption{Almost Sharp Front}\label{afoto}
+%% \end{figure}
+
+%\begin{figure}[h]
+%\centerline{\includegraphics[width=0.4\linewidth]{placeholder.jpg}}
+%\caption{Figure caption}\label{placeholder}
+%\end{figure}
+
+%% For Tables, put caption above table
+%%
+%% Table caption should start with a capital letter, continue with lower case
+%% and not have a period at the end
+%% Using @{\vrule height ?? depth ?? width0pt} in the tabular preamble will
+%% keep that much space between every line in the table.
+
+%% \begin{table}
+%% \caption{Repeat length of longer allele by age of onset class}
+%% \begin{tabular}{@{\vrule height 10.5pt depth4pt  width0pt}lrcccc}
+%% table text
+%% \end{tabular}
+%% \end{table}
+
+%\begin{table}[h]
+%\caption{Table caption}\label{sampletable}
+%\begin{tabular}{l l l}
+%\hline
+%\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+%\hline
+%Treatment 1 & 0.0003262 & 0.562 \\
+%Treatment 2 & 0.0015681 & 0.910 \\
+%Treatment 3 & 0.0009271 & 0.296 \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+%% For two column figures and tables, use the following:
+
+%% \begin{figure*}
+%% \caption{Almost Sharp Front}\label{afoto}
+%% \end{figure*}
+
+%% \begin{table*}
+%% \caption{Repeat length of longer allele by age of onset class}
+%% \begin{tabular}{ccc}
+%% table text
+%% \end{tabular}
+%% \end{table*}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
