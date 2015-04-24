@@ -210,6 +210,7 @@ The main contribution of this report is the indexes for
 an online voting process~\cite{issue1,issue2,tabRonald} with the following characteristics:
 \begin{itemize}
     \item proposals might be inserted by voters after the voting phase started.
+    \item Voting might be extended as a permanent social participation instance. In other words, voting on and adding new proposals might be open continuously.
     \item A proposal is presented to a voter one by one as random outcomes of all proposals.
     \item Each vote might be of one and only type among: ``approve'', ``disapprove'' and ``indifferent''.
     \item Voters vote without authentication.
@@ -219,8 +220,8 @@ This setting requires care about security and validity.
 Some of which are:
 \begin{itemize}
 	\item adequate estimates of threshold for statistical validity of the ranking.
-    \item Keeping the IP of voters to ease detection of automated and other fraudulent efforts.
-    \item The use of the outcomes from the voting process. This requires probing the survey being conducted and its purposes. The indexes here presented targets the deliverance of indicatives for the Brazilian federal government about the most important health care proposals. Given the unauthenticated voting, the outcomes might be regarded as a reference rankings if data is minimally shared and checked for inadequate data entry (such as voting by automated scripts or one persistent participant).
+    \item Keeping the IP address of voters to ease detection of automated and other fraudulent efforts.
+    \item The use of the outcomes from the voting process. This requires probing the survey being conducted and its purposes. The indexes here presented targets the deliverance of indicatives for the Brazilian federal government about the most important health care proposals. Given the unauthenticated voting, the outcomes might be regarded as reference rankings if data is minimally shared and checked for inadequate data entry (such as voting by automated scripts or one persistent participant).
 \end{itemize}
 
 % limiares
@@ -229,7 +230,9 @@ Some of which are:
 
 \section{}
 
-
+%\vfill
+%\vspace{.6cm}
+%\vfill
 \subsection{Approval and participation indexes}
 % equations of each participation index.
 
@@ -240,7 +243,36 @@ The approval index $\alpha_i$ and the participation index $\gamma_i$ of the prop
 \gamma_i=\frac{v^+_i+v^-_i}{\eta_i}
 \end{split}
 \end{equation}
-where $v^+_i$, $v^-_i$ and $\eta_i$ are approval count, disapproval count and exhibition count, respectively. Note that $\eta_i-v^+_i-v^-_i$ is the count of the ``indifferent'' manifestations received by proposal $i$. Also, such $\alpha_i$ and $\gamma_i$ indexes are expected to be constants for each proposal $i$, plus a sampling estimate error that should be smaller as $\eta_i$ raises. This error is thought to be acceptable if $\eta_i$ is above a threshold established by the participation community and public managers.
+where $v^+_i$, $v^-_i$ and $\eta_i$ are approval count, disapproval count and exhibition count, respectively.
+Note that $\alpha_i\in[-1,1]$, $\gamma_i\in[0,1]$, and $\eta_i-v^+_i-v^-_i$ is the count of the ``indifferent'' manifestations received by proposal $i$.
+Also, such $\alpha_i$ and $\gamma_i$ indexes are expected, for each proposal $i$, to be constants  plus a sampling estimate error that should be smaller as $\eta_i$ raises. This error is thought to be acceptable if $\eta_i$ is above a threshold $\overline{\eta}$ established by the participation community and public managers.
+As an initial decision, the staff agreed to use $\overline{\eta}$ as to select $10-20\%$ of all proposals.
+A threshold $\overline{\gamma}$ can be used as a required level of engagement for proposals to be relevant,
+while the threshold $\overline{\alpha}$ is used to classify the outcome
+as ``approved'',``disapproved'' and ``clash''. More specifically:
+
+\begin{equation}
+\begin{split}
+\eta_i > \overline{\eta}    \;\;\;\;\;\; & \Rightarrow\;\;\;\;\;\; i     \text{ is sampled} \\
+\gamma_i>\overline{\gamma}    \;\;\;\;\;\; & \Rightarrow\;\;\;\;\;\; i    \text{ is relevant} \\
+|\alpha_i| \leq\overline{\alpha}\;\;\;\;\;\; & \Rightarrow\;\;\;\;\;\; i  \text{ is a clash} \\
+\alpha_i > \overline{\alpha}  \;\;\;\;\;\; & \Rightarrow\;\;\;\;\;\; i    \text{ is approved} \\
+-\alpha_i > \overline{\alpha} \;\;\;\;\;\; & \Rightarrow\;\;\;\;\;\; i   \text{ is disapproved} \\
+\end{split}
+\end{equation}
+
+If a proposal $i$ is both sampled and approved, than it is prioritized.
+The coherent values of $\overline{\alpha_i}=0.5$ (or $1/3$)
+and $\overline{\gamma_i}=0.5$ were chosen as standards of the decision model. 
+These are likely to change with implementation and management.
+
+
+
+
+
+
+% notive that threasholds can be taken as different for each proposal: \overline{\alpha_i}=1-\eta_i/\eta_{max}
+
 
 \subsection{Selected decision framework examples}
 
@@ -255,7 +287,7 @@ Liquid Feedback~\cite{liquid} is a very renowned and bleeding edge solution for 
 It relies on delegating your voting count on specific subjects to other people you know or trust.
 Therefore, it does not fit current needs. Even so, this framework have precious considerations for our case, such as about ranking and presenting proposals to voters in the most useful ways.
 
-A Brazilian solution, used in diverse software and specially important as the output of a nation-wide decision making need, is the Agora Algorithm~\cite{agora}. It presents a decision procedure in phases (agenda proposition, deliberations proposition and commenting, voting) based on agendas with posting and voting and posting types (comment or proposal, the last can become a resolution).
+A Brazilian solution, used in diverse software and specially important as the output of a nation-wide decision making need, is the Agora Algorithm~\cite{agora}. It presents a decision procedure in phases (agenda proposition, deliberations proposition and commenting, voting) with resolution outcomes.
 Although coherent, this framework requires authentication and might need experimentation and tuning so to achieve the desired use with more than dozens or a few hundreds of participants.
 
 There is a number of other solutions for online collaborative prioritization, such as IdeaScale, Kidling, or any flavor of an Analytic Hierarchy Process (AHP). Authors hope to better formalize possible solutions (and found implementations), maybe through recommender systems theory~\cite{coursera}.
@@ -272,6 +304,7 @@ The following questions should be answered in near future:
 \begin{itemize}
 	\item Are there more adequate measures for ranking proposals in the given setting?
     \item What are strong and weak aspects of the approach for collective recommendation?
+    \item What thresholds will be the choice of community and will they be adjusted in time?
     \item Are there really no previous formalized solution to this problem in the exact setting? If there is, what comparisons can we make on design and outcomes?
     \item To which extent will participation community and public managers legitimize this approach?
 \end{itemize}
