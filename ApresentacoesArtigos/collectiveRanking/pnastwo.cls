@@ -322,7 +322,7 @@ This version is dated \currversion^^J^^J}
 \renewcommand\topfraction{.7}
 \setcounter{bottomnumber}{1}
 \renewcommand\bottomfraction{.3}
-\setcounter{totalnumber}{3}
+\setcounter{totalnumber}{2}
 \renewcommand\textfraction{.2}
 \renewcommand\floatpagefraction{.5}
 \setcounter{dbltopnumber}{2}
