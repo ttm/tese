@@ -1,0 +1,805 @@
+\documentclass[a4paper,openright,12pt]{report} %,parskip=full
+
+\usepackage{amssymb,amsmath,textcomp}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{braket}
+\usepackage{booktabs}  %Possibilidade de linhas mais grossas nas tabelas.
+
+%MEU
+%\usepackage[brazilian, portuguese, activeacute]{babel}
+%\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+%\usepackage{color}
+%\usepackage{amssymb}
+\usepackage{amsmath}  %for binom, not
+%\usepackage{pifont}   %for ding
+\usepackage{hyperref}
+%\usepackage{amsthm}   %for what
+%\usepackage{helvet}   %for what
+\usepackage{cancel}   %for cancel
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{etex}
+
+\usepackage{cite}
+
+
+
+%\usepackage[footnotesize,hang]{caption} 
+
+%\usepackage[hang,small,labelsep=endash]{caption} % Hifen na legenda de tableas e figuras
+\usepackage[hang,footnotesize,labelsep=endash,tableposition=top]{caption} % Hifen na legenda de tableas e figuras
+%CHCHCH
+%\usepackage{subcaption}
+
+%%%%%%%%%%%%%%%%% Bibliografia
+\usepackage{url}
+\usepackage[bibjustif,abnt-thesis-year=both,num]{abntcite} %%%%%% ABNY
+%%%%%%%%%%%%%%%%% Espacamento
+%\makeatletter  %Espa�amento entre os itens da bibliografia
+%\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
+%\let\ORIGINALlatex@openbib@code=\@openbib@code  
+%\renewcommand{\@openbib@code}{\ORIGINALlatex@openbib@code\adjustmybblparameters}
+%\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Espacaçamento entre as referências
+\makeatletter  %Espa�amento entre os itens da bibliografia
+\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
+\let\ORIGINALlatex@openbib@code=\@openbib@code  
+\renewcommand{\@openbib@code}{\ORIGINALlatex@openbib@code\adjustmybblparameters}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%Symbol footnote
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[Conny]{fncychap}
+\usepackage{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\makeatletter
+\renewcommand*{\@makechapterhead}[1]{%
+  \vspace*{-1.0cm}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
+        \DOCH
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
+      \DOTI{#1}%
+    \else%
+      \DOTIS{#1}%
+    \fi
+  }}
+
+%older
+%%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
+%\usepackage[compact]{titlesec}
+%\titlespacing{\section}{0pt}{0.5cm}{0.5cm}
+%%\titlespacing{\chapter}{0pt}{2.0cm}{2.0cm}
+%\titlespacing{\subsection}{0pt}{0.5cm}{0.5cm}
+%\titlespacing{\subsubsection}{0pt}{0.5cm}{0.5cm}	
+
+%%abnt mestrado
+%%%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
+%\usepackage{titlesec} %[compact]
+%\titlespacing{\chapter}{0pt}{1.9cm}{2.2cm}
+%\titlespacing{\section}{0pt}{1.9cm}{2.2cm}
+%\titlespacing{\subsection}{0pt}{2.1cm}{2.2cm}
+%\titlespacing{\subsubsection}{0pt}{2.2cm}{2.2cm}	
+
+%quali
+%%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
+\usepackage{titlesec} %[compact]
+\titlespacing{\chapter}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\section}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\subsection}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\subsubsection}{0pt}{1.5cm}{1.5cm}	
+
+
+%%%%%%%%%% Escreve ``Figura`` e ``Tabela`` nas listas de figuras e tabelas
+%%CHCHCH
+%\usepackage[titles]{tocloft}
+%\renewcommand{\cftfigaftersnum}{ -}
+%\renewcommand{\cfttabaftersnum}{ -}
+%\renewcommand{\cftfigpresnum}{Figura }
+%\renewcommand{\cfttabpresnum}{Tabela }
+%\setlength{\cftfignumwidth}{2.2cm}
+%\setlength{\cfttabnumwidth}{2.2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[pdftex]{graphicx}  %pacote para colocar figuras jpg
+\usepackage[final]{pdfpages}  %include pfd coloca um pdf em uma pagina
+
+%\usepackage[T1]{fontenc} %CHCHCH
+%\usepackage[OT2,T1]{fontenc} %CHCHCH
+%\usepackage[T1,T2A]{fontenc} %needs t2aenc.def
+\usepackage[T1,OT2,OT1]{fontenc} %CHCHCH
+
+%\usepackage{cyrillic} 
+
+%russian
+\newcommand\cyr{%
+\renewcommand\rmdefault{wncyr}%
+\renewcommand\sfdefault{wncyss}%
+\renewcommand\encodingdefault{OT2}%
+\normalfont
+\selectfont}
+\DeclareTextFontCommand{\textcyr}{\cyr}
+
+%%CHCHCH
+%%russian
+%\newcommand{\cyrrm}{\fontencoding{OT2}\selectfont\textcyrup}
+%\newcommand{\cyrit}{\fontencoding{OT2}\selectfont\textcyrit}
+%\newcommand{\cyrsl}{\fontencoding{OT2}\selectfont\textcyrsl}
+%\newcommand{\cyrsf}{\fontencoding{OT2}\selectfont\textcyrsf}
+%\newcommand{\cyrbf}{\fontencoding{OT2}\selectfont\textcyrbf}
+%\newcommand{\cyrsc}{\fontencoding{OT2}\selectfont\textcyrsc}
+%%%%% cyrrm = "Roman", or really upright, normal font
+%%%%% cyrit = Italic (cursive forms of letters)
+%%%%% cyrsl = Italic (non-cursive forms of letters)
+%%%%% cyrsf = Sans-serif
+%%%%% cyrbf = Bold-face 
+
+
+
+
+%\usepackage[math]{iwona}
+\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault} math
+
+\usepackage[absolute]{textpos}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{leftidx}
+
+%CHCHCH
+%\usepackage[superscript]{cite}  %citacoes em superscript
+\usepackage{cite}  %nao, meu, citacoes em superscript nao!
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations}
+\usetikzlibrary{snakes}
+
+\usepackage{color}
+
+\definecolor{DarkBlue}{rgb}{0.1,0.1,0.5}
+\definecolor{Red}{rgb}{0.9,0.0,0.1}
+\definecolor{DarkGreen}{rgb}{0.10,0.50,0.10}
+
+% see documentation for a0poster class for the size options here
+\let\Textsize\large
+\def\Head#1{\noindent\hbox to \hsize{\hfil{\LARGE\color{DarkBlue} #1}}\bigskip}
+\def\LHead#1{\noindent{\LARGE\color{DarkBlue} #1}\smallskip}
+\def\Aut#1{\noindent{\Huge\color{DarkBlue} #1}\smallskip}
+\def\End#1{\noindent{\large\it\color{DarkBlue} #1}\smallskip}
+\def\Subhead#1{\noindent{\Large\color{DarkBlue} #1}}
+\newcommand{\quiteHuge}{\fontsize{120}{93}\selectfont}
+\def\Title#1{\begin{center}\noindent{\quiteHuge\color{DarkGreen}#1}\end{center}}
+
+
+\usepackage[twoside,inner=3cm,outer=2cm,top=3cm,bottom=2cm]{geometry}
+
+\usepackage{setspace}   %Espacamento entre as linhas
+
+\setstretch{1.5} %Normal da ABNT: espaçamento entre as linhas de 1.5 de linha
+% Pode ser \singlespace 
+%          \onehalfspace
+%          \doublespace
+
+%---------------------------------------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy} % colocar Capítulos, Seções, etc em minúsculo
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\fancyhf{} % deletar configuração atual do cabeçalho (header) e rodapé (foot)
+
+\pagestyle{fancy} 
+
+\fancyhead[LE,RO]{\thepage}
+
+\fancyhead[LO]{\rightmark}
+  
+\fancyhead[RE]{\leftmark}
+
+\renewcommand{\headrulewidth}{0.5pt}
+  
+\renewcommand{\footrulewidth}{0pt}
+
+%CHCHCH
+%\addtolength{\headheight}{0.5pt} % cria um espaço para linha
+\addtolength{\headheight}{4.0pt} % cria um espaço para linha
+
+\fancypagestyle{plain}{
+    \fancyhead{} % exibir cabeçalho e rodapé
+    \renewcommand{\headrulewidth}{0pt} % linha
+}
+
+
+
+
+%---------------------------------------------------------------------------------------------------------
+
+\usepackage[marginal,symbol]{footmisc}
+\footnotemargin2pt
+
+%%%%%%%%%%%%%%%%%%
+
+
+\pagestyle{empty}
+
+%\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} %CHCHCH %to make tableofcontents empty pagestyle
+
+
+%CHCHCH TO MAKE TABLEOFCONTENTS PAGESTULE EMPTY
+%\fancypagestyle{plain}{%
+%  \fancyhf{}                          % clear all header and footer fields
+%  \renewcommand{\headrulewidth}{0pt}
+%  \renewcommand{\footrulewidth}{0pt}
+%}
+
+\usepackage[subfigure,titles]{tocloft}
+\renewcommand{\cftfigaftersnum}{ -}
+\renewcommand{\cfttabaftersnum}{ -}
+\renewcommand{\cftfigpresnum}{Figura }
+\setlength{\cftfignumwidth}{2.2cm}%{5em}
+
+
+
+%\renewcommand*{\chapterheadendvskip}{%
+%  \vspace{3.0cm}%
+%%  \vspace{0.725\baselineskip plus 0.115\baselineskip minus 0.192\baselineskip}%
+%}
+
+\usepackage{blindtext}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%\setlength{\parskip}{0.5cm}%1.5ex} %0pt} % 1ex plus 0.5ex minus 0.2ex}
+
+\hyphenation{ca-ra-te-ri-sti-cas}
+
+%\selectlanguage{portuguese}
+%\hyphenation{e-mer-g\^{e}n-cia}
+
+
+\pagestyle{fancy}
+
+
+\thispagestyle{empty}
+
+\vspace{0.5cm}
+
+\begin{center} 
+\LARGE{UNIVERSIDADE DE SÃO PAULO}  \\
+\LARGE{INSTITUTO DE FÍSICA DE SÃO CARLOS}
+\end{center}
+
+\vspace{6.0cm}
+
+\centerline{\LARGE{CAMILO AKIMUSHKIN VALENCIA}}
+
+\vspace{3.0cm}
+
+
+\centerline{\Huge{Din\^amica de redes complexas}} 
+\vspace{0.5cm}
+\centerline{\Huge{aplicada a reconhecimento de autoria}}
+
+
+\vspace{6.5cm}
+
+\begin{center}
+\Large{S\~ao Carlos}\\
+\Large{2015}
+\end{center}
+
+
+
+\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+\setcounter{page}{1} % ABNT: deve-se começar a numeração na folha de rosto.
+
+\begin{center}
+\LARGE{CAMILO AKIMUSHKIN VALENCIA}
+\end{center}
+
+\addvspace{4.0cm}
+
+\begin{center}
+\Huge{Din\^amica de redes complexas\\
+aplicada a reconhecimento de autoria}
+\end{center}
+
+\addvspace{3.0cm}
+
+\makebox[15cm][r]{
+\begin{minipage}[l]{8cm}
+
+\begin{singlespace}
+Monografia apresentada ao Programa de Pós-Graduação em Física 
+do Instituto de Física de São Carlos da Universidade de São Paulo, para o Exame de Qualifica\c c\~ao 
+como parte dos requisitos para obten\c c\~ao do t\'itulo de Doutor em Ci\^encias.\\
+
+Área de concentração: Física Básica
+
+Orientador: Prof. Dr. Osvaldo Novais de Oliveira Jr.
+\end{singlespace}
+
+
+\end{minipage}}
+
+\addvspace{3.0cm}
+
+\begin{center}
+%\Large{Versão original} \\
+\vspace{1.5cm}
+\Large{S\~ao Carlos}\\
+\Large{2015}
+\end{center}
+
+
+%%%%%%
+%\thispagestyle{empty}
+%
+%
+%\includepdf{index}
+%\includepdf{fichacatalog135}
+%%%%%%
+
+%% \vspace*{8cm}
+%%\begin{center}
+%% \huge{FICHA CATALOGRÁFICA}
+
+%% \vspace*{3cm}
+
+%%\large{Elaborar ao final, quando o número de páginas da 
+%%dissertação estiver definido - 
+%%www.biblioteca.ifsc.usp.br/ficha}
+%%\end{center}
+
+%%%%%%%%%%%
+%\newpage\thispagestyle{empty} 
+%
+%\vspace*{8cm}
+%
+%\begin{center}
+%\normalsize{FOLHA DE APROVAÇÃO}
+%\end{center}
+%
+%
+%
+%\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}\ 
+%
+%\vspace*{18cm}
+%
+%\begin{spacing}{1.2}
+%
+%\begin{flushright}\textit{
+%\`A MINHA AV\'O,\\
+%\vspace{0.5cm}
+%CLELIA C\'ESPEDES ACERO
+%\vspace{1cm}
+%}\end{flushright}
+%
+%\end{spacing}
+%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+%\newpage\ \thispagestyle{empty} %NEWW
+%
+%\newpage\ \thispagestyle{empty}
+%
+%
+%\vspace*{18cm}
+%
+%\begin{spacing}{1.2}
+%
+%\makebox[15cm][r]{ 
+%\begin{minipage}[l]{10cm}
+%\hspace*{2.2cm}\emph{ \large{ Este trabalho foi financiado pelo \\ \hspace*{7.5cm} CNPq } }
+%\end{minipage}}
+%
+%
+%
+%\end{spacing}
+%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+
+\begin{singlespace}
+
+\centerline{\LARGE{{\bf RESUMO}}}
+
+\vspace*{1.5cm}
+
+\hspace*{-0.9cm} AKIMUSHKIN, C. \textit{Din\^amica de redes complexas aplicado a reconhecimento de autoria}. Instituto de Física de São Carlos, Universidade de São Paulo, São Carlos, 2015. 
+
+\vspace*{1.2cm}
+
+\hspace*{-0.9cm}
+
+{\noindent
+Parte da complexidade impl\'icita na linguagem se reflete na ordem das palavras, o que j\'a foi usado para caracterizar linguagens, movimentos liter\'arios e autores por meio da cria\c c\~ao de redes de co-ocorr\^encia de palavras. O reconhecimento de autoria visa a separar textos em grupos que representam cada autor, tal que seja poss\'ivel identificar o autor de um texto em disputa. Redes de co-ocorr\^encia t\^em mostrado sucesso na tarefa de reconhecimento de autoria, mas pouco se tem estudado sobre a influ\^encia da din\^amica da rede. Isto \'e curioso, uma vez que a din\^amica \'e a respons\'avel pelas propriedades estruturais da rede. Portanto, aprofundar no estudo da din\^amica, al\'em do benef\'icio pr\'atico de servir para o reconhecimento de autoria, pode trazer maior compreens\~ao dos mecanismos de evolu\c c\~ao de redes de textos. Um problema recorrente do reconhecimento de autoria \'e a escassez e heterogeneidade dos textos dispon\'iveis. Neste projeto prop\~oe-se uma metodologia para o reconhecimento de autoria baseada na din\^amica de redes de co-ocorr\^encia. Para testar o m\'etodo utiliza-se uma cole\c c\~ao de $300$ textos de $27$ autores na l\'ingua inglesa. Para cada texto s\~ao obtidas s\'eries temporais para $6$ medidas de rede. As s\'eries temporais s\~ao estacion\'arias, permitindo usar os quatro primeiros momentos da distribui\c c\~ao para caracterizar a s\'erie. Os $24$ atributos obtidos s\~ao usados em algoritmos de classifica\c c\~ao e agrupamento. O desempenho da classifica\c c\~ao \'e compar\'avel ao de t\'ecnicas anteriores. Por outro lado, o agrupamento baseado em densidade mostra \'otimos resultados, agrupando corretamente 296 dos 300 textos analisados. Os melhores resultados s\~ao alcan\c cados com $\varepsilon=1$, a qual parece ser a separa\c c\~ao natural entre os grupos. As medidas introduzidas mostram ser caracter\'isticas de cada autor.
+}
+
+\vspace*{1.5cm}
+\hspace*{-0.9cm} {\bf Palavras-chave:} Redes complexas. S\'eries temporais. Classifica\c c\~ao e agrupamento de textos.
+
+\end{singlespace}
+
+  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage\thispagestyle{empty}
+%
+%\pagestyle{empty}
+%
+%\begin{singlespace}
+%\listoffigures
+%%\listoftables
+%\end{singlespace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%
+%\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+%\thispagestyle{empty} %CHCHCH
+
+\tableofcontents\thispagestyle{empty}\thispagestyle{empty}%\thispagestyle{empty}
+
+\clearpage \thispagestyle{empty}
+
+\pagestyle{fancy}
+
+
+
+
+
+
+\chapter{Introdu\c c\~ao}
+
+Os sistemas observados no dia a dia s\~ao quase sempre compostos de grande quantidade de elementos interagentes. A física, tradicionalmente caracterizada pelo reducionismo, poderia n\~ao ser considerada como a melhor ferramenta para abordar sistemas com tais propriedades. Por\'em, \'e fato que existem princ\'ipios b\'asicos para descrever os fen\^omenos observados. Isto ocorre com os chamados sistemas complexos, os quais seguem regras bastante simples. O nome vem das propriedades n\~ao triviais como a perda de escala nestes sistemas t\'ipica, por exemplo, dos fractais. A linguagem \'e um destes sistemas complexos.\\
+
+Um tipo especial de sistemas complexos vem sendo estudado com muito sucesso: as redes complexas. Redes podem construir-se partindo da maioria de sistemas dispon\'iveis, sendo a representa\c c\~ao mais natural de alguns deles. Muitos desses sistemas geram redes que satisfazem as condi\c c\~oes requeridas para ser classificadas como redes complexas \cite{barabasi1999emergence}. A complexidade manifesta-se em redes como uma ou mais das seguintes caracter\'isticas: distribui\c c\~oes em forma de leis de pot\^encia\footnote{As leis de pot\^encia s\~ao um exemplo de fun\c c\~oes que apresentam perda de escala.}, alta clusteriza\c c\~ao, efeito de mundo pequeno, e organiza\c c\~ao hier\'arquica.\\
+
+Textos representados em forma de redes apresentaram as caracter\'isticas anteriores \cite{ferrer2001two}, \cite{dorogovtsev2001language}. V\'arias redes obtidas a partir da linguagem, al\'em de textos escritos, s\~ao exemplos disto \cite{choudhury2009structure}. Redes fonol\'ogicas de palavras t\^em propriedades modulares e perda de escala. Redes de similaridade sem\^antica apresentam o fen\^omeno de mundo pequeno e perda de escala. Redes de depend\^encia sint\'atica mostram organiza\c c\~ao hier\'arquica, e redes de coloca\c c\~ao apresentam o fen\^omeno de mundo pequeno e distribui\c c\~oes livres de escala. As redes de co-ocorr\^encia s\~ao um caso particular de rede de coloca\c c\~ao, constru\'idas criando-se uma aresta entre duas palavras (os n\'os da rede) cada vez que essas palavras aparecem consecutivamente num texto. Acredita-se que as linguagens evolu\'iram adquirindo estas qualidades para facilitar o aprendizado e a navega\c c\~ao por palavras.\\
+
+O surgimento de complexidade \'e uma descoberta importante j\'a que permite aplicar o conhecimento te\'orico dos modelos de redes, o que ajudaria a entender o comportamento das l\'inguas a partir de mecanismos de evolu\c c\~ao de redes. 
+Igualmente, o fato de apresentar um comportamento conhecido permite caracterizar estas redes, e assim textos inteiros podem ser razoavelmente bem descritos em termos de uns poucos par\^ametros. 
+Considerando ent\~ao que a representa\c c\~ao por meio de redes consegue capturar aspectos relevantes dos textos, poder\'iamos us\'a-las para um fim pr\'atico.\\
+
+A an\'alise autom\'atica de textos vem adquirindo crescente import\^ancia. A disponibilidade de \textit{corpora} (cole\c c\~oes de textos) \'e cada vez maior e os textos, que continuam sendo gerados diariamente, precisam ser analisados, organizados e acessados adequadamente. A minera\c c\~ao de textos \'e talvez a parte mais evolu\'ida da \'area de minera\c c\~ao de dados, principalmente porque textos s\~ao processados mais facilmente do que, por exemplo, uma imagem. Na minera\c c\~ao de textos existem v\'arias tarefas: recupera\c c\~ao de informa\c c\~ao, indexa\c c\~ao, extra\c c\~ao de caracter\'isticas, sumariza\c c\~ao e classifica\c c\~ao e agrupamento de textos.\\ 
+
+As ferramentas mencionadas acima s\~ao usadas separadamente e em conjunto para diversos fins. 
+A recupera\c c\~ao de informa\c c\~ao est\'a associada com a fase de prepara\c c\~ao dos textos, necess\'aria para a maioria das outras aplica\c c\~oes. 
+A indexa\c c\~ao permite converter um texto num conjunto de palavras-chave para otimizar a busca. 
+A extra\c c\~ao de caracter\'isticas e a sumariza\c c\~ao procuram os elementos relevantes dentro de um texto. 
+A classifica\c c\~ao e o agrupamento de textos podem ser aplicados \`a organiza\c c\~ao dos mesmos, por exemplo a categoriza\c c\~ao autom\'atica de mensagens de correio eletr\^onico \'e utilizada na dete\c c\~ao de spam. Outra aplica\c c\~ao consiste em organizar p\'aginas de um dom\'inio, por exemplo em se\c c\~oes num jornal de not\'icias.\\
+
+Estas e outras ferramentas de processamento de l\'ingua natural t\^em evidentes aplica\c c\~oes, principalmente na internet. Neste trabalho utilizaremos duas delas, a classifica\c c\~ao e o agrupamento. Elas se encaixam naturalmente no nosso objetivo: a predi\c c\~ao autom\'atica do autor de um texto.\\
+
+As ferramentas tradicionais de classifica\c c\~ao e agrupamento de textos usam uma representa\c c\~ao do texto do tipo \textit{bag of words}. A classifica\c c\~ao de textos tem usado a maioria das t\'ecnicas de aprendizado supervisionado. T\'ecnicas bem conhecidas como a TF-IDF e similares obt\^em uma medida da relev\^ancia de cada texto para uma consulta (tal como na tarefa de indexa\c c\~ao) baseando-se no n\'umero de vezes que aparece uma palavra-chave no documento. Do outro lado, no escopo de agrupamento se atribui um vetor cujas componentes s\~ao por exemplo as frequ\^encias de cada termo no documento. A dissimilaridade, isto \'e, a dist\^ancia entre documentos, pode ser a diferen\c ca entre vetores ou ser o inverso do cosseno do \^angulo entre eles. 
+Nas t\'ecnicas anteriores o n\'umero de atributos que representa um documento \'e da ordem de grandeza do vocabul\'ario do corpus. Uma forma de reduzir a dimensionalidade consiste em extrair os termos relevantes.\\
+
+O reconhecimento de autoria tamb\'em \'e problema central de uma nova \'area de pesquisa chamada estilometria. A estilometria junta t\'ecnicas, mesmo com focos distintos, para encontrar elementos caracter\'isticos do estilo de cada autor. A estilometria pode precisar de conhecimento de especialista, isto \'e, aquele obtido da lingu\'istica. 
+
+
+\section{Proposta de pesquisa}
+
+Mesmo que bem sucedidas, as t\'ecnicas tradicionais de reconhecimento de autoria t\^em problemas inerentes. 
+A dimensionalidade tem papel importante j\'a que mesmo usando t\'ecnicas para reduzir o n\'umero de palavras-chave, este continua sendo consider\'avel. Pior ainda, este n\'umero depende do maior elemento presente na cole\c c\~ao. Este problema se trata com algoritmos otimizados para c\'alculos em muitas dimens\~oes. 
+Al\'em disso, focar na sem\^antica das palavras pode ser prejudicial no reconhecimento de autoria. Considere por exemplo dois livros de dois autores diferentes, ambos abordando temas sobre o mar. Considerar esses livros como similares pode ser \'util para outros fins mas n\~ao necessariamente para descobrir o autor.\\
+
+Dentre as t\'ecnicas usadas para o reconhecimento de autoria, redes de co-ocorr\^encia apresentam v\'arias vantagens. O uso de conhecimento de especialista limita-se \`a fase preparat\'oria, a qual est\'a totalmente automatizada, diferentemente das t\'ecnicas de estilometria. 
+A dimensionalidade do problema fica a cargo do usu\'ario, que define quantas e quais medidas quer usar. Sob certas condi\c c\~oes esta dimensionalidade pode ser baixa. 
+Diferentemente das t\'ecnicas tradicionais que funcionam extraindo-se palavras-chave, pode tratar facilmente diversos g\^eneros liter\'arios.\\
+
+As propriedades das redes de co-ocorr\^encia j\'a serviram para identificar linguagens \cite{ferrer2001two}, \cite{biemann2009networks}, correntes liter\'arias \cite{amancio2012identification} e autores \cite{amancio2011comparing}. No entanto n\~ao h\'a estudos sobre caracteriza\c c\~ao de textos usando a evolu\c c\~ao temporal, ou din\^amica, da rede de co-ocorr\^encia. Acreditamos que a din\^amica de rede e o estilo da escrita estejam relacionados. Baseamo-nos no fato que a din\^amica define a topologia da rede \cite{barabasi1999emergence}, \cite{dorogovtsev2001language}.\\
+
+Gostar\'iamos de extrair medidas, em particular, m\'etricas de rede \`a medida que ela evolui. No entanto, dois grandes problemas surgem. Primeiro, as m\'etricas de uma rede dependem enormemente do tamanho da rede. Considere um exemplo extremo: a conectividade m\'edia de uma rede com distribui\c c\~ao livre de escala \'e infinita, se a rede for infinita. Portanto deve-se ter cuidado ao comparar m\'etricas de redes de diferentes tamanhos, principalmente se a topologia n\~ao for conhecida. O segundo problema tem a ver com a independ\^encia das observa\c c\~oes. Se medirmos uma m\'etrica numa rede e a mesma m\'etrica depois que a mesma rede evolui, as duas medidas com certeza n\~ao ser\~ao independentes. Este problema, embora tenha solu\c c\~ao, precisa ser tratado com cuidado.\\
+
+O m\'etodo proposto neste trabalho evita estes e outros problemas para analisar redes. Em particular, o reconhecimento de autoria sofre pela heterogeneidade e escassez de textos que remete ao problema de comparar duas redes de tamanho distinto.\\
+
+Se as medidas de rede dependerem do autor do texto, al\'em das aplica\c c\~oes pr\'aticas haveria importantes quest\~oes sobre a linguagem. O resultado implicaria que o autor de um texto tem algum controle sobre a rede ao inv\'es de ela estar governada por um mecanismo rigidamente fixo. Assim como sutis diferen\c cas entre redes de textos sugerem caracter\'isticas pr\'oprias de linguagens espec\'ificas (no entanto possuindo todas um mecanismo comum \cite{ferrer2001two}, \cite{dorogovtsev2001language}), as medidas de rede poderiam dizer algo a respeito da forma de escrever de uma pessoa.\\
+
+
+\section{Objetivos}
+
+O objetivo geral do projeto \'e avan\c car na compreens\~ao do processo de cria\c c\~ao de textos escritos visando a entender a influ\^encia do autor na din\^amica de redes. Os objetivos espec\'ificos s\~ao:
+
+\begin{itemize}
+\item Observar os aspectos gerais da din\^amica das redes de co-ocorr\^encia.
+\item Propor uma metodologia para testar a poss\'ivel depend\^encia da din\^amica de redes com respeito \`a autoria de textos escritos.
+\item Criar e disponibilizar uma ferramenta para reconhecimento de autoria baseada na metodologia proposta.
+\end{itemize}
+
+
+
+\chapter{Fundamenta\c c\~ao Te\'orica} \label{teoria}
+
+A base te\'orica necess\'aria para a realiza\c c\~ao do trabalho consiste em conceitos b\'asicos e defini\c c\~oes de redes complexas, s\'eries temporais e conhecimento dos principais algoritmos de aprendizado de m\'aquina.\\
+
+
+\section{Redes complexas}
+
+
+
+A linguagem pode ser representada mediante diferentes tipos de redes. No entanto, a caracteriza\c c\~ao de um texto individual beneficia-se particularmente de um tipo: as redes de co-ocorr\^encia. Uma rede de co-ocorr\^encia \'e gerada associando-se palavras consecutivas em pares. As redes de co-ocorr\^encia apresentam distribui\c c\~oes em forma de lei de pot\^encia, isto \'e, perda de escala.\\
+
+Muitos mecanismos geram perda de escala, como o paradoxo de S\~ao Petersburgo do jogo de moeda. No entanto, o paradigma atual em redes complexas \'e a liga\c c\~ao preferencial, proposta por Albert Barab\'asi e Reka Albert \cite{barabasi1999emergence}. Em termos gerais, a liga\c c\~ao preferencial preconiza que quanto maior for o n\'umero de conex\~oes de um n\'o numa rede, tanto maior \'e a chance de esse n\'o adquirir uma nova conex\~ao, o que \`as vezes \'e chamado como fen\^omeno ``\textit{rich get richer}''. O mecanismo de Barab\'asi e Albert gera redes com distribu\c c\~oes de probabilidade em forma de lei de pot\^encia, $P(k) \sim k^{-\gamma}$ na faixa de valores $\gamma\in \left( 2, 3 \right]$. As redes de Barab\'asi e Albert descrevem as redes de co-ocorr\^encia entre outras. Um refinamento do modelo, proposto por Dorogovtsev e Mendes, especificamente para redes de texto \cite{dorogovtsev2001language}, gera distribui\c c\~oes com dois regimes de lei de pot\^encia.\\
+
+As m\'etricas extra\'idas das redes de co-ocorr\^encia s\~ao bem conhecidas na literatura \cite{boccara2010modeling}, \cite{newman2010networks}. A primeira \'e conhecida como conectividade ou grau de um n\'o. A conectividade \'e o n\'umero de arestas que conectam o n\'o. Em redes com arestas dirigidas distingue-se entre conectividade de entrada e de sa\'ida. Pela constru\c c\~ao da rede \'e facil ver que os n\'os das redes de co-ocorr\^encia de textos t\^em a mesma conectividade de entrada e de sa\'ida exceto pelo primeiro e o \'ultimo. Neste trabalho usamos a conectividade total obtida como a soma das conectividades de entrada e sa\'ida.\\
+
+Uma outra m\'etrica que define o efeito de mundo pequeno \'e a menor dist\^ancia ou menor caminho (\`as vezes chamado de geod\'esica) medida como o n\'umero de arestas que se deve percorrer de um n\'o a outro. Em redes com efeito de mundo pequeno esta dist\^ancia \'e pequena comparada com o tamanho da rede. Em princ\'ipio \'e facil calcular os caminhos de um certo tamanho usando a defini\c c\~ao de matriz de adjac\^encia. O elemento $A_{ij}$ da matriz de adjac\^encia \'e igual a um se existir uma aresta do $i$-\'esimo ao $j$-\'esimo n\'o e igual a zero caso contr\'ario. A $n$-\'esima pot\^encia da matriz de adjac\^encia cont\'em os caminhos de comprimento $n$ entre os n\'os. Em particular, as conectividades dos n\'os s\~ao dadas pelos elementos diagonais do quadrado da matriz de adjac\^encia, $A^2$. Na pr\'atica este m\'etodo pode ter problemas se usado com uma rede muito grande.\\
+
+Outra m\'etrica a ser considerada \'e chamada de centralidade, que mostra qu\~ao importante \'e um n\'o na rede. Existem muitas medidas de centralidade; a conectividade de um n\'o, por exemplo, pode ser considerada como medida de centralidade. No entanto usamos uma m\'etrica que considera as propriedades globais da rede inteira. A centralidade de intermedia\c c\~ao (do ingl\^es \textit{betweenness centrality}) mede quanto um n\'o possui de  menores caminhos, isto \'e qu\~ao importantes s\~ao as conex\~oes que possui. A centralidade de intermedia\c c\~ao do n\'o $i$ \'e definida como:
+
+\begin{equation}
+x_i = \sum_{s\neq i\neq t} \frac{g_{st}^i}{g_{st}}
+\label{eq:bc}
+\end{equation}
+onde $g_{st}$ \'e o n\'umero total de menores caminhos entre os n\'os $s$ e $t$ e $g_{st}^i$ \'e o n\'umero destes caminhos que passam por $i$. Um n\'o tem portanto alta centralidade se para ir de uma parte da rede a outra \'e preciso passar por ele. Usamos tamb\'em outra medida que tem sido \'util na caracteriza\c c\~ao de textos, a intermit\^encia m\'edia. 
+A intermit\^encia \'e t\~ao maior quanto mais irregular for a dist\^ancia entre duas apari\c c\~oes da mesma palavra. Assim, se uma palavra aparecer muito mais em intervalos regulares ela ter\'a intermit\^encia baixa. 
+Nas redes de co-ocorr\^encia a intermit\^encia tem rela\c c\~ao com o comprimento dos ciclos ou caminhos fechados. 
+Tamb\'em definimos o peso de uma aresta como sendo o n\'umero de vezes que o respectivo par de palavras aparece no texto. As outras medidas consideradas neste trabalho s\~ao o n\'umero total de n\'os e de arestas (\`as vezes chamadas de ordem e tamanho da rede). Como fixaremos o peso total nas arestas da rede, estas duas grandezas s\~ao vari\'aveis. 
+%Esta n\~ao \'e uma medida de rede e sim da organiza\c c\~ao das palavras. 
+
+
+\section{S\'eries temporais}
+
+\'E preciso definir alguns conceitos simples de s\'eries temporais \cite{chatfield2013analysis}, \cite{hamilton1994time}. Considere um conjunto de realiza\c c\~oes $\{ x_1, x_2, \dots x_T \}$ de uma vari\'avel $X$. A s\'erie satisfaz a forma estrita de ser estacion\'aria se a distribui\c c\~ao estat\'istica conjunta de qualquer grandeza da s\'erie (tal como a m\'edia ou a vari\^ancia) nunca varia no tempo. Formalmente, se $F_X(x_{t_1+\tau}, \dots x_{t_k+\tau})$ \'e a fun\c c\~ao de distribui\c c\~ao cumulativa da s\'erie $\{X_t\}$ nos instantes $t_1+\tau, \dots t_k+\tau$, diz-se que $\{X_t\}$ \'e estritamente, ou fortemente estacion\'aria, se
+
+\begin{equation}
+F_X(x_{t_1+\tau}, \dots x_{t_k+\tau}) = F_X(x_{t_1}, \dots x_{t_k})
+\end{equation}
+para todos $k$ e $\tau$ e para todos os instantes $t_1, \dots t_k$. Portanto, $F_X$ n\~ao depende do tempo, isto \'e, a s\'erie n\~ao apresenta fen\^omenos como tend\^encia (\textit{trending}) ou sazonalidade (\textit{seasonality}). A forma fraca da estacionariedade ou estacionariedade de segunda ordem exige unicamente que a m\'edia e a vari\^ancia sejam constantes e que a autocovari\^ancia n\~ao dependa do tempo. Existem v\'arios testes de estacionariedade, incluindo: o teste aumentado de Dickey-Fuller, de Elliott-Rothenberg-Stock, teste KPSS de raiz unit\'aria, o de Phillips-Perron, de Schmidt-Phillips, de Zivot-Andrews e o de Priestley-Subba Rao. Eles v\^em inclusos nos principais pacotes de estat\'istica. O resultado dos testes \'e um p-value que aceita ou rejeita com certo grau de confian\c ca a hip\'otese nula de que a s\'erie seja estacion\'aria.\\
+
+Muitas vezes uma simples an\'alise visual permite determinar se uma s\'erie pode ser estacion\'aria. Uma grandeza a conferir \'e a autocorrela\c c\~ao. O par\^ametro de correla\c c\~ao de Pearson entre duas s\'eries finitas se define como:
+\begin{equation}
+r_{xy} = \frac{\sum_{i=1}^T (x_i-\bar{x}) (y_i-\bar{y}) } {\sqrt{\sum_{i=1}^T (x_i-\bar{x})^2}\sqrt{\sum_{i=1}^T (y_i-\bar{y})^2}}
+\end{equation}
+
+Onde $\bar{x}$ e $\bar{y}$ s\~ao as m\'edias das distribui\c c\~oes. A autocorrela\c c\~ao \'e a correla\c c\~ao entre uma s\'erie e ela mesma deslocada um n\'umero $\tau$ de passos temporais. Para $\tau=0$ a autocorrela\c c\~ao tem o m\'aximo valor igual \`a unidade. Para $\tau$ diferente de zero a autocorrela\c c\~ao deve cair rapidamente a zero se a s\'erie for estacion\'aria tal como se mostra na figura \ref{fig:pearson_autocorrelation} obtida da s\'erie temporal de um dos textos da cole\c c\~ao. Observe a simetria da figura. A autocorrela\c c\~ao tamb\'em \'e igual \`a transformada de Fourier do quadrado absoluto da s\'erie devido ao teorema de Wiener-Khinchin.\\
+
+\begin{figure}[t]%[ht]
+\centering
+\includegraphics[width=0.7\textwidth]{ex_ac_lt25_s400_pearson.png}
+\caption{Autocorrela\c c\~ao de Pearson para um dos textos da cole\c c\~ao.}
+\label{fig:pearson_autocorrelation}
+\end{figure}
+
+
+\section{Reconhecimento de autoria}
+
+Para reconhecer automaticamente a classe ou grupo (no nosso caso o autor) \`a qual pertence um determinado elemento \'e preciso realizar alguma tarefa de aprendizado de m\'aquina. O aprendizado de m\'aquina divide-se em duas grandes vertentes. No aprendizado supervisionado a m\'aquina utiliza um conjunto de dados de treino para predizer a classe de um conjunto menor de dados de teste. No aprendizado n\~ao-supervisionado n\~ao existem dados de treino e portanto a solu\c c\~ao, isto \'e, o agrupamento dos dados se faz usando alguma medida de similaridade. Em aprendizado de m\'aquina os dados, no caso as $24$ medidas introduzidas, s\~ao chamados de atributos.\\
+
+\subsection{Classifica\c c\~ao}
+
+No aprendizado supervisionado ou classifica\c c\~ao usamos cinco algoritmos, sendo que cada um \'e representativo de uma classe geral de algoritmos. O algoritmo mais simples \'e o \textsf{ZeroR}. Este algoritmo identifica a classe com mais elementos e atribui a esta classe todos os elementos da cole\c c\~ao, assim, a taxa de acerto est\'a predefinida como a raz\~ao entre o n\'umero de elementos da maior classe e o n\'umero total. O algoritmo \textsf{OneR}, abrevia\c c\~ao do ingl\^es \textit{one rule}, cria uma regra a partir de cada atributo e testa a taxa de acerto de cada regra, posteriormente utiliza a regra com a melhor taxa de acerto com todos os atributos.\\
+
+Outro algoritmo usado \'e o $K$-\textit{Nearest Neighbors}, no qual a classe de um elemento \'e dada pela classe dos $K$ elementos mais pr\'oximos. Uma variante atribui mais peso aos elementos mais pr\'oximos. O quarto algoritmo \'e o \textit{Naive Bayes} ou Bayesiano ing\^enuo. Este algoritmo assume independ\^encia entre os atributos. Assim, para cada atributo se obt\'em a m\'edia e a vari\^ancia para caracteriz\'a-lo como sendo distribu\'ido normalmente. Para a nova inst\^ancia a ser classificada se calcula a probabilidade de pertencer a uma classe dado o valor do seu atributo. A probabilidade de pertencer a uma classe \'e dada pelo produto das probabilidades condicionais de todos os atributos. O \'ultimo algoritmo de classifica\c c\~ao usado \'e o de \'arvore de decis\~ao J$48$. Este \'e a vers\~ao livre em \textsf{Java} do algoritmo C$4.5$ (que por sua vez \'e uma extens\~ao do algoritmo \textsf{ID}$3$). O algoritmo cria uma \'arvore de decis\~ao onde cada bifurca\c c\~ao \'e um crit\'erio para classificar as inst\^ancias como pertencendo a uma ou outra classe. O crit\'erio de decis\~ao \'e o valor de um dos atributos. Escolhem-se primeiro os atributos que geram um maior ganho da informa\c c\~ao.\\
+
+\subsection{Agrupamento}
+
+Os algoritmos de aprendizado de m\'aquina n\~ao-supervisionado ou agrupamento procuram os grupos que formam os elementos naturalmente. Para isto alguma defini\c c\~ao de dist\^ancia \'e requerida. Quando os atributos s\~ao num\'ericos a escolha mais razo\'avel \'e geralmente a dist\^ancia Euclidiana. Tr\^es tipos de algoritmos foram implementados: baseados em densidade, hier\'arquicos e maximiza\c c\~ao da expectativa.\\
+
+O algoritmo baseado em densidade padr\~ao \'e o DBSCAN (\textit{Density-Based Spacial Clustering of Applications with Noise}), que precisa de dois par\^ametros. O raio $\varepsilon$ define uma esfera no espa\c co de atributos. $MinPoints$ \'e o n\'umero m\'inimo de pontos que deve encontrar-se dentro da espera para consider\'a-la densa. Um ponto \'e considerado pertencente a um grupo se a esfera centrada nele \'e densa, caso contr\'ario considera-se o ponto como ru\'ido. Uma generaliza\c c\~ao do DBSCAN \'e o algoritmo OPTICS (\textit{Ordering Points To Identify the Clustering Structure}) que fornece uma ideia visual do agrupamento de pontos. Este algoritmo retorna uma lista ordenada dos elementos junto com duas dist\^ancias caracter\'isticas do algoritmo. O primeiro elemento da lista \'e arbitr\'ario, o seguinte \'e o elemento mais pr\'oximo ao primeiro, o terceiro \'e o mais pr\'oximo ao segundo, e assim sucessivamente. \'E poss\'ivel ver os grupos formados j\'a que os elementos pertencentes a um mesmo grupo t\^em as menores dist\^ancias enquanto ao passar de um grupo para o seguinte t\^em-se as maiores.\\
+
+Outro tipo de algoritmos de agrupamento \'e o chamado agrupamento hier\'arquico aglomerativo. Nesta classe de algoritmos uma matriz contendo as dist\^ancias entre todos os elementos \'e definida. Segundo um certo crit\'erio os pontos se unem sucessivamente, reduzindo o tamanho da matriz e formando os grupos. Depois de unir todos os elementos tem-se uma hierarquia que pode ser representada em forma de dendrograma. Os diferentes crit\'erios de liga\c c\~ao definem os algoritmos e podem ser mais ou menos \'uteis dependendo dos dados a serem agrupados. A liga\c c\~ao simples junta dois grupos se a menor dist\^ancia entre qualquer par de elementos for pequena. Na liga\c c\~ao m\'edia a dist\^ancia a ser considerada \'e a m\'edia das dist\^ancias dos elementos de ambos grupos. A liga\c c\~ao centroide considera a dist\^ancia entre os centroides dos grupos igual \`a m\'edia, que \'e mais efetivo com grupos regulares. Uma liga\c c\~ao similar \'e a mediana. Na liga\c c\~ao completa considera-se a m\'axima dist\^ancia entre pares de elementos dos grupos, o que pode ser ruim na presen\c ca de elementos muito afastados. A liga\c c\~ao com peso atribui mais import\^ancia aos grupos maiores. Na liga\c c\~ao Ward a dist\^ancia entre dois grupos \'e a soma dos desvios padr\~ao dos elementos com rela\c c\~ao aos centroides visando a minimizar a soma de quadrados dentro dos grupos.\\
+
+O \'ultimo tipo de algoritmo de agrupamento \'e chamado de maximiza\c c\~ao da expectativa. Este pressup\~oe que os elementos est\~ao posicionados segundo uma distribui\c c\~ao gaussiana. Mais do que um agrupamento, o algoritmo fornece as probabilidades de que um elemento perten\c ca a um determinado grupo. Este algoritmo \'e especialmente \'util quando existe superposi\c c\~ao dos grupos. No entanto, a suposição de que os grupos s\~ao distribu\'idos segundo uma Gaussiana pode ser muito forte.\\
+
+
+
+
+
+\chapter{Metodologia}
+
+Neste trabalho prop\~oe-se uma metodologia para obter medidas da evolu\c c\~ao temporal, isto \'e, da din\^amica das redes de co-ocorr\^encia de textos escritos. As medidas devem caracterizar o texto, j\'a que s\~ao usadas posteriormente para identificar a autoria do texto sob an\'alise. Como primeiro passo devemos escolher uma cole\c c\~ao de textos para aplicar a metodologia.
+
+
+\section{Corpus}
+
+O corpus foi obtido da base de dados aberta \href{www.gutenberg.org}{gutenberg.org}, contendo $300$ textos de $27$ autores na l\'ingua inglesa criados desde meados do s\'eculo \textsf{XIX} e no s\'eculo \textsf{XX} (por\'em, tr\^es deles escreveram suas obras em outras l\'inguas, posteriormente traduzidas ao ingl\^es). Os textos incluem principalmente contos, novelas e ensaios. A cole\c c\~ao foi propositalmente constru\'ida com grande heterogeneidade no tamanho das obras como mostra a figura \ref{fig:corpus}. O detalhe da figura \ref{fig:corpus} tamb\'em mostra que o n\'umero de obras por autor \'e vari\'avel. Os dois autores mais prol\'ificos possuem respectivamente $52$ e $49$ textos enquanto $5$ autores t\^em um texto cada. Esta heterogeneidade simula as caracter\'isticas das cole\c c\~oes de textos reais. Dispondo de uma cole\c c\~ao de textos o primeiro passo numa an\'alise computacional \'e a prepara\c c\~ao dos textos.\\
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{sizes_histogram.png}%
+\begin{picture}(0,0)
+\put(-230,85){\includegraphics[width=0.4\textwidth]{authors_histogram.png}}%-225,100)
+\end{picture}
+\caption{Corpus utilizado. Distribui\c c\~ao do tamanho dos textos em n\'umero de palavras depois do pr\'e-processamento. A linha fina assinala a m\'edia, $27755.8$ palavras. N\'umero de bins = 30. Detalhe: distribui\c c\~ao do n\'umero de livros por autor. A linha fina assinala a m\'edia, $11.1$ livros por autor.}
+\label{fig:corpus}
+\end{center}
+\end{figure}
+
+
+\section{Pr\'e-processamento}
+
+O conhecimento de especialistas s\'o \'e usado neste passo preparat\'orio da metodologia. Primeiro, \'e preciso remover as chamadas \textit{stopwords}, como palavras funcionais consideradas pouco informativas, tais como os artigos e preposi\c c\~oes. O m\'etodo mais simples \'e usar uma lista contendo aquelas palavras que se deseja retirar. O seguinte passo \'e a lematiza\c c\~ao ou \textit{stemming} na qual uma ou v\'arias palavras s\~ao substitu\'idas por um \'unico conceito que descreve todas elas, como um verbo no infinitivo. Esta tarefa pode ser cr\'itica em outras aplica\c c\~oes; por exemplo, se existirem v\'arios significados para uma mesma palavra. 
+No terceiro passo se reduz o n\'umero de palavras (conceitos) com a ajuda de um \textit{thesaurus} onde as palavras est\~ao ligadas segundo a depend\^encia sem\^antica, a mais simples das quais \'e a existente entre sin\^onimos.\\
+
+Estas tarefas s\~ao feitas usando a base de dados l\'exica \href{http://wordnet.princeton.edu/}{WordNet}. 
+Os tr\^es passos anteriores convertem a vasta quantidade de palavras de um texto escrito a uma lista ordenada de conceitos ou \textit{tokens} que podem se repetir dentro da lista. No nosso caso os poss\'iveis erros que estes possam causar s\~ao compensados de sobra pelo benef\'icio. Como veremos, as redes constru\'idas s\~ao extremamente esparsas e portanto diminuir o n\'umero de n\'os ajuda a ter maior diversidade de comportamentos.\\
+
+
+\section{Cria\c c\~ao de redes de co-ocorr\^encia}
+
+A partir da lista ordenada de tokens, criamos redes de co-ocorr\^encia. Primeiro criamos uma rede sem arestas cujos n\'os s\~ao os tokens (sem repeti\c c\~ao). Em seguida cada conceito (token) \'e associado com o seguinte da lista. Se a aresta j\'a estiver presente na rede aumentamos o valor de seu peso em uma unidade (uma nova aresta possui peso igual a um). Observe-se que na passagem por um dado token ele vai adquirir duas arestas, uma com o token anterior e outra com o seguinte (exceto pelo primeiro e o \'ultimo token).\\
+
+\section{Extra\c c\~ao de atributos din\^amicos}
+
+O objetivo do trabalho \'e extrair atributos que refletem a evolu\c c\~ao temporal da rede. Como se comentou anteriormente isto pode trazer problemas. A abordagem proposta \'e a seguinte. Primeiro deve-se dividir a lista ordenada de tokens em janelas de igual tamanho (igual n\'umero de tokens e incluindo os repetidos). Os tokens restantes do final da lista n\~ao se consideram. Posteriormente se constr\'oi uma rede de co-ocorr\^encia para cada uma das janelas. De cada rede constru\'ida se extrai a m\'edia aritm\'etica sobre todos os n\'os da rede das m\'etricas. Neste trabalho utilizam-se: a conectividade, a centralidade de intermedia\c c\~ao, o menor caminho e a intermit\^encia m\'edia. Junto com eles se guardam o n\'umero total de n\'os e o de arestas da rede. Pela constru\c c\~ao anterior o peso total nas arestas \'e fixo, sendo o \'unico par\^ametro do modelo. Teremos ent\~ao para cada m\'etrica uma lista ordenada de valores ou s\'erie temporal.\\
+
+O resto do procedimento depende do resultado deste passo. Se todas as s\'eries temporais das m\'etricas podem ser consideradas estacion\'arias (ver cap\'itulo \ref{teoria}) continuamos a calcular os primeiros momentos da s\'erie. Caso contr\'ario, t\'ecnicas mais sofisticadas de an\'alise de s\'eries temporais devem ser usadas. Para cada s\'erie $\{x_1, x_2, \dots x_T\}$ de cada m\'etrica calculamos a vers\~ao linearizada do $i$-\'esimo momento como $\mu_i=\left[ (T-1)^{-1} \Sigma_{j=1}^T (x_j-\mu_i)^i \right]^{1/i}$, onde $i>1$ e $\mu_1$ \'e o valor m\'edio da s\'erie. Neste trabalho usamos os quatro primeiros momentos de cada s\'erie, portanto, havendo $6$ s\'eries das m\'etricas de um texto teremos $24$ atributos por texto.\\
+
+
+\section{Reconhecimento de autoria}
+
+Com os $24$ atributos din\^amicos de rede que representam cada texto obtemos uma matriz de ordem $300$ (n\'umero de elementos ou inst\^ancias) por $24$, chamada de matriz de atributos. Salvamos tamb\'em um vetor de cadeias de caracteres de comprimento igual a $300$ de tal forma que para o $i$-\'esimo texto, a $i$-\'esima fila da matriz de atributos cont\'em os valores dos atributos do texto e o $i$-\'esimo elemento do vetor cont\'em a etiqueta da classe (autor) correspondente ao texto. Com esta informa\c c\~ao criamos um arquivo de entrada para algum pacote de aprendizado de m\'aquina. Usamos o pacote \href{http://www.cs.waikato.ac.nz/ml/weka/}{WEKA} disponibilizado pela Universidade de Waikato.\\
+
+Neste trabalho usam-se $5$ algoritmos de classifica\c c\~ao, cada um representativo de uma classe geral de algoritmos: \textsf{ZeroR}, \textsf{OneR}, K-Nearest Neighbors, Naive Bayes e J$48$. Na parte de agrupamento usam-se os seguintes algoritmos: Algoritmos baseados em densidade, DBSCAN e OPTICS; Algoritmos Aglomerativos Hier\'arquicos, entre os quais se usam as liga\c c\~oes: centroide, completa, m\'edia, mediana, ponderada, singular e Ward; e o algoritmo de Maximiza\c c\~ao da Expectativa.\\
+
+
+
+\chapter{Resultados Preliminares}
+
+Conseguiu-se observar um comportamento da din\^amica das redes consistente entre os textos usados. Em geral verifica-se que a din\^amica \'e estacion\'aria, pelo menos no que se refere ao comportamento da rede como um todo. As medidas consideradas oscilam, mas sempre ao redor de um valor m\'edio fixo e estas oscila\c c\~oes mant\^em sempre o mesmo formato. Podemos observar isto na figura \ref{fig:histograms} que mostra os histogramas normalizados, gerados a partir das s\'eries temporais da conectividade e do menor caminho para os $7$ autores com maior volume total de textos da cole\c c\~ao. Para efeitos de visualiza\c c\~ao os histogramas s\~ao obtidos juntando-se as s\'eries temporais de toda a produ\c c\~ao bibliogr\'afica de cada autor e criando-se uma \'unica s\'erie. Al\'em de estacion\'arias, as s\'eries temporais s\~ao representativas de cada autor. Observe que cada histograma tem um valor m\'edio, uma vari\^ancia e uma assimetria (\textit{skewness}) bem diferenciadas. Para o menor caminho, o valor m\'edio das distribui\c c\~oes parece seguir uma tend\^encia na parte (b) da figura \ref{fig:histograms}; por\'em, no caso da conectividade a ordem dos picos se altera (parte (a) da figura) quase dividindo-se em dois conjuntos de histogramas. Este comportamento garante que nossa escolha dos primeiros momentos dos histogramas como atributos para o aprendizado de m\'aquina diferencie um autor de outro.\\
+
+\begin{figure}[t]%[h]
+\centering
+\begin{tabular}{cc}
+\includegraphics[width=0.49\textwidth]{selected_joined_series_histograms_od.png} &
+\includegraphics[width=0.49\textwidth]{selected_joined_series_histograms_sp.png} \\
+\small{(a) Histogramas da conectividade.} & \small{(b) Histogramas do menor caminho.}\\
+\end{tabular}
+\caption{Histogramas normalizados de s\'eries temporais da conectividade (a) e do menor caminho (b) para os $7$ autores com maior volume total de texto.}
+\label{fig:histograms}
+\end{figure}
+
+
+\section{Classifica\c c\~ao}
+
+O aprendizado de m\'aquina supervisionado ou classifica\c c\~ao dos textos foi realizado usando $5$ classificadores. Um deles, o \textrm{ZeroR}, foi usado como limiar inferior para comparar o desempenho dos demais. Para a cole\c c\~ao completa de textos, e considerando que o autor com mais textos tem $52$, \textrm{ZeroR} fornece uma taxa de acerto de $17.3\%$. Os outros quatro algoritmos praticamente dobram tal valor, com taxas similares entre si. O melhor desempenho foi uma taxa de acerto de $36.3\%$ com o algoritmo de \'arvore de decis\~ao J$48$. Tamb\'em consideramos s\'o os dois autores mais prol\'ificos, com $52$ e $49$ obras respectivamente, para testar a capacidade de desambigua\c c\~ao do m\'etodo. \textrm{ZeroR} tem uma taxa de acerto de $51.5\%$, ou seja, uma chance de aproximadamente um meio de acertar o autor de um texto. Os outros algoritmos superam de longe este limiar, o melhor sendo novamente o J$48$ com uma taxa de acerto de $95\%.$\\
+
+\begin{figure}[t]%[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{classification_scores.png}
+\caption{Resultados dos algoritmos de classifica\c c\~ao. Para a cole\c c\~ao completa: valores F micro- (amarelo) e macro- (verde) ponderadas e $\phi=\sqrt{\chi^2/N}$ (vermelho). Para os dois autores mais prol\'ificos valores F micro-ponderadas (azul) e $\phi=\sqrt{\chi^2/N}$ (cinza).}
+\label{fig:classification_scores}
+\end{figure}
+
+Estes resultados est\~ao na figura \ref{fig:classification_scores}. As barras amarelas e azuis correspondem \`as taxas de acerto para a cole\c c\~ao inteira e os dois autores mais prol\'ificos respectivamente. Elas s\~ao denominadas valores F micro-ponderadas (do ingl\^es \textit{micro-averaged F-scores}) j\'a que s\~ao as m\'edias aritm\'eticas das taxas de acerto de cada uma das classes (autores). Em contraste, para cole\c c\~oes que cont\^em v\'arias classes com diversidade no n\'umero de elementos em cada classe (que \'e o nosso caso), uma m\'edia aritm\'etica pode ser enganosa, sendo mais conveniente uma m\'edia ponderada pelo n\'umero de elementos por classe. Esta \'e chamada de valor F macro-ponderada ou \textit{macro-averaged F-score}. Para a cole\c c\~ao completa, os F macro-ponderadas aparecem como barras verdes. Neste caso a diferen\c ca \'e mais marcante passando de $5\%$ com o \textrm{ZeroR} para $35\%$ com J$48$. Para os dois autores mais prol\'ificos, as pondera\c c\~oes micro- e macro- t\^em pouca diferen\c ca, j\'a que o n\'umero de textos dos dois autores \'e quase igual. A medida $\chi^2$ ou chi-quadrado quantifica a dispers\~ao dos elementos incorretamente classificados. Uma medida normalizada, definida como $\phi=\sqrt{\chi^2/N}$, mostra leve queda (do \textrm{ZeroR} para o J$48$) de $0.58$ a $0.43$ para a cole\c c\~ao inteira (barras vermelhas) e uma bem mais vis\'ivel, de $3.5$ a $0.28$ para os dois autores mais prol\'ificos (barras cinza).\\
+
+As taxas de acerto dependem fortemente do corpus utilizado, mas uma compara\c c\~ao grosseira mostra que a metodologia proposta apresenta desempenho muito similar, tanto quanto \`as t\'ecnicas tradicionais como \`as mais recentes que usam redes de co-ocorr\^encia. Por exemplo, em \cite{hoorn1999neural}, um trabalho de reconhecimento autoral de poemas baseado em sequ\^encias de letras atinge $70\%$ de sucesso ao comparar $3$ autores, o que seria o dobro do desempenho do \textrm{ZeroR} se aplicado ao corpus.\\
+
+
+\section{Agrupamento}
+
+O agrupamento dos textos desconsidera as etiquetas previamente conhecidas e procura os grupos naturalmente formados. Devido \`as caracter\'isticas dos algoritmos, a avalia\c c\~ao do desempenho dos algoritmos deve ser feita manualmente comparando-se as classes (os autores predefinidos) com os grupos gerados\footnote{Conhecendo as classes, medidas de avalia\c c\~ao internas perdem sentido.}. Os algoritmos baseados em densidade mostraram os resultados mais promissores. No DBSCAN fixamos o par\^ametro $MinPoints=2$ para encontrar todos os grupos, mesmo os menores. \'E claro que para este algoritmo os $5$ autores que tenham um s\'o texto devem ser interpretados como ru\'ido\footnote{Uma vantagem do agrupamento sobre a classifica\c c\~ao \'e que para o segundo \'e preciso dividir o corpus num conjunto de treino e um de teste, fazendo com que autores com poucos textos sejam classificados erroneamente.}. Usando o valor padr\~ao para o raio, $\varepsilon=0.9$, obtemos somente $6$ textos ($2\%$ da cole\c c\~ao) mal agrupados, sendo um grupo de dois elementos e outros quatro elementos erroneamente considerados como ru\'ido. Fixando o raio em $\varepsilon=1$, obtemos apenas quatro erros no agrupamento: novamente um grupo de dois elementos, e dois outros elementos se afastam dos seus grupos, e portanto s\~ao considerados como ru\'ido. Notavelmente, nenhum elemento ficou em um grupo que n\~ao correspondesse ao do seu autor.\\
+
+O algoritmo OPTICS \'e uma generaliza\c c\~ao do DBSCAN que permite ter uma ideia visual do agrupamento, cujo resultado \'e mostrado na figura \ref{fig:optics}. Observe-se que os po\c cos, isto \'e, os grupos gerados, t\^em aproximadamente a mesma profundidade, o que significa uma densidade constante dentro de cada grupo. A altura da separa\c c\~ao entre po\c cos \'e dada pela menor dist\^ancia desde o \'ultimo elemento de um grupo at\'e um elemento do grupo seguinte. Estas alturas s\~ao quase constantes, o que significa que existe uma dist\^ancia caracter\'istica entre grupos. Todas as dist\^ancias entre grupos ficam numa estreita faixa, entre $1.00175$ e $1.0285$, exceto pelos $3$ \'ultimos elementos listados. Isto explica o sucesso obtido com $\varepsilon=1$ no DBSCAN. Igualmente importante \'e o fato de n\~ao se ter encontrado nenhum elemento num grupo diferente ao do seu mesmo autor.\\
+
+\begin{figure}[t]%[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{optics.png}
+\caption{Resultados do agrupamento OPTICS. As barras que possuem etiquetas correspondem ao autor dado pela etiqueta, as barras sem etiquetas correspondem ao mesmo autor dado pela etiqueta mais pr\'oxima \`a esquerda. A altura da maior dist\^ancia plotada \'e $\varepsilon=1.4$, $MinPoints=2$. Figura adaptada do pacote WEKA.}
+\label{fig:optics}
+\end{figure}
+
+Outra classe de algoritmos muito usada \'e o agrupamento aglomerativo hier\'arquico. Dos v\'arios crit\'erios de liga\c c\~ao conhecidos, a liga\c c\~ao singular \'e a que apresentou os melhores resultados. Se fixarmos o n\'umero de grupos na nossa hierarquia em $27$, isto \'e, o n\'umero original de autores, dois grupos dividem-se deixando um grupo com $8$ elementos e quatro grupos com um elemento cada. Para manter o n\'umero de grupos requerido, os dois maiores grupos juntam-se a outros tr\^es. Para evitar esta fus\~ao de grupos aumentamos o n\'umero de grupos requerido a $30$ e obtemos uma concord\^ancia perfeita com os autores, exceto pelos tr\^es textos que agora s\~ao considerados grupos independentes.\\
+
+A maior fraqueza da liga\c c\~ao singular s\~ao os elementos inseridos entre dois grupos, os quais podem criar uma ponte fazendo com que os grupos se juntem. Conclu\'imos que os poucos elementos perdidos da nossa cole\c c\~ao est\~ao t\~ao longe de seus respectivos grupos quanto dos outros. Al\'em disso, o desempenho ruim com outros crit\'erios de liga\c c\~ao significa que os grupos t\^em formas irregulares j\'a que centroides e m\'edias n\~ao representam corretamente os elementos do grupo.\\
+
+Por \'ultimo, usamos o algoritmo de maximiza\c c\~ao da expectativa. Neste caso n\~ao se obteve um bom agrupamento. O algoritmo de maximiza\c c\~ao da expectativa serve para lidar com grupos misturados e de elementos normalmente distribu\'idos de forma el\'iptica. Este algoritmo confirma que os grupos n\~ao se misturam consideravelmente e que t\^em formas irregulares e de densidade de elementos constante.\\
+
+
+\section{Visualiza\c c\~ao}
+
+Os algoritmos de redu\c c\~ao da dimensionalidade ou proje\c c\~ao permitem visualizar os elementos em gr\'aficos de dispers\~ao bidimensionais. Em geral se observa superposi\c c\~ao dos grupos. Na figura \ref{fig:isomaps} \'e mostrada a melhor proje\c c\~ao, obtida usando \textit{Isometric Feature Mapping} junto com uma redu\c c\~ao a $15$ dimens\~oes usando An\'alise de Componentes Principais. Para comparar os resultados, na parte (b) da figura mostramos a mesma t\'ecnica aplicada a um outro corpus correspondente ao autor Brasileiro Joaquim Machado de Assis. Machado assinou suas obras com diferentes pseud\^onimos, representados como as diferentes cores na parte (b) da figura. Os grupos (pseud\^onimos) no caso do Machado ficam totalmente misturados, enquanto os textos da cole\c c\~ao ficam razoavelmente separados.\\
+
+\begin{figure}[t]%[ht]%{0.99\textwidth}
+\centering
+\begin{tabular}{cc}
+\includegraphics[width=0.49\textwidth]{ISOMAP-7biggestbooks.png} &
+\includegraphics[width=0.49\textwidth]{ISOMAP-machadodeassis.png} \\
+\small{(a) Cole\c c\~ao atual.} & \small{(b) Cole\c c\~ao do Machado de Assis.}\\
+\end{tabular}
+\caption{Proje\c c\~ao Isometric Feature Mapping. (a): Os sete autores com maior volume de produ\c c\~ao da cole\c c\~ao utilizada, contendo $177$ textos. (b): cole\c c\~ao do Machado de Assis, contendo $106$ textos.}\label{fig:isomaps}
+\end{figure}
+
+
+
+\chapter{Conclus\~oes gerais}
+
+A pesquisa realizada permite inferir aspectos gerais sobre a din\^amica de redes de co-ocorr\^encia, em que medidas de topologia e de intermit\^encia capturam a identidade do autor de um texto. N\~ao somente a m\'edia de cada s\'erie, que poderia se associar com a m\'edia da distribui\c c\~ao sobre os n\'os da rede de um texto inteiro, mas os momentos de ordem superior s\~ao relevantes. Isto se verifica por exemplo observando a organiza\c c\~ao espacial dos elementos nos gr\'aficos com um corte correspondente a estes momentos de ordem superior. Outra prova disto \'e a \'arvore de decis\~ao obtida com o algoritmo J$48$ onde v\'arios dos n\'os principais correspondem a estes momentos, o que significa que a sua utiliza\c c\~ao resulta num alto ganho de informa\c c\~ao.\\
+
+A utilidade das medidas introduzidas baseia-se no fato de as s\'eries serem estacion\'arias, pois caso contr\'ario o m\'etodo n\~ao seria vi\'avel. Por exemplo, numa s\'erie na qual o valor esperado cres\c ca com o tempo n\~ao faz sentido obter a m\'edia j\'a que ela vai depender, entre outras coisas, do tamanho da s\'erie. Observe que s\'o \'e preciso garantir uma forma fraca de estacionariedade na qual os momentos considerados sejam constantes. Entre as medidas usadas encontra-se o n\'umero de n\'os da rede, cujos momentos foram not\'orios ao longo do trabalho. O n\'umero de n\'os reflete a import\^ancia do peso nas arestas, que ficou fixo. \'E razo\'avel pensar que o n\'umero de vezes no qual duas palavras aparecem juntas no texto possa ser carater\'istico de um autor, mais do que a simples presen\c ca ou aus\^encia do par.\\
+
+Com respeito ao desempenho das medidas propostas, observamos: Os algoritmos de classifica\c c\~ao apresentam um comportamento compar\'avel, \`as vezes superior, ao obtido com outras t\'ecnicas bem estabelecidas de classifica\c c\~ao de textos. Os resultados dependem fortemente do n\'umero de obras por autor assim como do n\'umero de autores, o que deve ser considerado para uma aplica\c c\~ao pr\'atica. No caso do agrupamento, o melhor desempenho foi obtido com algoritmos baseados em densidade. A ferramenta OPTICS revelou que existe uma dist\^ancia caracter\'istica entre os grupos. Consistentemente, observou-se que os textos de dois autores n\~ao est\~ao mais perto do que um raio $\varepsilon=1$ (no espa\c co de atributos normalizado) ficando na estreita faixa entre $1.001$ e $1.02$. Al\'em de uma dist\^ancia caracter\'istica inter-grupos, as dist\^ancias intra-grupos s\~ao baixas e razoavelmente constantes como mostra a figura \ref{fig:optics}. A metodologia apresentada mostrou ser efetiva no tratamento de uma cole\c c\~ao heterog\^enea, e no caso do agrupamento, consegue juntar os textos de autores com poucas obras, mesmo aqueles com duas obras s\'o.\\
+
+O m\'etodo introduzido apresenta uma vantagem sobre o outro m\'etodo de redes de co-ocorr\^encia para reconhecimento de autoria \cite{amancio2011comparing}: a independ\^encia com rela\c c\~ao aos elementos individuais da cole\c c\~ao. O m\'etodo em \cite{amancio2011comparing} corta todos os textos pelo texto de menor tamanho para poder fazer a compara\c c\~ao das redes. Al\'em de modificar drasticamente os objetos de estudo, todos os c\'alculos v\~ao depender deste menor tamanho e dever\~ao ser refeitos caso se introduza um novo elemento na cole\c c\~ao. Com a nova metodologia apresentada aqui, a cole\c c\~ao pode ser constru\'ida gradualmente e os poss\'iveis problemas de um texto somente afetar\~ao a classifica\c c\~ao desse mesmo texto.\\
+
+Uma fraqueza que em princ\'ipio poderia ser observada \'e o tratamento de textos curtos (fraqueza comum a todos os m\'etodos de an\'alise de textos). No m\'etodo apresentado, um texto curto gera uma rede curta. Por sua vez, os momentos calculados a partir de uma rede curta podem n\~ao ser confi\'aveis fazendo com que a posi\c c\~ao do elemento no espa\c co de atributos esteja longe dos outros elementos. No entanto, este n\~ao parece ser o caso e quando elementos ficaram afastados foi devido \`a formata\c c\~ao dos textos, como no exemplo da figura \ref{fig:isomaps}.\\
+
+
+
+\chapter{Cronograma}
+
+\begin{center}
+\begin{table}[ht]
+\centering
+\begin{tabular}{lll}
+Ano & Semestre & Atividade \\
+%\hline
+\hline
+2012 & II & Revis\~ao e estudo da bibliografia.\\
+\hline
+2013 & I & Implementa\c c\~ao computacional.\\
+%\hline
+\ & II & Cursar disciplinas.\\
+\hline
+2014 & I & Implementa\c c\~ao computacional: refinamento do c\'odigo e corpus.\\
+%\hline
+\ & II & Apresenta\c c\~ao de resultados.\\
+\hline
+2015 & I & Exame de qualifica\c c\~ao.\\
+\ & \ & Escrita de artigo.\\
+%\hline
+\ & II & Cursar disciplina.\\
+%\ & \ & Monitoria para o Programa de Aperfei\c c\~ao do Ensino.\\
+\ & \ & Monitoria PAE.\\
+\hline
+2016 & I & Defesa do doutorado.\\
+\ & \ & Escrita de artigo.\\
+\hline
+\end{tabular}
+\caption{Cronograma de atividades}
+\label{table:cronograma}
+\end{table}
+\end{center}
+
+\section{Disciplinas Cursadas}
+
+As disciplinas foram escolhidas visando a aperfei\c coar os conhecimentos gerais da f\'isica e adquirir os necess\'arios na \'area de aprendizado de m\'aquina e minera\c c\~ao de dados. As tr\^es disciplinas cursadas at\'e agora s\~ao:
+
+\paragraph{T\'opicos especiais em teoria de muitos corpos}{\'E uma das disciplinas requeridas pelo instituto. O foco s\~ao as teorias de campo de part\'iculas elementares.}
+
+\paragraph{Minera\c c\~ao de dados n\~ao estruturados}{Apresenta uma vis\~ao geral das diferentes \'areas de minera\c c\~ao de dados na atualidade, incluindo uma revis\~ao das t\'ecnicas para minera\c c\~ao de textos. \'E uma disciplina \'util para conhecer o estado da arte em reconhecimento de autoria.}
+
+\paragraph{An\'alise de agrupamento de dados}{Concentra-se no aprendizado de m\'aquina n\~ao-supervisionado detalhando nos conceitos e contas. Serve para aprender os principais algoritmos usados na atualidade.}
+
+
+\bibliography{biblio}
+
+\end{document}
+
