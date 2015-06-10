@@ -1,0 +1,549 @@
+\documentclass[a4paper,openright,12pt]{report} %,parskip=full
+
+\usepackage{amssymb,amsmath,textcomp}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{braket}
+\usepackage{booktabs}  %Possibilidade de linhas mais grossas nas tabelas.
+
+%MEU
+%\usepackage[brazilian, portuguese, activeacute]{babel}
+%\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+%\usepackage{color}
+%\usepackage{amssymb}
+\usepackage{amsmath}  %for binom, not
+%\usepackage{pifont}   %for ding
+\usepackage{hyperref}
+%\usepackage{amsthm}   %for what
+%\usepackage{helvet}   %for what
+\usepackage{cancel}   %for cancel
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{etex}
+
+\usepackage{cite}
+
+
+
+%\usepackage[footnotesize,hang]{caption} 
+
+%\usepackage[hang,small,labelsep=endash]{caption} % Hifen na legenda de tableas e figuras
+\usepackage[hang,footnotesize,labelsep=endash,tableposition=top]{caption} % Hifen na legenda de tableas e figuras
+%CHCHCH
+%\usepackage{subcaption}
+
+%%%%%%%%%%%%%%%%% Bibliografia
+\usepackage{url}
+\usepackage[bibjustif,abnt-thesis-year=both,num]{abntcite} %%%%%% ABNY
+%%%%%%%%%%%%%%%%% Espacamento
+%\makeatletter  %Espa�amento entre os itens da bibliografia
+%\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
+%\let\ORIGINALlatex@openbib@code=\@openbib@code  
+%\renewcommand{\@openbib@code}{\ORIGINALlatex@openbib@code\adjustmybblparameters}
+%\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Espacaçamento entre as referências
+\makeatletter  %Espa�amento entre os itens da bibliografia
+\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
+\let\ORIGINALlatex@openbib@code=\@openbib@code  
+\renewcommand{\@openbib@code}{\ORIGINALlatex@openbib@code\adjustmybblparameters}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%Symbol footnote
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[Conny]{fncychap}
+\usepackage{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\makeatletter
+\renewcommand*{\@makechapterhead}[1]{%
+  \vspace*{-1.0cm}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
+        \DOCH
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
+      \DOTI{#1}%
+    \else%
+      \DOTIS{#1}%
+    \fi
+  }}
+
+%older
+%%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
+%\usepackage[compact]{titlesec}
+%\titlespacing{\section}{0pt}{0.5cm}{0.5cm}
+%%\titlespacing{\chapter}{0pt}{2.0cm}{2.0cm}
+%\titlespacing{\subsection}{0pt}{0.5cm}{0.5cm}
+%\titlespacing{\subsubsection}{0pt}{0.5cm}{0.5cm}	
+
+%%abnt mestrado
+%%%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
+%\usepackage{titlesec} %[compact]
+%\titlespacing{\chapter}{0pt}{1.9cm}{2.2cm}
+%\titlespacing{\section}{0pt}{1.9cm}{2.2cm}
+%\titlespacing{\subsection}{0pt}{2.1cm}{2.2cm}
+%\titlespacing{\subsubsection}{0pt}{2.2cm}{2.2cm}	
+
+%quali
+%%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
+\usepackage{titlesec} %[compact]
+\titlespacing{\chapter}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\section}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\subsection}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\subsubsection}{0pt}{1.5cm}{1.5cm}	
+
+
+%%%%%%%%%% Escreve ``Figura`` e ``Tabela`` nas listas de figuras e tabelas
+%%CHCHCH
+%\usepackage[titles]{tocloft}
+%\renewcommand{\cftfigaftersnum}{ -}
+%\renewcommand{\cfttabaftersnum}{ -}
+%\renewcommand{\cftfigpresnum}{Figura }
+%\renewcommand{\cfttabpresnum}{Tabela }
+%\setlength{\cftfignumwidth}{2.2cm}
+%\setlength{\cfttabnumwidth}{2.2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[pdftex]{graphicx}  %pacote para colocar figuras jpg
+\usepackage[final]{pdfpages}  %include pfd coloca um pdf em uma pagina
+
+%\usepackage[T1]{fontenc} %CHCHCH
+%\usepackage[OT2,T1]{fontenc} %CHCHCH
+%\usepackage[T1,T2A]{fontenc} %needs t2aenc.def
+\usepackage[T1,OT2,OT1]{fontenc} %CHCHCH
+
+%\usepackage{cyrillic} 
+
+%russian
+\newcommand\cyr{%
+\renewcommand\rmdefault{wncyr}%
+\renewcommand\sfdefault{wncyss}%
+\renewcommand\encodingdefault{OT2}%
+\normalfont
+\selectfont}
+\DeclareTextFontCommand{\textcyr}{\cyr}
+
+%%CHCHCH
+%%russian
+%\newcommand{\cyrrm}{\fontencoding{OT2}\selectfont\textcyrup}
+%\newcommand{\cyrit}{\fontencoding{OT2}\selectfont\textcyrit}
+%\newcommand{\cyrsl}{\fontencoding{OT2}\selectfont\textcyrsl}
+%\newcommand{\cyrsf}{\fontencoding{OT2}\selectfont\textcyrsf}
+%\newcommand{\cyrbf}{\fontencoding{OT2}\selectfont\textcyrbf}
+%\newcommand{\cyrsc}{\fontencoding{OT2}\selectfont\textcyrsc}
+%%%%% cyrrm = "Roman", or really upright, normal font
+%%%%% cyrit = Italic (cursive forms of letters)
+%%%%% cyrsl = Italic (non-cursive forms of letters)
+%%%%% cyrsf = Sans-serif
+%%%%% cyrbf = Bold-face 
+
+
+
+
+%\usepackage[math]{iwona}
+\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault} math
+
+\usepackage[absolute]{textpos}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{leftidx}
+
+%CHCHCH
+%\usepackage[superscript]{cite}  %citacoes em superscript
+\usepackage{cite}  %nao, meu, citacoes em superscript nao!
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations}
+\usetikzlibrary{snakes}
+
+\usepackage{color}
+
+\definecolor{DarkBlue}{rgb}{0.1,0.1,0.5}
+\definecolor{Red}{rgb}{0.9,0.0,0.1}
+\definecolor{DarkGreen}{rgb}{0.10,0.50,0.10}
+
+% see documentation for a0poster class for the size options here
+\let\Textsize\large
+\def\Head#1{\noindent\hbox to \hsize{\hfil{\LARGE\color{DarkBlue} #1}}\bigskip}
+\def\LHead#1{\noindent{\LARGE\color{DarkBlue} #1}\smallskip}
+\def\Aut#1{\noindent{\Huge\color{DarkBlue} #1}\smallskip}
+\def\End#1{\noindent{\large\it\color{DarkBlue} #1}\smallskip}
+\def\Subhead#1{\noindent{\Large\color{DarkBlue} #1}}
+\newcommand{\quiteHuge}{\fontsize{120}{93}\selectfont}
+\def\Title#1{\begin{center}\noindent{\quiteHuge\color{DarkGreen}#1}\end{center}}
+
+
+\usepackage[twoside,inner=3cm,outer=2cm,top=3cm,bottom=2cm]{geometry}
+
+\usepackage{setspace}   %Espacamento entre as linhas
+
+\setstretch{1.5} %Normal da ABNT: espaçamento entre as linhas de 1.5 de linha
+% Pode ser \singlespace 
+%          \onehalfspace
+%          \doublespace
+
+%---------------------------------------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy} % colocar Capítulos, Seções, etc em minúsculo
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\fancyhf{} % deletar configuração atual do cabeçalho (header) e rodapé (foot)
+
+\pagestyle{fancy} 
+
+\fancyhead[LE,RO]{\thepage}
+
+\fancyhead[LO]{\rightmark}
+  
+\fancyhead[RE]{\leftmark}
+
+\renewcommand{\headrulewidth}{0.5pt}
+  
+\renewcommand{\footrulewidth}{0pt}
+
+%CHCHCH
+%\addtolength{\headheight}{0.5pt} % cria um espaço para linha
+\addtolength{\headheight}{4.0pt} % cria um espaço para linha
+
+\fancypagestyle{plain}{
+    \fancyhead{} % exibir cabeçalho e rodapé
+    \renewcommand{\headrulewidth}{0pt} % linha
+}
+
+
+
+
+%---------------------------------------------------------------------------------------------------------
+
+\usepackage[marginal,symbol]{footmisc}
+\footnotemargin2pt
+
+%%%%%%%%%%%%%%%%%%
+
+
+\pagestyle{empty}
+
+%\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} %CHCHCH %to make tableofcontents empty pagestyle
+
+
+%CHCHCH TO MAKE TABLEOFCONTENTS PAGESTULE EMPTY
+%\fancypagestyle{plain}{%
+%  \fancyhf{}                          % clear all header and footer fields
+%  \renewcommand{\headrulewidth}{0pt}
+%  \renewcommand{\footrulewidth}{0pt}
+%}
+
+\usepackage[subfigure,titles]{tocloft}
+\renewcommand{\cftfigaftersnum}{ -}
+\renewcommand{\cfttabaftersnum}{ -}
+\renewcommand{\cftfigpresnum}{Figura }
+\setlength{\cftfignumwidth}{2.2cm}%{5em}
+
+
+
+%\renewcommand*{\chapterheadendvskip}{%
+%  \vspace{3.0cm}%
+%%  \vspace{0.725\baselineskip plus 0.115\baselineskip minus 0.192\baselineskip}%
+%}
+
+\usepackage{blindtext}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%\setlength{\parskip}{0.5cm}%1.5ex} %0pt} % 1ex plus 0.5ex minus 0.2ex}
+
+\hyphenation{ca-ra-te-ri-sti-cas}
+
+%\selectlanguage{portuguese}
+%\hyphenation{e-mer-g\^{e}n-cia}
+
+
+\pagestyle{fancy}
+
+
+\thispagestyle{empty}
+
+\vspace{0.5cm}
+
+\begin{center} 
+\LARGE{UNIVERSIDADE DE SÃO PAULO}  \\
+\LARGE{INSTITUTO DE FÍSICA DE SÃO CARLOS}
+\end{center}
+
+\vspace{6.0cm}
+
+\centerline{\LARGE{CAMILO AKIMUSHKIN VALENCIA}}
+
+\vspace{3.0cm}
+
+
+\centerline{\Huge{Din\^amica de redes complexas}} 
+\vspace{0.5cm}
+\centerline{\Huge{aplicada a reconhecimento de autoria}}
+
+
+\vspace{6.5cm}
+
+\begin{center}
+\Large{S\~ao Carlos}\\
+\Large{2015}
+\end{center}
+
+
+
+\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+\setcounter{page}{1} % ABNT: deve-se começar a numeração na folha de rosto.
+
+\begin{center}
+\LARGE{CAMILO AKIMUSHKIN VALENCIA}
+\end{center}
+
+\addvspace{4.0cm}
+
+\begin{center}
+\Huge{Din\^amica de redes complexas\\
+aplicada a reconhecimento de autoria}
+\end{center}
+
+\addvspace{3.0cm}
+
+\makebox[15cm][r]{
+\begin{minipage}[l]{8cm}
+
+\begin{singlespace}
+Monografia apresentada ao Programa de Pós-Graduação em Física 
+do Instituto de Física de São Carlos da Universidade de São Paulo, para o Exame de Qualifica\c c\~ao 
+como parte dos requisitos para obten\c c\~ao do t\'itulo de Doutor em Ci\^encias.\\
+
+Área de concentração: Física Básica
+
+Orientador: Prof. Dr. Osvaldo Novais de Oliveira Jr.
+\end{singlespace}
+
+
+\end{minipage}}
+
+\addvspace{3.0cm}
+
+\begin{center}
+%\Large{Versão original} \\
+\vspace{1.5cm}
+\Large{S\~ao Carlos}\\
+\Large{2015}
+\end{center}
+
+
+%%%%%%
+%\thispagestyle{empty}
+%
+%
+%\includepdf{index}
+%\includepdf{fichacatalog135}
+%%%%%%
+
+%% \vspace*{8cm}
+%%\begin{center}
+%% \huge{FICHA CATALOGRÁFICA}
+
+%% \vspace*{3cm}
+
+%%\large{Elaborar ao final, quando o número de páginas da 
+%%dissertação estiver definido - 
+%%www.biblioteca.ifsc.usp.br/ficha}
+%%\end{center}
+
+%%%%%%%%%%%
+%\newpage\thispagestyle{empty} 
+%
+%\vspace*{8cm}
+%
+%\begin{center}
+%\normalsize{FOLHA DE APROVAÇÃO}
+%\end{center}
+%
+%
+%
+%\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}\ 
+%
+%\vspace*{18cm}
+%
+%\begin{spacing}{1.2}
+%
+%\begin{flushright}\textit{
+%\`A MINHA AV\'O,\\
+%\vspace{0.5cm}
+%CLELIA C\'ESPEDES ACERO
+%\vspace{1cm}
+%}\end{flushright}
+%
+%\end{spacing}
+%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+%\newpage\ \thispagestyle{empty} %NEWW
+%
+%\newpage\ \thispagestyle{empty}
+%
+%
+%\vspace*{18cm}
+%
+%\begin{spacing}{1.2}
+%
+%\makebox[15cm][r]{ 
+%\begin{minipage}[l]{10cm}
+%\hspace*{2.2cm}\emph{ \large{ Este trabalho foi financiado pelo \\ \hspace*{7.5cm} CNPq } }
+%\end{minipage}}
+%
+%
+%
+%\end{spacing}
+%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+
+\begin{singlespace}
+
+\centerline{\LARGE{{\bf RESUMO}}}
+
+\vspace*{1.5cm}
+
+\hspace*{-0.9cm} AKIMUSHKIN, C. \textit{Din\^amica de redes complexas aplicado a reconhecimento de autoria}. Instituto de Física de São Carlos, Universidade de São Paulo, São Carlos, 2015. 
+
+\vspace*{1.2cm}
+
+\hspace*{-0.9cm}
+
+{\noindent
+Parte da complexidade impl\'icita na linguagem se reflete na ordem das palavras, o que j\'a foi usado para caracterizar linguagens, movimentos liter\'arios e autores por meio da cria\c c\~ao de redes de co-ocorr\^encia de palavras. O reconhecimento de autoria visa a separar textos em grupos que representam cada autor, tal que seja poss\'ivel identificar o autor de um texto em disputa. Redes de co-ocorr\^encia t\^em mostrado sucesso na tarefa de reconhecimento de autoria, mas pouco se tem estudado sobre a influ\^encia da din\^amica da rede. Isto \'e curioso, uma vez que a din\^amica \'e a respons\'avel pelas propriedades estruturais da rede. Portanto, aprofundar no estudo da din\^amica, al\'em do benef\'icio pr\'atico de servir para o reconhecimento de autoria, pode trazer maior compreens\~ao dos mecanismos de evolu\c c\~ao de redes de textos. Um problema recorrente do reconhecimento de autoria \'e a escassez e heterogeneidade dos textos dispon\'iveis. Neste projeto prop\~oe-se uma metodologia para o reconhecimento de autoria baseada na din\^amica de redes de co-ocorr\^encia. Para testar o m\'etodo utiliza-se uma cole\c c\~ao de $300$ textos de $27$ autores na l\'ingua inglesa. Para cada texto s\~ao obtidas s\'eries temporais para $6$ medidas de rede. As s\'eries temporais s\~ao estacion\'arias, permitindo usar os quatro primeiros momentos da distribui\c c\~ao para caracterizar a s\'erie. Os $24$ atributos obtidos s\~ao usados em algoritmos de classifica\c c\~ao e agrupamento. O desempenho da classifica\c c\~ao \'e compar\'avel ao de t\'ecnicas anteriores. Por outro lado, o agrupamento baseado em densidade mostra \'otimos resultados, agrupando corretamente 296 dos 300 textos analisados. Os melhores resultados s\~ao alcan\c cados com $\varepsilon=1$, a qual parece ser a separa\c c\~ao natural entre os grupos. As medidas introduzidas mostram ser caracter\'isticas de cada autor.
+}
+
+\vspace*{1.5cm}
+\hspace*{-0.9cm} {\bf Palavras-chave:} Redes complexas. S\'eries temporais. Classifica\c c\~ao e agrupamento de textos.
+
+\end{singlespace}
+
+  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage\thispagestyle{empty}
+%
+%\pagestyle{empty}
+%
+%\begin{singlespace}
+%\listoffigures
+%%\listoftables
+%\end{singlespace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%
+%\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+%\thispagestyle{empty} %CHCHCH
+
+\tableofcontents\thispagestyle{empty}\thispagestyle{empty}%\thispagestyle{empty}
+
+\clearpage \thispagestyle{empty}
+
+\pagestyle{fancy}
+
+
+
+
+
+
+\chapter{Introdu\c c\~ao}
+
+\section{Proposta de pesquisa}
+
+\section{Objetivos}
+
+\chapter{Materiais e métodos}
+
+\chapter{Resultados}
+
+\chapter{Conclus\~oes}
+
+\chapter{Cronograma}
+
+\begin{center}
+\begin{table}[ht]
+\centering
+\begin{tabular}{lll}
+Ano & Semestre & Atividade \\
+%\hline
+\hline
+2012 & II & Revis\~ao e estudo da bibliografia.\\
+\hline
+2013 & I & Implementa\c c\~ao computacional.\\
+%\hline
+\ & II & Cursar disciplinas.\\
+\hline
+2014 & I & Implementa\c c\~ao computacional: refinamento do c\'odigo e corpus.\\
+%\hline
+\ & II & Apresenta\c c\~ao de resultados.\\
+\hline
+2015 & I & Exame de qualifica\c c\~ao.\\
+\ & \ & Escrita de artigo.\\
+%\hline
+\ & II & Cursar disciplina.\\
+%\ & \ & Monitoria para o Programa de Aperfei\c c\~ao do Ensino.\\
+\ & \ & Monitoria PAE.\\
+\hline
+2016 & I & Defesa do doutorado.\\
+\ & \ & Escrita de artigo.\\
+\hline
+\end{tabular}
+\caption{Cronograma de atividades}
+\label{table:cronograma}
+\end{table}
+\end{center}
+
+\section{Disciplinas Cursadas}
+
+As disciplinas foram escolhidas visando a aperfei\c coar os conhecimentos gerais da f\'isica e adquirir os necess\'arios na \'area de aprendizado de m\'aquina e minera\c c\~ao de dados. As tr\^es disciplinas cursadas at\'e agora s\~ao:
+
+\paragraph{T\'opicos especiais em teoria de muitos corpos}{\'E uma das disciplinas requeridas pelo instituto. O foco s\~ao as teorias de campo de part\'iculas elementares.}
+
+\paragraph{Minera\c c\~ao de dados n\~ao estruturados}{Apresenta uma vis\~ao geral das diferentes \'areas de minera\c c\~ao de dados na atualidade, incluindo uma revis\~ao das t\'ecnicas para minera\c c\~ao de textos. \'E uma disciplina \'util para conhecer o estado da arte em reconhecimento de autoria.}
+
+\paragraph{An\'alise de agrupamento de dados}{Concentra-se no aprendizado de m\'aquina n\~ao-supervisionado detalhando nos conceitos e contas. Serve para aprender os principais algoritmos usados na atualidade.}
+
+
+\bibliography{biblio}
+
+\end{document}
+
