@@ -104,10 +104,21 @@
 %quali
 %%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
 \usepackage{titlesec} %[compact]
-\titlespacing{\chapter}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\chapter}{0pt}{0cm}{1.5cm}
 \titlespacing{\section}{0pt}{1.5cm}{1.5cm}
 \titlespacing{\subsection}{0pt}{1.5cm}{1.5cm}
 \titlespacing{\subsubsection}{0pt}{1.5cm}{1.5cm}	
+
+%  \usepackage{titlesec}
+  \titleformat{\chapter}[display]
+  {\normalfont\bfseries\filcenter}
+  {\LARGE\thechapter}
+  {1ex}
+  {\titlerule[2pt]
+	  \vspace{2ex}%
+  \LARGE}
+  [\vspace{1ex}%
+  {\titlerule[2pt]}]
 
 
 %%%%%%%%%% Escreve ``Figura`` e ``Tabela`` nas listas de figuras e tabelas
@@ -497,24 +508,73 @@ São Carlos Institute of Physics. University of São Paulo, São Carlos, 2015.
 
 \pagestyle{fancy}
 
+\chapter{Introduction}
+Studies on human interaction networks have started long before modern computers, dating back to the nineteenth century, while the foundation of
+social network analysis is generally attributed to the psychiatrist Jacob Moreno in mid twentieth century~\cite{newmanBook}.
+With the increasing availability of data related to human interactions, research on these networks has grown continuously.
+Contributions can now be found in a variety of fields, from social sciences and humanities~\cite{latour2013} to computer science~\cite{bird} and physics~\cite{barabasiHumanDyn,newmanFriendship}, given the multidisciplinary nature of the topic.
+One of the approaches from an exact science perspective is to represent interaction networks as complex networks~\cite{barabasiHumanDyn,newmanFriendship}, with which 
+several features of human interaction have been revealed.
+For example, the topology of human interaction networks exhibits a scale-free trace, which points to the existence of a small number of highly connected hubs and a large number of poorly connected nodes.
+
+There is gap of knowledge and technology between the complex networks legacy and the usufruct of the participant. This hiatus is reactive, and events suggest that it will maintain itself as an ecosystem of knowledge, technology and undertake of society in all scales. It should ease for example: entrepreneur goals, elaboration and preparation of documents, rapid achievement of knowledge. In general: processes that refer to collection and diffusion of goods and information.
+% Argumentar que é tido que o correto entendimento destas estruturas
+% será mais forte que XXX (ver no curso da Melanie/CE).
+
+This work presets a confirmation of such scenario and advances.
+Some strategies were selected to verify the complex networks to the
+advantage of the participant. Specially, very simple experiments
+seems able to modify social structures. In this context, we verified
+temporal stabilities in human interaction networks, and exposed that
+primitive sectors of the networks (hubs, intermediary and periphery)
+produce texts that are very different. This is useful for a
+not stigmatizing typology of participants in interaction networks
+via quantitative criteria. This yielded audiovisualization and
+interconnection of data as art and technological gadgets, 
+as support for scientific research. Applications were complemented
+with the (Brazilian) Presidency of the Republic and UNDP.
+
+Next subsections present a
+% 1/N^2 == physics of humans, they are the agents
+% Interacting with own network, with constant feedback, study of the self
+% Annotation of own data, study of them. Extend analysis within the route.
+%In this work, we present advances in handing the participant ways to explore and harness the social networks he/she participates in.
+%This is not an easy task, therefore we selected
 
 
 
 
+\section{Related work}
 
-\chapter{Introdu\c c\~ao}
+\chapter{Materials}
+\section{The Gmane public database of email lists (benchmarks)}
+\section{Facebook, Twitter, Participa.br, Cidade Democrática, AA}
+\section{My own social networks}
+Considerations about the right to annotate.
 
-\section{Proposta de pesquisa}
+\chapter{Methods}
+\section{Circular statistics}
+\section{Erdös Sectioning}
+\section{PCA of measures along time}
+\section{Kolmogorov-Smirnoff test for texts produced by sectors}
+\section{Audiovisualization of data}
+\section{Typological considerations}
+\section{Semantic web}
+\subsection{OWL ontology construction}
 
-\section{Objetivos}
+\chapter{Results}
+\section{Time stability in human interaction networks}
+\section{Semantic web}
+\subsection{Linked data}
+\subsection{RDF data conversion of data into linked data}
+\subsection{Published linked data and OWL ontologies}
+\section{Harnessing}
+\subsection{Social percolation procedures}
+\subsection{Recommendation systems for the enrichment of semantic navigation}
+\subsection{Understanding the social being}
+Scale free as the consequence of $T^2$ signal, fractal, constant, with three primitive parts and greater specialization. Gradus ad Parnassum
 
-\chapter{Materiais e métodos}
-
-\chapter{Resultados}
-
-\chapter{Conclus\~oes}
-
-\chapter{Cronograma}
+\chapter{Chronogram and outline of finished and planed tasks}
 
 \begin{center}
 \begin{table}[ht]
@@ -549,16 +609,42 @@ Ano & Semestre & Atividade \\
 \end{table}
 \end{center}
 
-\section{Disciplinas Cursadas}
+% colocar comparativos aqui
+\section{Documents}
+\subsection{To be finished}
 
-As disciplinas foram escolhidas visando a aperfei\c coar os conhecimentos gerais da f\'isica e adquirir os necess\'arios na \'area de aprendizado de m\'aquina e minera\c c\~ao de dados. As tr\^es disciplinas cursadas at\'e agora s\~ao:
 
-\paragraph{T\'opicos especiais em teoria de muitos corpos}{\'E uma das disciplinas requeridas pelo instituto. O foco s\~ao as teorias de campo de part\'iculas elementares.}
+\section{Anthropological physics}
+The study of human systems raises conceptual
+and ethical issues that require anthropological considerations.
+There are two immediate routes to this concepts:
+\begin{itemize}
+	\item What data should or can be used?
+	\item Can one experiment in a network of humans? In which context?
+\end{itemize}
 
-\paragraph{Minera\c c\~ao de dados n\~ao estruturados}{Apresenta uma vis\~ao geral das diferentes \'areas de minera\c c\~ao de dados na atualidade, incluindo uma revis\~ao das t\'ecnicas para minera\c c\~ao de textos. \'E uma disciplina \'util para conhecer o estado da arte em reconhecimento de autoria.}
+The short answer is that ethics committees and procedures are dedicated to dealing with those issues.
+Even so, there is a key-concept from the anthropological legacy: the study of the self as exposed to the interested culture or context. 
+In this sense, it is reasonable (if not a suggestion) that
+a researcher do reflexive consideration, 
+i.e. that he/she observe and make assumptions about its own sampling of the world.
+Within this same framework, many social networks (email, Facebook, Twitter, Participa.br, AA) were openly mined,
+with feedback to and from the studied communities.
+The term ``anthropological physics'' started being used in Brazil around
+2014 and can be thought as a subfield of Social Physics.
 
-\paragraph{An\'alise de agrupamento de dados}{Concentra-se no aprendizado de m\'aquina n\~ao-supervisionado detalhando nos conceitos e contas. Serve para aprender os principais algoritmos usados na atualidade.}
+\subsubsection{Gradus}
+Fazer o $2^(100 2)$
 
+Consider a idealized constitution of these networks: 
+\begin{itemize}
+	\item the resources of the environment are the persons, each with an amount of time available.
+	\item The amount of resource employed by the environment to the network is constant through all connective sectors
+\end{itemize}
+
+\subsection{Finished}
+
+\chapter{Conclusions}
 
 \bibliography{biblio}
 
