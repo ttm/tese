@@ -1,7 +1,7 @@
 \documentclass[a4paper,openright,12pt]{report} %,parskip=full
 
 \usepackage{amssymb,amsmath,textcomp}
-\usepackage[brazil]{babel}
+\usepackage[brazil,english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{braket}
 \usepackage{booktabs}  %Possibilidade de linhas mais grossas nas tabelas.
@@ -289,20 +289,20 @@
 \vspace{0.5cm}
 
 \begin{center} 
-\LARGE{UNIVERSIDADE DE SÃO PAULO}  \\
-\LARGE{INSTITUTO DE FÍSICA DE SÃO CARLOS}
+\LARGE{UNIVERSITY OF SÃO PAULO}  \\
+\LARGE{SÃO CARLOS PHYSICS INSTITUTE}
 \end{center}
 
 \vspace{6.0cm}
 
-\centerline{\LARGE{CAMILO AKIMUSHKIN VALENCIA}}
+\centerline{\LARGE{RENATO FABBRI}}
 
 \vspace{3.0cm}
 
 
-\centerline{\Huge{Din\^amica de redes complexas}} 
+\centerline{\Huge{Complex networks for the participant}} 
 \vspace{0.5cm}
-\centerline{\Huge{aplicada a reconhecimento de autoria}}
+%\centerline{\Huge{aplicada a reconhecimento de autoria}}
 
 
 \vspace{6.5cm}
@@ -319,14 +319,13 @@
 \setcounter{page}{1} % ABNT: deve-se começar a numeração na folha de rosto.
 
 \begin{center}
-\LARGE{CAMILO AKIMUSHKIN VALENCIA}
+\LARGE{RENATO FABBRI}
 \end{center}
 
 \addvspace{4.0cm}
 
 \begin{center}
-\Huge{Din\^amica de redes complexas\\
-aplicada a reconhecimento de autoria}
+\Huge{Complex networks for the participant}
 \end{center}
 
 \addvspace{3.0cm}
@@ -335,13 +334,16 @@ aplicada a reconhecimento de autoria}
 \begin{minipage}[l]{8cm}
 
 \begin{singlespace}
-Monografia apresentada ao Programa de Pós-Graduação em Física 
-do Instituto de Física de São Carlos da Universidade de São Paulo, para o Exame de Qualifica\c c\~ao 
-como parte dos requisitos para obten\c c\~ao do t\'itulo de Doutor em Ci\^encias.\\
+Monograph presented to the Physics Graduate Program of the
+São Carlos Institute of Physics, University of São Paulo,
+for the qualification exam, as part of the requirements
+for obtaining the title of Doctor in Sciences.\\
 
-Área de concentração: Física Básica
+Concentration area: Applied Physics
 
-Orientador: Prof. Dr. Osvaldo Novais de Oliveira Jr.
+Option: Computational Physics
+
+Advisor: Prof. Dr. Osvaldo Novais de Oliveira Jr.
 \end{singlespace}
 
 
@@ -436,22 +438,37 @@ Orientador: Prof. Dr. Osvaldo Novais de Oliveira Jr.
 
 \begin{singlespace}
 
-\centerline{\LARGE{{\bf RESUMO}}}
+\centerline{\LARGE{{\bf ABSTRACT}}}
 
 \vspace*{1.5cm}
 
-\hspace*{-0.9cm} AKIMUSHKIN, C. \textit{Din\^amica de redes complexas aplicado a reconhecimento de autoria}. Instituto de Física de São Carlos, Universidade de São Paulo, São Carlos, 2015. 
+\hspace*{-0.9cm} FABBRI, C. \textit{Complex networks for the participant}. 
+São Carlos Institute of Physics. University of São Paulo, São Carlos, 2015. 
 
 \vspace*{1.2cm}
 
 \hspace*{-0.9cm}
 
 {\noindent
-Parte da complexidade impl\'icita na linguagem se reflete na ordem das palavras, o que j\'a foi usado para caracterizar linguagens, movimentos liter\'arios e autores por meio da cria\c c\~ao de redes de co-ocorr\^encia de palavras. O reconhecimento de autoria visa a separar textos em grupos que representam cada autor, tal que seja poss\'ivel identificar o autor de um texto em disputa. Redes de co-ocorr\^encia t\^em mostrado sucesso na tarefa de reconhecimento de autoria, mas pouco se tem estudado sobre a influ\^encia da din\^amica da rede. Isto \'e curioso, uma vez que a din\^amica \'e a respons\'avel pelas propriedades estruturais da rede. Portanto, aprofundar no estudo da din\^amica, al\'em do benef\'icio pr\'atico de servir para o reconhecimento de autoria, pode trazer maior compreens\~ao dos mecanismos de evolu\c c\~ao de redes de textos. Um problema recorrente do reconhecimento de autoria \'e a escassez e heterogeneidade dos textos dispon\'iveis. Neste projeto prop\~oe-se uma metodologia para o reconhecimento de autoria baseada na din\^amica de redes de co-ocorr\^encia. Para testar o m\'etodo utiliza-se uma cole\c c\~ao de $300$ textos de $27$ autores na l\'ingua inglesa. Para cada texto s\~ao obtidas s\'eries temporais para $6$ medidas de rede. As s\'eries temporais s\~ao estacion\'arias, permitindo usar os quatro primeiros momentos da distribui\c c\~ao para caracterizar a s\'erie. Os $24$ atributos obtidos s\~ao usados em algoritmos de classifica\c c\~ao e agrupamento. O desempenho da classifica\c c\~ao \'e compar\'avel ao de t\'ecnicas anteriores. Por outro lado, o agrupamento baseado em densidade mostra \'otimos resultados, agrupando corretamente 296 dos 300 textos analisados. Os melhores resultados s\~ao alcan\c cados com $\varepsilon=1$, a qual parece ser a separa\c c\~ao natural entre os grupos. As medidas introduzidas mostram ser caracter\'isticas de cada autor.
+	Complex networks form one of the most active fields of recent physics.
+	With respectable efforts for exhibiting advances to the general audience, 
+	it seems, however, that few or none of these are targeted to the individual profit.
+	That is, with a core knowledge about the field, and recipes for harnessing,
+	provide means for the participant to interact and understand the networks they are in.
+	This work aims to accomplish such task by means of the social networks of the participants.
+	We verified basic ubiquitous characteristics in such networks, such as time stability of topological measures,
+	of basic connective sector sizes and the differentiation of the textual production.
+	We also formalized conceptualizations of these networks as OWL were they were possible, specially
+	in relation to the social participation instances provided by law. Finally, software and
+	data have been put available and used, as means to enable integrated analysis of different provenance and public benefit.
+	Conceptual consequences have been documented and requires anthropological considerations.
+	Furthermore, software, ontological and data contributions can be better documented and developed while
+	a typological consideration of the physical properties observed in human interaction networks should
+	bridge complex networks and more the traditional legacy of human sciences on the subject.
 }
 
 \vspace*{1.5cm}
-\hspace*{-0.9cm} {\bf Palavras-chave:} Redes complexas. S\'eries temporais. Classifica\c c\~ao e agrupamento de textos.
+\hspace*{-0.9cm} {\bf Keywords:} Complex networks. Social networks. Complexity. Anthropological physics. Linked data. Semantic web. Social participation. Text mining. Natural language processing.
 
 \end{singlespace}
 
