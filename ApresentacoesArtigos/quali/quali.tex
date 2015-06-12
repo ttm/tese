@@ -597,28 +597,73 @@ A monografia termina com as conclusões na Seção~\ref{sec:con}, seguida de agr
 %In this work, we present advances in handing the participant ways to explore and harness the social networks he/she participates in.
 %This is not an easy task, therefore we selected
 
-\section{Literature review}
+\section{Revisão de literatura}
 A área das redes complexas é relativamente nova ($\approx 25$ anos)
 e a literatura apresenta definições divergentes da área em si.
-Uma definição que tem ti
-
-One definition that is having increasing acceptance
-considers a complex network a ``large graph with non-trivial topological features''.
-This definition is misleading in at least two points: there are networks of interest with trivial topological features, such as the paradigmatic Erdös-Rényi network and the lattice network~\cite{newman}. 
-Second, it fails to deliver the fundamental message that the complex network is not an isolated mathematical graph structure. Complex networks of interest are real networks or idealized models for understanding them. Besides that, not only large graphs are of interest, but small graphs are very often used as toy examples and measured as extension of larger structures.
-A definition, still far from perfect, but preferred in this work, is:
-%``often large graphs considered in the physical
-%or natural environment they reside''.
-``often large and non-trivial graphs considered in,
-or for the consideration of, 
-the environment they reside''.
+Uma definição que tem recebido aceitação crescente
+é da rede complexa como ``um grafo grande com características topológicas
+não triviais''. Esta definição é enganosa ao menos em três pontos.
+Primeiro, há redes de interesse com características topológicas triviais, como as redes de Erdös-Rényi e a Geográfica~\cite{newman}, ou as redes simples usadas para exemplos.
+Segundo, a definição falha ao não emitir a mensagem fundamental de que uma rede complexas não é somente uma estrutura matemática, um grafo isolado. As redes complexas de interesse são redes reais ou modelos idealizados para as entender.
+Além disso, não só grafos grandes são de interesse, mas grafos pequenos são comumente usados como exemplos de propriedades e extensão das estruturas maiores.
+Uma definição, ainda longe de perfeita, mas preferida neste trabalho, é considerar a área das redes complexas como interessada em
+``redes usualmente grandes, consideradas no, ou para consideração do,
+meio em que residem''.
 This definition resolves both issues.
 
-Books in general present a common and powerful repertory for characterization of complex systems through graphs. Maybe most importantly are the arsenal of measures: degree, strength, betweenness centrality, clustering coefficient, etc.; the basic network paradigms: Erd\"os Rényi, geographical, small-world, scale-free; and the transdisciplinary approach to the environments that yield the networks. The literature on social network analysis,foe example, can often be understood as dealing with complex networks in human social systems.
+Os livros em geral apresentam um comum e poderoso repertório para a caracterização de sistemas complexos através de grafos. Talvez mais notáveis sejam:
+\begin{itemize}
+	\item O arsenal de medidas: grau, força, betweenness centrality, coeficiente de clusterização, etc.
+	\item Os paradigmas básicos de redes: Erdös-Rényi, geográfica, de mundo pequeno e livre de escala.
+	\item A abordagem transdisciplinar para considerar o meio no qual a rede está inserida, ou que implica na rede.
+\end{itemize}
 
-A careful consideration of the books and articles read for this research
-is given in Section~\ref{}.
-\subsection{Ambiguidades e sinonimos no jargão}
+A literatura sobre análise de redes sociais (ARS, ou \emph{SNA} para \emph{Social Network Analysis}), por exemplo, pode ser frequentemente compreendida como redes complexas em sistemas sociais humanos.
+
+Uma consideração cuidadosa dos livros e artigos lidos para esta pesquisa estão na Seção~\ref{}. As seções a seguir (\ref{sec:jar} e~\ref{sec:misc})
+explicitam peculiaridades do jargão da área e considerações sobre as áreas secundárias.
+
+\subsection{Ambiguidades e sinonimos no jargão}\label{sec:jar}
+A área de redes complexas é recente e conflui com diversas 
+correntes científicas, como a física, a biologia e a sociologia.
+Assim, possui termos ambiguos e sinònimos.
+
+Exemplos de ambiguidade e delimitações adotadas:
+\begin{itemize}
+	\item Os vértices mais conectados são, por definição, chamados hubs da rede. O vértice mais conectado é chamado hub da rede. No contexto do algoritmo HITS, o que é bem comum, estes significados mudam: os hubs são os que possuem mais arestas saindo (grau de saída); as autoridades recebem as arestas, ou são referenciados por vários hubs e outras entidades.
+	\item Há uma definição de centro e periferia com relação ao raio e diâmetro da rede~\cite{newman,networkX}.
+		Por extensão os intermediários podem ser considerados os que não são centro nem periferia.
+		Esta setorialização centro, intermediários e periferia gera frações que diferem do previsto pela literatura para as frações de hubs, intermediários e periféricos.
+		Um método apropriado para realizar esta setorialização da rede, com resultados estáveis e significativos, consta na Seção~\ref{sec:set}.
+	\item etc
+\end{itemize}
+
+
+
+\subsection{Processamento de linguagem natural, dados ligados, participação social}\label{sec:misc}
+Os termos processamento de linguagem natural (PLN) e mineração de
+texto (MT) podem em geral serem substituídos um pelo outro.
+O termo PLN é preferido pois os intuitos da pesquisa são muito mais
+próximos aos intuitos da área: compreender como a linguagem verbal está
+sendo usada para significar.
+
+Os termos web semântica e dados ligados em geral também podem ser 
+substituídos um pelo outro. O primeiro salienta
+a rede de referenciamento dos dados,
+o segundo os dados referenciando-se. Principalmente na esfera
+acadêmica, a área é, salvo segunda ordem, sinônimo de dados em 
+RDF via XML ou Turtle, ontologias OWL e máquinas de inferència.
+
+A participação social é a incorporação da própria sociedade nos 
+processos de governança da sociedade.
+Quase toda a participação social atual é indireta e presencial, 
+com a população fornecendo diretrizes e indicadores para o setor público.
+A transparência tem sido cada vez mais presente,
+e o norte de ``participação direta'' (participação direta 
+da sociedade civil na tomada de decisões pelo Estado)
+cada vez mais presente. 
+% discursar sobre a literatura de cada tema.
+
 
 \chapter{Materials}\label{sec:mat}
 \section{The Gmane public database of email lists (benchmarks)}
@@ -672,6 +717,8 @@ The term ``anthropological physics'' started being used in Brazil around
 2014 and can be thought as a subfield of Social Physics.
 
 \subsubsection{Gradus}
+Uma lista detalhada de ambiguidades e sinônimos deverá completar o que está na Seção~\ref{sec:jar}.
+
 % 1/N^2 == physics of humans, they are the agents
 Fazer o $2^(100 2)$
 
