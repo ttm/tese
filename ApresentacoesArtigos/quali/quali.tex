@@ -790,50 +790,102 @@ Referiremos-nos a este procedimento como \emph{seccionamento de Erdös},
 com os setores resultantes chamados \emph{setores de Erdös} (ou \emph{setores primitivos}, \emph{setores básicos} da rede).
 
 A distribuição de grau
-
-
-The degree distribution $\widetilde{P}(k)$ of an ideal
-scale-free network $\mathcal{N}_f$ with $N$ vertices and $z$ edges has less
-average degree nodes than the distribution $P(k)$ of an Erd\"os-R\'enyi
-network with the same number of vertices and edges. Indeed, we define in this work the intermediary sector of a network to be the set of all the nodes whose degree is less abundant in the real network than on the Erd\"os-R\'enyi model:
-
+$\widetilde{P}(k)$
+de uma rede livre de escala ideal
+$\mathcal{N}_f$ com $N$ 
+vértices e $z$ arestas possui menos
+vértices com grau médios do que a distribuição $P(k)$
+de uma rede Erdös-Rényi com o mesmo número de vértices e arestas.
+De fato, definimos (neste trabalho) o setor intermediário de uma
+rede como sendo o conjunto de todos os vértices cujo grau é
+menos abundante em uma rede real do que no modelo de Erdös-Rényi:
 \begin{equation}\label{criterio}
-	\widetilde{P}(k)<P(k) \Rightarrow \text{k is intermediary degree}
+	\widetilde{P}(k)<P(k) \Rightarrow \text{k é grau intermediário}
 \end{equation}
 
-If $\mathcal{N}_f$ is directed and has no self-loops, the probability
-of an edge between two arbitrary vertices is $p_e=\frac{z}{N(N-1)}$.
-A vertex in the ideal Erd\"os-R\'enyi digraph with the same number of vertices and edges, and thus the same probability $p_e$ for the presence of an edge, will have degree $k$ with probability:
-
+Se $\mathcal{N}_f$ for dirigida e não possuir selfloops, a probabilidade
+de existência de uma aresta entre dois vértices arbitrários é
+$p_e=\frac{z}{N(N-1)}$.
+Um vértice em um dígrafo de Erdös-Rényi com o mesmo número de vértices e aresta,
+portanto mesma probabilidade
+$p_e$
+para existência de aresta, terá grau $k$ com probabilidade:
 \begin{equation}
 	P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
 \end{equation}
 
-The lower degree fat tail represents the border vertices, i.e. the peripheral sector or periphery where $\widetilde{P}(k)>P(k)$ and $k$ is lower than any intermediary sector value of $k$. The higher degree fat tail is the hub sector, i.e. $\widetilde{P}(k)>P(k)$ and $k$ is higher than any intermediary sector value of $k$. The reasoning for this classification is: 1) vertices so connected that they are virtually inexistent in networks connected at pure chance (e.g. without preferential attachment) are correctly associated to the hubs sector. Vertices with very few connections, which are way more abundant than expected by pure chance, are assigned to the periphery. Vertices with degree values predicted as the most abundant if connections are created by pure chance, near the average, and less frequent in the real network, are classified as intermediary.
+A cauda longa de graus baixos consiste nos vértices de borda,
+i.e. o setor periférico ou periferia, onde
+$\widetilde{P}(k)>P(k)$ e $k$ é mais baixo
+que qualquer valor intermediário de $k$.
+A cauda londa de grau alto é o setor dos hubs,
+i.e.
+$\widetilde{P}(k)>P(k)$ e $k$ é maior que qualquer valor de $k$ do setor
+intermediário.
+O raciocínio para esta classificação é: os vértices tão conectados
+que são virtualmente inexistentes em redes conectadas por puro acaso
+(i.e. sem ligação preferencial) são corretamente associadas
+aos hubs.
+Vértices com pouquíssimas conexões, e muito mais abundantes do que esperado
+por puro acaso, são atribuídos à periferia.
+Vértices com valores de grau previstos como os mais abundantes caso
+as conexões sejam fruto de puro acaso, valores próximos da média,
+e menos abundantes em nas redes reais, são classificados como intermediários.
+
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figs/fser_}
-	\caption{Degree distribution of scale-free and Erd\"os-R\'enyi ideal networks.
-		The latter has more intermediary vertices, while the former has more peripheral and hub vertices.
-		The sector borders are defined by the two intersections $k_L$ and $k_R$ of the connectivity distributions.
-		Characteristic degrees are in the compact intervals: $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$ for the Erd\"os sectors (periphery, intermediary and hubs).}
+	\caption{As distribuições de grau de modelos ideais de redes livres de escala e Erdös-Rényi
+		A segunda possui mais vérices intermediários, enquanto a primeira possui mais vértices
+		periféricos e hubs. As bordas dos setores são definidas pelas duas intersecções $k_L$
+		e $k_R$ das distribuições de conectividade.
+		Os graus característicos estão nos intervalos compactos:
+                $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$
+	para os setores de Erdös (periferia, intermediários e hubs).}	
 		\label{fig:setores}
 \end{figure}
-i	To ensure statistical validity of the histograms, bins can be chosen to contain at least $\eta$ vertices of the real network. Thus, each bin, starting at degree $k_i$, spans $\Delta_i=[k_{i},k_{j}]$ degree values, where $j$ is the smallest integer with which there are at least $\eta$ vertices with degree larger than or equal $k_i$, and less than or equal $k_{j}$. This changes equation~\ref{criterio} to:
+
+Para assegurar a validade estatística dos histogramas, os intervalos podem
+ser escolhidos de forma que contenham ao menos $\eta$ vértices da rede real.
+Assim, cada intervalo, começando no grau $k_i$, estende-se por
+$\Delta_i=[k_{i},k_{j}]$,
+onde $j$ é o menor inteiro tal que há ao menos $\eta$ vértices com grau maior que ou igual a $k_i$,
+e menos que $k_j$. Isso altera a equação~\ref{criterio} para:
 
 \begin{equation}\label{criterio2}
-	\sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i is intermediary}
+	\sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i é intermediário}
 \end{equation}
 
-If strength $s$ is used for comparison, $P$ remains the same, but $P(\kappa_i)$ with $\kappa_i=\frac{s_i}{\overline{w}}$ should be used for comparison, with $\overline{w}=2\frac{z}{\sum_is_i}$ the average weight of an edge and $s_i$ the strength of vertex $i$. For in and out degrees ($k^{in}$, $k^{out}$) comparison of the real network should be made with:
+Se a força $s$ for usada para comparação, $P$ permanece a mesma, mas
+$P(\kappa_i)$ com $\kappa_i=\frac{s_i}{\overline{w}}$
+deve ser usado na comparação, com
+$\overline{w}=2\frac{z}{\sum_is_i}$
+o peso médio da aresta e $s_i$ o peso do vértice $i$.
+Para graus de entrada e saída
+($k^{in}$, $k^{out}$)
+a comparação com a rede real deve ser feita com:
 \begin{equation}
 	\hat{P}(k^{way})=\binom{N-1}{k^{way}}p_e^k(1-p_e)^{N-1-k^{way}}
 \end{equation}
 
-\noindent where \emph{way} can be \emph{in} or \emph{out}. In and out strengths ($s^{in}$, $s^{out}$) are divided by $\overline{w}$ and compared also using $\hat{P}$. Note that $p_e$ remains the same, as each edge yields an incoming (or outgoing) edge, and there are at most $N(N-1)$ incoming (or outgoing) edges, thus $p_e=\frac{z}{N(N-1)}$ as with the total degree.
+\noindent where \emph{way} (sentido) pode ser \emph{in} or \emph{out} (entrada e saída).
+Forças de entrada e saída ($s^{in}$, $s^{out}$)
+são divididas por
+$\overline{w}$
+e comparadas também usando $\hat{P}$. Note que $p_e$ permanece a mesma,
+pois cada aresta é uma aresta de entrada (ou de saída), e há no máximo $N(N-1)$
+arestas entrando (ou saindo), portanto
+$p_e=\frac{z}{N(N-1)}$
+assim como no caso do grau total
 
-In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$, and each of the basic six Erd\"os sectioning possibilities $\{E_{\gamma}\}$ have three Erd\"os sectors $E_{\gamma}= \{e_{\gamma, \phi} \}$ defined as:
+Em outras palavras, seja $\gamma$ e $\phi$ inteiros no intervalos.
+$1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$,
+e cada uma das seis possibilidades de seccionamento de Erdös 
+$\{E_{\gamma}\}$
+possui três setores de Erdös
+$E_{\gamma}= \{e_{\gamma, \phi} \}$
+definidos como:
 
 \begin{alignat}{3}\label{eq:part}
 	e_{\gamma,1}&=\{\;i\;|\;\overline{k}_{\gamma,L}\geq&&\overline{k}_{\gamma,i}\} \nonumber \\
@@ -841,7 +893,7 @@ In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \ga
 	e_{\gamma,3}&=\{\;i\;|\;&&\overline{k}_{\gamma,i}<\overline{k}_{\gamma,R}\} \nonumber
 \end{alignat}
 
-\noindent where $\{\overline{k}_{\gamma,i}\}$ is:
+\noindent onde $\{\overline{k}_{\gamma,i}\}$ é:
 
 \begin{equation}
 	\begin{split}
@@ -854,22 +906,16 @@ In other words, let $\gamma$ and $\phi$ be integers in the intervals $1 \leq \ga
 	\end{split}
 \end{equation}
 
-\noindent and both $\overline{k}_{\gamma,L}$ and $\overline{k}_{\gamma,R}$ are found using $P(\overline{k})$ or $\hat{P}(\overline{k})$ as described above.
+\noindent e ambos $\overline{k}_{\gamma,L}$ e $\overline{k}_{\gamma,R}$ são encontrados  usando
+$P(\overline{k})$ ou $\hat{P}(\overline{k})$
+como descrito acima.
 
-Since different metrics can be used to identify the three types of vertices, compound criteria can be defined. For example, a very stringent criterion can be used, according to which a vertex is only regarded as pertaining to a sector if it is so for all the metrics. After a careful consideration of possible combinations, these were reduced to six:
+Como métricas diferentes podem ser usadas para identificas
+os três tipos de vértices, critérios compostos podem ser
+definidos. Após uma inspeção cuidadosa das possibilidades,
+os critérios compostos foram reduzidos a 6: $\{C_\delta\}_{\delta=1}^{6}$.
+Utilizando as Equações~\ref{eq:part}, estes critérios compostos $C_\delta$, com $\delta$ inteiro no intervalo $1\leq\delta<6$ podem ser descritos como:
 
-\begin{itemize}
-	\item Exclusivist criterion $C_1$:  vertices are only classified if the class is the same according to all metrics. In this case, vertices classified (usually) do not reach 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
-	\item Inclusivist criterion $C_2$: a vertex has the class given by any of the metrics. Therefore, a vertex may belong to more than one class, and the total number of members may exceed 100\%, which is indicated by a black line in Figure~\ref{fig:sectIL}.
-	\item Exclusivist cascade $C_3$: vertices are only classified as hubs if they are hubs according to all metrics. Intermediary are the vertices classified either as intermediary or hubs with respect to all metrics. The remaining vertices are regarded as peripheral.
-	\item Inclusivist cascade $C_4$: vertices are hubs if they are classified as so according to any of the metrics. The remaining vertices are classified as intermediary if they belong to this category for any of the metrics. Peripheral vertices will then be those which were not classified as hub or intermediary with any of the metrics. 
-	\item Exclusivist externals $C_5$: vertices are only hubs if they are classified as such according to all the metrics. The remaining vertices are classified as peripheral if they fall into the periphery or hub classes by any metric. The rest of the nodes are classified as intermediary.
-	\item Inclusivist externals $C_6$: hubs are vertices classified as hubs according to any metric. The remaining vertices will be peripheral if they are classified as such according to any metric. The rest of the vertices will be intermediary vertices.
-\end{itemize}
-
-Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$ integer in the interval $1<\delta<6$ can be described as:
-
-%\begin{alignat}{3}
 \begin{equation}
 	\begin{split}
 		%\begin{multline}
@@ -884,12 +930,9 @@ Using equations~\ref{eq:part}, these compound criteria $C_\delta$, with $\delta$
 		%\end{multline}
 	\end{split}
 \end{equation}
-%\end{alignat}
-
-The simplification of all the compound possibilities to the small set listed above can be formalized in strict mathematical terms, but this was considered out of the scope for current interests. It is worth noting that the exclusivist cascade is the same sectioning of an inclusivist cascade from periphery to hubs, but with inverted order of sectors precedence. These compound criteria can be used to examine network sections considering all degrees and strengths and are specially useful in the case of a low number of messages, such as in Section~\ref{si:frac} of the Supporting Information.
 
 
-
+No artigo~\cite{timeS}, os critérios $C_1$, $C_3$ e $C_5$ foram chamados exclusivistas, os critérios $C_3$ e $C_4$ de cascata e os critérios $C_5$ e $C_6$ de externos. Note que uma cascata exclusivista $C_3$ é a mesma classificação que uma cascata invertida (considera-se dos periféricos aos hubs) e inclusivista. Estes critérios compostos são especialmente úteis para observar estruturas com poucos participantes ou fruto de pouca atividade (veja as figuras do documento de Supporting Information de~\cite{timeS}).
 
 \section{Média e desvio do PCA ao longo do tempo}
 A Análise de Componentes Principais (PCA é a sigla consagrada, do inglês Principal Component Analysis) foi usada para observar a estabilidade
