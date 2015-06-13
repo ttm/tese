@@ -964,7 +964,7 @@ Em~\cite{timeS}, em especial, foram feitas médias e desvios das constribuiçõe
 a média $\mu_{V'}[j,k]$ e desvio $\sigma_{V'}[j,k]$ 
 da medida j na componente principal k,
 e a média $\mu_{D'}[k]$ e desvio $\sigma_{D'}[k]$ da 
-contribuição da componente k na dispersão do sistema:
+contribuição da componente $k$ na dispersão do sistema:
 
 \begin{align}\label{eq:pca}
 \mu_{V'}[j,k]   &=\frac{\sum_l^L V'[j,k,l]}{L}\nonumber\\
@@ -978,56 +978,67 @@ uma primeira pista sobre os padrões. Isso é feito com associações simples: v
 valores negativos com módulo grande indicam correlação negativa (inversamente proporcional).
 
 \subsection{Medidas consideradas e acrescentadas}
-The topology of the networks was studied using Principal Component Analysis (PCA~\cite{pca}) with a small selection of the most basic and fundamental measurements for each vertex, as follows:
+A topologia das rede sestudas foram estudadas utilizando PCA~\cite{pca}
+com uma pequena seleção das medidas mais básicas e fundamentais de cada vértice. Formalmente, sejam $i$, $j$ vértices e $e_{ij}$ uma aresta de $j$ para $i$ (ou $j\rightarrow i$) e $w_{ij}$ seu peso. Então:
 
 \begin{itemize}
-	\item Degree     $k_i$: number of edges linked to vertex $i$.
-	\item In-degree  $k_i^{in}$: number of edges ending at vertex $i$.
-	\item Out-degree $k_i^{out}$: number of edges departing from vertex $i$.
-	\item Strength $s$: sum of weights of all edges linked to vertex $i$.
-	\item In-strength $s_i^{in}$: sum of weights of all edges ending at vertex $i$.
-	\item Out-strength $s_i^{out}$: sum of weights of all edges departing from vertex $i$.
-	\item Clustering coefficient $cc_i$: fraction of pairs of neighbors of $i$ that are linked.  The standard clustering coefficient for undirected graphs was used.
-	\item Betweenness centrality $bt_i$: fraction of geodesics that contain vertex $i$. The betweenness centrality index considered directions and weight, as specified in~\cite{faster}.
+	\item Grau $k_i=\sum_j (e_{i,j}+e_{j,i})$: número de arestas conectadas a $i$.
+	\item Grau de entrada $k_i^{in}=\sum_j e_{i,j}$: número de arestas que terminam no vértice $i$.
+	\item Grau de saída $k_i^{out}=\sum_j e_{j,i}$: número de arestas que partem do vértice $i$.
+	\item Força $s=\sum_j (w_{i,j}+w_{j,i})$: soma dos pesos de todas as arestas conectadas ao vértice $i$.
+	\item Força de entrada $s_i^{in}=\sum_j w_{i,j}$: soma dos pesos de todas as arestas que terminam no vértice $i$.
+	\item Força de saída $s_i^{out}$: sima dos pesos de todas as arestas que partem do vértice $i$.
+	\item Coeficiente de clusterização $cc_i=\frac{\sum e_{j_1 j_2}}{\binom{k_i}{2}}$: fração de pares de vizinhos $j_1$, $j_2$ de $i$ que são conectados. A medida usual para grafos não direcionados foi usada.
+\item Intermediação (betweenness centrality) $bt_i=\frac{\Delta_i}{\Delta}$: fração entre o número $\Delta_i$ de geodésicas entre cada par de vértices da rede que contém o vértice $i$ e $\Delta$, o número total de geodésicas entre cada par de vértices da rede.
+	A intermediação foi calculada considerando direções e peso, como especificado em~\cite{faster}.
 \end{itemize}
 
-In order to capture symmetries in the activity of participants, the following metrics were introduced for a vertex $i$: 
+Para apreender as simetrias das atividades dos participantes, as
+seguintes métricas foram introduzidas para o vértice $i$:
 
 \begin{itemize}
-	\item Asymmetry: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
-	\item Mean of asymmetry of edges: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$, where $e_{xy}$ is 1 if there is an edge from $x$ to $y$, and $0$ otherwise. $J_i$ is the set of neighbors of vertex $i$, and $|J_i|=k_i$ is the number of neighbors of vertex $i$.
-	\item Standard deviation of asymmetry of edges: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
-	\item Disequilibrium: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
-	\item Mean of disequilibrium of edges: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, where $w_{xy}$ is the weight of edge $x\rightarrow y$ and zero if there is no such edge.
-	\item Standard deviation of disequilibrium of edges: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
+	\item Assimetria: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
+	\item Média da assimetria das arestas: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$, onde $e_{xy}$ é 1 se houver aresta de $x$ para $y$, e $0$ caso contrário. $J_i$ é o conjunto de vizinhos do vértice $i$, e $|J_i|=k_i$ é o número de vizinhos do vértice $i$.
+	\item Desvio padrão da assimetria das arestas: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
+	\item Desequilíbrio: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
+	\item Média do desequilíbrio das arestas: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, onde $w_{xy}$ é o peso da aresta $x\rightarrow y$ e zero se não houver tal aresta.
+	\item Desvio padrão do desequilíbrio das arestas: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
 \end{itemize}
 
 \section{Teste de Kolmogorov-Smirnoff para os textos produzidos por cada setor}
 
-Be $F_{1,n}$ and $F_{2,n'}$ two empirical distribution functions, where $n$ and $n'$ are the number of observations on each sample. The two-sample Kolmogorov-Smirnov test rejects the null hypothesis if:
+Sejam $F_{1,n}$ e $F_{2,n'}$ duas distribuições cumulativas empíricas onde $n$ e $n'$ são o número de observações em cada amostragem.
+O teste de Kolmogorov-Smirnov de amostragem dupla 
+rejeita a hipótese nula se:
 \begin{equation}\label{eq:ks}
 D_{n,n'} > c(\alpha)\sqrt{\frac{n+n'}{nn'}}
 \end{equation}
 
-where $D_{n,n'}=sup_x[F_{1,n}-F_{2,n'}]$ and $c(\alpha)$ is given for each level of $\alpha$:
+onde $D_{n,n'}=sup_x[F_{1,n}-F_{2,n'}]$ e $c(\alpha)$ é dado para cada $\alpha$ segundo a Tabela~\ref{tab:kol}:
 
-\begin{table}[H]
+\begin{table}[!h]
 \centering
+\caption{Relação entre $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov}\label{tab:kol}
 \begin{tabular}{|l||c|c|c|c|c|c|}\hline
 $\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
 $c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
 \end{tabular}
 \end{table}
 
+
+
 \subsection{Adaptação}
-We need to compare empirical distribution functions, so $D_{n,n'}$ is given, as are $n$ and $n'$. Therefore, as all terms in equation~\ref{eq:ks} are positive and $c(\alpha)$ can be isolated:
+
+Para alguns dos resultados, 
+utilizamos $c(\alpha)$ como pista sobre
+o quão diferentes são pares de distribuições empíricas.
+São calculados $D_{n,n'}$, enquanto $n$ e $n'$ são dados.
+Assim, todos os termos da Equação~\ref{eq:ks} são positivos
+e $c(\alpha)$ pode ser isolado:
 
 \begin{equation}\label{eq:ks2}
 c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{equation}
-
-Tables~\ref{tab:kolSub}-\ref{tab:kolPctInter} are populated with values for $c'(\alpha)$. When $c'(\alpha)$ is high, low values of $\alpha$ are possible for the test to reject the null hypothesis. Therefore, when $c'(\alpha)$ is greater than $\approx 1.7$, it is reasonable to assume that $F_{1,n}$ and $F_{2,n'}$ differ.
-
 
 %\section{Audiovisualization of data}
 \section{Audiovisualização de dados}
@@ -1059,8 +1070,13 @@ acessar dados relacionais e escrever triplas RDF.
 
 \chapter{Resultados}
 %\section{Time stability in human interaction networks}
-\section{Estabilidade temporal em redes de interação humana}\label{sec:timeS}
+\section{Estabilidade temporal e diferenciação textual em redes de interação humana}\label{sec:timeS}
 Explicitados em~\cite{timeS}.
+
+
+Tables~\ref{tab:kolSub}-\ref{tab:kolPctInter} are populated with values for $c'(\alpha)$. When $c'(\alpha)$ is high, low values of $\alpha$ are possible for the test to reject the null hypothesis. Therefore, when $c'(\alpha)$ is greater than $\approx 1.7$, it is reasonable to assume that $F_{1,n}$ and $F_{2,n'}$ differ.
+
+
 \section{Criação da nuvem brasileira de dados participativos}
 %\subsection{RDF data conversion of data into linked data}
 Primeiras ontologias, aplicações, dados, publicações, etc.
