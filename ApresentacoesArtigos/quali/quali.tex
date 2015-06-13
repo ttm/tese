@@ -339,7 +339,8 @@
 \addvspace{4.0cm}
 
 \begin{center}
-\Huge{Complex networks for the participant}
+%\Huge{Complex networks for the participant}
+\Huge{Redes complexas para o participante}
 \end{center}
 
 \addvspace{3.0cm}
@@ -352,7 +353,8 @@ Monografia apresentada ao Programa de Pós-Graduação em Física
 do Instituto de Física de São Carlos da Universidade de São Paulo, para o Exame de Qualifica\c c\~ao 
 como parte dos requisitos para obten\c c\~ao do t\'itulo de Doutor em Ci\^encias.\\
 
-Área de concentração: Física Básica
+Área de concentração: Física Aplicada
+Opção: Física Computacional
 
 Orientador: Prof. Dr. Osvaldo Novais de Oliveira Jr.
 %Monograph presented to the Physics Graduate Program of the
@@ -682,21 +684,21 @@ na observação de propriedades gerais, outras fontes
 foram analisadas:
 
 \begin{itemize}
-	\item Redes do Facebook: 8 são usadas como referência em~\cite{timeS}, mas dezenas, talvez algumas centenas, foram observadas nos experimentos da Seção~\ref{sec:exp}.
-	\item milhares de tweets (talvez alguns milhões), dados de portais
- 	\item mecanismos participativos como o Participa.br, Cidade Democrática e o AA.
+	\item Redes de amizade e interação do Facebook. 8 são usadas como referência em~\cite{timeS}, mas dezenas, talvez algumas centenas, foram observadas nos experimentos da Seção~\ref{sec:exp}.
+	\item Milhares de tweets (talvez alguns milhões), geralmente vinculados à alguma \emph{hashtag}. Em especial, a rede de retweets de 22 mil tweets com a hashtag \#arenaNETmundial, foi analizada em~\cite{timeS}.
+	\item Mecanismos participativos como o Participa.br, Cidade Democrática e o AA. As redes de amizade e de interação do Participa.br foram analizadas em~\cite{timeS}.
 \end{itemize}
 
-\section{Minhas próprias redes sociais}
-Considerações sobre o uso de minhas anotações para
-pesquisa sobre mim e meu mundo.
-
 \chapter{Métodos}
-\section{Estatística circular}
-Messages were counted along time with respect to seconds, minutes, hours, days of the week, days of the month, and months of the year. This resulted in histograms from which patterns could be drawn. The ratio $\frac{b_h}{b_l}$ between the highest and lowest incidences on the histograms served as a hint of how close the observed distribution is to a uniform distribution.
+\section{Estatística temporal e circular}
 
-The average and the dispersion were taken using circular statistics, in which each $measurement$ (data point) is represented as a complex number with modulus equal to one, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, where $\theta=measurement\frac{2\pi}{period}$. The moments $m_n$, lengths of moments $R_n$, mean angle $\theta_\mu$, and rescaled mean angle $\theta_\mu'$ are defined as:
+Para observação de padrões temporais, foram consideradas escalas diferentes.
+Em cada escala, de segundos e meses, foram construídos histogramas de atividade
+e feitas algumas medidas de estatística circular.
+A fração $\frac{b_h}{b_l}$ entre a maior $b_h $ e a menor $b_l$ incidência nos histogramas
+serviram como pista sobre quão uniforme são as distribuições observadas.
 
+Considere cada $ medida $ (dado pontual) como um número complexo com módulo 1, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, onde $\theta= medida \frac{2\pi}{periodo}$. Os momentos $m_n$, tamanhos dos momentos $R_n$, ângulo médio $\theta_\mu$, e o ângulo médio reescalado $\theta_\mu'$ são definidos assim:
 \begin{align}\label{eq:cmom}
 	m_n&=\frac{1}{N}\sum_{i=1}^N z_i^n \nonumber\\
 	R_n&=|m_n|\\
@@ -704,7 +706,8 @@ The average and the dispersion were taken using circular statistics, in which ea
 	\theta_\mu'&=\frac{period}{2\pi} \theta_\mu \nonumber
 \end{align}
 
-$\theta_\mu'$ is used as the measure of location. Dispersion is measured using the circular variance $Var(z)$, the circular standard deviation $S(z)$, and the circular dispersion $\delta(z)$:
+$\theta_\mu'$ é usado como medida de localização. A dispersão é medida usando a variância circular $Var(z)$, 
+o desvio padrão circular $S(z)$, e a dispersão circular $\delta(z)$:
 
 \begin{align}\label{eq:cmd}
 	Var(z)&=1 - R_1 \nonumber\\
@@ -712,12 +715,28 @@ $\theta_\mu'$ is used as the measure of location. Dispersion is measured using t
 	\delta(z)&=\frac{1-R_2}{2 R_1^2} \nonumber
 \end{align}
 
-As expected, a positive correlation was found in all $Var(z)$, $S(z)$ and $\delta(z)$ dispersion measures, as can be noticed in Section~\ref{si:circ} of the Supporting Information, and $\delta(z)$ was preferred in the discussion of results.
+Como esperado, há uma correlação positiva entre $Var(z)$, $S(z)$ e $\delta(z)$,
+como pode ser notado nas informações de suporte de~\cite{timeS}.
+A medida $\delta(z)$ foi preferida na discussão dos resultados.
 
 \subsection{Formação das redes de interação}\label{sec:intNet}
-Interaction networks can be modeled both weighted or unweighted, both directed or undirected~\cite{bird,newmanCommunityDirected,newmanCommunity2013}.
-Networks in this article are directed and weighted, the more informative of trivial possibilities, i.e. we did not investigate directed unweighted, undirected weighted, and undirected unweighted representations of the interaction networks. 
-The networks were obtained as follows: a direct response from participant B to a message from participant A yields an edge from A to B, as information went from A to B. The reasoning is: if B wrote a response to a message from A, he/she read what A wrote and formulated a response, so B assimilated information from A, thus $A \rightarrow B$. Inverting edge direction yields the status network: B read the message and considered what A wrote worth responding, giving status to A, thus $B\rightarrow A$. This article uses the information network as described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, one is added to the edge weight. Selfloops were regarded as non-informative and discarded. These human social interaction networks are reported in the literature as exhibiting scale-free and small world properties, as expected for (some) social networks~\cite{bird,newmanBook}.
+Redes de interação podem ser modeladas tanto com quanto sem peso, tanto dirigida quando não dirigida~\cite{bird,newmanCommunityDirected,newmanCommunity2013,newmanBook}.
+Neste trabalho, quando possível, consideramos redes dirigidas e com peso, a mais informativa das possibilidades.
+Nestes casos, desconsideramos as versões dirigidas sem peso, não dirigidas com peso e não dirigidas e sem peso.
+
+Em geral, as redes de interação são obtidas da seguinte forma:
+uma reação direta do participante B a uma mensagem do participante A implica em uma aresta de A para B,
+representando a informação que foi de A para B.
+O raciocínio é: se B reagiu
+a uma mensagem de A, ele/ela leu o que A escreveu e formulou uma reação, portanto B
+assimilou informação de A, assim $A \rightarrow B$.
+A inversão da direção da aresta produz a rede de status: B leu a mensagem e considerou
+o que A escreveu digno de resposta, dando status para A, portanto $B \rightarrow A$.
+Neste trabalho, as redes de interação são dirigida conforme o fluxo de informação, $A \rightarrow B$.
+A Figura~\ref{formationNetwork} expõe esta formação. Maiores detalhes são: 
+
+
+Inverting edge direction yields the status network: B read the message and considered what A wrote worth responding, giving status to A, thus $B\rightarrow A$. This article uses the information network as described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, one is added to the edge weight. Selfloops were regarded as non-informative and discarded. These human social interaction networks are reported in the literature as exhibiting scale-free and small world properties, as expected for (some) social networks~\cite{bird,newmanBook}..
 
 \begin{figure}[!h]
 	\centering
@@ -730,6 +749,7 @@ Edges can be created from all antecedent message authors on the message-response
 We only linked the immediate antecedent to the new message author, both for simplicity and for the valid objection that in adding two edges, $x\rightarrow y$ and $y\rightarrow z$, there is also a weaker connection between $x$ and $z$. Potential interpretations for this weaker connection are: double length, half weight or with one more ``obstacles''. This suggests the adequacy of centrality measurements to account for the connectivity with all nodes, such as betweenness centrality, eigenvector centrality and accessibility~\cite{luMeasures,access}.
 
 
+% explicitar que a regra de formação não é só para mensagens de email
 
 \section{Seccionamento de Erdös}
 In scale-free networks, the peripheral, intermediary and hubs sectors can be derived from a comparison with an Erd\"os-R\'enyi network with the same number of edges and vertices~\cite{3setores}, as depicted in Figure~\ref{fig:setores}. We shall refer to this procedure as \emph{Erd\"os sectioning}, with the resulting sectors being referred to as \emph{Erd\"os sectors} or \emph{primitive sectors}.
@@ -952,7 +972,7 @@ Como descrito no produto 4 PNUD. Repassar caracterização básica e direcionar 
 Scale free as the consequence of $T^2$ signal, fractal, constant, with three primitive parts and greater specialization. Gradus ad Parnassum.
 
 %\chapter{Finished and planed tasks, chronogram}
-\chapter{Afazeres finalizados, planejados e prontos; cronograma}
+\chapter{Afazeres e cronograma}
 % Colocar tabela com os comparativos
 % Referenciar para complementos no texto.
 \section{Experimentos}\label{sec:exp}
