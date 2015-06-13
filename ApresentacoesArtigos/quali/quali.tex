@@ -936,8 +936,46 @@ No artigo~\cite{timeS}, os critérios $C_1$, $C_3$ e $C_5$ foram chamados exclus
 
 \section{Média e desvio do PCA ao longo do tempo}
 A Análise de Componentes Principais (PCA é a sigla consagrada, do inglês Principal Component Analysis) foi usada para observar a estabilidade
-na formação das componentes. Mais especificamente: 1) quais as medidas que contribuiem para cada componente e em que medida;
+na formação das componentes principais.
+A PCA é bastante estabelecida e bem documentada
+e foi usado para saber: 
+1) quais as medidas que contribuiem para cada componente e em que proporção;
 2) quanto da dispersão está concentrada em cada componente.
+
+Ou seja, foram analizados os autovetores e autovalores das matrizes
+de vértices e suas medidas da seguinte forma: seja $\mathbf{X}=\{X[i,j]\}$
+a matriz de todos os vértices $i$ e respectivos valores de cada medida $j$, 
+$\mu_X [j]=\frac{\sum_j X[j]}{J}$ a média da métrica $j$, 
+$\sigma_X [j]=\sqrt{\frac{(X[j]-\mu_X [j])^2}{J}}$ o desvio padrão da métrica $j$,
+e $\mathbf{X'}={\frac{X[i,j]-\mu_X[j]}{\sigma_X[j]}}$ a matriz com \emph{z-score} de cada métrica $j$ de de $\mathbf{X}$ em cada coluna. Seja $\mathbf{V}=\{V[j,k]\}$ a matriz $JxJ$ de autovetores da matriz $\mathbf{C}$ de covariância
+de $\mathbf{X'}$, um autovetor por coluna.
+Cada autovetor combina as medidas originais em uma componente principal, portanto, basta observar 
+$V'[j,k]=100*\frac{|V[j,k]|}{\sum_{j'} |V[j',k]|}$
+para saber com que percentagem a medida $j$ contribuiu
+para a componente principal $k$.
+Com o vetor de $k$ autovalores $D[K]$,
+basta observar $D'[k]=100*\frac{D[k]}{\sum_{k'}D[k']}$ para saber
+a percentagem da dispersão pela qual a componente principal é responsável.
+Com os autovalores k ordenados de forma decrescente, 
+em geral basta observar os primeiros três autovalores e respectivos
+autovetores em percentagens $\{(V'[j,k],\;D'[k])\}$, pois em geral
+já revelam padrões suficientes para uma boa análise e somam entre 60 e 95\% da dispersão de todo o sistema.
+Em~\cite{timeS}, em especial, foram feitas médias e desvios das constribuições de cada componente para a dispersão e das medidas em cada componente. Ou seja, dadas $L$ observações $l$, cada uma com $k$ pares de autovalores e autovetores, são observadas, para cada medida,
+a média $\mu_{V'}[j,k]$ e desvio $\sigma_{V'}[j,k]$ 
+da medida j na componente principal k,
+e a média $\mu_{D'}[k]$ e desvio $\sigma_{D'}[k]$ da 
+contribuição da componente k na dispersão do sistema:
+
+\begin{align}\label{eq:pca}
+\mu_{V'}[j,k]   &=\frac{\sum_l^L V'[j,k,l]}{L}\nonumber\\
+\sigma_{V'}[j,k]&=\sqrt{\frac{(\mu_{V'}-V'[j,k,l])^2}{L}}\\\nonumber
+\mu_{D'}[k]&=\frac{\sum_l^L D'[k,l]}{L}\\\nonumber
+\sigma_{D'}[k]&=\sqrt{\frac{(\mu_{D'}-D'[k,l])^2}{L}}
+\end{align}
+
+A matriz de covariância $\mathbf{C}$ também é observada diretamente para
+uma primeira pista sobre os padrões. Isso é feito com associações simples: valores absolutos pequenos indicam baixa correlação (a princípio independência); valores altos indicam correlação positiva (diretamente proporcional);
+valores negativos com módulo grande indicam correlação negativa (inversamente proporcional).
 
 \subsection{Medidas consideradas e acrescentadas}
 The topology of the networks was studied using Principal Component Analysis (PCA~\cite{pca}) with a small selection of the most basic and fundamental measurements for each vertex, as follows:
@@ -1021,7 +1059,7 @@ acessar dados relacionais e escrever triplas RDF.
 
 \chapter{Resultados}
 %\section{Time stability in human interaction networks}
-\section{Estabilidade temporal em redes de interação humana}
+\section{Estabilidade temporal em redes de interação humana}\label{sec:timeS}
 Explicitados em~\cite{timeS}.
 \section{Criação da nuvem brasileira de dados participativos}
 %\subsection{RDF data conversion of data into linked data}
