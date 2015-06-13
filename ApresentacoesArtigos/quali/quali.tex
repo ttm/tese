@@ -1040,33 +1040,91 @@ e $c(\alpha)$ pode ser isolado:
 c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{equation}
 
-%\section{Audiovisualization of data}
 \section{Audiovisualização de dados}
+Redes foram visualizadas com imagens, videos e engenhocas online para esta pesquisa~\cite{animacoes,galGMANE,appGMANE}. Também foram sonificadas, em especial como faceta auditiva de animações abstratas~\cite{preludio,4hubs,gmane,social}.
+Tais ``audiovisualizações'' foram cruciais para guiar a pesquisa para
+as características mais importantes das redes de evolução.
+Além disso, os tamanhos relativos dos três setores de Erdös foram visualizados como linhas temporais.
+A visualização da estrutura em rede foi especialmente útil na inspeção
+dos dados e estruturas das redes de email.
 
-Networks were visualized with animations, image galleries and online gadgets developed specifically for this research~\cite{animacoes,galGMANE,appGMANE}. Such visualizations were crucial to guide research into the most important features of network evolution. Furthermore, the size of the three Erd\"os sectors could be visualized in a timeline fashion. Visualization of network structure was especially useful in the inspection of data and derived structures from the email lists.
+\section{Considerações tipológicas e humanísticas}
+As redes estudadas são constituídos de seres humanos.
+Quando há classificação envolvida, sejam dos agentes
+ou dos sistemas em si, reflexões humanísticas são pertinentes, como as disparadas pelas perguntas:
 
-%\section{Typological considerations}
-\section{Considerações tipológicas}
-Por enquanto, isso para nós quer dizer:
 \begin{itemize}
-	\item Consideração sobre o potencial estigmatizante da classificação.
-	\item Considerações sobre o indivíduo ou a rede que é classificada, i.e. recebe um tipo.
+	\item Qual o potencial estigmatizante da classificação?
+	\item O que mais sabemos sobre o indivíduo ou a rede que é classificada, ou seja, é considerada(o) de um tipo?
+	\item Quais dados posso usar sem desviar a atenção para leis
+		e processos de comitês de ética?
+	\item Qual a melhor forma de proceder com os dados e conhecimentos relacionados?
 \end{itemize}
 
+Todas estas questões, e muitas outras, estão em constante amadurecimento com grupos de pesquisa~\cite{Nexus}, leituras, e contatos individuais com outros pesquisadores~\cite{massimoTexto,massimoEncontro}.
+
 \section{Web semântica}
+
 Para a formalização de conceitualizações, e
 para formatos de dados apropriados para armazenamento,
 compartilhamento e referência,
-foram adotadas as recomendações de linked data
+foram adotadas as recomendações de dados ligados / web semântica
 da W3C~\cite{rdf,owl,rdfs}.
+De forma bastante resumida, o arcabouço utilizado pode
+ser viso como uma forma de formalizar conceitos (classes), relações
+entre conceitos (propriedades) e instâncias dos conceitos (indivíduos).
+As informações são expressas de forma semi-estruturada em RDF:
+triplas ``sujeito predicado objeto'',
+com o sujeito sempre uma classe, o predicado sempre uma propriedade,
+e o objeto sempre uma classe ou dado. As propriedades podem ter aspectos
+específicos, chamados ``axiomas de propriedade''. As classes podem ser restritas a possuírem relações arbitrárias, chamadas ``restrições de classe''.
+É uma recomendação da W3C e o padrão acadêmico para dados ligados, i.e. para representação na web semântica.
 
-\subsection{A construção de ontologias OWL}
-Foram construídas ontologias e vocabulários a partir de entrevistas (OBS e VBS principalmente). Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPA dados e OCD).
+Utilidades da tecnologia incluem:
+\begin{itemize}
+	\item inferência por máquina através de especificações ontológicas. 
+	\item Interconexão de dados de fontes (bases de dados) diferentes.
+	\item Organização de conhecimento específico para consideração cuidadosa, seja individual ou em grupo.
+\end{itemize}
+
+As ontologias são chave dentre as tecnologias de web semântica.
+Uma ontologia é geralmente definida como uma ``especificação de
+uma conceitualização'', e a recomendação é o uso do padrão OWL.
+Os vocabulários são coleções de termos e metadados, como definição,
+e a recomendação é o uso do padrão SKOS.
+O estado da arte de web semântica tem apresentado avanços,
+por exemplo, é capaz de realizar inferências
+úteis, especialmente para buscas. Por outro lado, é uma tecnologia
+complicada e com algumas dificuldades de implementação.
+Por exemplo, um conceito SKOS é um indivíduo, e uma classe OWL,
+se identificado com um conceito SKOS é, por consequência um
+indivíduo. Neste caso, os recursos de inferência por máquina 
+ficam limitados
+dada a complexidade da especificação.
+Dito de outra forma, caso na especificação conste uma classe
+
+\subsection{A construção de ontologias OWL e vocabulários SKOS}
+
+Para formalizar conceitualizações referentes às estruturas sociais,
+mais especificamente relacionadas à participação social,
+foram construídas ontologias OWL e vocabulários SKOS a partir de entrevistas
+com especialistas: acadêmicos e gestores públicos.
+Também foram feitas ontologias e vocabulários a partir de bancos de dados,
+decretos presidenciais e outras documentações.
+O processo  consistiu sempre que possível na coleta de informações,
+formalização dos conceitos e devolutiva aos entrevistados,
+com figuras e outras documentações, até que não tivessem
+mais contribuições.
 
 \subsection{A triplificação de dados relacionais}
 Para disponibilização e uso de dados de diferentes fontes, foram
 feitos pequenos programas de computador (scripts) para
-acessar dados relacionais e escrever triplas RDF.
+acessar dados relacionais e escrever triplas RDF. Estes scripts
+criam conceitos novos e os vincula às instâncias dos dados.
+Na sequência, acessa as ontologias pertinentes, salva
+uma versão com os dados e ontologias, e uma versão
+com os dados, as ontologias e as triplas resultantes da inferência.
+
 
 \chapter{Resultados}
 %\section{Time stability in human interaction networks}
@@ -1088,6 +1146,14 @@ Roteiros de triplificação do Participa.br, Cidade Democrática, AA.
 Scripts para síntese, seja livre ou a partir dos dados.
 \subsection{Ontologias e dados publicados}
 datahub.io, MP, arXiv.
+Além disso, foi feita uma oficina, na Secretaria-Geral da
+Presidência da República, para explicitar a utilidade
+destas formalizações semânticas e coletar informações sobre
+diversos mecanismos e instâncias de participação social previstos
+em lei e praticados.
+
+(OBS e VBS principalmente). Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPA dados e OCD).
+
 
 \section{Aproveitamento}
 \subsection{Procedimentos de percolação social}
@@ -1098,6 +1164,8 @@ Experimentos paradigmáticos:
 	\item Crowdfunding para a pesquisa de redes (Vaca do fim do mundo).
 	\item Escrita para os de maior betweenness e de maior closeness, mostrar que não bate para as listas.
 \end{itemize}
+
+
 
 \subsection{Sistemas de recomendação para o enriquecimento da navegação semântica de recursos}
 %\subsection{Understanding the social being}
