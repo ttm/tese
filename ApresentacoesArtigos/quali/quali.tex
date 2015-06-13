@@ -354,6 +354,7 @@ do Instituto de Física de São Carlos da Universidade de São Paulo, para o Exa
 como parte dos requisitos para obten\c c\~ao do t\'itulo de Doutor em Ci\^encias.\\
 
 Área de concentração: Física Aplicada
+
 Opção: Física Computacional
 
 Orientador: Prof. Dr. Osvaldo Novais de Oliveira Jr.
@@ -690,6 +691,30 @@ foram analisadas:
 \end{itemize}
 
 \chapter{Métodos}
+Para realização desta pesquisa, foram
+necessários métodos consagrados, adequações
+e variantes.
+Esta seção expõe uma seleção destes métodos,
+para organizar o conhecimento
+e exemplificar esta diversidade:
+\begin{itemize}
+	\item A Seção~\ref{sec:cir} expõe medidas simples
+de estatística circular, ou direcional.
+A contribuição neste caso é unicamente nos
+padrões encontrados, o método é bastante estabelecido.
+	\item A Seção~\ref{sec:intNet} expõe a síntese de redes
+		de interação. Talvez haja contribuição na síntese
+		do conceito de redes de interação, pois não 
+		encontramos (ainda) na literatura tal exposição
+		concisa. De qualquer forma, o conceito e o procedimento
+		para obtenção das redes a partir de dados é usual,
+		a exposição neste texto e no artigo~\cite{timeS} serve
+		principalmente ao intuito de formalização do
+		processo.
+	\item A Seção~\ref{sec:sec} é dedicada ao ``Seccionamento de Erdös'', para obtenção dos três setores básicos da rede, compostos por: hubs, intermediários e periféricos. O método parece não ter sido aplicado antes para este fim, e é resultado imediato da observação das caudas longas de dados reais contrastadas com a rede Erdös-Rényi~\cite{3setores}.
+\end{itemize}
+
+
 \section{Estatística temporal e circular}
 
 Para observação de padrões temporais, foram consideradas escalas diferentes.
@@ -733,26 +758,39 @@ assimilou informação de A, assim $A \rightarrow B$.
 A inversão da direção da aresta produz a rede de status: B leu a mensagem e considerou
 o que A escreveu digno de resposta, dando status para A, portanto $B \rightarrow A$.
 Neste trabalho, as redes de interação são dirigida conforme o fluxo de informação, $A \rightarrow B$.
-A Figura~\ref{formationNetwork} expõe esta formação. Maiores detalhes são: 
-
-
-Inverting edge direction yields the status network: B read the message and considered what A wrote worth responding, giving status to A, thus $B\rightarrow A$. This article uses the information network as described above and depicted in Figure~\ref{formationNetwork}. Edges in both directions are allowed. Each time an interaction occurs, one is added to the edge weight. Selfloops were regarded as non-informative and discarded. These human social interaction networks are reported in the literature as exhibiting scale-free and small world properties, as expected for (some) social networks~\cite{bird,newmanBook}..
+A Figura~\ref{formationNetwork} expõe esta formação. Maiores detalhes são:arestas em ambas as direções são consideradas distintas;
+selfloops são consideradas não informativas (para os interesses atuais) e descartadas;  
+a primeira interação $A\rightarrow B$ cria a aresta com peso um; 
+a cada nova interação $A\rightarrow B$ um é adicionado ao peso da aresta.
+Estas redes de interação humana constam na literatura como portadoras
+de propriedades livres de escala (e pequeno mundo), como esperado
+para (algumas) redes sociais~\cite{bird,newmanBook}.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figs/criaRede__}
-	\caption{Formation of interaction network from email messages. Each vertex represents a participant. A reply message from participant B to a message from participant A is regarded as evidence that B received information from A and yields a directed edge. Multiple messages add ``weight'' to a directed edge. Further details are given in Section~\ref{intNet}.}
+	\caption{A formação da rede de interação a partir
+		de mensagens e respostas.
+		Cada vértice representa um participante.
+		Uma resposta do participante B a uma
+		mensagem do participante A é considerada
+		evidência de que B recebeu informação de A,
+		representada então por uma aresta dirigida.
+		Múltiplas mensagens adicionam ``peso'' à
+		aresta dirigida. Maiores detalhes
+		estão na Seção~\ref{sec:intNet}}
 	\label{formationNetwork}
 \end{figure}
 
-Edges can be created from all antecedent message authors on the message-response thread to each message author.
-We only linked the immediate antecedent to the new message author, both for simplicity and for the valid objection that in adding two edges, $x\rightarrow y$ and $y\rightarrow z$, there is also a weaker connection between $x$ and $z$. Potential interpretations for this weaker connection are: double length, half weight or with one more ``obstacles''. This suggests the adequacy of centrality measurements to account for the connectivity with all nodes, such as betweenness centrality, eigenvector centrality and accessibility~\cite{luMeasures,access}.
+\section{Seccionamento de Erdös}\label{sec:sec}
+Em uma rede livre de escala, os setores periféricos, intermediários
+e de hubs podem ser observados através de uma comparação
+com uma rede de Erdös Rényi com o mesmo número de arestas e vértices~\cite{3setores}, como na Figura~\ref{fig:setores}.
+Referiremos-nos a este procedimento como \emph{seccionamento de Erdös},
+com os setores resultantes chamados \emph{setores de Erdös} (ou \emph{setores primitivos}, \emph{setores básicos} da rede).
 
+A distribuição de grau
 
-% explicitar que a regra de formação não é só para mensagens de email
-
-\section{Seccionamento de Erdös}
-In scale-free networks, the peripheral, intermediary and hubs sectors can be derived from a comparison with an Erd\"os-R\'enyi network with the same number of edges and vertices~\cite{3setores}, as depicted in Figure~\ref{fig:setores}. We shall refer to this procedure as \emph{Erd\"os sectioning}, with the resulting sectors being referred to as \emph{Erd\"os sectors} or \emph{primitive sectors}.
 
 The degree distribution $\widetilde{P}(k)$ of an ideal
 scale-free network $\mathcal{N}_f$ with $N$ vertices and $z$ edges has less
