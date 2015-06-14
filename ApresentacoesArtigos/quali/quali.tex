@@ -1186,7 +1186,11 @@ Ontologias OWL feitas neste trabalho:
 		\item OPP (Ontologia de Portais Participativos): esta ontologia foi pensada com a equipe do Participa.br e outros especialistas como esquema geral de portais participativos. Ontologia relativamente complexa, centrada em 3 classes: Participante, Comunidade, Mecanismo Participativo.
 		\item Ontologiaa (Ontologia do AA): é uma pequena ontologia para o minimalista AA (Autorregulação Algorítmica), um software para registrar e compartilhar processos intelectuais como para pesquisa e arte~\cite{paaper, ensaaio}.
 		\item OCD (Ontologia do Cidade Democrática): é uma ontologia extensa para o portal participativo Cidade Democrática, da sociedade civil. Dado o tamanho da ontologia, o processo de sua construção deu origem ao método de construção de ontologia OWL a partir dos dados, descrito na Seção~\ref{} e utilizado também para a construção da OPa (acima).
-		\item OBS (Ontologia da Biblioteca Social): Esta ontologia consiste na verdade em uma coleção de ontologias, uma para cada conceito que precisasse de uma abordagem dedicada, e uma para cada mecanismo ou instância de participação social prevista no Decreto Presidencial nº 8.243 de 23 de maio de 2014, conhecido como decreto da PNPS ou da Política Nacional de Participação Social. Esta ontologia também contou com entrevistas feitas diretamente para este trabalho, além da contribuição de uma oficina na Presidência da República com diversos gestores públicos e acadêmicos.
+		\item OBS (Ontologia da Biblioteca Social): Esta ontologia consiste na verdade em uma coleção de ontologias, uma para cada conceito que precisasse de uma abordagem dedicada, e uma para cada mecanismo ou instância de participação social prevista no Decreto Presidencial nº 8.243 de 23 de maio de 2014, conhecido como decreto da PNPS ou da Política Nacional de Participação Social. Esta ontologia também contou com entrevistas feitas diretamente para este trabalho, além da contribuição de uma oficina na na Secretaria-Geral da
+Presidência da República, para explicitar a utilidade
+destas formalizações semânticas e coletar informações sobre
+diversos mecanismos e instâncias de participação social previstos
+em lei e praticados.
 		\item VBS (Vocabulário da Biblioteca Social): este
 			vocabulário é uma adaptação (com complementos)
 			da OBS no formato
@@ -1197,7 +1201,7 @@ Ontologias OWL feitas neste trabalho:
 As ontologias são todas construídas através de scripts, com exceção da
 OPP, feita no Protegé.
 
-\subsection{Formatação de dados ligadaos a partir de dados relacionais}
+\subsection{Formatação de dados ligados a partir de dados relacionais}
 Três roteiros de conversão de dados foram feitos para conversão de dados relacionais em dados RDF enriquecidos semanticamente:
 \begin{itemize}
 	\item Triplificação do Participa.br: 
@@ -1218,23 +1222,31 @@ Três roteiros de conversão de dados foram feitos para conversão de dados rela
 		Esta foi a única triplificação feita depois da ontologia e não aproveitada para a construção da ontologia.
 \end{itemize}
 
-\subsection{Ontologias e dados publicados}
- Uma ontologia, que já estava rascunhada em instâncias
-online e abertas de participação social~\cite{opsCorais} foi
+\subsection{Escritos, ontologias e dados publicados}
+Artigo sobre a OPS~\cite{ops}. Produtos PNUD/ONU~\cite{pnud3,pnud4,pnud5}.
+Dados em RDF do Participa.br, Cidade
+Democrática e AA no Datahub.io~\cite{datahub}.
+Ontologias~\cite{opa,opp,ops,obs}. Vocabulários~\cite{vbs}.
+Scripts para síntese das ontologias e triplificação
+de dados~\cite{opa,ops,obs,partT,cdT,aaT}.
 
+\subsection{Método de construção de ontologias orientado aos dados}
+Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPA dados e OCD).
+Resumidaemente, o método consiste em: representar os dados de interesse como RDF; realizar buscas SparQL para construir ontologia trivial com as classes e propriedades encontradas; realizar buscas SparQL para inferir restrições de classe e axiomas de propriedade.
 
-
-datahub.io, MP, arXiv.
-Além disso, foi feita uma oficina, na Secretaria-Geral da
-Presidência da República, para explicitar a utilidade
-destas formalizações semânticas e coletar informações sobre
-diversos mecanismos e instâncias de participação social previstos
-em lei e praticados.
-
-(OBS e VBS principalmente). Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPA dados e OCD).
-
-\subsection{Aparato em software}
-Fuseki, pubby, pacotes, webprotege.
+\section{Aparato em software}
+Scripts para verificar as estabilidades topológicas e diferenciações textuais em redes humanas estão reunidos em um pacote oficial da linguagem Python~\cite{gmanePack}.
+Estão sendo feitos pacotes para organizar com os scripts todos
+de triplificação de dados, construção de ontologias e mineração das
+estruturas~\cite{participation, percolation}. 
+Os dados, classes e propriedades das
+ontologias e triplificações estão também disponíveis (em parte)
+através das próprias URIs, redirecionadas via purl.org
+para um servidor de pesquisa.
+Os dados estão em um endpoint SparQL, e scripts para a mineração
+destes dados estão disponíveis em interfaces web via um
+IPython Notebook. As ontologias estão também disponíveis
+na instalação do Webprotegé da Stanford.
 
 \section{Aproveitamento}
 \subsection{Procedimentos de percolação social}
