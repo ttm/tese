@@ -1335,47 +1335,52 @@ da navegação semântica. Esta recebeu até prova de conceito~\cite{pnud4}:
 		registro de potenciais utilidades para o participante.
 \end{itemize}
 
-%\subsection{Compreensão sobre as estruturas sociais}\label{sec:com}
-%Praticamente todos os resultados citados acima
-%são úteis para compreender as estruturas sociais e são
-%fruto desta tentativa.
-%Há a intenção de escrever uma introdução às redes complexas
-%e instruir o leitor através destes conhecimentos e tecnologias
-%para exploração de si próprio. Um esboço
-%consta em~\cite{gradus}.
-%
-%Em exemplo de fundamentação que parece não 
-%constar na literatura é a constatação de que
-%a propriedade livre de escala é consequência da distribuição
-%equânime de recursos pelos setores da rede. 
-%Para apreender este fato, considere uma quantidade $R$ de recursos.
-%Considere que para cada tamanho $T$, sejam contadadas as $\frac{R}{T}$ partes de tamanho T que cabem em R.
-%Teremos uma curva como exposta na Figura~\ref{fig:1T}.
-%
-%\begin{figure}[!h]
-%	\centering
-%	\includegraphics[width=0.5\textwidth]{figs/rt}
-%	\caption{A curva resultante da divisão de uma mesma quantidade
-%	R de recurso em $\frac{R}{T}$ partes de tamanho T.
-%        Utilizada para expor uma potencial causa da ubiquidade da
-%        propriedade livre de escala.}
-%	\label{fig:1T}
-%\end{figure}
-%
-%Por simplicidade, considere $R=1$ e 
-%$f=\frac{1}{T}$.
-%Segue que $log(f)=-1 log(T)$, e uma
-%reta descreve a relação entre $log(f)$
-%$log(T)$.
-%Considere que $f=\frac{1}{T}+\frac{1}{U}$.
-%Segue que $log(f)=-log(T.U)$. Se U=T, $log(f)=-2 log(T)$, e
-%$\gamma=2$ como previsto pela literatura.
-%Os recursos são alocados pelo sistema, por exemplo,
-%T tempo e U agentes. Ora, o tempo alocado
-%pelos é o tempo dos próprios agentes,
-%portante é razoável considerar T=U. 
-%Possíveis causas para a distorção do valor exato $\gamma=2$
-%são: propriedades fractais, recursos em número diferente, associações entre os recursos. 
+\subsection{Compreensão sobre as estruturas sociais}\label{sec:com}
+Praticamente todos os resultados citados acima
+são úteis para compreender as estruturas sociais e são
+fruto desta tentativa.
+Há a intenção de disponibilizar uma introdução às redes complexas
+através da instrumentalização do leitor com estes conhecimentos e tecnologias
+para exploração de si próprio. Um esboço
+consta em~\cite{gradus}.
+
+Um exemplo especial de fundamentação que parece não 
+constar na literatura é a constatação de que
+a propriedade livre de escala é consequência da distribuição
+equânime de recursos pelos setores da rede. 
+Para apreender este fato, considere uma quantidade $R$ de recursos.
+Considere que para cada tamanho $T$, sejam contadas as $\frac{R}{T}$ partes de tamanho T que cabem em R.
+Teremos uma curva como exposta na figura~\ref{fig:1t}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figs/rt}
+	\caption{A curva resultante da divisão de uma mesma quantidade
+	R de recurso em $\frac{R}{T}$ partes de tamanho T.
+        Utilizada para expor uma potencial causa da ubiquidade da
+        propriedade livre de escala.}
+	\label{fig:1T}
+\end{figure}
+
+Por simplicidade, considere $R=1$ e 
+Segue que $log(f)=-1 log(T) + C$, $C=log(R)$ uma constante
+arbitrária. Uma reta descreve a relação entre $log(f)$
+$log(T)$, como na Figura~\ref{fig:1t}.
+Os recursos são alocados pelo sistema de forma uniforme,
+pois $T\frac{R}{T}=R=constante$.
+
+Considere que $T=T_1 T_2$ 
+(e.g. recursos da rede=agentes x tempo de cada agente). 
+Neste caso,
+$f=\frac{R}{T_1 T_2}$ e
+segue que $log(f)=-log(T_1 T_2) +C$. Se $T_1=T_2$, 
+$log(f)=-2 log(T_1)$, e
+$\gamma=2$ como previsto pela literatura.
+No exemplo, o tempo alocado
+é o tempo dos próprios agentes,
+portante é razoável considerar $T_1=T_2$. 
+Possíveis causas para a distorção do valor exato $\gamma=2$
+são: propriedades fractais, recursos em número diferente, associações entre os recursos. 
 
 %\chapter{Finished and planed tasks, chronogram}
 \chapter{Afazeres e cronograma}
