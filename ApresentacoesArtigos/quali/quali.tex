@@ -1164,17 +1164,66 @@ com foco na potencial relação entre topologia, setor de Erdös e texto produzi
 		relacionadas ao tamanho das palavras parecem se conservar. Não foi dada uma explicação definitiva para este fenômeno, embora haja esperança de que consigamo explicações simples (o problema não parece difícil). Algumas destas medidas estão ao final de~\cite{rcText}, resultantes de somas cumulativas de diferencas de histogramas.
 \end{itemize}
 
+Estes resultados permearam várias outras frentes de
+de pesquisa e desenvolvimento tecnológico~\cite{prod1,prod2,prod3,prod4,prod5,ops,versinus}.
 
-\section{Criação da nuvem brasileira de dados participativos}
-%\subsection{RDF data conversion of data into linked data}
-Primeiras ontologias, aplicações, dados, publicações, etc.
-Produtos 3,4,5 e artigo sobre OPS.
-\subsection{Conversão de dados relacionais para RDF}
-Roteiros de triplificação do Participa.br, Cidade Democrática, AA.
+\section{Criação da nuvem brasileira de dados participativos ligados}
+Iniciada para formalizar os tipos de rede e participantes, e estruturas
+que pudessem formar, esta frente rapidamente se voltou para
+formalizações de conceitualizações referentes às estruturas
+e sistemáticas já em prática e previstos em lei.
+Dados também foram publicados, fazendo uso das ontologias
+feitas. Estes dados e ontologias foram em grande parte
+já publicados e estão em uso, mas a grande maioria não
+recebeu artigo científico.
+
 %\subsection{Published linked data and OWL ontologies}
 \subsection{Síntese de ontologias OWL}
-Scripts para síntese, seja livre ou a partir dos dados.
+Ontologias OWL feitas neste trabalho:
+\begin{itemize}
+		\item OPS (Ontologia de Participação Social): é uma ontologia fruto de diversos esforços da américa latina, principalmente do Brasil. Nesta pesquisa, revisamos a ontologia e disponibilizamos um código OWL em uso por instâncias diferentes da academia, Estado e sociedade civil.
+		\item OPa (Ontologia do Participa.br): esta é uma ontologia feita para e partir dos dados do Participa.br (Portal Federal de Participação Social, SG-PR).
+		\item OPP (Ontologia de Portais Participativos): esta ontologia foi pensada com a equipe do Participa.br e outros especialistas como esquema geral de portais participativos. Ontologia relativamente complexa, centrada em 3 classes: Participante, Comunidade, Mecanismo Participativo.
+		\item Ontologiaa (Ontologia do AA): é uma pequena ontologia para o minimalista AA (Autorregulação Algorítmica), um software para registrar e compartilhar processos intelectuais como para pesquisa e arte~\cite{paaper, ensaaio}.
+		\item OCD (Ontologia do Cidade Democrática): é uma ontologia extensa para o portal participativo Cidade Democrática, da sociedade civil. Dado o tamanho da ontologia, o processo de sua construção deu origem ao método de construção de ontologia OWL a partir dos dados, descrito na Seção~\ref{} e utilizado também para a construção da OPa (acima).
+		\item OBS (Ontologia da Biblioteca Social): Esta ontologia consiste na verdade em uma coleção de ontologias, uma para cada conceito que precisasse de uma abordagem dedicada, e uma para cada mecanismo ou instância de participação social prevista no Decreto Presidencial nº 8.243 de 23 de maio de 2014, conhecido como decreto da PNPS ou da Política Nacional de Participação Social. Esta ontologia também contou com entrevistas feitas diretamente para este trabalho, além da contribuição de uma oficina na Presidência da República com diversos gestores públicos e acadêmicos.
+		\item VBS (Vocabulário da Biblioteca Social): este
+			vocabulário é uma adaptação (com complementos)
+			da OBS no formato
+			de vocabulário, principalmente para permitir
+			uso junto ao DSPACE.
+\end{itemize}
+
+As ontologias são todas construídas através de scripts, com exceção da
+OPP, feita no Protegé.
+
+\subsection{Formatação de dados ligadaos a partir de dados relacionais}
+Três roteiros de conversão de dados foram feitos para conversão de dados relacionais em dados RDF enriquecidos semanticamente:
+\begin{itemize}
+	\item Triplificação do Participa.br: 
+		foi elaborado e disponibilizado um roteiro para formatação em RDF de dados relacionais do Participa.br (originalmente em PostgreSQL)~\cite{triplificaParticipa}. Estes dados foram depois usados, através de buscas SparQL, para auxiliar na construção da OPa~\cite{opaScript}.
+	\item Triplificação dos dados do Cidade Democrática: 
+		foi elaborado um roteiro para formatação em RDF de dados 
+		do Cidade Democrática (originalmente em MySQL). Estes
+		dados foram depois utilizados para auxiliar na construção
+		da OCD~\cite{ocdScript}.
+	\item Triplificação dos dados do AA:
+		foi elaborado um roteiro para formatação em RDF de
+		dados do AA encontrados em bancos de dado MySQL
+		e MongoDB, e em logs de IRC.
+		Esta triplificação é especialmente útil pela
+		simplicidade do AA, o que permite experimentar
+		abordagens diferentes e escolher a melhor, antes
+		de desenvolver ontologias e triplificações mais complicadas.
+		Esta foi a única triplificação feita depois da ontologia e não aproveitada para a construção da ontologia.
+\end{itemize}
+
 \subsection{Ontologias e dados publicados}
+ Uma ontologia, que já estava rascunhada em instâncias
+online e abertas de participação social~\cite{opsCorais} foi
+
+
+
 datahub.io, MP, arXiv.
 Além disso, foi feita uma oficina, na Secretaria-Geral da
 Presidência da República, para explicitar a utilidade
@@ -1184,6 +1233,8 @@ em lei e praticados.
 
 (OBS e VBS principalmente). Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPA dados e OCD).
 
+\subsection{Aparato em software}
+Fuseki, pubby, pacotes, webprotege.
 
 \section{Aproveitamento}
 \subsection{Procedimentos de percolação social}
@@ -1336,6 +1387,10 @@ e está faltando uma capacidade de apresentar isso para as revistas.
 Talvez por falta de equipe adequada para realizar o trabalho,
 talvez por falta de prática do doutorando na escrita e encaminhamento
 acadêmico.
+
+Há muitos trabalhos na bibliografia.
+Caso haja disponibilidade para visitar itens da literatura
+produzida, recomendamos, nesta mesma ordem,~\cite{timeS,pnud5,ensaioAA,gmane,fourHubs}.
 
 
 
