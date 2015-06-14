@@ -624,29 +624,31 @@ A literatura sobre análise de redes sociais (ARS, ou \emph{SNA} para \emph{Soci
 Uma consideração cuidadosa dos livros e artigos lidos para esta pesquisa estão na Seção~\ref{}. As seções a seguir (\ref{sec:jar} e~\ref{sec:misc})
 explicitam peculiaridades do jargão da área e considerações sobre as áreas secundárias.
 
-\section{Ambiguidades e sinonimos no jargão}\label{sec:jar}
+\section{Ambiguidades e sinônimos no jargão}\label{sec:jar}
 A área de redes complexas é recente e conflui com diversas 
 correntes científicas, como a física, a biologia e a sociologia.
 Portanto, possui termos ambiguos e sinònimos.
 
-Exemplos de ambiguidade e delimitações adotadas:
+Exemplos de ambiguidade, sinônimos e delimitações adotadas:
 \begin{itemize}
 	\item Os vértices mais conectados são, por definição, chamados hubs da rede. O vértice mais conectado é chamado hub da rede. No contexto do algoritmo HITS, o que é bem comum, estes significados mudam: os hubs são os que possuem mais arestas saindo (grau de saída); as autoridades recebem as arestas, ou são referenciados por vários hubs e outras entidades.
 	\item Há uma definição de centro e periferia com relação ao raio e diâmetro da rede~\cite{newman,networkX}.
 		Por extensão os intermediários podem ser considerados os que não são centro nem periferia.
 		Esta setorialização centro, intermediários e periferia gera frações que diferem do previsto pela literatura para as frações de hubs, intermediários e periféricos.
 		Um método apropriado para realizar esta setorialização da rede, com resultados estáveis e significativos, consta na Seção~\ref{sec:set}.
-	\item 
+	\item \emph{Aresta} e \emph{ligação} são usadas como sinônimos. \emph{Nó} e \emph{vértice} também. É comum o uso de outros termos, em geral coerentes com a aplicação, como \emph{agente}, \emph{ator} ou \emph{participante} para vértices de redes observadas em sistemas humanos.
 \end{itemize}
 
-
-
-
 \subsection{Processamento de linguagem natural, dados ligados, participação social}\label{sec:misc}
+Diversos títulos foram lidos sobre processamento de linguagem natural, mineração de texto,
+visualização de dados e web semântica. Estas áreas tem impacto sobre o que está feito, e sendo feito,
+e foram cursadas formalmente uma disciplina sobre cada uma para o doutorado.
+Seguem informações pontuais sobre cada área.
+
 Os termos processamento de linguagem natural (PLN) e mineração de
 texto (MT) podem em geral serem substituídos um pelo outro.
-O termo PLN é preferido pois os intuitos da pesquisa são muito mais
-próximos aos intuitos da área: compreender como a linguagem verbal está
+O termo PLN é preferido nesta pesquisa pois o intuito é mais confluente: 
+compreender como a linguagem verbal está
 sendo usada para significar.
 
 Os termos web semântica e dados ligados em geral também podem ser 
@@ -656,12 +658,22 @@ o segundo os dados referenciando-se. Principalmente na esfera
 acadêmica, a área é, salvo segunda ordem, sinônimo de dados em 
 RDF via XML ou Turtle, ontologias OWL e máquinas de inferència.
 
+A visualização de dados de grafos em evolução temporal é bastante
+incipiente. Os poucos casos da literatura foram visitados. As
+animações abstratas de redes em evolução, e as ``audiovisualizações''
+das redes, que disponibilizamos como parte desta pesquisa,
+são potencialmente contribuições na fronteira da visualização.
+Video, porém, não é o formato mais apreciado pela literatura
+de visualização de dados, que tende a qualificar as figuras
+bidimensionais como as mais apropriadas para a pesquisa
+científica.
+
 A participação social é a incorporação da própria sociedade nos 
 processos de governança da sociedade.
 Quase toda a participação social atual é indireta e presencial, 
-com a população fornecendo diretrizes e indicadores para o setor público.
-A transparência tem sido cada vez mais presente,
-e o norte de ``participação direta'' (participação direta 
+com a população fornecendo diretrizes, indicadores e acompanhamento
+para o setor público.
+A ``participação direta'' (participação direta 
 da sociedade civil na tomada de decisões pelo Estado)
 cada vez mais presente. 
 
@@ -1323,47 +1335,47 @@ da navegação semântica. Esta recebeu até prova de conceito~\cite{pnud4}:
 		registro de potenciais utilidades para o participante.
 \end{itemize}
 
-\subsection{Compreensão sobre as estruturas sociais}\label{sec:com}
-Praticamente todos os resultados citados acima
-são úteis para compreender as estruturas sociais e são
-fruto desta tentativa.
-Há a intenção de escrever uma introdução às redes complexas
-e instruir o leitor através destes conhecimentos e tecnologias
-para exploração de si próprio. Um esboço
-consta em~\cite{gradus}.
-
-Em exemplo de fundamentação que parece não 
-constar na literatura é a constatação de que
-a propriedade livre de escala é consequência da distribuição
-equânime de recursos pelos setores da rede. 
-Para apreender este fato, considere uma quantidade $R$ de recursos.
-Considere que para cada tamanho $T$, sejam contadadas as $\frac{R}{T}$ partes de tamanho T que cabem em R.
-Teremos uma curva como exposta na Figura~\ref{fig:1T}.
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{figs/rt}
-	\caption{A curva resultante da divisão de uma mesma quantidade
-	R de recurso em $\frac{R}{T}$ partes de tamanho T.
-        Utilizada para expor uma potencial causa da ubiquidade da
-        propriedade livre de escala.}
-	\label{fig:1T}
-\end{figure}
-
-Por simplicidade, considere $R=1$ e 
-$f=\frac{1}{T}$.
-Segue que $log(f)=-1 log(T)$, e uma
-reta descreve a relação entre $log(f)$
-$log(T)$.
-Considere que $f=\frac{1}{T}+\frac{1}{U}$.
-Segue que $log(f)=-log(T.U)$. Se U=T, $log(f)=-2 log(T)$, e
-$\gamma=2$ como previsto pela literatura.
-Os recursos são alocados pelo sistema, por exemplo,
-T tempo e U agentes. Ora, o tempo alocado
-pelos é o tempo dos próprios agentes,
-portante é razoável considerar T=U. 
-Possíveis causas para a distorção do valor exato $\gamma=2$
-são: propriedades fractais, recursos em número diferente, associações entre os recursos. 
+%\subsection{Compreensão sobre as estruturas sociais}\label{sec:com}
+%Praticamente todos os resultados citados acima
+%são úteis para compreender as estruturas sociais e são
+%fruto desta tentativa.
+%Há a intenção de escrever uma introdução às redes complexas
+%e instruir o leitor através destes conhecimentos e tecnologias
+%para exploração de si próprio. Um esboço
+%consta em~\cite{gradus}.
+%
+%Em exemplo de fundamentação que parece não 
+%constar na literatura é a constatação de que
+%a propriedade livre de escala é consequência da distribuição
+%equânime de recursos pelos setores da rede. 
+%Para apreender este fato, considere uma quantidade $R$ de recursos.
+%Considere que para cada tamanho $T$, sejam contadadas as $\frac{R}{T}$ partes de tamanho T que cabem em R.
+%Teremos uma curva como exposta na Figura~\ref{fig:1T}.
+%
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{figs/rt}
+%	\caption{A curva resultante da divisão de uma mesma quantidade
+%	R de recurso em $\frac{R}{T}$ partes de tamanho T.
+%        Utilizada para expor uma potencial causa da ubiquidade da
+%        propriedade livre de escala.}
+%	\label{fig:1T}
+%\end{figure}
+%
+%Por simplicidade, considere $R=1$ e 
+%$f=\frac{1}{T}$.
+%Segue que $log(f)=-1 log(T)$, e uma
+%reta descreve a relação entre $log(f)$
+%$log(T)$.
+%Considere que $f=\frac{1}{T}+\frac{1}{U}$.
+%Segue que $log(f)=-log(T.U)$. Se U=T, $log(f)=-2 log(T)$, e
+%$\gamma=2$ como previsto pela literatura.
+%Os recursos são alocados pelo sistema, por exemplo,
+%T tempo e U agentes. Ora, o tempo alocado
+%pelos é o tempo dos próprios agentes,
+%portante é razoável considerar T=U. 
+%Possíveis causas para a distorção do valor exato $\gamma=2$
+%são: propriedades fractais, recursos em número diferente, associações entre os recursos. 
 
 %\chapter{Finished and planed tasks, chronogram}
 \chapter{Afazeres e cronograma}
