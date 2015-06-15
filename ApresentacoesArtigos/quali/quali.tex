@@ -724,7 +724,7 @@ padrões encontrados, o método é bastante estabelecido.
 		a exposição neste texto e no artigo~\cite{timeS} serve
 		principalmente ao intuito de formalização do
 		processo.
-	\item A Seção~\ref{sec:sec} é dedicada ao ``Seccionamento de Erdös'', para obtenção dos três setores básicos da rede, compostos por: hubs, intermediários e periféricos. O método parece não ter sido aplicado antes para este fim, e é resultado imediato da observação das caudas longas de dados reais contrastadas com a rede Erdös-Rényi~\cite{3setores}.
+	\item A Seção~\ref{sec:sec} é dedicada ao ``Setorialização de Erdös'', para obtenção dos três setores básicos da rede, compostos por: hubs, intermediários e periféricos. O método parece não ter sido aplicado antes para este fim, e é resultado imediato da observação das caudas longas de dados reais contrastadas com a rede Erdös-Rényi~\cite{3setores}.
 \end{itemize}
 
 
@@ -795,19 +795,21 @@ para (algumas) redes sociais~\cite{bird,newmanBook}.
 	\label{formationNetwork}
 \end{figure}
 
-\section{Seccionamento de Erdös}\label{sec:sec}
+\section{Setorialização de Erdös}\label{sec:sec}
 Em uma rede livre de escala, os setores periféricos, intermediários
 e de hubs podem ser observados através de uma comparação
-com uma rede de Erdös Rényi com o mesmo número de arestas e vértices~\cite{3setores}, como na Figura~\ref{fig:setores}.
-Referiremos-nos a este procedimento como \emph{seccionamento de Erdös},
-com os setores resultantes chamados \emph{setores de Erdös} (ou \emph{setores primitivos}, \emph{setores básicos} da rede).
+com uma rede de Erdös-Rényi com o mesmo número de arestas e vértices~\cite{3setores},
+como na Figura~\ref{fig:setores}.
+Referiremos-nos a este procedimento como \emph{setorialização de Erdös},
+com os setores resultantes chamados \emph{setores de Erdös}
+(ou \emph{setores primitivos}, \emph{setores básicos} da rede).
 
 A distribuição de grau
 $\widetilde{P}(k)$
 de uma rede livre de escala ideal
 $\mathcal{N}_f$ com $N$ 
 vértices e $z$ arestas possui menos
-vértices com grau médios do que a distribuição $P(k)$
+vértices com grau médio do que a distribuição $P(k)$
 de uma rede Erdös-Rényi com o mesmo número de vértices e arestas.
 De fato, definimos (neste trabalho) o setor intermediário de uma
 rede como sendo o conjunto de todos os vértices cujo grau é
@@ -816,13 +818,14 @@ menos abundante em uma rede real do que no modelo de Erdös-Rényi:
 	\widetilde{P}(k)<P(k) \Rightarrow \text{k é grau intermediário}
 \end{equation}
 
-Se $\mathcal{N}_f$ for dirigida e não possuir selfloops, a probabilidade
+Se $\mathcal{N}_f$ for dirigida e não possuir laço (aresta de um vértice para ele próprio),
+a probabilidade
 de existência de uma aresta entre dois vértices arbitrários é
 $p_e=\frac{z}{N(N-1)}$.
 Um vértice em um dígrafo de Erdös-Rényi com o mesmo número de vértices e aresta,
 portanto mesma probabilidade
 $p_e$
-para existência de aresta, terá grau $k$ com probabilidade:
+para existência de aresta, terá grau $k$ com probabilidade ditada pela distribuição binomial:
 \begin{equation}
 	P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
 \end{equation}
@@ -845,11 +848,10 @@ Vértices com valores de grau previstos como os mais abundantes caso
 as conexões sejam fruto de puro acaso, valores próximos da média,
 e menos abundantes em nas redes reais, são classificados como intermediários.
 
-
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figs/fser_}
-	\caption{As distribuições de grau de modelos ideais de redes livres de escala e Erdös-Rényi
+	\caption{As distribuições de grau de modelos ideais de redes livres de escala e Erdös-Rényi.
 		A segunda possui mais vérices intermediários, enquanto a primeira possui mais vértices
 		periféricos e hubs. As bordas dos setores são definidas pelas duas intersecções $k_L$
 		e $k_R$ das distribuições de conectividade.
@@ -890,11 +892,11 @@ e comparadas também usando $\hat{P}$. Note que $p_e$ permanece a mesma,
 pois cada aresta é uma aresta de entrada (ou de saída), e há no máximo $N(N-1)$
 arestas entrando (ou saindo), portanto
 $p_e=\frac{z}{N(N-1)}$
-assim como no caso do grau total
+assim como no caso do grau total.
 
-Em outras palavras, seja $\gamma$ e $\phi$ inteiros no intervalos.
-$1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$,
-e cada uma das seis possibilidades de seccionamento de Erdös 
+Em outras palavras, sejam $\gamma$ e $\phi$ inteiros nos intervalos
+$1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$.
+Cada uma das seis possibilidades de setorialização de Erdös 
 $\{E_{\gamma}\}$
 possui três setores de Erdös
 $E_{\gamma}= \{e_{\gamma, \phi} \}$
@@ -906,7 +908,8 @@ definidos como:
 	e_{\gamma,3}&=\{\;i\;|\;&&\overline{k}_{\gamma,i}<\overline{k}_{\gamma,R}\} \nonumber
 \end{alignat}
 
-\noindent onde $\{\overline{k}_{\gamma,i}\}$ é:
+\noindent onde $\overline{k}_{\gamma,i}$ é a medida $\gamma$ no vértice $i$,
+convencionada:
 
 \begin{equation}
 	\begin{split}
@@ -921,9 +924,9 @@ definidos como:
 
 \noindent e ambos $\overline{k}_{\gamma,L}$ e $\overline{k}_{\gamma,R}$ são encontrados  usando
 $P(\overline{k})$ ou $\hat{P}(\overline{k})$
-como descrito acima.
+como descrito.
 
-Como métricas diferentes podem ser usadas para identificas
+Como métricas diferentes podem ser usadas para identificar
 os três tipos de vértices, critérios compostos podem ser
 definidos. Após uma inspeção cuidadosa das possibilidades,
 os critérios compostos foram reduzidos a 6: $\{C_\delta\}_{\delta=1}^{6}$.
@@ -951,8 +954,8 @@ No artigo~\cite{timeS}, os critérios $C_1$, $C_3$ e $C_5$ foram chamados exclus
 A Análise de Componentes Principais (PCA é a sigla consagrada, do inglês Principal Component Analysis) foi usada para observar a estabilidade
 na formação das componentes principais.
 A PCA é bastante estabelecida e bem documentada
-e foi usado para saber: 
-1) quais as medidas que contribuiem para cada componente e em que proporção;
+e foi usada para saber: 
+1) quais as medidas que contribuem para cada componente e em que proporção;
 2) quanto da dispersão está concentrada em cada componente.
 
 Ou seja, foram analizados os autovetores e autovalores das matrizes
@@ -960,12 +963,13 @@ de vértices e suas medidas da seguinte forma: seja $\mathbf{X}=\{X[i,j]\}$
 a matriz de todos os vértices $i$ e respectivos valores de cada medida $j$, 
 $\mu_X [j]=\frac{\sum_j X[j]}{J}$ a média da métrica $j$, 
 $\sigma_X [j]=\sqrt{\frac{(X[j]-\mu_X [j])^2}{J}}$ o desvio padrão da métrica $j$,
-e $\mathbf{X'}={\frac{X[i,j]-\mu_X[j]}{\sigma_X[j]}}$ a matriz com \emph{z-score} de cada métrica $j$ de de $\mathbf{X}$ em cada coluna. Seja $\mathbf{V}=\{V[j,k]\}$ a matriz $JxJ$ de autovetores da matriz $\mathbf{C}$ de covariância
+e $\mathbf{X'}={\frac{X[i,j]-\mu_X[j]}{\sigma_X[j]}}$ a matriz com \emph{z-score} de cada métrica $j$ de de $\mathbf{X}$ em cada coluna. 
+Seja $\mathbf{V}=\{V[j,k]\}$ a matriz $J\times J$ de autovetores da matriz $\mathbf{C}$ de covariância
 de $\mathbf{X'}$, um autovetor por coluna.
 Cada autovetor combina as medidas originais em uma componente principal, portanto, basta observar 
 $V'[j,k]=100*\frac{|V[j,k]|}{\sum_{j'} |V[j',k]|}$
-para saber com que percentagem a medida $j$ contribuiu
-para a componente principal $k$.
+para saber que percentagem da a componente principal $k$
+é contribuição da medida $j$.
 Com o vetor de $k$ autovalores $D[K]$,
 basta observar $D'[k]=100*\frac{D[k]}{\sum_{k'}D[k']}$ para saber
 a percentagem da dispersão pela qual a componente principal é responsável.
@@ -991,22 +995,26 @@ uma primeira pista sobre os padrões. Isso é feito com associações simples: v
 valores negativos com módulo grande indicam correlação negativa (inversamente proporcional).
 
 \subsection{Medidas consideradas e acrescentadas}\label{sec:med}
-A topologia das rede sestudas foram estudadas utilizando PCA~\cite{pca}
-com uma pequena seleção das medidas mais básicas e fundamentais de cada vértice. Formalmente, sejam $i$, $j$ vértices e $e_{ij}$ uma aresta de $j$ para $i$ (ou $j\rightarrow i$) e $w_{ij}$ seu peso. Então:
+A topologia das rede foram estudadas utilizando PCA~\cite{pca}
+com uma pequena seleção das medidas mais básicas e fundamentais de cada vértice. 
+%Formalmente, sejam $i$, $j$ vértices e $e_{ij}$ uma aresta de $j$ para $i$ (ou $j\rightarrow i$) e $w_{ij}$ seu peso. Então as medidas utilizadas, e bem conhecidas, podem ser expressas assim:
+%
+%\begin{itemize}
+%	\item Grau $k_i=\sum_j (e_{ij}+e_{ji})$: número de arestas conectadas a $i$.
+%	\item Grau de entrada $k_i^{in}=\sum_j e_{ij}$: número de arestas que terminam no vértice $i$.
+%	\item Grau de saída $k_i^{out}=\sum_j e_{ji}$: número de arestas que partem do vértice $i$.
+%	\item Força $s=\sum_j (w_{ij}+w_{ji})$: soma dos pesos de todas as arestas conectadas ao vértice $i$.
+%	\item Força de entrada $s_i^{in}=\sum_j w_{ij}$: soma dos pesos de todas as arestas que terminam no vértice $i$.
+%	\item Força de saída $s_i^{out}$: soma dos pesos de todas as arestas que partem do vértice $i$.
+%	\item Coeficiente de clusterização $cc_i=\frac{\sum e_{j_1 j_2}}{\binom{k_i}{2}}$: fração de pares de vizinhos $j_1$, $j_2$ de $i$ que são conectados. A medida usual para grafos não direcionados foi usada.
+%\item Intermediação (betweenness centrality) $bt_i=\frac{\Delta_i}{\Delta}$: fração entre o número $\Delta_i$ de geodésicas entre cada par de vértices da rede que contém o vértice $i$ e $\Delta$, o número total de geodésicas entre cada par de vértices da rede.
+%	A intermediação foi calculada considerando direções e peso, como especificado em~\cite{faster}.
+%\end{itemize}
 
-\begin{itemize}
-	\item Grau $k_i=\sum_j (e_{i,j}+e_{j,i})$: número de arestas conectadas a $i$.
-	\item Grau de entrada $k_i^{in}=\sum_j e_{i,j}$: número de arestas que terminam no vértice $i$.
-	\item Grau de saída $k_i^{out}=\sum_j e_{j,i}$: número de arestas que partem do vértice $i$.
-	\item Força $s=\sum_j (w_{i,j}+w_{j,i})$: soma dos pesos de todas as arestas conectadas ao vértice $i$.
-	\item Força de entrada $s_i^{in}=\sum_j w_{i,j}$: soma dos pesos de todas as arestas que terminam no vértice $i$.
-	\item Força de saída $s_i^{out}$: sima dos pesos de todas as arestas que partem do vértice $i$.
-	\item Coeficiente de clusterização $cc_i=\frac{\sum e_{j_1 j_2}}{\binom{k_i}{2}}$: fração de pares de vizinhos $j_1$, $j_2$ de $i$ que são conectados. A medida usual para grafos não direcionados foi usada.
-\item Intermediação (betweenness centrality) $bt_i=\frac{\Delta_i}{\Delta}$: fração entre o número $\Delta_i$ de geodésicas entre cada par de vértices da rede que contém o vértice $i$ e $\Delta$, o número total de geodésicas entre cada par de vértices da rede.
-	A intermediação foi calculada considerando direções e peso, como especificado em~\cite{faster}.
-\end{itemize}
-
-Para apreender as simetrias das atividades dos participantes, as
+As seguintes medidas bastante conhecidas foram usadas: grau, grau de entrada, grau de saída,
+força, força de entrada, força de saída, coeficiente de clusterização,
+centralidade de intermediação (\emph{betweenness centrality}).
+Além disso, para apreender as simetrias das atividades dos participantes, as
 seguintes métricas foram introduzidas para o vértice $i$:
 
 \begin{itemize}
@@ -1020,18 +1028,21 @@ seguintes métricas foram introduzidas para o vértice $i$:
 
 \section{Teste de Kolmogorov-Smirnoff para os textos produzidos por cada setor}\label{sec:kol}
 
-Sejam $F_{1,n}$ e $F_{2,n'}$ duas distribuições cumulativas empíricas onde $n$ e $n'$ são o número de observações em cada amostragem.
+Sejam $F_{1,n}$ e $F_{2,n'}$ duas distribuições cumulativas empíricas onde 
+$n$ e $n'$ contam as observações em cada amostragem.
 O teste de Kolmogorov-Smirnov de amostragem dupla 
-rejeita a hipótese nula se:
+rejeita a hipótese nula (rejeita que $F_{1,n}$ seja fruto da mesma distribuição que $F_{2,n'}$) se:
 \begin{equation}\label{eq:ks}
 D_{n,n'} > c(\alpha)\sqrt{\frac{n+n'}{nn'}}
 \end{equation}
 
-onde $D_{n,n'}=sup_x[F_{1,n}-F_{2,n'}]$ e $c(\alpha)$ é dado para cada $\alpha$ segundo a Tabela~\ref{tab:kol}:
+onde $D_{n,n'}=sup_x[F_{1,n}-F_{2,n'}]$ e $c(\alpha)$ é dado para cada região crítica $\alpha$
+(probabilidade da hipótese nula ser verdadeira) segundo a Tabela~\ref{tab:kol}.
 
 \begin{table}[!h]
 \centering
-\caption{Relação entre $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov}\label{tab:kol}
+\caption{Relação entre a região crítica $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov
+de amostragem dupla.}\label{tab:kol}
 \begin{tabular}{|l||c|c|c|c|c|c|}\hline
 $\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
 $c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
@@ -1042,39 +1053,42 @@ $c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
 
 \subsection{Adaptação}
 
-Para alguns dos resultados, 
-utilizamos $c(\alpha)$ como pista sobre
-o quão diferentes são pares de distribuições empíricas.
 São calculados $D_{n,n'}$, enquanto $n$ e $n'$ são dados.
-Assim, todos os termos da Equação~\ref{eq:ks} são positivos
+Todos os termos da Equação~\ref{eq:ks} são positivos
 e $c(\alpha)$ pode ser isolado:
 
 \begin{equation}\label{eq:ks2}
 c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{equation}
 
+Utilizamos $c'(\alpha)$
+como distância entre pares de distribuições empíricas,
+o que é coerente com a teoria~\cite{kol}.
+
 \section{Audiovisualização de dados}
-Redes foram visualizadas com imagens, videos e engenhocas online para esta pesquisa~\cite{animacoes,galGMANE,appGMANE}. Também foram sonificadas, em especial como faceta auditiva de animações abstratas~\cite{preludio,4hubs,gmane,social}.
+Redes foram visualizadas com imagens, videos e engenhocas online para esta pesquisa~\cite{animacoes,galGMANE,appGMANE}. Também foram sonificadas, em especial como faceta sonora de animações abstratas~\cite{preludio,4hubs,gmane,social}.
 Tais ``audiovisualizações'' foram cruciais para guiar a pesquisa para
-as características mais importantes das redes de evolução.
+características relevantes das redes de interação.
 Além disso, os tamanhos relativos dos três setores de Erdös foram visualizados como linhas temporais.
 A visualização da estrutura em rede foi especialmente útil na inspeção
 dos dados e estruturas das redes de email.
 
 \section{Considerações tipológicas e humanísticas}
-As redes estudadas são constituídos de seres humanos.
-Quando há classificação envolvida, sejam dos agentes
-ou dos sistemas em si, reflexões humanísticas são pertinentes, como as disparadas pelas perguntas:
+As redes estudadas neste trabalho são constituídas por seres humanos.
+Quando há classificação envolvida, seja dos agentes
+ou dos sistemas em si, reflexões humanísticas são pertinentes,
+como as disparadas pelas perguntas:
 
 \begin{itemize}
 	\item Qual o potencial estigmatizante da classificação?
 	\item O que mais sabemos sobre o indivíduo ou a rede que é classificada, ou seja, é considerada(o) de um tipo?
-	\item Quais dados posso usar sem desviar a atenção para leis
-		e processos de comitês de ética?
-	\item Qual a melhor forma de proceder com os dados e conhecimentos relacionados?
+	\item Quais dados posso usar e que procedimentos posso realizar
+		sem desviar a atenção da pesquisa para leis e processos de comitês de ética?
+	\item Qual a melhor forma de proceder com os dados e conhecimentos frutos da pesquisa?
 \end{itemize}
 
-Todas estas questões, e muitas outras, estão em constante amadurecimento com grupos de pesquisa~\cite{Nexus}, leituras, e contatos individuais com outros pesquisadores~\cite{massimoTexto,massimoEncontro}.
+Todas estas questões, e muitas outras, estão em constante amadurecimento com grupos de pesquisa~\cite{Nexus}, 
+leituras~\cite{mas}, escrita~\cite{ensaioAA,ap}, e contatos individuais com outros pesquisadores~\cite{massimoTexto,massimoEncontro}.
 
 \section{Web semântica}
 
@@ -1084,59 +1098,60 @@ compartilhamento e referência,
 foram adotadas as recomendações de dados ligados / web semântica
 da W3C~\cite{rdf,owl,rdfs}.
 De forma bastante resumida, o arcabouço utilizado pode
-ser viso como uma forma de formalizar conceitos (classes), relações
+ser viso como uma maneira de formalizar conceitos (classes), relações
 entre conceitos (propriedades) e instâncias dos conceitos (indivíduos).
 As informações são expressas de forma semi-estruturada em RDF:
 triplas ``sujeito predicado objeto'',
 com o sujeito sempre uma classe, o predicado sempre uma propriedade,
-e o objeto sempre uma classe ou dado. As propriedades podem ter aspectos
-específicos, chamados ``axiomas de propriedade''. As classes podem ser restritas a possuírem relações arbitrárias, chamadas ``restrições de classe''.
+e o objeto sempre uma classe ou dado. As propriedades podem ter especificidades
+, chamadas ``axiomas de propriedade''. As classes podem ser restritas a possuírem certas relações, chamadas ``restrições de classe''.
 É uma recomendação da W3C e o padrão acadêmico para dados ligados, i.e. para representação na web semântica.
 
 Utilidades da tecnologia incluem:
 \begin{itemize}
 	\item inferência por máquina através de especificações ontológicas. 
-	\item Interconexão de dados de fontes (bases de dados) diferentes.
-	\item Organização de conhecimento específico para consideração cuidadosa, seja individual ou em grupo.
+	\item Interconexão de dados de fontes diferentes.
+	\item Organização ontológica de conhecimento específico para consideração cuidadosa, seja individual ou em grupo.
 \end{itemize}
 
 As ontologias são chave dentre as tecnologias de web semântica.
 Uma ontologia é geralmente definida como uma ``especificação de
-uma conceitualização'', e a recomendação é o uso do padrão OWL.
+uma conceitualização'', e a recomendação é o uso do padrão OWL~\cite{owl}.
 Os vocabulários são coleções de termos e metadados, como definição,
-e a recomendação é o uso do padrão SKOS.
+e a recomendação é o uso do padrão SKOS~\cite{skos}.
 O estado da arte de web semântica tem apresentado avanços,
-por exemplo, é capaz de realizar inferências
-úteis, especialmente para buscas. Por outro lado, é uma tecnologia
+por exemplo, as inferências tem se tornado mais ágeis e úteis, especialmente para buscas.
+Por outro lado, é uma tecnologia
 complicada e com algumas dificuldades de implementação.
-Por exemplo, um conceito SKOS é um indivíduo, e uma classe OWL,
+Por exemplo, um conceito SKOS é um indivíduo (instância de uma classe),
+e uma classe OWL,
 se identificado com um conceito SKOS é, por consequência um
-indivíduo. Neste caso, os recursos de inferência por máquina 
-ficam limitados
-dada a complexidade da especificação.
-Dito de outra forma, caso na especificação conste uma classe
+indivíduo.
+Neste caso, quando um um indivíduo (instância de uma classe) é
+também uma classe, dada a complexidade, os recursos de inferência por máquina 
+ficam limitados e lentificados.
 
 \subsection{A construção de ontologias OWL e vocabulários SKOS}
 
 Para formalizar conceitualizações referentes às estruturas sociais,
 mais especificamente relacionadas à participação social,
 foram construídas ontologias OWL e vocabulários SKOS a partir de entrevistas
-com especialistas: acadêmicos e gestores públicos.
+com especialistas acadêmicos e gestores públicos.
 Também foram feitas ontologias e vocabulários a partir de bancos de dados,
 decretos presidenciais e outras documentações.
 O processo  consistiu sempre que possível na coleta de informações,
 formalização dos conceitos e devolutiva aos entrevistados,
 com figuras e outras documentações, até que não tivessem
-mais contribuições.
+mais contribuições~\cite{pnud5}.
 
 \subsection{A triplificação de dados relacionais}
 Para disponibilização e uso de dados de diferentes fontes, foram
-feitos pequenos programas de computador (scripts) para
-acessar dados relacionais e escrever triplas RDF. Estes scripts
-criam conceitos novos e os vincula às instâncias dos dados.
-Na sequência, acessa as ontologias pertinentes, salva
+feitos pequenos programas de computador (\emph{scripts}) para
+acessar dados relacionais e escrever triplas RDF com os dados semanticamente enriquecidos.
+Estes \emph{scripts} formalizam conceitos e os vinculam aos dados.
+Na sequência, acessam as ontologias pertinentes, salvam
 uma versão com os dados e ontologias, e uma versão
-com os dados, as ontologias e as triplas resultantes da inferência.
+com os dados, as ontologias e as triplas resultantes da inferência sobre os dados com a ontologia.
 
 
 \chapter{Resultados}
