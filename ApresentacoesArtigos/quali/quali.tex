@@ -1018,7 +1018,7 @@ seguintes métricas foram introduzidas para o vértice $i$:
 	\item Desvio padrão do desequilíbrio das arestas: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
 \end{itemize}
 
-\section{Teste de Kolmogorov-Smirnoff para os textos produzidos por cada setor}
+\section{Teste de Kolmogorov-Smirnoff para os textos produzidos por cada setor}\label{sec:kol}
 
 Sejam $F_{1,n}$ e $F_{2,n'}$ duas distribuições cumulativas empíricas onde $n$ e $n'$ são o número de observações em cada amostragem.
 O teste de Kolmogorov-Smirnov de amostragem dupla 
@@ -1141,40 +1141,63 @@ com os dados, as ontologias e as triplas resultantes da inferência.
 
 \chapter{Resultados}
 %\section{Time stability in human interaction networks}
-\section{Estabilidade temporal e diferenciação textual em redes de interação humana}\label{sec:timeS}
-Explicitados cuidadosamente em~\cite{timeS}, os principais resultados são:
+\section{Estabilidade temporal e topológica; diferenciação textual em redes de interação humana}\label{sec:timeS}
+Explicitados cuidadosamente em~\cite{timeS}, os principais resultados da estabilidade temporal e topológica em redes de interação humana são:
 \begin{itemize}
-	\item A atividade ao longo do tempo é praticamente a mesma para todas as listas de email analisadas, e em todas as escalas. A maior dispersão foi encontrada nos segundos e minutos, seguida pelos dias do mês, meses, dias da semana e horas do dia. Padrões estáveis foram apreciados em todas estas escalas: segundos, minutos e dias do mês apresentaram uniformidade; meses parecem seguir calendários acadêmicos e escolares; dias da semana apresentam redução para dois ou um terço das atividades nos finais
+	\item A atividade ao longo do tempo é praticamente a mesma para todas as listas de email analisadas, e em todas as escalas. A maior dispersão foi encontrada nos segundos e minutos, seguida pela dispersão encontrada nos dias do mês, meses, dias da semana e horas do dia. Padrões estáveis foram apreciados em todas estas escalas: segundos, minutos e dias do mês apresentaram uniformidade; meses parecem seguir calendários acadêmicos e escolares; dias da semana apresentam redução para dois ou um terço das atividades nos finais
 		de semana;
-		nas horas do dia, há concentração de atividades das 12-18h, o pico, porém, ocorre pouco antes das 12h.
-	\item A fração de participantes em cada setor de Erdös é estável ao longo do tempo e pode ser determinada mesmo com poucas mensagens.
-	\item As métricas topológicas se combinam nas componentes principais do PCA da mesma forma para todas as listas e todos os snapshots.
-	\item As medidas de simetria da topologia, como definidas na Seção~\ref{sec:med}, apresentam mais dispersão do que o usual coeficiente de clusterização. O coeficiente de clusterização se combina com os desvios padrões de assimetria e desequilíbrio para a formação da terceira componente.
-	\item Estes comportamentos são muito estáveis para em redes de interação de email. Nas outras redes analisadas, Twitter e Participa.br
+		nas horas do dia, há concentração de atividades das 12-18h, mas o pico, porém, ocorre pouco antes das 12h.
+	\item A fração de participantes em cada setor de Erdös é estável ao longo do tempo e
+		esta estrutura já desponta na rede mesmo com poucas mensagens.
+	\item As métricas topológicas se combinam nas componentes principais do PCA praticamente 
+		da mesma forma para todas as listas e todos os \emph{snapshots}.
+	\item As medidas de simetria da topologia, como definidas na Seção~\ref{sec:med},
+		são responsáveis por mais dispersão do que o coeficiente de clusterização.
+		Resultado menor: 
+		o coeficiente de clusterização se combina com os desvios padrões de assimetria e desequilíbrio para a formação da terceira componente.
+	\item Estes comportamentos são muito estáveis para em redes de interação de email.
+		Nas outras redes analisadas, Twitter e Participa.br
 		apresentaram redes bastante similares às de email. Nas
-	redes do Facebook foram encontradas algumas redes que diferiam
-	do modelo apresentado pelas redes de listas públicas de email.
+		redes do Facebook foram encontradas algumas redes que diferiam
+	do modelo apresentado pelas redes de listas públicas de email em dois aspectos:
+	algumas proporções e combinações de medidas das componentes principais;
+	frações de participantes em cada setor de Erdös.
 \item Para um mesmo número de mensagens (sejam 20 mil)  e diferentes listas, há uma
-	correlação negativa entre número de participantes e número de threads quando os participantes são poucos (até 2 mil participantes quando são 20 mil mensagens). Para uma quantidade maior de participantes, há uma correlação positiva entre o número de participantes e o número de threads. Este fato deve estar relacionada a outras características topológicas e textuais da rede e pode servir para uma tipologia das próprias redes.
+	correlação negativa entre número de participantes e número de threads quando os participantes são poucos 
+	(até $\approx$ 2 mil participantes quando são 20 mil mensagens).
+	Para uma quantidade maior de participantes,
+	há uma correlação positiva entre o número de participantes e o número de threads.
+	Este fato deve estar relacionada a outras características topológicas e textuais da rede e 
+	pode servir para uma tipologia das próprias redes.
 	\item Especulações humanísticas, especialmente sobre questões
-		tipológicas e antropológicas, são seguem imediatamente
-		os resultados quantitativos. Em especial, a setorialização
-		de Erdös implica em uma tipologia de agentes em redes humandas de interação.
-		Esta tipologia é, a princípio, não estigmatizante pois os agentes mudam de setor o tempo todo. Além disso, um mesmo agente pertence
-		a todos os setores ao mesmo tempo, mas em redes diferentes. Maiores qualificações desta tipologia, decorrente do pertencimento
-		a um setor de Erdös, estão no proprio artigo.
+		tipológicas e antropológicas, seguem imediatamente
+		dos procedimentos e resultados quantitativos deste trabalho.
+		Em especial, a setorialização de Erdös implica em uma
+		tipologia de agentes em redes humandas de interação.
+		Esta tipologia é, a princípio, não estigmatizante pois os agentes mudam de setor constantemente.
+		Além disso, um mesmo agente pertence a todos os setores ao mesmo tempo,	mas em redes diferentes.
+		Maiores qualificações desta tipologia, decorrente do pertencimento
+		a um setor de Erdös, estão no final dos resultados do artigo.
 \end{itemize}
 
 Com base nestes resultados, foi investigada a produção de texto na rede,
-com foco na potencial relação entre topologia, setor de Erdös e texto produzido~\cite{rcText}. As principais conclusões são:
+com foco na potencial relação entre topologia,
+setor de Erdös e texto produzido~\cite{rcText}.
+As principais conclusões são:
 \begin{itemize}
-	\item Os textos produzidos por cada setor de Erdös diferem bastante: os $c(\alpha)$ fruto das comparações são tão grandes que as tabelas não registram os valores. Além disso, as diferenças entre setores iguais de redes diferentes são, via de regra, maiores que as encontradas entre setores diferentes da mesma rede.
+	\item O texto produzido por cada setor de Erdös é bastante diferente um do outro:
+		os $c(\alpha)$ fruto do teste de Kolmogorov-Smirnov
+		entre histogramas
+		de uso de recursos textuais (pontuação, adjetivos, etc) de cada setor
+		são tão grandes que as tabelas não registram os valores (veja Seção~\ref{sec:kol}).
+		Além disso, as diferenças entre $c(\alpha)$ de setores iguais de redes diferentes são,
+		na grande maioria das vezes, maiores que as encontradas entre setores diferentes de uma mesma rede.
+		Isso decorre de uma maior discrepância de massa probabilística entre os histogramas de setores diferentes de uma mesma rede do que entre setores iguais de redes diferentes. 
+
 	\item As características topológicas e textuais de cada agente apresentam correlações não triviais (como entre intermediação e uso de advérbios) e triviais (como entre grau e número de caractéres escritos).
 		Mesmo assim, são muito menos correlacionadas entre si do que separadamente. Ou seja, as componentes principais possuem tendência
 		a prevalência de medidas topológicas {\bf ou} textuais,
-		mas combinam-se medidas de ambos os tipos.
-	\item Dada uma quantidade grande de texto, algumas medidas estatísticas 
-		relacionadas ao tamanho das palavras parecem se conservar. Não foi dada uma explicação definitiva para este fenômeno, embora haja esperança de que consigamo explicações simples (o problema não parece difícil). Algumas destas medidas estão ao final de~\cite{rcText}, resultantes de somas cumulativas de diferencas de histogramas.
+		mas a combinação de medidas de ambos os tipos é incidente.
 \end{itemize}
 
 Estes resultados permearam várias outras frentes de
