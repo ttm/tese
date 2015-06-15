@@ -1181,17 +1181,18 @@ Estes resultados permearam várias outras frentes de
 de pesquisa e desenvolvimento tecnológico~\cite{prod1,prod2,prod3,prod4,prod5,ops,versinus}.
 
 \section{Criação da nuvem brasileira de dados participativos ligados}
-Iniciada para formalizar os tipos de rede e participantes, e estruturas
-que pudessem formar, esta frente rapidamente se voltou para
-formalizações de conceitualizações referentes às estruturas
-e sistemáticas já em prática e previstos em lei.
+Iniciada para formalizar as rede e participantes, junto às suas
+propriedades e estruturas.
+Esta frente rapidamente se voltou para
+as formalizações de conceitualizações referentes às estruturas
+e sistemáticas já em prática e previstas em lei.
 Dados também foram publicados, fazendo uso das ontologias
 feitas. Estes dados e ontologias foram em grande parte
 já publicados e estão em uso, mas a grande maioria não
-recebeu artigo científico.
+recebeu artigo científico ainda.
 
 %\subsection{Published linked data and OWL ontologies}
-\subsection{Síntese de ontologias OWL}
+\subsection{Síntese de ontologias OWL e vocabulários SKOS}
 Ontologias OWL feitas neste trabalho:
 \begin{itemize}
 		\item OPS (Ontologia de Participação Social): é uma ontologia fruto de diversos esforços da américa latina, principalmente do Brasil. Nesta pesquisa, revisamos a ontologia e disponibilizamos um código OWL em uso por instâncias diferentes da academia, Estado e sociedade civil.
@@ -1204,14 +1205,15 @@ Presidência da República, para explicitar a utilidade
 destas formalizações semânticas e coletar informações sobre
 diversos mecanismos e instâncias de participação social previstos
 em lei e praticados.
-		\item VBS (Vocabulário da Biblioteca Social): este
-			vocabulário é uma adaptação (com complementos)
-			da OBS no formato
-			de vocabulário, principalmente para permitir
-			uso junto ao DSPACE.
 \end{itemize}
 
-As ontologias são todas construídas através de scripts, com exceção da
+O
+VBS (Vocabulário da Biblioteca Social) é uma adaptação (com complementos)
+			da OBS no formato
+			de vocabulário SKOS, principalmente para permitir
+			uso junto ao DSPACE.
+
+As ontologias e vocabulários são todas construídas através de scripts, com exceção da
 OPP, feita no Protegé.
 
 \subsection{Formatação de dados ligados a partir de dados relacionais}
@@ -1221,45 +1223,60 @@ Três roteiros de conversão de dados foram feitos para conversão de dados rela
 		foi elaborado e disponibilizado um roteiro para formatação em RDF de dados relacionais do Participa.br (originalmente em PostgreSQL)~\cite{triplificaParticipa}. Estes dados foram depois usados, através de buscas SparQL, para auxiliar na construção da OPa~\cite{opaScript}.
 	\item Triplificação dos dados do Cidade Democrática: 
 		foi elaborado um roteiro para formatação em RDF de dados 
-		do Cidade Democrática (originalmente em MySQL). Estes
+		do Cidade Democrática (originalmente em MySQL)~\cite{cdScript}. Estes
 		dados foram depois utilizados para auxiliar na construção
 		da OCD~\cite{ocdScript}.
 	\item Triplificação dos dados do AA:
 		foi elaborado um roteiro para formatação em RDF de
-		dados do AA encontrados em bancos de dado MySQL
-		e MongoDB, e em logs de IRC.
+		dados do AA encontrados em bancos de dados MySQL
+		e MongoDB, e em logs de IRC~\cite{aaScript}.
 		Esta triplificação é especialmente útil pela
 		simplicidade do AA, o que permite experimentar
 		abordagens diferentes e escolher a melhor, antes
 		de desenvolver ontologias e triplificações mais complicadas.
-		Esta foi a única triplificação feita depois da ontologia e não aproveitada para a construção da ontologia.
+		Esta foi a única triplificação feita depois da ontologia e não aproveitada para a construção da ontologia~\cite{scriptOntologiaa}.
 \end{itemize}
 
 \subsection{Escritos, ontologias e dados publicados}
-Artigo sobre a OPS~\cite{ops}. Produtos PNUD/ONU~\cite{pnud3,pnud4,pnud5}.
-Dados em RDF do Participa.br, Cidade
+Foi publicado no arXiv um artigo sobre a OPS~\cite{ops}.
+Este escrito aguarda confluência com orientador para publicação em revista, potencialmente na revista PLOS ONE.
+Foram escritos também os produtos PNUD/ONU,
+em processo de publicação em instâncias governamentais,
+mas já em repositórios públicos~\cite{pnud3,pnud4,pnud5}.
+Foram publicados dados em RDF do Participa.br, Cidade
 Democrática e AA no Datahub.io~\cite{datahub}.
-Ontologias~\cite{opa,opp,ops,obs}. Vocabulários~\cite{vbs}.
+Ontologias e vocabulários foram publicadas junto ao ministério do planejamento
+e em repositórios públicos~\cite{opa,opp,ops,obs,vbs}
 Scripts para síntese das ontologias e triplificação
-de dados~\cite{opa,ops,obs,partT,cdT,aaT}.
+de dados estão também publicamente acessíveis
+e junto aos produtos PNUD citados acima.
 
 \subsection{Método de construção de ontologias orientado aos dados}
 Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPA dados e OCD).
-Resumidaemente, o método consiste em: representar os dados de interesse como RDF; realizar buscas SparQL para construir ontologia trivial com as classes e propriedades encontradas; realizar buscas SparQL para inferir restrições de classe e axiomas de propriedade.
+Resumidamente, o método consiste em: representar os dados de interesse como RDF; realizar buscas SparQL para construir ontologia trivial com as classes e propriedades encontradas; realizar buscas SparQL para inferir restrições de classe e axiomas de propriedade~\cite{pnud5,scriptOCD,scriptOPA}.
 
 \section{Aparato em software}
 Scripts para verificar as estabilidades topológicas e diferenciações textuais em redes humanas estão reunidos em um pacote oficial da linguagem Python~\cite{gmanePack}.
-Estão sendo feitos pacotes para organizar com os scripts todos
-de triplificação de dados, construção de ontologias e mineração das
+Estão sendo feitos pacotes para organizar os numerosos scripts 
+de triplificação de dados, construção de ontologias e vocabulários e mineração das
 estruturas~\cite{participation, percolation}. 
 Os dados, classes e propriedades das
 ontologias e triplificações estão também disponíveis (em parte)
 através das próprias URIs, redirecionadas via purl.org
-para um servidor de pesquisa.
+para um servidor de pesquisa. Ou seja,
+caso você acesse \url{http://purl.org/socialparticipation/opa/Participant},
+o servidor em http://purl.org redireciona seu navegador para
+um servidor de pesquisa com várias entidades do conceito ``Participante''
+da ontologia ``opa''.
 Os dados estão em um endpoint SparQL, e scripts para a mineração
 destes dados estão disponíveis em interfaces web via um
 IPython Notebook. As ontologias estão também disponíveis
 na instalação do Webprotegé da Stanford.
+Muitas engenhocas foram criadas para gerar figuras, videos e inspecionar
+estruturas sociais de emails, Facebook, Twitter, Participa.br, AA, IRC e outras
+fontes~\cite{engeHeraGmane,social,ensaaio,ensaioAA}.
+Outras engenhoras foram criadas para experimentações estéticas e
+informacionais~\cite{mmissa,teloes,gmane,governArt}.
 
 \section{Aproveitamento, utilidade e formalismo}
 A proposta do trabalho é comprovar a demanda e desenvolver algumas formas para o participante se beneficiar de suas redes através do legado das redes complexas.
@@ -1346,6 +1363,16 @@ Experimentos paradigmáticos:
 		para explicar esta diferença de reação é a de que os de maior intermediação
 		tinham maior influência sobre
 		a rede, enquanto os de maior \emph{closenness} sofriam maior influência.
+	\item Em um evento grande em São Paulo sobre transparência e governança na internet,
+		foi operacionalizado um telão de streaming de estruturas sociais, escrito
+		no percurso desta pesquisa, que expunha em tempo real as três diferentes redes de Twitter
+		formada por usuários relacionados por retweet, vocabulário e hashtag.
+		A tecnologia pode ser compreendida como ``streaming de estruturas sociais'',
+		e gerou bastante discussão com as pessoas que foram ao evento, inclusive
+		com os próprios comunicadores que constavam nas redes de retweet.
+		Houve confirmação da hipótese de que as pessoas se interessariam e se instruiriam.
+		Houve alguns usos a mais da ferramenta, localizados e a pedido do meio, não
+		por necessidade da pesquisa.
 \end{itemize}
 
 O segundo experimento foi feito por vários parceiros de pesquisa,
