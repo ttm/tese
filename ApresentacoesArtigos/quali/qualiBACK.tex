@@ -1,0 +1,1710 @@
+\documentclass[a4paper,openright,12pt]{report} %,parskip=full
+
+\usepackage{amssymb,amsmath,textcomp}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{braket}
+\usepackage{booktabs}  %Possibilidade de linhas mais grossas nas tabelas.
+
+%MEU
+%\usepackage[brazilian, portuguese, activeacute]{babel}
+%\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+%\usepackage{color}
+%\usepackage{amssymb}
+\usepackage{amsmath}  %for binom, not
+%\usepackage{pifont}   %for ding
+\usepackage{hyperref}
+%\usepackage{amsthm}   %for what
+%\usepackage{helvet}   %for what
+\usepackage{cancel}   %for cancel
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{etex}
+
+\usepackage{cite}
+
+
+
+%\usepackage[footnotesize,hang]{caption} 
+
+%\usepackage[hang,small,labelsep=endash]{caption} % Hifen na legenda de tableas e figuras
+\usepackage[hang,footnotesize,labelsep=endash,tableposition=top]{caption} % Hifen na legenda de tableas e figuras
+%CHCHCH
+%\usepackage{subcaption}
+
+%%%%%%%%%%%%%%%%% Bibliografia
+\usepackage{url}
+\usepackage[bibjustif,abnt-thesis-year=both,num]{abntcite} %%%%%% ABNY
+%%%%%%%%%%%%%%%%% Espacamento
+%\makeatletter  %Espa�amento entre os itens da bibliografia
+%\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
+%\let\ORIGINALlatex@openbib@code=\@openbib@code  
+%\renewcommand{\@openbib@code}{\ORIGINALlatex@openbib@code\adjustmybblparameters}
+%\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Espacaçamento entre as referências
+\makeatletter  %Espa�amento entre os itens da bibliografia
+\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
+\let\ORIGINALlatex@openbib@code=\@openbib@code  
+\renewcommand{\@openbib@code}{\ORIGINALlatex@openbib@code\adjustmybblparameters}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%Symbol footnote
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[Conny]{fncychap}
+\usepackage{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\makeatletter
+\renewcommand*{\@makechapterhead}[1]{%
+  \vspace*{-1.0cm}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
+        \DOCH
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
+      \DOTI{#1}%
+    \else%
+      \DOTIS{#1}%
+    \fi
+  }}
+
+%older
+%%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
+%\usepackage[compact]{titlesec}
+%\titlespacing{\section}{0pt}{0.5cm}{0.5cm}
+%%\titlespacing{\chapter}{0pt}{2.0cm}{2.0cm}
+%\titlespacing{\subsection}{0pt}{0.5cm}{0.5cm}
+%\titlespacing{\subsubsection}{0pt}{0.5cm}{0.5cm}	
+
+%%abnt mestrado
+%%%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
+%\usepackage{titlesec} %[compact]
+%\titlespacing{\chapter}{0pt}{1.9cm}{2.2cm}
+%\titlespacing{\section}{0pt}{1.9cm}{2.2cm}
+%\titlespacing{\subsection}{0pt}{2.1cm}{2.2cm}
+%\titlespacing{\subsubsection}{0pt}{2.2cm}{2.2cm}	
+
+%quali
+%%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
+\usepackage{titlesec} %[compact]
+\titlespacing{\chapter}{0pt}{0cm}{1.5cm}
+\titlespacing{\section}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\subsection}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\subsubsection}{0pt}{1.5cm}{1.5cm}	
+
+%  \usepackage{titlesec}
+  \titleformat{\chapter}[display]
+  {\normalfont\bfseries\filcenter}
+  {\LARGE\thechapter}
+  {-2ex}
+  {%\titlerule[2pt]
+	 % \vspace{2ex}%
+  \LARGE}
+  [%\vspace{1ex}%
+  {\titlerule[1pt]}]
+
+
+%%%%%%%%%% Escreve ``Figura`` e ``Tabela`` nas listas de figuras e tabelas
+%%CHCHCH
+%\usepackage[titles]{tocloft}
+%\renewcommand{\cftfigaftersnum}{ -}
+%\renewcommand{\cfttabaftersnum}{ -}
+%\renewcommand{\cftfigpresnum}{Figura }
+%\renewcommand{\cfttabpresnum}{Tabela }
+%\setlength{\cftfignumwidth}{2.2cm}
+%\setlength{\cfttabnumwidth}{2.2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[pdftex]{graphicx}  %pacote para colocar figuras jpg
+\usepackage[final]{pdfpages}  %include pfd coloca um pdf em uma pagina
+
+%\usepackage[T1]{fontenc} %CHCHCH
+%\usepackage[OT2,T1]{fontenc} %CHCHCH
+%\usepackage[T1,T2A]{fontenc} %needs t2aenc.def
+\usepackage[T1,OT2,OT1]{fontenc} %CHCHCH
+
+%\usepackage{cyrillic} 
+
+%russian
+\newcommand\cyr{%
+\renewcommand\rmdefault{wncyr}%
+\renewcommand\sfdefault{wncyss}%
+\renewcommand\encodingdefault{OT2}%
+\normalfont
+\selectfont}
+\DeclareTextFontCommand{\textcyr}{\cyr}
+
+%%CHCHCH
+%%russian
+%\newcommand{\cyrrm}{\fontencoding{OT2}\selectfont\textcyrup}
+%\newcommand{\cyrit}{\fontencoding{OT2}\selectfont\textcyrit}
+%\newcommand{\cyrsl}{\fontencoding{OT2}\selectfont\textcyrsl}
+%\newcommand{\cyrsf}{\fontencoding{OT2}\selectfont\textcyrsf}
+%\newcommand{\cyrbf}{\fontencoding{OT2}\selectfont\textcyrbf}
+%\newcommand{\cyrsc}{\fontencoding{OT2}\selectfont\textcyrsc}
+%%%%% cyrrm = "Roman", or really upright, normal font
+%%%%% cyrit = Italic (cursive forms of letters)
+%%%%% cyrsl = Italic (non-cursive forms of letters)
+%%%%% cyrsf = Sans-serif
+%%%%% cyrbf = Bold-face 
+
+
+
+
+%\usepackage[math]{iwona}
+\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\sfdefault} math
+
+\usepackage[absolute]{textpos}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{leftidx}
+
+%CHCHCH
+%\usepackage[superscript]{cite}  %citacoes em superscript
+\usepackage{cite}  %nao, meu, citacoes em superscript nao!
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations}
+\usetikzlibrary{snakes}
+
+\usepackage{color}
+
+\definecolor{DarkBlue}{rgb}{0.1,0.1,0.5}
+\definecolor{Red}{rgb}{0.9,0.0,0.1}
+\definecolor{DarkGreen}{rgb}{0.10,0.50,0.10}
+
+% see documentation for a0poster class for the size options here
+\let\Textsize\large
+\def\Head#1{\noindent\hbox to \hsize{\hfil{\LARGE\color{DarkBlue} #1}}\bigskip}
+\def\LHead#1{\noindent{\LARGE\color{DarkBlue} #1}\smallskip}
+\def\Aut#1{\noindent{\Huge\color{DarkBlue} #1}\smallskip}
+\def\End#1{\noindent{\large\it\color{DarkBlue} #1}\smallskip}
+\def\Subhead#1{\noindent{\Large\color{DarkBlue} #1}}
+\newcommand{\quiteHuge}{\fontsize{120}{93}\selectfont}
+\def\Title#1{\begin{center}\noindent{\quiteHuge\color{DarkGreen}#1}\end{center}}
+
+
+\usepackage[twoside,inner=3cm,outer=2cm,top=3cm,bottom=2cm]{geometry}
+
+\usepackage{setspace}   %Espacamento entre as linhas
+
+\setstretch{1.5} %Normal da ABNT: espaçamento entre as linhas de 1.5 de linha
+% Pode ser \singlespace 
+%          \onehalfspace
+%          \doublespace
+
+%---------------------------------------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy} % colocar Capítulos, Seções, etc em minúsculo
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\fancyhf{} % deletar configuração atual do cabeçalho (header) e rodapé (foot)
+
+\pagestyle{fancy} 
+
+\fancyhead[LE,RO]{\thepage}
+
+\fancyhead[LO]{\rightmark}
+  
+\fancyhead[RE]{\leftmark}
+
+\renewcommand{\headrulewidth}{0.5pt}
+  
+\renewcommand{\footrulewidth}{0pt}
+
+%CHCHCH
+%\addtolength{\headheight}{0.5pt} % cria um espaço para linha
+\addtolength{\headheight}{4.0pt} % cria um espaço para linha
+
+\fancypagestyle{plain}{
+    \fancyhead{} % exibir cabeçalho e rodapé
+    \renewcommand{\headrulewidth}{0pt} % linha
+}
+
+
+
+
+%---------------------------------------------------------------------------------------------------------
+
+\usepackage[marginal,symbol]{footmisc}
+\footnotemargin2pt
+
+%%%%%%%%%%%%%%%%%%
+
+
+\pagestyle{empty}
+
+%\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} %CHCHCH %to make tableofcontents empty pagestyle
+
+
+%CHCHCH TO MAKE TABLEOFCONTENTS PAGESTULE EMPTY
+%\fancypagestyle{plain}{%
+%  \fancyhf{}                          % clear all header and footer fields
+%  \renewcommand{\headrulewidth}{0pt}
+%  \renewcommand{\footrulewidth}{0pt}
+%}
+
+\usepackage[subfigure,titles]{tocloft}
+\renewcommand{\cftfigaftersnum}{ -}
+\renewcommand{\cfttabaftersnum}{ -}
+\renewcommand{\cftfigpresnum}{Figura }
+\setlength{\cftfignumwidth}{2.2cm}%{5em}
+
+
+
+%\renewcommand*{\chapterheadendvskip}{%
+%  \vspace{3.0cm}%
+%%  \vspace{0.725\baselineskip plus 0.115\baselineskip minus 0.192\baselineskip}%
+%}
+
+\usepackage{blindtext}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%\setlength{\parskip}{0.5cm}%1.5ex} %0pt} % 1ex plus 0.5ex minus 0.2ex}
+
+\hyphenation{ca-ra-te-ri-sti-cas}
+
+%\selectlanguage{portuguese}
+%\hyphenation{e-mer-g\^{e}n-cia}
+
+
+\pagestyle{fancy}
+
+
+\thispagestyle{empty}
+
+\vspace{0.5cm}
+
+\begin{center} 
+%\LARGE{UNIVERSITY OF SÃO PAULO}  \\
+%\LARGE{SÃO CARLOS PHYSICS INSTITUTE}
+\LARGE{UNIVERSIDADE DE SÃO PAULO}  \\
+\LARGE{INSTITUTO DE FÍSICA DE SÃO CARLOS}
+\end{center}
+
+\vspace{6.0cm}
+
+\centerline{\LARGE{RENATO FABBRI}}
+
+\vspace{3.0cm}
+
+
+%\centerline{\Huge{Complex networks for the participant}} 
+\centerline{\Huge{Redes complexas para o participante}} 
+%\centerline{\Huge{Redes complexas para o participante de redes sociais}} 
+\vspace{0.5cm}
+%\centerline{\Huge{aplicada a reconhecimento de autoria}}
+
+
+\vspace{6.5cm}
+
+\begin{center}
+\Large{S\~ao Carlos}\\
+\Large{2015}
+\end{center}
+
+
+
+\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+\setcounter{page}{1} % ABNT: deve-se começar a numeração na folha de rosto.
+
+\begin{center}
+\LARGE{RENATO FABBRI}
+\end{center}
+
+\addvspace{4.0cm}
+
+\begin{center}
+%\Huge{Complex networks for the participant}
+\Huge{Redes complexas para o participante}
+\end{center}
+
+\addvspace{3.0cm}
+
+\makebox[15cm][r]{
+\begin{minipage}[l]{8cm}
+
+\begin{singlespace}
+Monografia apresentada ao Programa de Pós-Graduação em Física 
+do Instituto de Física de São Carlos da Universidade de São Paulo, para o Exame de Qualifica\c c\~ao 
+como parte dos requisitos para obten\c c\~ao do t\'itulo de Doutor em Ci\^encias.\\
+
+Área de concentração: Física Aplicada
+
+Opção: Física Computacional
+
+Orientador: Prof. Dr. Osvaldo Novais de Oliveira Jr.
+%Monograph presented to the Physics Graduate Program of the
+%São Carlos Institute of Physics, University of São Paulo,
+%for the qualification exam, as part of the requirements
+%for obtaining the title of Doctor in Sciences.\\
+%
+%Concentration area: Applied Physics
+%
+%Option: Computational Physics
+%
+%Advisor: Prof. Dr. Osvaldo Novais de Oliveira Jr.
+\end{singlespace}
+
+
+\end{minipage}}
+
+\addvspace{3.0cm}
+
+\begin{center}
+%\Large{Versão original} \\
+\vspace{1.5cm}
+\Large{S\~ao Carlos}\\
+\Large{2015}
+\end{center}
+
+
+%%%%%%
+%\thispagestyle{empty}
+%
+%
+%\includepdf{index}
+%\includepdf{fichacatalog135}
+%%%%%%
+
+%% \vspace*{8cm}
+%%\begin{center}
+%% \huge{FICHA CATALOGRÁFICA}
+
+%% \vspace*{3cm}
+
+%%\large{Elaborar ao final, quando o número de páginas da 
+%%dissertação estiver definido - 
+%%www.biblioteca.ifsc.usp.br/ficha}
+%%\end{center}
+
+%%%%%%%%%%%
+%\newpage\thispagestyle{empty} 
+%
+%\vspace*{8cm}
+%
+%\begin{center}
+%\normalsize{FOLHA DE APROVAÇÃO}
+%\end{center}
+%
+%
+%
+%\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}\ 
+%
+%\vspace*{18cm}
+%
+%\begin{spacing}{1.2}
+%
+%\begin{flushright}\textit{
+%\`A MINHA AV\'O,\\
+%\vspace{0.5cm}
+%CLELIA C\'ESPEDES ACERO
+%\vspace{1cm}
+%}\end{flushright}
+%
+%\end{spacing}
+%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+%\newpage\ \thispagestyle{empty} %NEWW
+%
+%\newpage\ \thispagestyle{empty}
+%
+%
+%\vspace*{18cm}
+%
+%\begin{spacing}{1.2}
+%
+%\makebox[15cm][r]{ 
+%\begin{minipage}[l]{10cm}
+%\hspace*{2.2cm}\emph{ \large{ Este trabalho foi financiado pelo \\ \hspace*{7.5cm} CNPq } }
+%\end{minipage}}
+%
+%
+%
+%\end{spacing}
+%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+
+\begin{singlespace}
+
+%\centerline{\LARGE{{\bf ABSTRACT}}}
+\centerline{\LARGE{{\bf RESUMO}}}
+
+\vspace*{1.5cm}
+
+%\hspace*{-0.9cm} FABBRI, C. \textit{Complex networks for the participant}. 
+\hspace*{-0.9cm} FABBRI, C. \textit{Redes complexas para o participante}. 
+Instituto de Física de São Carlos, Universidade de São Paulo, São Carlos, 2015. 
+%São Carlos Institute of Physics. University of São Paulo, São Carlos, 2015. 
+
+\vspace*{1.2cm}
+
+\hspace*{-0.9cm}
+
+{\noindent
+	As redes complexas compõem uma das áreas mais ativas da física recente.
+	Há esforços consideráveis para apresentar estes avanços ao público não especialista, mas tudo indica
+	que poucos ou nenhum são propostos para instrumentalizar o indivíduo que constitui estes sistemas a se beneficiarem.
+	Ou seja, com um núcleo de conhecimento da área, e receitas para aproveitamento,
+	fornecer meios para o participante interagir e entender as redes nas quais ele se encontra.
+	Este trabalho busca realizar tal tarefa por meio das redes sociais do participante.
+	Verificamos que tais redes exibem uma estabilidade temporal de medidas topológicas e dos
+	tamanhos relativos dos setores básicos (hubs, intermediários, periféricos).
+	Observamos uma diferenciação da produção de texto de cada setor básico.
+	Também formalizamos as conceitualizações vinculadas a estas redes como ontologias OWL onde foi possível,
+	principalmente as instâncias de participação social previstas por lei e praticadas ou implementadas como computacionalmente.
+	Software e dados foram disponibilizados e usados. Protocolos escolhidos para
+	facilitar a integração de estruturas de diferentes procedências,
+	para reutilização dos dados em outros trabalhos e pesquisas, e para o benefício público.
+	Consequências conceituais requerem considerações antropológocas e estão sendo redigidas.
+	Próximos passos são: melhor documentação e desenvolvimento do aparato em software, ontologias e dados;
+	considerações tipológicas das propriedades físicas observadas nas redes de interação humana, com
+	atenção aos outliers, às relações entre topologia do agente e texto produzido, e à ponte com
+	a bagagem mais tradicional das ciências humanas no assunto.
+}
+
+%{\noindent
+%	Complex networks form one of the most active fields of recent physics.
+%	With respectable efforts for exhibiting advances to the general audience, 
+%	it seems, however, that few or none of these are targeted to the benefit of the individual that constitute such systems.
+%	That is, with a core knowledge about the field, and recipes for harnessing,
+%	provide means for the participant to interact and understand the networks he/she is in.
+%	This work aims to accomplish such task by means of the social networks of the participants.
+%	We verified that such networks exhibit time stability of topological measures and
+%	of basic connective sector sizes and exhibit differentiation of the textual production in each basic connective sector.
+%	We also formalized conceptualizations of these networks as OWL were they were possible, specially
+%	in relation to the social participation instances provided by law. Finally, software and
+%	data have been put available and used, as means to enable integrated analysis of different provenance and public benefit.
+%	Conceptual consequences have been documented and requires anthropological considerations.
+%	Furthermore, software, ontological and data contributions can be better documented and developed while
+%	a typological consideration of the physical properties observed in human interaction networks should
+%	bridge complex networks and the more traditional legacy of human sciences on the subject.
+%}
+
+\vspace*{1.5cm}
+%\hspace*{-0.9cm} {\bf Keywords:} Complex networks. Social networks. Complexity. Anthropological physics. Linked data. Semantic web. Social participation. Text mining. Natural language processing.
+\hspace*{-0.9cm} {\bf Palavras-chave:} Redes complexas. Redes sociais. Complexidade. Física antropológica.
+Dados ligados. Web semântica. Participação social. Mineração de texto. Processamento de linguagem natural.
+
+\end{singlespace}
+
+  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage\thispagestyle{empty}
+%
+%\pagestyle{empty}
+%
+%\begin{singlespace}
+%\listoffigures
+%%\listoftables
+%\end{singlespace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%
+%\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+
+\newpage\ \thispagestyle{empty}  \newpage\thispagestyle{empty}
+%\thispagestyle{empty} %CHCHCH
+
+\tableofcontents\thispagestyle{empty}\thispagestyle{empty}%\thispagestyle{empty}
+
+\clearpage \thispagestyle{empty}
+
+\pagestyle{fancy}
+
+%\chapter{Introduction}
+\chapter{Introdução}
+Estudos sobre redes de interação humana foram iniciados bem antes dos computadores modernos,
+datam do século XIX, enquanto a fundação da ``Análise de Redes Sociais''/ARS (ou \emph{Social Network Analysis}/SNA)
+é geralmente atribuída ao psiquiatra Jacob Moreno na metade do século vinte~\cite{newmanBook}.
+Com a crescente disponibilidade de dados relacionados à interação humana, a pesquisa destas redes tem aumentado continuamente.
+Contribuições podem ser encontradas em uma variedade de áreas, de ciências sociais e humanidades~\cite{latour2013}
+a ciências sociais~\cite{bird} e física~\cite{barabasiHumanDyn,newmanFriendship},
+dada a natureza multidisciplinar do assunto.
+Uma das abordagens da perspectiva de uma ciência exata é representar a rede de interação como uma rede
+complexa~\cite{barabasiHumanDyn,newmanFriendship},
+com a qual algumas características foram reveladas.
+Por exemplo, a topologia das redes de interação humana exibem um traço livre de escala,
+o que aponta para a existência de um pequeno número de hubs super conectados
+e um grande número de vértices pouco conectados.
+
+Há um hiato de conhecimento e tecnologia entre o legado de redes complexas e o usufruto do participante.
+Este hiato é reativo, e há evidência de que conseguirá se manter como um ecossistema de conhecimento, tecnologia
+e empreendimento da sociedade em todas as suas escalas.
+Deve facilitar, por exemplo:
+elaboração e preparação de documentos, aquisição rápida de conhecimento,
+realização de empreitadas coletivas.
+Em geral: processos de coleta e difusão de informação (e bens)~\cite{pentland1,pentland2}.
+% Argumentar que é tido que o correto entendimento destas estruturas
+% será mais forte que XXX (ver no curso da Melanie/CE).
+
+Este trabalho apresenta uma confirmação deste cenário e avanços.
+Algumas estratégias foram selecionadas para verificar a aplicabilidade
+de conceitos de redes complexas para o benefício do participante.
+Em especial, experimentos muito simples parecem capazes de modificar
+estruturas sociais. Neste contexto, verificamos estabilidades temporais
+nas redes de interação humana, e expomos que os setores básicos
+das redes (hubs, intermediários e periféricos)
+produzem textos bastante diferentes entre si.
+Este conhecimento é útil para uma tipologia não estigmatizante
+de participantes em redes de interação.
+A audiovisualização e interconexão de dados com arte e engenhocas
+em software deram suporte contínuo à pesquisa científica.
+Aplicações foram complementadas em parceria com a Presidência da República
+e o Programa das Nações Unidas para o Desenvolvimento.
+
+A próxima seção apresenta considerações gerais sobre a literatura.
+A Seção~\ref{sec:jar} expõe a proliferação de ambiguidades e sinônimos
+no jargão da área.
+A Seção~\ref{sec:mat} é dedicada aos dados analisados.
+A Seção~\ref{sec:met} contém os métodos usados para atingir os resultados, que são explicitados na Seção~\ref{sec:res}. O cronograma de atividades e uma comparação entre afazeres planejados e finalizados
+estão na Seção~\ref{sec:chr}.
+A monografia termina com as conclusões na Seção~\ref{sec:con}, seguida de agradecimentos e bibliografia.
+
+\section{Revisão de literatura}
+A área das redes complexas é relativamente nova ($\approx 25$ anos)
+e a literatura apresenta definições divergentes da área em si.
+Uma definição que tem recebido aceitação crescente
+é da rede complexa como ``um grafo grande com características topológicas
+não triviais''. Esta definição é enganosa ao menos em três pontos.
+Primeiro, há redes de interesse com características topológicas triviais, como as redes de Erdös-Rényi e a Geográfica~\cite{newman}, ou as redes simples usadas para exemplos.
+Segundo, a definição falha ao não emitir a mensagem fundamental de que uma rede complexa não é somente uma estrutura matemática, um grafo isolado. As redes complexas de interesse são redes reais ou modelos idealizados para as entender.
+Além disso, não só grafos grandes são de interesse, mas grafos pequenos são comumente usados como exemplos de propriedades e extensão das estruturas maiores.
+Uma definição, ainda longe de perfeita, mas preferida neste trabalho, é considerar a área das redes complexas como interessada em
+``redes usualmente grandes, consideradas no, ou para consideração do,
+meio em que residem''.
+Esta definição resolve ambas as questões.
+
+Os livros em geral apresentam um comum e poderoso repertório para a caracterização de sistemas complexos através de grafos. Talvez as mais notáveis características deste repertório sejam:
+\begin{itemize}
+	\item O arsenal de medidas: grau, força, betweenness centrality, coeficiente de clusterização, etc.
+	\item Os paradigmas básicos de redes: Erdös-Rényi, geográfica, de mundo pequeno e livre de escala.
+	\item A abordagem transdisciplinar para considerar o meio no qual a rede está inserida, ou que implica na rede.
+\end{itemize}
+
+A literatura sobre análise de redes sociais (ARS, ou \emph{SNA} para \emph{Social Network Analysis}), por exemplo, pode ser frequentemente compreendida como redes complexas em sistemas sociais humanos.
+
+Uma consideração cuidadosa dos livros e artigos lidos para esta pesquisa estão na Seção~\ref{}. As seções a seguir (\ref{sec:jar} e~\ref{sec:misc})
+explicitam peculiaridades do jargão da área e considerações sobre as áreas secundárias.
+
+\section{Ambiguidades e sinônimos no jargão}\label{sec:jar}
+A área de redes complexas é recente e conflui com diversas 
+correntes científicas, como a física, a biologia e a sociologia.
+Portanto, possui termos ambíguos e sinônimos.
+
+Exemplos de ambiguidade, sinônimos e delimitações adotadas:
+\begin{itemize}
+	\item Os vértices mais conectados são, por definição, chamados hubs da rede. O vértice mais conectado é chamado hub da rede. No contexto do algoritmo HITS, o que é bem comum, estes significados mudam: os hubs são os que possuem mais arestas saindo (grau de saída); as autoridades recebem as arestas, ou são referenciados por vários hubs e outras entidades.
+	\item Há uma definição de centro e periferia com relação ao raio e diâmetro da rede~\cite{newman,networkX}.
+		Por extensão os intermediários podem ser considerados os que não são centro nem periferia.
+		Esta setorialização centro, intermediários e periferia gera frações que diferem do previsto pela literatura para as frações de hubs, intermediários e periféricos.
+		Um método apropriado para realizar esta setorialização da rede, com resultados estáveis e significativos, consta na Seção~\ref{sec:set}.
+	\item \emph{Aresta} e \emph{ligação} são usadas como sinônimos. \emph{Nó} e \emph{vértice} também. É comum o uso de outros termos, em geral coerentes com a aplicação, como \emph{agente}, \emph{ator} ou \emph{participante} para vértices de redes observadas em sistemas humanos.
+	\item Laços, \emph{loops}, \emph{selfloops}, \emph{autoloop}, \emph{buckle} são termos usados para arestas de um vértice para ele próprio.
+\end{itemize}
+
+\subsection{Processamento de linguagem natural, dados ligados, participação social}\label{sec:misc}
+Diversos títulos foram lidos sobre processamento de linguagem natural, mineração de texto,
+visualização de dados e web semântica. Estas áreas tem impacto sobre o que está feito, e sendo feito,
+e foram cursadas formalmente uma disciplina sobre cada uma para o doutorado.
+Seguem informações pontuais sobre cada área.
+
+Os termos processamento de linguagem natural (PLN) e mineração de
+texto (MT) podem em geral serem substituídos um pelo outro.
+O termo PLN é preferido nesta pesquisa pois o intuito é mais confluente: 
+compreender como a linguagem verbal está
+sendo usada para significar.
+
+Os termos web semântica e dados ligados em geral também podem ser 
+substituídos um pelo outro. O primeiro salienta
+a rede de referenciamento dos dados,
+o segundo os dados referenciando-se. Principalmente na esfera
+acadêmica, a área é, salvo segunda ordem, sinônimo de dados em 
+RDF via XML ou Turtle, ontologias OWL e máquinas de inferência.
+
+A visualização de dados de grafos em evolução temporal é bastante
+incipiente. Os poucos casos da literatura foram visitados. As
+animações abstratas de redes em evolução, e as ``audiovisualizações''
+das redes, que disponibilizamos como parte desta pesquisa,
+são potencialmente contribuições na fronteira da visualização.
+Vídeo, porém, não é o formato mais apreciado pela literatura
+de visualização de dados, que tende a qualificar as figuras
+bidimensionais como as mais apropriadas para a pesquisa
+científica.
+
+A participação social é a incorporação da própria sociedade nos 
+processos de governança da sociedade.
+Quase toda a participação social atual é indireta e presencial, 
+com a população fornecendo diretrizes, indicadores e acompanhamento
+para o setor público.
+A participação social tem sido fortalecida no mundo todo,
+e conceitos como transparência, participação direta (participação direta 
+da sociedade civil na tomada de decisões pelo Estado) e
+democracia líquida (atribuição recursiva de competência para tomada
+de decisão), se estabelecendo aos poucos como diretrizes para
+governos, acadêmicos e sociedade civil.
+
+\chapter{Materiais}\label{sec:mat}
+\section{O banco Gmane de dados públicos sobre listas de email (benchmark)}
+Mensagens de listas de email foram obtidas através do arquivo Gmane~\cite{gmanePack},
+que consiste em mais de 20 mil listas de email e mais de 130 milhões de mensagens públicas~\cite{GMANEwikipedia}.
+Estas listas cobrem uma variedade de assuntos, em especial
+relacionados à tecnologia. O arquivo pode ser descrito como
+um corpus com metadados de emails, que incluem hora e lugar
+de envio, nome e email do remetente. O uso do Gmane para
+pesquisa científica é incidente no estudo de listas isoladas
+e de inovações lexicais~\cite{GMANE2,bird}. 
+
+\section{Facebook, Twitter, Participa.br, Cidade Democrática, AA}
+Embora as redes de email tenham sido usadas como referência
+na observação de propriedades gerais, outras fontes
+foram analisadas:
+
+\begin{itemize}
+	\item Redes de amizade e interação do Facebook. 8 são usadas como referência em~\cite{timeS}, mas dezenas, talvez algumas centenas, foram observadas nos experimentos da Seção~\ref{sec:exp}.
+	\item Milhares de tweets (talvez alguns milhões), geralmente vinculados à alguma \emph{hashtag}. Em especial, a rede de retweets de 22 mil tweets com a hashtag \#arenaNETmundial, foi analisada em~\cite{timeS}.
+	\item Mecanismos participativos como o Participa.br, Cidade Democrática e o AA. As redes de amizade e de interação do Participa.br foram analisadas em~\cite{timeS}.
+\end{itemize}
+
+\chapter{Métodos}
+Para realização desta pesquisa, foram
+necessários métodos consagrados, adequações
+e variantes.
+Esta seção expõe uma seleção destes métodos,
+para organizar o conhecimento
+e exemplificar esta diversidade:
+\begin{itemize}
+	\item A Seção~\ref{sec:cir} expõe medidas simples
+de estatística circular, ou direcional.
+A contribuição neste caso é unicamente nos
+padrões encontrados, o método é bastante estabelecido.
+	\item A Seção~\ref{sec:intNet} expõe a síntese de redes
+		de interação. Talvez haja contribuição na síntese
+		do conceito de redes de interação, pois não 
+		encontramos (ainda) na literatura tal exposição
+		concisa. De qualquer forma, o conceito e o procedimento
+		para obtenção das redes a partir de dados é usual,
+		a exposição neste texto e no artigo~\cite{timeS} serve
+		principalmente ao intuito de formalização do
+		processo.
+	\item A Seção~\ref{sec:sec} é dedicada à ``Setorialização de Erdös'', para obtenção dos três setores básicos da rede, compostos por: hubs, intermediários e periféricos. 
+		O método parece não ter sido aplicado antes para este fim, e é resultado imediato da observação das caudas longas de dados reais contrastadas com o modelo de Erdös-Rényi~\cite{3setores}.
+	\item A Seção~\ref{sec:pca} apresenta o uso mais recorrente da Análise de Componentes Principais (PCA) neste trabalho. Várias redes são observadas, ou a mesma rede é observada em vários momentos, e a concentração
+		de dispersão das componentes principais, e das medidas nas componentes principais, são observadas através de médias e desvios padrão.
+	\item A Seção~\ref{sec:med} apresenta as medidas utilizadas nas análises, com exposição formal das medidas de simetria potencialmente novas (não encontramos ainda na literatura), mas bastante úteis nas análises.
+	\item A Seção~\ref{sec:kol} apresenta o uso que fazemos do teste de Kolmogorov-Smirnov de amostragem dupla. O método é bem estabelecido, e a contribuição está nos resultados alcançados com ele sobre diferenciação
+		da produção de texto nas redes de interação.
+	\item A Seção~\ref{sec:aud} expõe sobre a utilização dos dados de redes sociais para geração de imagem, música, e animação abstrata.
+	\item A Seção~\ref{sec:tip} explicita a pertinente recorrência de considerações qualitativas e do cânone das ciências humanas.
+	\item A Seção~\ref{sec:web} delineia um pouco as abordagens
+		utilizadas para registrar conceitualizações e vinculá-las
+		aos dados.
+\end{itemize}
+
+
+\section{Estatística temporal e circular}\label{sec:cir}
+
+Para observação de padrões temporais, foram consideradas escalas diferentes.
+Em cada escala, de segundos e meses, foram construídos histogramas de atividade
+e feitas algumas medidas de estatística circular.
+Considere cada $ medida $ (dado pontual) como um número complexo de módulo 1, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, onde $\theta= medida \frac{2\pi}{periodo}$. Os momentos $m_n$, tamanhos dos momentos $R_n$, ângulo médio $\theta_\mu$, e o ângulo médio reescalado $\theta_\mu'$ são definidos assim:
+\begin{align}\label{eq:cmom}
+	m_n&=\frac{1}{N}\sum_{i=1}^N z_i^n \nonumber\\
+	R_n&=|m_n|\\
+	\theta_\mu&=Arg(m_1) \nonumber \\
+	\theta_\mu'&=\frac{period}{2\pi} \theta_\mu \nonumber
+\end{align}
+
+$\theta_\mu'$ é usado como medida de localização. A dispersão é medida usando a variância circular $Var(z)$, 
+o desvio padrão circular $S(z)$, e a dispersão circular $\delta(z)$:
+
+\begin{align}\label{eq:cmd}
+	Var(z)&=1 - R_1 \nonumber\\
+	S(z)&= \sqrt{-2\ln(R_1)}\\
+	\delta(z)&=\frac{1-R_2}{2 R_1^2} \nonumber
+\end{align}
+
+Como esperado e pode ser notado nas informações de suporte de~\cite{timeS}, há uma correlação positiva entre $Var(z)$, $S(z)$ e $\delta(z)$.
+A medida $\delta(z)$ foi preferida na discussão dos resultados.
+A fração $\frac{b_h}{b_l}$ entre a maior $b_h $ e a menor $b_l$ incidência nos histogramas
+também serviram como pista sobre quão próximas à distribuição uniforme são as distribuições observadas.
+
+
+\section{Formação das redes de interação}\label{sec:intNet}
+Redes de interação podem ser modeladas tanto com quanto sem peso, tanto dirigida quando não dirigida~\cite{bird,newmanCommunityDirected,newmanCommunity2013,newmanBook}.
+Neste trabalho, quando possível, consideramos redes dirigidas e com peso, a mais informativa das possibilidades.
+Nestes casos, desconsideramos as versões dirigidas sem peso, não dirigidas com peso e não dirigidas e sem peso.
+
+Em geral, as redes de interação são obtidas da seguinte forma:
+uma reação direta do participante B a uma mensagem do participante A implica em uma aresta de A para B,
+representando a informação que foi de A para B.
+O raciocínio é: se B reagiu
+a uma mensagem de A, ele/ela leu o que A escreveu e formulou uma reação, portanto B
+assimilou informação de A, assim $A \rightarrow B$.
+A inversão da direção da aresta produz a rede de status: B leu a mensagem e considerou
+o que A escreveu digno de resposta, dando status para A, portanto $B \rightarrow A$.
+Neste trabalho, as redes de interação são dirigida conforme o fluxo de informação, $A \rightarrow B$.
+A Figura~\ref{formationNetwork} expõe esta formação. Maiores detalhes são:
+arestas em ambas as direções são consideradas distintas;
+laços são consideradas não informativos (para os interesses atuais) e descartados;  
+a primeira interação $A\rightarrow B$ cria a aresta com peso um; 
+a cada nova interação $A\rightarrow B$ um é adicionado ao peso da aresta.
+Estas redes de interação humana constam na literatura como portadoras
+de propriedades livres de escala (e pequeno mundo), como esperado
+para (algumas) redes sociais~\cite{bird,newmanBook}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figs/criaRede__}
+	\caption{A formação da rede de interação a partir
+		de mensagens e respostas.
+		Cada vértice representa um participante.
+		Uma resposta do participante B a uma
+		mensagem do participante A é considerada
+		evidência de que B recebeu informação de A,
+		representada então por uma aresta dirigida.
+		Múltiplas mensagens adicionam ``peso'' à
+		aresta dirigida. Maiores detalhes
+		estão na Seção~\ref{sec:intNet}}
+	\label{formationNetwork}
+\end{figure}
+
+\section{Setorialização de Erdös}\label{sec:sec}
+Em uma rede livre de escala, os setores periféricos, intermediários
+e de hubs podem ser observados através de uma comparação
+com uma rede de Erdös-Rényi com o mesmo número de arestas e vértices~\cite{3setores},
+como na Figura~\ref{fig:setores}.
+Referiremos-nos a este procedimento como \emph{setorialização de Erdös},
+com os setores resultantes chamados \emph{setores de Erdös}
+(ou \emph{setores primitivos}, \emph{setores básicos} da rede).
+
+A distribuição de grau
+$\widetilde{P}(k)$
+de uma rede livre de escala ideal
+$\mathcal{N}_f$ com $N$ 
+vértices e $z$ arestas possui menos
+vértices com grau médio do que a distribuição $P(k)$
+de uma rede Erdös-Rényi com o mesmo número de vértices e arestas.
+De fato, definimos (neste trabalho) o setor intermediário de uma
+rede como sendo o conjunto de todos os vértices cujo grau é
+menos abundante em uma rede real do que no modelo de Erdös-Rényi:
+\begin{equation}\label{criterio}
+	\widetilde{P}(k)<P(k) \Rightarrow \text{k é grau intermediário}
+\end{equation}
+
+Se $\mathcal{N}_f$ for dirigida e não possuir laço (aresta de um vértice para ele próprio),
+a probabilidade
+de existência de uma aresta entre dois vértices arbitrários é
+$p_e=\frac{z}{N(N-1)}$.
+Um vértice em um dígrafo de Erdös-Rényi com o mesmo número de vértices e aresta,
+portanto mesma probabilidade
+$p_e$
+para existência de aresta, terá grau $k$ com probabilidade ditada pela distribuição binomial:
+\begin{equation}
+	P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
+\end{equation}
+
+A cauda longa de graus baixos consiste nos vértices de borda,
+i.e. o setor periférico ou periferia, onde
+$\widetilde{P}(k)>P(k)$ e $k$ é mais baixo
+que qualquer valor intermediário de $k$.
+A cauda longa de grau alto é o setor dos hubs,
+i.e.
+$\widetilde{P}(k)>P(k)$ e $k$ é maior que qualquer valor de $k$ do setor
+intermediário.
+O raciocínio para esta classificação é: os vértices tão conectados
+que são virtualmente inexistentes em redes conectadas por puro acaso
+(i.e. sem ligação preferencial) são corretamente associadas
+aos hubs.
+Vértices com pouquíssimas conexões, e muito mais abundantes do que esperado
+por puro acaso, são atribuídos à periferia.
+Vértices com valores de grau previstos como os mais abundantes caso
+as conexões sejam fruto de puro acaso, valores próximos da média,
+e menos abundantes em nas redes reais, são classificados como intermediários.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figs/fser_}
+	\caption{As distribuições de grau de modelos ideais de redes livres de escala e Erdös-Rényi.
+		A segunda possui mais vértices intermediários, enquanto a primeira possui mais vértices
+		periféricos e hubs. As bordas dos setores são definidas pelas duas intersecções $k_L$
+		e $k_R$ das distribuições de conectividade.
+		Os graus característicos estão nos intervalos compactos:
+                $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$
+	para os setores de Erdös (periferia, intermediários e hubs).}	
+		\label{fig:setores}
+\end{figure}
+
+Para assegurar a validade estatística dos histogramas, os intervalos podem
+ser escolhidos de forma que contenham ao menos $\eta$ vértices da rede real.
+Assim, cada intervalo, começando no grau $k_i$, estende-se por
+$\Delta_i=[k_{i},k_{j}]$,
+onde $j$ é o menor inteiro tal que há ao menos $\eta$ vértices com grau maior que ou igual a $k_i$,
+e menos que $k_j$. Isso altera a equação~\ref{criterio} para:
+
+\begin{equation}\label{criterio2}
+	\sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i é intermediário}
+\end{equation}
+
+Se a força $s$ for usada para comparação, $P$ permanece a mesma, mas
+$P(\kappa_i)$ com $\kappa_i=\frac{s_i}{\overline{w}}$
+deve ser usado na comparação, com
+$\overline{w}=2\frac{z}{\sum_is_i}$
+o peso médio da aresta e $s_i$ o peso do vértice $i$.
+Para graus de entrada e saída
+($k^{in}$, $k^{out}$)
+a comparação com a rede real deve ser feita com:
+\begin{equation}
+	\hat{P}(k^{way})=\binom{N-1}{k^{way}}p_e^k(1-p_e)^{N-1-k^{way}}
+\end{equation}
+
+\noindent onde \emph{way} (sentido) pode ser \emph{in} ou \emph{out} (entrada e saída).
+Forças de entrada e saída ($s^{in}$, $s^{out}$)
+são divididas por
+$\overline{w}$
+e comparadas também usando $\hat{P}$. Note que $p_e$ permanece a mesma,
+pois cada aresta é uma aresta de entrada (ou de saída), e há no máximo $N(N-1)$
+arestas entrando (ou saindo), portanto
+$p_e=\frac{z}{N(N-1)}$
+assim como no caso do grau total.
+
+Em outras palavras, sejam $\gamma$ e $\phi$ inteiros nos intervalos
+$1 \leq \gamma \leq 6$, $1 \leq \phi \leq 3$.
+Cada uma das seis possibilidades de setorialização de Erdös 
+$\{E_{\gamma}\}$
+possui três setores de Erdös
+$E_{\gamma}= \{e_{\gamma, \phi} \}$
+definidos como:
+
+\begin{alignat}{3}\label{eq:part}
+	e_{\gamma,1}&=\{\;i\;|\;\overline{k}_{\gamma,L}\geq&&\overline{k}_{\gamma,i}\} \nonumber \\
+	e_{\gamma,2}&=\{\;i\;|\;\overline{k}_{\gamma,L}<\;&&\overline{k}_{\gamma,i}\leq\overline{k}_{\gamma,R}\} \\ 
+	e_{\gamma,3}&=\{\;i\;|\;&&\overline{k}_{\gamma,i}<\overline{k}_{\gamma,R}\} \nonumber
+\end{alignat}
+
+\noindent onde $\overline{k}_{\gamma,i}$ é a medida $\gamma$ no vértice $i$,
+convencionada:
+
+\begin{equation}
+	\begin{split}
+		\overline{k}_{1,i}&=k_i \\
+		\overline{k}_{2,i}&=k_i^{in} \\
+		\overline{k}_{3,i}&=k_i^{out} \\
+		\overline{k}_{4,i}&=\frac{s_i}{\overline{w}} \\
+		\overline{k}_{5,i}&=\frac{s_i^{in}}{\overline{w}} \\
+		\overline{k}_{6,i}&=\frac{s_i^{out}}{\overline{w}} \\
+	\end{split}
+\end{equation}
+
+\noindent e ambos $\overline{k}_{\gamma,L}$ e $\overline{k}_{\gamma,R}$ são encontrados  usando
+$P(\overline{k})$ ou $\hat{P}(\overline{k})$
+como descrito.
+
+Como métricas diferentes podem ser usadas para identificar
+os três tipos de vértices, critérios compostos podem ser
+definidos. Após uma inspeção cuidadosa das possibilidades,
+os critérios compostos foram reduzidos a 6: $\{C_\delta\}_{\delta=1}^{6}$.
+Utilizando as Equações~\ref{eq:part}, estes critérios compostos $C_\delta$, com $\delta$ inteiro no intervalo $1\leq\delta<6$ podem ser descritos como:
+
+\begin{equation}
+	\begin{split}
+		%\begin{multline}
+		C_1&=\{c_{1,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi}, \;\forall\; \gamma\}\right\} \\
+		C_2&=\{c_{2,\phi}=\left\{i\mid \exists \;\;\gamma: i \in e_{\gamma,\phi}\}\right\} \\
+		C_3&=\{c_{3,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\;\forall\;\phi'\geq \phi\}\right\} \\
+		C_4&=\{c_{4,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\;\forall\;\phi'\leq \phi\}\right\} \\
+		C_5&=\{c_{5,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\right.\\
+																																	&\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\leq (\phi+1)\%4\}\right\} \\
+		C_6&=\{c_{6,\phi}=\left\{i\mid i\;\in e_{\gamma,\phi'}, \;\forall\; \gamma,\right.\\
+																																	&\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \left.\;\forall\;(\phi'+1)\%4\geq (\phi+1)\%4\}\right\} \\
+		%\end{multline}
+	\end{split}
+\end{equation}
+
+
+No artigo~\cite{timeS}, os critérios $C_1$, $C_3$ e $C_5$ foram chamados exclusivistas, os critérios $C_3$ e $C_4$ de cascata e os critérios $C_5$ e $C_6$ de externos. Note que uma cascata exclusivista $C_3$ é a mesma classificação que uma cascata invertida (considera-se dos periféricos aos hubs) e inclusivista. Estes critérios compostos são especialmente úteis para observar estruturas com poucos participantes ou fruto de pouca atividade (veja as figuras do documento de Supporting Information de~\cite{timeS}).
+
+\section{Médias e variâncias nas Análises de Componentes Principais de cada sistema}\label{sec:pca}
+A Análise de Componentes Principais (PCA é a sigla consagrada, do inglês Principal Component Analysis) é bastante estabelecida e bem documentada
+e foi usada para saber: 
+1) quais as medidas que contribuem para cada componente principal e em que proporção;
+2) quanto da dispersão está concentrada em cada componente.
+3) médias e desvios padrão destas quantidades envolvidas para vários
+sistemas diferentes. Em geral, os diferentes sistemas eram evolução
+temporal um do outro.
+
+Ou seja, foram analisados os autovetores e autovalores das matrizes
+de vértices e suas medidas da seguinte forma: seja $\mathbf{X}=\{X[i,j]\}$
+a matriz de todos os vértices $i$ e respectivos valores de cada medida $j$, 
+$\mu_X [j]=\frac{\sum_j X[j]}{J}$ a média da métrica $j$, 
+$\sigma_X [j]=\sqrt{\frac{(X[j]-\mu_X [j])^2}{J}}$ o desvio padrão da métrica $j$,
+e $\mathbf{X'}={\frac{X[i,j]-\mu_X[j]}{\sigma_X[j]}}$ a matriz com \emph{z-score} de cada métrica $j$ de de $\mathbf{X}$ em cada coluna. 
+Seja $\mathbf{V}=\{V[j,k]\}$ a matriz $J\times J$ de autovetores da matriz $\mathbf{C}$ de covariância
+de $\mathbf{X'}$, um autovetor por coluna.
+Cada autovetor combina as medidas originais em uma componente principal, portanto, basta observar 
+$V'[j,k]=100*\frac{|V[j,k]|}{\sum_{j'} |V[j',k]|}$
+para saber que percentagem da a componente principal $k$
+é contribuição da medida $j$.
+Com o vetor de $k$ autovalores $D[k]$,
+basta observar $D'[k]=100*\frac{D[k]}{\sum_{k'}D[k']}$ para saber
+a percentagem da dispersão pela qual a componente principal é responsável.
+Com os autovalores k ordenados de forma decrescente, 
+em geral basta observar os primeiros três autovalores e respectivos
+autovetores em percentagens $\{(V'[j,k],\;D'[k])\}$, pois em geral
+já revelam padrões suficientes para uma boa análise e somam entre 60 e 95\% da dispersão de todo o sistema.
+Em~\cite{timeS}, em especial, foram feitas médias e desvios das contribuições de cada componente para a dispersão e das medidas em cada componente. Ou seja, dadas $L$ observações $l$, cada uma com $k$ pares de autovalores e autovetores, são observadas, para cada medida,
+a média $\mu_{V'}[j,k]$ e desvio $\sigma_{V'}[j,k]$ 
+da medida j na componente principal k,
+e a média $\mu_{D'}[k]$ e desvio $\sigma_{D'}[k]$ da 
+contribuição da componente $k$ na dispersão do sistema:
+
+\begin{align}\label{eq:pca}
+\mu_{V'}[j,k]   &=\frac{\sum_l^L V'[j,k,l]}{L}\nonumber\\
+\sigma_{V'}[j,k]&=\sqrt{\frac{(\mu_{V'}-V'[j,k,l])^2}{L}}\\\nonumber
+\mu_{D'}[k]&=\frac{\sum_l^L D'[k,l]}{L}\\\nonumber
+\sigma_{D'}[k]&=\sqrt{\frac{(\mu_{D'}-D'[k,l])^2}{L}}
+\end{align}
+
+A matriz de covariância $\mathbf{C}$ também é observada diretamente para
+uma primeira pista sobre os padrões. Isso é feito com associações simples: valores absolutos pequenos indicam baixa correlação (a princípio independência); valores altos indicam correlação positiva (diretamente proporcional);
+valores negativos com módulo grande indicam correlação negativa (inversamente proporcional).
+
+\subsection{Medidas consideradas e acrescentadas}\label{sec:med}
+A topologia das rede foram estudadas utilizando PCA~\cite{pca}
+com uma pequena seleção das medidas mais básicas e fundamentais de cada vértice. 
+%Formalmente, sejam $i$, $j$ vértices e $e_{ij}$ uma aresta de $j$ para $i$ (ou $j\rightarrow i$) e $w_{ij}$ seu peso. Então as medidas utilizadas, e bem conhecidas, podem ser expressas assim:
+%
+%\begin{itemize}
+%	\item Grau $k_i=\sum_j (e_{ij}+e_{ji})$: número de arestas conectadas a $i$.
+%	\item Grau de entrada $k_i^{in}=\sum_j e_{ij}$: número de arestas que terminam no vértice $i$.
+%	\item Grau de saída $k_i^{out}=\sum_j e_{ji}$: número de arestas que partem do vértice $i$.
+%	\item Força $s=\sum_j (w_{ij}+w_{ji})$: soma dos pesos de todas as arestas conectadas ao vértice $i$.
+%	\item Força de entrada $s_i^{in}=\sum_j w_{ij}$: soma dos pesos de todas as arestas que terminam no vértice $i$.
+%	\item Força de saída $s_i^{out}$: soma dos pesos de todas as arestas que partem do vértice $i$.
+%	\item Coeficiente de clusterização $cc_i=\frac{\sum e_{j_1 j_2}}{\binom{k_i}{2}}$: fração de pares de vizinhos $j_1$, $j_2$ de $i$ que são conectados. A medida usual para grafos não direcionados foi usada.
+%\item Intermediação (betweenness centrality) $bt_i=\frac{\Delta_i}{\Delta}$: fração entre o número $\Delta_i$ de geodésicas entre cada par de vértices da rede que contém o vértice $i$ e $\Delta$, o número total de geodésicas entre cada par de vértices da rede.
+%	A intermediação foi calculada considerando direções e peso, como especificado em~\cite{faster}.
+%\end{itemize}
+
+As seguintes medidas bastante conhecidas foram usadas: grau, grau de entrada, grau de saída,
+força, força de entrada, força de saída, coeficiente de clusterização,
+centralidade de intermediação (\emph{betweenness centrality}).
+Além disso, para apreender as simetrias das atividades dos participantes, as
+seguintes métricas foram introduzidas para o vértice $i$:
+
+\begin{itemize}
+	\item Assimetria: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
+	\item Média da assimetria das arestas: $\mu_i^{asy}=\frac{\sum_{j\in J_i} e_{ji}-e_{ij}}{|J_i|=k_i}$, onde $e_{xy}$ é 1 se houver aresta de $x$ para $y$, e $0$ caso contrário. $J_i$ é o conjunto de vizinhos do vértice $i$, e $|J_i|=k_i$ é o número de vizinhos do vértice $i$.
+	\item Desvio padrão da assimetria das arestas: $\sigma_i^{asy}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{asy} -(e_{ji}-e_{ij}) ]^2  }{k_i}  }$.
+	\item Desequilíbrio: $dis_i=\frac{s_i^{in}-s_i^{out}}{s_i}$.
+	\item Média do desequilíbrio das arestas: $\mu_i^{dis}=\frac{\sum_{j \in J_i}\frac{w_{ji}-w_{ij}}{s_i}}{k_i}$, onde $w_{xy}$ é o peso da aresta $x\rightarrow y$ e zero se não houver tal aresta.
+	\item Desvio padrão do desequilíbrio das arestas: $\sigma_i^{dis}=\sqrt{\frac{\sum_{j\in J_i}[\mu_{dis}-\frac{(w_{ji}-w_{ij})}{s_i}]^2}{k_i}}$.
+\end{itemize}
+
+\section{Teste de Kolmogorov-Smirnoff para os textos produzidos por cada setor}\label{sec:kol}
+
+Sejam $F_{1,n}$ e $F_{2,n'}$ duas distribuições cumulativas empíricas onde 
+$n$ e $n'$ contam as observações em cada amostragem.
+O teste de Kolmogorov-Smirnov de amostragem dupla 
+rejeita a hipótese nula (rejeita que $F_{1,n}$ seja fruto da mesma distribuição que $F_{2,n'}$) se:
+\begin{equation}\label{eq:ks}
+D_{n,n'} > c(\alpha)\sqrt{\frac{n+n'}{nn'}}
+\end{equation}
+
+onde $D_{n,n'}=sup_x[F_{1,n}-F_{2,n'}]$ e $c(\alpha)$ é dado para cada região crítica $\alpha$
+(probabilidade da hipótese nula ser verdadeira) segundo a Tabela~\ref{tab:kol}.
+
+\begin{table}[!h]
+\centering
+\caption{Relação entre a região crítica $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov
+de amostragem dupla.}\label{tab:kol}
+\begin{tabular}{|l||c|c|c|c|c|c|}\hline
+$\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
+$c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
+\end{tabular}
+\end{table}
+
+\subsection{Adaptação}
+
+São calculados $D_{n,n'}$, enquanto $n$ e $n'$ são dados.
+Todos os termos da Equação~\ref{eq:ks} são positivos
+e $c(\alpha)$ pode ser isolado:
+
+\begin{equation}\label{eq:ks2}
+c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
+\end{equation}
+
+Utilizamos $c'(\alpha)$
+como distância entre pares de distribuições empíricas,
+o que é coerente com a teoria~\cite{kol}.
+
+\section{Audiovisualização de dados}\label{sec:aud}
+Redes foram visualizadas com imagens, videos e engenhocas online para esta pesquisa~\cite{animacoes,galGMANE,appGMANE}.
+Também foram sonificadas, em especial como faceta sonora de animações abstratas~\cite{preludio,4hubs,gmane,social}.
+Tais ``audiovisualizações'' foram cruciais para guiar a pesquisa para
+características relevantes das redes de interação.
+Além disso, os tamanhos relativos dos três setores de Erdös foram visualizados como linhas temporais.
+A visualização da estrutura em rede foi especialmente útil na inspeção
+dos dados e estruturas das redes de email.
+
+\section{Considerações tipológicas e humanísticas}\label{sec:tip}
+As redes estudadas neste trabalho são constituídas por seres humanos.
+Quando há classificação envolvida, seja dos agentes
+ou dos sistemas em si, reflexões humanísticas são pertinentes,
+como as disparadas pelas perguntas:
+
+\begin{itemize}
+	\item Qual o potencial estigmatizante da classificação?
+	\item O que mais sabemos sobre o indivíduo ou a rede que é classificada, ou seja, é considerada(o) de um tipo?
+	\item Quais dados posso usar e que procedimentos posso realizar
+		sem desviar a atenção da pesquisa para leis e processos de comitês de ética?
+	\item Qual a melhor forma de proceder com os dados e conhecimentos frutos da pesquisa?
+\end{itemize}
+
+Todas estas questões, e muitas outras, estão em constante amadurecimento com grupos de pesquisa~\cite{Nexus}, 
+leituras~\cite{mas}, escrita~\cite{ensaioAA,ap}, e contatos individuais com outros pesquisadores~\cite{massimoTexto,massimoEncontro}.
+
+\section{Web semântica}\label{sec:web}
+Para a formalização de conceitualizações, e
+para formatos de dados apropriados para armazenamento,
+compartilhamento e referência,
+foram adotadas as recomendações de dados ligados / web semântica
+da W3C~\cite{rdf,owl,rdfs}.
+De forma bastante resumida, o arcabouço utilizado pode
+ser viso como uma maneira de formalizar conceitos (classes), relações
+entre conceitos (propriedades) e instâncias dos conceitos (indivíduos).
+As informações são expressas de forma semi-estruturada em RDF:
+triplas ``sujeito predicado objeto'',
+com o sujeito sempre uma classe, o predicado sempre uma propriedade,
+e o objeto sempre uma classe ou dado. As propriedades podem ter especificidades
+, chamadas ``axiomas de propriedade''. As classes podem ser restritas a possuírem certas relações, chamadas ``restrições de classe''.
+É uma recomendação da W3C e o padrão acadêmico para dados ligados, i.e. para representação na web semântica.
+
+Utilidades da tecnologia incluem:
+\begin{itemize}
+	\item inferência por máquina através de especificações ontológicas. 
+	\item Interconexão de dados de fontes diferentes.
+	\item Organização ontológica de conhecimento específico para consideração cuidadosa, seja individual ou em grupo.
+\end{itemize}
+
+As ontologias são chave dentre as tecnologias de web semântica.
+Uma ontologia é geralmente definida como uma ``especificação de
+uma conceitualização'', e a recomendação é o uso do padrão OWL~\cite{owl}.
+Os vocabulários são coleções de termos e metadados, como definição,
+e a recomendação é o uso do padrão SKOS~\cite{skos}.
+O estado da arte de web semântica tem apresentado avanços,
+por exemplo, as inferências tem se tornado mais ágeis e úteis, especialmente para buscas.
+Por outro lado, é uma tecnologia
+complicada e com algumas dificuldades de implementação.
+Por exemplo, um conceito SKOS é um indivíduo (instância de uma classe),
+e uma classe OWL,
+se identificado com um conceito SKOS é, por consequência um
+indivíduo.
+Neste caso, quando um um indivíduo (instância de uma classe) é
+também uma classe, dada a complexidade, os recursos de inferência por máquina 
+ficam limitados e lentificados.
+
+\subsection{A construção de ontologias OWL e vocabulários SKOS}
+
+Para formalizar conceitualizações referentes às estruturas sociais,
+mais especificamente relacionadas à participação social,
+foram construídas ontologias OWL e vocabulários SKOS a partir de entrevistas
+com especialistas acadêmicos e gestores públicos.
+Também foram feitas ontologias e vocabulários a partir de bancos de dados,
+decretos presidenciais e outras documentações.
+O processo  consistiu sempre que possível na coleta de informações,
+formalização dos conceitos e devolutiva aos entrevistados,
+com figuras e outras documentações, até que não tivessem
+mais contribuições~\cite{pnud5}.
+
+\subsection{A triplificação de dados relacionais}
+Para disponibilização e uso de dados de diferentes fontes, foram
+feitos pequenos programas de computador (\emph{scripts}) para
+acessar dados relacionais e escrever triplas RDF com os dados semanticamente enriquecidos.
+Estes \emph{scripts} formalizam conceitos e os vinculam aos dados.
+Na sequência, acessam as ontologias pertinentes, salvam
+uma versão com os dados e ontologias, e uma versão
+com os dados, as ontologias e as triplas resultantes da inferência sobre os dados com a ontologia.
+
+
+\chapter{Resultados}
+%\section{Time stability in human interaction networks}
+\section{Estabilidade temporal e topológica; diferenciação textual em redes de interação humana}\label{sec:timeS}
+Explicitados cuidadosamente em~\cite{timeS}, os principais resultados da estabilidade temporal e topológica em redes de interação humana são:
+\begin{itemize}
+	\item A atividade ao longo do tempo é praticamente a mesma para todas as listas de email analisadas, e em todas as escalas. A maior dispersão foi encontrada nos segundos e minutos, seguida pela dispersão encontrada nos dias do mês, meses, dias da semana e horas do dia. Padrões estáveis foram apreciados em todas estas escalas: segundos, minutos e dias do mês apresentaram uniformidade; meses parecem seguir calendários acadêmicos e escolares; dias da semana apresentam redução para dois ou um terço das atividades nos finais
+		de semana;
+		nas horas do dia, há concentração de atividades das 12-18h, mas o pico, porém, ocorre pouco antes das 12h.
+	\item A fração de participantes em cada setor de Erdös é estável ao longo do tempo e
+		esta estrutura já desponta na rede mesmo com poucas mensagens.
+	\item As métricas topológicas se combinam nas componentes principais do PCA praticamente 
+		da mesma forma para todas as listas e todos os \emph{snapshots}.
+	\item As medidas de simetria da topologia, como definidas na Seção~\ref{sec:med},
+		são responsáveis por mais dispersão do que o coeficiente de clusterização.
+		Resultado menor: 
+		o coeficiente de clusterização se combina com os desvios padrões de assimetria e desequilíbrio para a formação da terceira componente.
+	\item Estes comportamentos são muito estáveis para em redes de interação de email.
+		Nas outras redes analisadas, Twitter e Participa.br
+		apresentaram redes bastante similares às de email. Nas
+		redes do Facebook foram encontradas algumas redes que diferiam
+	do modelo apresentado pelas redes de listas públicas de email em dois aspectos:
+	algumas proporções e combinações de medidas das componentes principais;
+	frações de participantes em cada setor de Erdös.
+\item Para um mesmo número de mensagens (sejam 20 mil)  e diferentes listas, há uma
+	correlação negativa entre número de participantes e número de \emph{threads} quando os participantes são poucos 
+	(até $\approx$ 2 mil participantes quando são 20 mil mensagens).
+	Para uma quantidade maior de participantes,
+	há uma correlação positiva entre o número de participantes e o número de \emph{threads}.
+	Este fato deve estar relacionada a outras características topológicas e textuais da rede e 
+	pode servir para uma tipologia das próprias redes.
+	\item Especulações humanísticas, especialmente sobre questões
+		tipológicas e antropológicas, seguem imediatamente
+		dos procedimentos e resultados quantitativos deste trabalho.
+		Em especial, a setorialização de Erdös implica em uma
+		tipologia de agentes em redes humanas de interação.
+		Esta tipologia é, a princípio, não estigmatizante pois os agentes mudam de setor constantemente.
+		Além disso, um mesmo agente pertence a todos os setores ao mesmo tempo,	mas em redes diferentes.
+		Maiores qualificações desta tipologia, decorrente do pertencimento
+		a um setor de Erdös, estão no final dos resultados do artigo.
+\end{itemize}
+
+Com base nestes resultados, foi investigada a produção de texto na rede,
+com foco na potencial relação entre topologia,
+setor de Erdös e texto produzido~\cite{rcText}.
+As principais conclusões são:
+\begin{itemize}
+	\item O texto produzido por cada setor de Erdös é bastante diferente um do outro:
+		os $c(\alpha)$ fruto do teste de Kolmogorov-Smirnov
+		entre histogramas
+		de uso de recursos textuais (pontuação, adjetivos, etc) de cada setor
+		são tão grandes que as tabelas não registram os valores (veja Seção~\ref{sec:kol}).
+		Além disso, as diferenças entre $c(\alpha)$ de setores iguais de redes diferentes são,
+		na grande maioria das vezes, maiores que as encontradas entre setores diferentes de uma mesma rede.
+		Isso decorre de uma maior discrepância de massa probabilística entre os histogramas de setores diferentes de uma mesma rede do que entre setores iguais de redes diferentes. 
+
+	\item As características topológicas e textuais de cada agente apresentam correlações não triviais (como entre intermediação e uso de advérbios) e triviais (como entre grau e número de caracteres escritos).
+		Mesmo assim, são muito menos correlacionadas entre si do que separadamente. Ou seja, as componentes principais possuem tendência
+		a prevalência de medidas topológicas {\bf ou} textuais,
+		mas a combinação de medidas de ambos os tipos é incidente.
+\end{itemize}
+
+Estes resultados permearam várias outras frentes de
+de pesquisa e desenvolvimento tecnológico~\cite{prod1,prod2,prod3,prod4,prod5,ops,versinus}.
+
+\section{Criação da nuvem brasileira de dados participativos ligados}
+Iniciada para formalizar as rede e participantes, junto às suas
+propriedades e estruturas.
+Esta frente rapidamente se voltou para
+as formalizações de conceitualizações referentes às estruturas
+e sistemáticas já em prática e previstas em lei.
+Dados também foram publicados, fazendo uso das ontologias
+feitas. Estes dados e ontologias foram em grande parte
+já publicados e estão em uso, mas a grande maioria não
+recebeu artigo científico ainda.
+
+\subsection{Síntese de ontologias OWL e vocabulários SKOS}
+Ontologias OWL feitas neste trabalho:
+\begin{itemize}
+		\item OPS (Ontologia de Participação Social): é uma ontologia fruto de diversos esforços da América latina, principalmente do Brasil. Nesta pesquisa, revisamos a ontologia e disponibilizamos um código OWL em uso por instâncias diferentes da academia, Estado e sociedade civil.
+		\item OPa (Ontologia do Participa.br): esta é uma ontologia feita para e partir dos dados do Participa.br (Portal Federal de Participação Social, SG-PR).
+		\item OPP (Ontologia de Portais Participativos): esta ontologia foi pensada com a equipe do Participa.br e outros especialistas como esquema geral de portais participativos. Ontologia relativamente complexa, centrada em 3 classes: Participante, Comunidade, Mecanismo Participativo.
+		\item Ontologiaa (Ontologia do AA): é uma pequena ontologia para o minimalista AA (Autorregulação Algorítmica), um software para registrar e compartilhar processos intelectuais como para pesquisa e arte~\cite{paaper, ensaaio}.
+		\item OCD (Ontologia do Cidade Democrática): é uma ontologia extensa para o portal participativo Cidade Democrática, da sociedade civil. Dado o tamanho da ontologia, o processo de sua construção deu origem ao método de construção de ontologia OWL a partir dos dados, descrito na Seção~\ref{} e utilizado também para a construção da OPa (acima).
+		\item OBS (Ontologia da Biblioteca Social): Esta ontologia consiste na verdade em uma coleção de ontologias, uma para cada conceito que precisasse de uma abordagem dedicada, e uma para cada mecanismo ou instância de participação social prevista no Decreto Presidencial nº 8.243 de 23 de maio de 2014, conhecido como decreto da PNPS ou da Política Nacional de Participação Social. Esta ontologia também contou com entrevistas feitas diretamente para este trabalho, além da contribuição de uma oficina na na Secretaria-Geral da
+Presidência da República, para explicitar a utilidade
+destas formalizações semânticas e coletar informações sobre
+diversos mecanismos e instâncias de participação social previstos
+em lei e praticados.
+\end{itemize}
+
+O
+VBS (Vocabulário da Biblioteca Social) é uma adaptação (com complementos)
+			da OBS no formato
+			de vocabulário SKOS, principalmente para permitir
+			uso junto ao DSPACE.
+
+As ontologias e vocabulários são todas construídas através de scripts, com exceção da
+OPP, feita no Protegé.
+
+\subsection{Formatação de dados ligados a partir de dados relacionais}
+Três roteiros de conversão de dados foram feitos para conversão de dados relacionais em dados RDF enriquecidos semanticamente:
+\begin{itemize}
+	\item Triplificação do Participa.br: 
+		foi elaborado e disponibilizado um roteiro para formatação em RDF de dados relacionais do Participa.br (originalmente em PostgreSQL)~\cite{triplificaParticipa}. Estes dados foram depois usados, através de buscas SparQL, para auxiliar na construção da OPa~\cite{opaScript}.
+	\item Triplificação dos dados do Cidade Democrática: 
+		foi elaborado um roteiro para formatação em RDF de dados 
+		do Cidade Democrática (originalmente em MySQL)~\cite{cdScript}. Estes
+		dados foram depois utilizados para auxiliar na construção
+		da OCD~\cite{ocdScript}.
+	\item Triplificação dos dados do AA:
+		foi elaborado um roteiro para formatação em RDF de
+		dados do AA encontrados em bancos de dados MySQL
+		e MongoDB, e em \emph{logs} de IRC~\cite{aaScript}.
+		Esta triplificação é especialmente útil pela
+		simplicidade do AA, o que permite experimentar
+		abordagens diferentes e escolher a melhor, antes
+		de desenvolver ontologias e triplificações mais complicadas.
+		Esta foi a única triplificação feita depois da ontologia e não aproveitada para a construção da ontologia~\cite{scriptOntologiaa}.
+\end{itemize}
+
+\subsection{Escritos, ontologias e dados publicados}
+Foi publicado no arXiv um artigo sobre a OPS~\cite{ops}.
+Este escrito aguarda confluência com orientador para publicação em revista, potencialmente na revista PLOS ONE.
+Foram escritos também os produtos PNUD/ONU,
+em processo de publicação em instâncias governamentais,
+mas já em repositórios públicos~\cite{pnud3,pnud4,pnud5}.
+Foram publicados dados em RDF do Participa.br, Cidade
+Democrática e AA no Datahub.io~\cite{datahub}.
+Ontologias e vocabulários foram publicadas junto ao ministério do planejamento
+e em repositórios públicos~\cite{opa,opp,ops,obs,vbs}
+\emph{Scripts} para síntese das ontologias e triplificação
+de dados estão também publicamente acessíveis
+e junto aos produtos PNUD citados acima.
+
+\subsection{Método de construção de ontologias orientado aos dados}
+Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPA dados e OCD).
+Resumidamente, o método consiste em: representar os dados de interesse como RDF; realizar buscas SparQL para construir ontologia trivial com as classes e propriedades encontradas; realizar buscas SparQL para inferir restrições de classe e axiomas de propriedade~\cite{pnud5,scriptOCD,scriptOPA}.
+
+\section{Aparato em software}
+\emph{Scripts} para verificar as estabilidades topológicas e diferenciações textuais em redes humanas estão reunidos em um pacote oficial da linguagem Python~\cite{gmanePack}.
+Estão sendo feitos pacotes para organizar os numerosos \emph{scripts}
+de triplificação de dados, construção de ontologias e vocabulários e mineração das
+estruturas~\cite{participation, percolation}. 
+Os dados, classes e propriedades das
+ontologias e triplificações estão também disponíveis (em parte)
+através das próprias URIs, redirecionadas via purl.org
+para um servidor de pesquisa. Ou seja,
+caso você acesse \url{http://purl.org/socialparticipation/opa/Participant},
+o servidor em http://purl.org redireciona seu navegador para
+um servidor de pesquisa com várias entidades do conceito ``Participante''
+da ontologia ``opa''.
+Os dados estão em um \emph{endpoint} SparQL, e \emph{scripts} para a mineração
+destes dados estão disponíveis em interfaces web via um
+IPython Notebook. As ontologias estão também disponíveis
+na instalação do Webprotegé da Stanford~\cite{pnud5}.
+Muitas engenhocas foram criadas para gerar figuras, vídeos e inspecionar
+estruturas sociais de emails, Facebook, Twitter, Participa.br, AA, IRC e outras
+fontes~\cite{engeHeraGmane,social,ensaaio,ensaioAA}.
+Outras engenhocas foram criadas para experimentações estéticas e
+informacionais~\cite{mmissa,teloes,gmane,governArt}.
+
+\section{Aproveitamento, utilidade e formalismo}
+A proposta do trabalho é comprovar a demanda e desenvolver algumas formas para o participante se beneficiar de suas redes através do legado das redes complexas.
+Os resultados das seções anteriores servem a este fim, sendo, porém, mais desenvolvimentos científicos e tecnológicos do que formas
+para o participante se beneficiar.
+Esta seção complementa a monografia neste aspecto:
+registra andamentos fronteiriços do trabalho, difíceis de formalizar e até inconclusivos,
+mas cuja utilidade para o participante é latente.
+
+
+\subsection{Sistemas de recomendação para o enriquecimento da navegação semântica de recursos}
+O relacionamento semântico de dados e conceitualizações via tecnologias de web semântica 
+torna os recursos navegáveis à semelhança do que fazemos com os navegadores Web
+ao abrir páginas HTML (por isso a área chama-se {\bf web} semântica).
+Ao invés de páginas HTML, os recursos são formatados em RDF e os links são
+consequência de critérios semânticos.
+No decorrer desta pesquisa, surgiram possibilidades de enriquecimento
+da navegação semântica através de recomendações de recursos com
+métodos abertos e propostas de aproveitamento pelo usuário.
+Esta versão recebeu até prova de conceito~\cite{pnud4}:
+\begin{itemize}
+	\item São geradas estruturas auxiliares: rede de amizades, rede de interação, histograma de radicais (morfemas do texto),
+		seleção dos 400 radicais
+		mais incidentes para caracterizar o domínio,
+		histograma de radicais de cada recurso 
+		(postagem, comentário, participante, etc.).
+	\item O solicitante pode requerer recomendação de recursos
+		de qualquer tipo a partir de um recurso de qualquer
+		tipo. Pode optar pelo método de recomendação topológico (utilizando as redes de amizade e interação),
+		textual (utilizando os histogramas de radicais) ou híbrido (utilizando ambos).
+		Pode optar por polaridade de similaridade (recomenda recursos similares),
+		dissimilaridade (recomenda recursos dissimilares) ou
+		mista (mistura de recursos similares e dissimilares ou recomendação na qual essa classificação não se aplica).
+	\item Os métodos são todos explicitados em texto e código
+		para o participante. Cada método conta também com um
+		registro de potenciais utilidades para o participante,
+		assim como cada recomendação.
+\end{itemize}
+
+\subsection{Experimentos de percolação social}\label{sec:exp}
+Foram realizados procedimentos cíclicos e procedimentos efêmeros
+de difusão de informação para observar as reações
+e testar hipóteses de modificação das estruturas sociais.
+Experimentos paradigmáticos:
+\begin{itemize}
+	\item Em dezembro de 2012 foram iniciados ciclos de
+		coleta e difusão de informação sobre
+		as redes sociais e o potencial benéfico para
+		o indivíduo civil. Duraram meses e redes diferentes
+		foram usadas. Foram confirmadas 
+		as hipóteses de modificação das
+		estruturas sociais para comportar a pesquisa,
+		com suporte humano, financeiro e institucional.
+		Foram confirmadas hipóteses de modificação
+		do tratamento da sociedade sobre o tema.
+		Foram confirmadas hipóteses de que seriam
+		verificáveis estes resultados tanto em minhas
+		interações cotidianas, via praticamente todos os meios.
+		Estas foram algumas consequências da ``percolação
+		do tecido social'' (mudança abrupta das propriedades físicas do tecido social
+		acompanhado de mudança gradual de conectividade).
+		Em especial, a minha rede de amizades do Facebook
+		foi utilizada (cada vértice é um amigo meu,
+		cada aresta indica uma amizade entre eles), e
+		amigo por amigo foi acionado,
+		dos menos conectados aos mais conectados.
+	\item Analisando redes de amizade do Facebook, percebi que
+		portavam uma característica não intuitiva:
+		em praticamente qualquer rede de tamanho médio ou grande
+		(mais de 500 pessoas), dentre as 50 pessoas com a
+		maior intermediação (\emph{betweenness centrality}, mais participa de geodésicas)
+		haviam sempre pouquíssimas que constavam entre as 50
+		com maior closenness centrality (mais perto de todos os outros agentes). 
+		Com base nesta diferenciação inesperada, selecionei estes dois grupos em minha
+		rede e em redes de parceiros que também fazem experimentos semelhantes.
+		Cada um de nós elaboramos uma mensagem diferente, e a mandamos
+		para nossos respectivos dois grupos, separadamente. Ou seja,
+		cada pessoa enviou uma mensagem diferente, cada grupo de cada pessoa
+		recebeu uma cópia desta mensagem. O grupo com a maior intermediação
+		reagia sempre calorosamente, repassava a mensagem, até interagiam entre si,
+		mesmo sem se conhecerem ou serem próximos.
+		Os grupos de maior \emph{closenness} nunca reagiam, saíam rapidamente 
+		da interface usada para a mensagem. A hipótese mais plausível que surgiu
+		para explicar esta diferença de reação é a de que os de maior intermediação
+		tinham maior influência sobre
+		a rede, enquanto os de maior \emph{closenness} sofriam maior influência.
+	\item Em um evento grande em São Paulo sobre transparência e governança na internet,
+		foi operacionalizado um telão de streaming de estruturas sociais, escrito
+		no percurso desta pesquisa, que expunha em tempo real as três diferentes redes de Twitter
+		formada por usuários relacionados por \emph{retweet}, vocabulário e \emph{\#hashtag}.
+		A tecnologia pode ser compreendida como ``\emph{streaming} de estruturas sociais'',
+		e gerou bastante discussão com as pessoas que foram ao evento, inclusive
+		com os próprios comunicadores que constavam nas redes de \emph{retweet}.
+		Houve confirmação da hipótese de que as pessoas se interessariam e se instruiriam.
+		Houve alguns usos a mais da ferramenta, localizados e a pedido do meio, não
+		por necessidade da pesquisa.
+\end{itemize}
+
+O segundo experimento foi feito por vários parceiros de pesquisa,
+por onde pôde ser verificado o comportamento constante.
+O primeiro experimento ainda não foi replicado.
+É comum após alguma apresentação ou reunião de pesquisa
+alguém se prontificar a fazê-lo,
+mas isso nunca aconteceu. 
+Eu mesmo já me comprometi comigo a replicar o experimento,
+mas não aconteceu. Uma hipótese usual é que haja bloqueios
+mentais que nos impedem de realizar uma intervenção tão direta
+na nossa existência social, ou nosso eu-rede~\cite{latour,ciberiun}.
+
+\subsection{Física antropológica}\label{sec:fan}
+Estes experimentos, e outras anotações de dados, são, no escopo deste
+trabalho, considerados questionáveis, potencialmente inapropriados,
+caso não sejam observadas algumas diretrizes:
+\begin{itemize}
+	\item estudo das redes das quais o pesquisador faz parte, como um estudo de si.
+	\item Uso de anotações (de si) com a devida atenção para não expor as pessoas desnecessariamente
+		e para quaisquer maiores cuidados sugeridos pelo contexto.
+	\item Abertura constante dos procedimentos, dados, códigos e literatura produzida.
+\end{itemize}
+
+Estas diretrizes foram apreendidas em grande parte da tradição antropológica,
+e, portanto, configuram uma pesquisa com alguns aspectos``antropológicos''.
+O termo ``física antropológica'' começou a ser usado no Brasil principalmente por
+acadêmicos (físicos, cientistas da computação, filósofos, antropólogos) em 2013-14,
+no contexto dos experimentos de difusão de informação e das análises, ambos em minhas próprias redes.
+Considerações cuidadosas estão sendo feitas constantemente sobre o presente trabalho, 
+sobre o termo, sobre o legado antropológico,
+sobre a física e as redes complexas, e sobre termos relacionados, 
+como física social~\cite{pentland} e sociofísica~\cite{socioF}.
+Há resistência do meio científico, mas no geral o balanço apontada para uma pertinência do uso do termo
+para representar o que está sendo feito.
+
+\subsection{Compreensão sobre as estruturas sociais}\label{sec:com}
+Praticamente todos os resultados citados acima
+são úteis para compreender as estruturas sociais e são
+fruto desta tentativa.
+Há a intenção de disponibilizar um compêndio às redes complexas
+através da instrumentalização do leitor com estes conhecimentos e tecnologias
+para exploração de si próprio. Um esboço
+consta em~\cite{gradus}.
+
+Um exemplo especial de fundamentação que parece não 
+constar na literatura é a constatação de que
+a propriedade livre de escala é consequência da distribuição
+equânime de recursos pelos setores da rede.
+Para apreender este fato, considere uma quantidade fixa $R$ de recursos
+que será utilizada para a realização da rede em cada setor.
+Considere que, para cada quantidade de recursos $T$, são contadas $f=\frac{R}{T}$ partes de tamanho T, como na Figura~\ref{fig:1T}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figs/rt}
+	\caption{A curva resultante da divisão de uma mesma quantidade
+	R de recursos em $\frac{R}{T}$ partes de tamanho T.
+        Utilizada para expor uma potencial causa da ubiquidade da
+        propriedade livre de escala.}
+	\label{fig:1T}
+\end{figure}
+
+Segue que $log(f)=-1 log(T) + C$, $C=log(R)$ uma constante
+arbitrária. Uma reta descreve a relação entre $log(f)$ e 
+$log(T)$, como na Figura~\ref{fig:1t}.
+Os recursos são alocados pelo sistema de forma uniforme,
+pois $T\frac{R}{T}=R=constante$.
+
+Considere que $T=T_1 T_2$ 
+(e.g. recursos da rede=agentes x tempo de cada agente). 
+Neste caso,
+$f=\frac{R}{T_1 T_2}$ e
+segue que $log(f)=-log(T_1 T_2) +C$. Se $T_1=T_2$, 
+$log(f)=-2 log(T_1) + C$, e
+$\gamma=2$ como previsto pela literatura.
+No exemplo, o tempo alocado
+é o tempo dos próprios agentes,
+portanto é razoável considerar $T_1=T_2$. 
+Possíveis causas para a distorção do valor exato $\gamma=2$
+são: propriedades fractais, recursos em número diferente, associações entre os recursos. 
+
+%\chapter{Finished and planed tasks, chronogram}
+\chapter{Afazeres e cronograma}
+% Colocar tabela com os comparativos
+% Referenciar para complementos no texto.
+
+\section{Cronograma}\label{sec:cron}
+
+\begin{table}[h]
+\begin{center}
+  \caption{Cronograma de atividades ao longo dos semestres, descritas na Seção~\ref{sec:cron}.
+	  A marcação $\bullet$ indica previsão feita no início do doutorado.
+  A marcação [ ] se refere ao relato e previsão, agora no final do $1^{\circ}$ semestre de 2015.
+  As principais diferenças do previsto foram: as disciplinas terminaram no primeiro ano; a revisão da literatura, os acréscimos aos modelos atuais com o foco no participante da rede, e a implementação computacional, estas três atividades estão sendo realizadas constantemente e devem durar até a entrega e defesa da tese. }
+\label{tab:cron}
+  \begin{tabular}{ | c ||   c | c |     c | c |   c | c |}
+    \hline
+      & \multicolumn{2}{|c|}{2013} & \multicolumn{2}{|c|}{2014} & \multicolumn{2}{|c|}{2015} \\
+    \hline
+    Atividade & 1$^{\circ}$ & 2$^{\circ}$ & 1$^{\circ}$ & 2$^{\circ}$ & 1$^{\circ}$ & 2$^{\circ}$ \\
+    \hline \hline
+
+    1 & [$\bullet$] & [$\bullet$] & $\bullet$ & $\bullet$ & & \\
+    \hline
+    2 & [$\bullet$] & [$\bullet$] & [$\bullet$] & [ ] & [ ] & [ ] \\
+    \hline
+    3 & [ ] & [$\bullet$] & [$\bullet$] & [$\bullet$] & [$\bullet$] & [ ]  \\
+    \hline
+    4 & [ ] & [$\bullet$] & [$\bullet$] & [$\bullet$] & [$\bullet$] & [$\bullet$]  \\
+    \hline
+    5 & & & & & [$\bullet$] & [$\bullet$]  \\
+    \hline
+    6 & [$\bullet$] & [$\bullet$] & [$\bullet$] & [$\bullet$] & [$\bullet$] & [$\bullet$]  \\
+    \hline
+    7 & [$\bullet$] & [$\bullet$] & [$\bullet$] & [$\bullet$] & [$\bullet$] & [$\bullet$]  \\
+    \hline
+  \end{tabular}
+\end{center}
+\end{table}
+
+
+Este projeto foi inicialmente dividido segundo as etapas a seguir 
+e usadas como referência na Tabela~\ref{tab:cron}:
+
+\begin{enumerate}
+\item Créditos Obrigatórios: cumprimento dos créditos obrigatórios em disciplinas, exigidas pelo programa de Doutorado do IFSC/USP.
+
+\item Revisão da literatura.
+
+\item Acréscimos aos modelos atuais com o foco no participante da rede.
+
+\item Implementação computacional.
+
+\item Escrita da tese.
+
+\item Escrita e publicação dos resultados em artigos.
+
+\item Trocas com pessoas externas, estabelecimento de colaborações.
+\end{enumerate}
+
+Considerações sobre estes itens:
+\begin{enumerate}
+	\item Foram cursadas as disciplinas Introdução ao Processamento de Língua Natural (SCC5908, 12 créditos),
+		Mineração de Dados não Estruturados (SCC5920, 12 créditos), 
+		Visualização Computacional (SCC5836, 12 créditos),
+		e Introdução à Web Semântica (SCC5929, 8 créditos).
+		Por um ano as disciplinas foram priorizadas. 
+		No mestrado, fazia mais de 20 créditos na por semestre graduação,
+		6 disciplinas na pós em um ano (66 créditos) e pesquisa, e fechei todas com A.
+		Estranhamente, no doutorado fechei todas as disciplinas com B, fiz menos disciplinas na pós,
+		não fiz graduação e desprendi tempo para as disciplinas.
+\item A literatura de para o trabalho proposto é ampla e este aprofundamento tem sido constante.
+\item Os acréscimos aos modelos atuais tem tido o foco no participante da rede, em especial através das tipologias e considerações antropológicas.
+\item Há implementações computacionais de provas de conceito, bibliotecas, rotinas básicas e rotinas para replicar resultados do grupo de pesquisa. Engenhocas para gerar arte audiovisual a partir de redes.
+\item A escrita da tese pode tomar vários rumos: pode consistir de um conjunto de artigos ou de uma monografia final. Acho mais provável que seja um conjunto de artigos focados nas direções dadas na Seção~\ref{sec:com}.
+\item Conseguimos finalizar um artigo~\cite{timeS}. Há ao menos mais dois em condições de publicação~\cite{ops,mass}. Além destes, há mais estes artigos no arXiv~\cite{ensaio,connectiveDiff,XXX,YY}, todos referentes ao trabalho do doutorado. Foram publicados em revista internacional os artigos AA e Images/Vilson, ambos sem a colaboração do orientador.
+\item Parte substancial do trabalho consistiu em experimentos de coleta e difusão de informação, o que disparou reuniões, visitas e colaborações. Este processo foi iniciado logo antes do doutorado e pode ser apreciado, por exemplo, pelas visitas a São Carlos de parceiros de pesquisa, pela integração do pesquisador ao grupo de pesquisa Nexus, vinculado ao CNPq, e ao aporte do PNUD/ONU dado ao pesquisador, sobre o qual a Presidência da República se posicionou como beneficiária (veja a Seção~\ref{sec:exp} e~\cite{ensaioAA} para mais detalhes).
+\end{enumerate}
+
+
+\section{Comparativo de afazeres}\label{sec:afa}
+\begin{table}[h]
+\centering
+\footnotesize
+\caption{Relação de tarefas feitas e por fazer. Há literatura pronta e vários documentos escritos e em mãos para serem aprofundados. A literatura a ser consumida é bastante extensa e cursos em vídeo, como do Coursera,
+são vistos com frequência (alguns cursos foram vistos inteiros).
+O mais urgente parece fazer uma revisão e aprofundamento de estatística
+e física estatística. Falta confirmar os experimentos percolatórios contínuos (veja Seções~\ref{sec:exp} e~\ref{sec:fan}).
+As disciplinas foram terminadas.}\label{tab:afa}
+\begin{tabular}{p{1.3cm}||p{7.6cm}|p{7.1cm}}\hline
+	& {\bf feito} & {\bf por fazer} \\\hline
+	{\bf escrita}      & artigo de estabilidade em redes de interação humana~\cite{timeS};
+	artigo sobre a Ontologia de Participação Social~\cite{ops};
+	ensaio descrevendo simbiose com PNUD/ONU e SG-PR~\cite{ensaioAA};
+	artigo com descrição psicofísica da música no áudio digital~\cite{massa};
+	produtos PNUD 3, 4 e 5, descrevendo sistemas de classificação, recomendação, ontologias e triplificações para participação social com métodos de redes complexas e processamento de linguagem natural~\cite{pnud3,pnud4,pnud5};
+	artigo sobre AA~\cite{paaper}; 
+	versões iniciais e rascunhos dos artigos sobre física antropológica~\cite{pa},
+	sobre votação contínua por aprovação e participação~\cite{vote},
+	sobre diferenças da produção textual nos setores de Erdös~\cite{rcText},
+	sobre visualização de redes de interação em evolução temporal~\cite{versinus},
+	sobre audiovisualização de redes de interação em evolução temporal~\cite{versinus},
+	sobre performance audiovisual via controle coletivo de código e projeção ao vivo~\cite{vivace}
+	& publicar artigos no arXiv; repassar produtos PNUD um e dois;
+	``Complex Networks Gradus ad Parnassum'', um compêndio de redes complexas que utiliza a existência
+	em rede do leitor para instrumentalizá-lo;
+	artigo sobre tipologia de agentes humanos em redes de interação;
+	versão desenvolvida do escrito sobre física antropológica;
+	documentação do pacote Python oficial ``percolation''~\cite{percolation};
+	artigo com o método de levantamento de ontologias orientado aos dados;
+	artigo sobre os dados participativos ligados brasileiros;
+	artigo com os experimentos de coleta e difusão de informação;
+	versão final do ensaio do AA~\cite{ensaaio}\\\hline
+	{\bf leitura }     & documentação de redes complexas;
+			documentação de web semântica;
+			amadurecimentos coletivos frutos das difusões de informação;
+	               numerosos artigos da Wikipédia, protocolos e manuais de software;
+		       cursos do Coursera, alguns completos;
+		       literatura de PLN;
+		       literatura de visualização de dados e mineração de dados;
+		       artigos, exemplos especiais são~\cite{} & 
+		                       estatística e física estatística, talvez manuais de R também;
+				       terminar livros referência de redes complexas;
+				       absorver uma literatura mínima sobre antropologia;
+				       visita à topologia tradicional e teoria de grafos na computação \\\hline\hline
+				       {\bf experi-mentos} & experimentos contínuos/cíclicos e outros efêmeros  & confirmar experimentos contínuos/cíclicos \\\hline
+				       {\bf comuni-dade  }& repassados resultados para comunidades estudadas;
+				       confirmada permissão dos desenvolvedores
+				      do Gmane para utilizar os dados das listas para pesquisa
+				        & repassar às comunidades estudadas um resumo dos resultados, em linguagem mais acessível que os artigos \\\hline
+				      {\bf disciplinas} & cursadas disciplinas Introdução ao Processamento de Linguagem Natural,
+				       Mineração de dados;
+				       Visualização de dados;
+				       Introdução à web semântica & -//- \\\hline
+				       {\bf considerar banca} & -//-  & preparar apresentação; apresentar e anotar contribuição da banca; conduzir com orientador \\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+\centering
+\footnotesize
+\caption{Relação de tarefas feitas e por fazer.
+Há bastante software pronto, principalmente para experimentos
+e provas de conceito, mas também para pesquisa científica.
+A finalização de pacotes oficiais
+da linguagem Python está planejada.
+Foram publicados também dados, 
+ontologias e vocabulários relacionados 
+à participação social.
+Arte audiovisual é feita junto às visualizações de dados.}\label{tab:afa}
+\begin{tabular}{p{1.3cm}||p{7.6cm}|p{7.1cm}}\hline
+	& {\bf feito} & {\bf por fazer} \\\hline
+				       {\bf software}     & telões de streaming de estruturas sociais;
+	funcionalidades escolhidas da MMISSA (Monitoramento Massivo e Interativo da Sociedade pela Sociedade para Aproveitamento);
+	engenhoras no AARS (A Análise de Redes Sociais) e MyNSA (\emph{Monitoring yields Natural Streaming and Analysis});
+				       rotinas de triplificação de dados; rotinas de construção de ontologias;
+				       rotinas para, dada a rede social, sintetizar música e animação visual sincronizados;
+				       rotinas com fundamentos e provas de conceitos para genérica classificação e recomendação de recursos
+				       & finalizar pacotes oficiais da linguagem Python;
+				       estação de monitoramento massivo;
+				       sistema de navegação semântica enriquecido com recomendação de recursos
+				       \\\hline
+				       {\bf dados}        & dados triplificados do Participa.br, do Cidade Democrática, do AA  & revisar dados triplificados;
+				       triplificar dados do Facebook, Twitter e listas de email \\\hline
+				       {\bf ontologias e vocabulários}  & OPS, OPa, OPP, OCD, Ontologiaa, OBS e VBS iniciais  & ontologias e vocabulários revisados \\\hline
+				       {\bf audiovisu-alização}         & versinus; prelúdio social; four hubs dance   & músicas focando em algum dos participantes da rede; mais músicas sobre as redes do Facebook; mais músicas sobre as redes de email; rotinas para fazer animação abstrata sobre rede de interação e mixar com clipe do youtube;
+				       sonificação de dados semânticos e renderização de imagens sincronizadas \\\hline
+\end{tabular}
+\end{table}
+
+
+
+
+\chapter{Conclusões e previsão}
+Há, a princípio, uma confirmação de que os conhecimentos de redes complexas
+possuem aplicações diversas e potencialmente benéficas para o participante.
+Por exemplo, os experimentos apresentaram modificações da estrutura social para comportar a pesquisa, e podem ser usados para comportar outros empreendimentos. Os estudos de estabilidade e diferenciação em redes de interação humana apontam na direção de tipologias de redes e de participantes, com base nos setores de Erdös e com componentes principais típicas e estáveis.
+Um legado de dados ligados e abertos é conveniente para apresentar estes resultados às comunidades acadêmicas e interessadas nas aplicações, para as quais foram adiantadas ontologias, vocabulários, rotinas de conversão de dados relacionais em RDF e os dados em si.
+
+Uma direção simples para concluir a pesquisa
+consiste em focar no documento \emph{Complex Networks Gradus ad Parnassum},
+que está planejado como uma apresentação das redes complexas através
+da entrega, para o leitor, de formas de observar e interagir com suas redes, beneficiando-se.
+Uma direção menos pedagógica, porém mais usual e simples, é
+explorar as estabilidades encontradas: até que número de
+agentes a distribuição dos participantes nos setores e a
+formação das componentes principais se mantém? Para quais redes?
+Como caracterizar a intermitência dos agentes enquanto a distribuição de
+grau é estável? Se o texto produzido pelos setores é diferente,
+em quais aspectos é igual e em quais se diferencia?
+Os resultados se mantém em ambas as línguas português e inglês?
+
+Há, em alguns casos extremos, considerações na base da área,
+com implicações sobre a própria constituição das redes complexas
+(como na Seção~\ref{}).
+Ao mesmo tempo, os métodos utilizados são potencialmente novos (como na Seção~\ref{}).
+Há diversos trabalhos na bibliografia e,
+caso haja disponibilidade para visitar itens da literatura
+produzida, recomendamos, nesta mesma ordem,~\cite{timeS,pnud5,ensaioAA,gmane,fourHubs}.
+
+\section*{Agradecimentos}
+CNPq, PNUD/ONU, IEA/USP, Nexus/CNPq, SGPR, labMacambira.sf.net.
+
+\bibliography{biblio}
+
+\end{document}
+
