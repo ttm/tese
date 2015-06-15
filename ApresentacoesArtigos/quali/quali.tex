@@ -1261,15 +1261,47 @@ destes dados estão disponíveis em interfaces web via um
 IPython Notebook. As ontologias estão também disponíveis
 na instalação do Webprotegé da Stanford.
 
-\section{Aproveitamento}
-A proposta do trabalho é comprovar e desenvolver algumas formas para o participante destas redes se beneficiar delas.
+\section{Aproveitamento, utilidade e formalismo}
+A proposta do trabalho é comprovar a demanda e desenvolver algumas formas para o participante se beneficiar de suas redes através do legado das redes complexas.
 Os resultados das seções anteriores servem a este fim, sendo, porém, mais desenvolvimentos científicos e tecnológicos do que formas imediatas
 de beneficio para o participante.
-Esta seção é uma investida mais reta nesta direção, tendo como base os métodos e resultados alcançados.
+Esta seção complementa a monografia neste aspecto:
+registra andamentos fronteiriços do trabalho, difíceis de formalizar e até inconclusivos,
+mas cuja utilidade para o participante é latente.
 
-\subsection{Procedimentos de percolação social}\label{sec:exp}
+
+\subsection{Sistemas de recomendação para o enriquecimento da navegação semântica de recursos}
+O relacionamento semântico de dados e conceitualizações via tecnologias de web semântica 
+torna os recursos navegáveis à semelhança do que fazemos com os navegadores Web
+ao abrir páginas HTML (por isso a área chama-se {\bf web} semântica).
+Ao invés de páginas HTML, os recursos são formatados em RDF e os links são
+consequência de critérios semânticos.
+No decorrer desta pesquisa, surgiram possibilidades de enriquecimento
+da navegação semântica através de recomendações de recursos com
+métodos abertos e propostas de aproveitamento pelo usuário.
+Esta versão recebeu até prova de conceito~\cite{pnud4}:
+\begin{itemize}
+	\item São geradas estruturas auxiliares: rede de amizades, rede de interação, histograma de radicais (morfemas do texto),
+		seleção dos 400 radicais
+		mais incidentes para caracterizar o domínio,
+		histograma de radicais de cada recurso 
+		(postagem, comentário, participante, etc.).
+	\item O solicitante pode requerer recomendação de recursos
+		de qualquer tipo a partir de um recurso de qualquer
+		tipo. Pode optar pelo método de recomendação topológico (utilizando as redes de amizade e interação),
+		textual (utilizando os histogramas de radicais) ou híbrido (utilizando ambos).
+		Pode optar por polaridade de similaridade (recomenda recursos similares),
+		dissimilaridade (recomenda recursos dissimilares) ou
+		mista (mistrura de recursos similares e dissimilares ou recomendação na qual essa classificação não se aplica).
+	\item Os métodos são todos explicitados em texto e código
+		para o participante. Cada método conta também com um
+		registro de potenciais utilidades para o participante,
+		assim como cada recomendação.
+\end{itemize}
+
+\subsection{Experimentos de percolação social}\label{sec:exp}
 Foram realizados procedimentos cíclicos e procedimentos efêmeros
-no tecido social para observar as reações
+de difusão de informação para observar as reações
 e testar hipóteses de modificação das estruturas sociais.
 Experimentos paradigmáticos:
 \begin{itemize}
@@ -1286,53 +1318,69 @@ Experimentos paradigmáticos:
 		Foram confirmadas hipóteses de que seriam
 		verificáveis estes resultados tanto em minhas
 		interações cotidianas, via praticamente todos os meios.
+		Estas foram algumas consequências da ``percolação
+		do tecido social'' (mudança abrupta das propriedades físicas do tecido social
+		acompanhado de mudança gradual de conectividade).
 		Em especial, a minha rede de amizades do Facebook
 		foi utilizada (cada vértice é um amigo meu,
 		cada aresta indica uma amizade entre eles), e
 		amigo por amigo foi acionado,
 		dos menos conectados aos mais conectados.
-	\item Escrita para os de maior betweenness e de maior closeness, mostrar que não bate para as listas.
+	\item Analisando redes de amizade do Facebook, percebi que
+		portavam uma característica não intuitiva:
+		em praticamente qualquer rede de tamanho médio ou grande
+		(mais de 500 pessoas), dentre as 50 pessoas com a
+		maior intermediação (\emph{betweenness centrality}, mais participa de geodésicas)
+		haviam sempre pouquíssimas que constavam entre as 50
+		com maior closenness centrality (mais perto de todos os outros agentes). 
+		Com base nesta diferenciação inesperada, selecionei estes dois grupos em minha
+		rede e em redes de parceiros que também fazem experimentos semelhantes.
+		Cada um de nós elaboramos uma mensagem diferente, e a mandamos
+		para nossos respectivos dois grupos, separadamente. Ou seja,
+		cada pessoa enviou uma mensagem diferente, cada grupo de cada pessoa
+		recebeu uma cópia desta mensagem. O grupo com a maior intermediação
+		reagia sempre calorosamente, repassava a mensagem, até interagiam entre si,
+		mesmo sem se conhecerem ou serem próximos.
+		Os grupos de maior \emph{closenness} nunca reagiam, saíam rapidamente 
+		da interface usada para a mensagem. A hipótese mais plausível que surgiu
+		para explicar esta diferença de reação é a de que os de maior intermediação
+		tinham maior influência sobre
+		a rede, enquanto os de maior \emph{closenness} sofriam maior influência.
 \end{itemize}
 
-O segundo experimento foi feito por vários parceiros de pesquisa, por onde pode ser verificado.
-O segundo experimento ainda não foi replicado.
-É comum após alguma apresentação alguém se prontificar a fazê-lo,
+O segundo experimento foi feito por vários parceiros de pesquisa,
+por onde pôde ser verificado o comportamento constante.
+O primeiro experimento ainda não foi replicado.
+É comum após alguma apresentação ou reunião de pesquisa
+alguém se prontificar a fazê-lo,
 mas isso nunca aconteceu. 
-Eu mesmo já me comprometi comigo em replicar o experimento,
-mas não aconteceu. Uma tese usual é que haja bloqueios
-mentais que impedem a intervenção tão direta na nossa existência
-social, ou nosso eu-rede~\cite{latour,ciberiun}.
+Eu mesmo já me comprometi comigo a replicar o experimento,
+mas não aconteceu. Uma hipótese usual é que haja bloqueios
+mentais que nos impedem de realizar uma intervenção tão direta
+na nossa existência social, ou nosso eu-rede~\cite{latour,ciberiun}.
 
 \subsection{Física antropológica}
 Estes experimentos, e outras anotações de dados, são, no escopo deste
-trabalho, consideradas questionáveis, potencialmente erradas mesmo,
+trabalho, considerados questionáveis, potencialmente inapropriados,
 caso não sejam observadas algumas diretrizes:
 \begin{itemize}
-	\item estudo das próprias redes como estudo de si.
-	\item Uso de anotações de si com a devida atenção para não expor as pessoas desnecessáriamente.
-	\item Abertura constante dos procedimentos, dados e códigos.
+	\item estudo das redes das quais o pesquisador faz parte, como um estudo de si.
+	\item Uso de anotações (de si) com a devida atenção para não expor as pessoas desnecessáriamente
+		e para quaisquer maiores cuidados sugeridos pelo contexto.
+	\item Abertura constante dos procedimentos, dados, códigos e literatura produzida.
 \end{itemize}
-Estas diretrizes são considerações da tradição antropológica,
-e, portanto, configuram uma pesquisa de ``física antropológica''.
-O termo começou a ser usado no Brasil principalmente por
-acadêmicos (físicos, cientistas da computação, filósofos, antropólogos).
 
-\subsection{Sistemas de recomendação para o enriquecimento da navegação semântica de recursos}
-O relacionamento semântico de dados e conceitualizações via tecnologias de web semântica são feitos para que os recursos sejam navegáveis à semelhança das usuais páginas HTML da WWW (por isso chama-se {\bf web} semântica).
-Mas, ao invés de páginas HTML, recursos em RDF e links via critérios semânticos.
-No decorrer desta pesquisa, surgiram possibilidades de enriquecimento
-da navegação semântica. Esta recebeu até prova de conceito~\cite{pnud4}:
-\begin{itemize}
-	\item São geradas estruturas auxiliares: rede de amizades, rede de interação, histograma de radicais (do texto), seleção dos 400 radicais
-		mais incidentes para caracterizar o domínio,
-		histograma de radicais de cada recurso (postagem, comentário, participante, etc).
-	\item O solicitante pode requerer recomendação de recursos
-		de qualquer tipo a partir de um recurso de qualquer
-		tipo. Pode optar por métodos de recomendação topológico, textual ou híbrido. Pode optar por polaridade de similareidade, dissimilaridade ou mista.
-	\item Os métodos são todos explicitados em texto e código
-		para o participante. Cada método conta também com um
-		registro de potenciais utilidades para o participante.
-\end{itemize}
+Estas diretrizes foram apreendidas em grande parte da tradição antropológica,
+e, portanto, configuram uma pesquisa com alguns aspectos``antropológicos''.
+O termo ``física antropológica'' começou a ser usado no Brasil principalmente por
+acadêmicos (físicos, cientistas da computação, filósofos, antropólogos) em 2013-14,
+no contexto dos experimentos de difusão de informação e das análises, ambos em minhas próprias redes.
+Considerações cuidadosas estão sendo feitas constantemente sobre o presente trabalho, 
+sobre o termo, sobre o legado antropológico,
+sobre a física e as redes complexas, e sobre termos relacionados, 
+como física social~\cite{pentland} e sociofísica~\cite{socioF}.
+Há resistência do meio científico, mas no geral o balanço apontada para uma pertinência do uso do termo
+para representar o que está sendo feito.
 
 \subsection{Compreensão sobre as estruturas sociais}\label{sec:com}
 Praticamente todos os resultados citados acima
@@ -1543,21 +1591,25 @@ possuem aplicações diversas e potencialmente benéficas para o participante.
 Por exemplo, os experimentos apresentaram modificações da estrutura social para comportar a pesquisa, e podem ser usados para comportar outros empreendimentos. Os estudos de estabilidade e diferenciação em redes de interação humana apontam na direção de tipologias de redes e de participantes, com base nos setores de Erdös e com componentes principais típicas e estáveis.
 Um legado de dados ligados e abertos é conveniente para apresentar estes resultados às comunidades acadêmicas e interessadas nas aplicações, para as quais foram adiantadas ontologias, vocabulários, rotinas de conversão de dados relacionais em RDF e os dados em si.
 
-Uma direção simples
-é focar no \emph{Complex Networks Gradus ad Parnassum},
+Uma direção simples para concluir a pesquisa
+consiste em focar no documento \emph{Complex Networks Gradus ad Parnassum},
 que está planejado como uma apresentação das redes complexas através
-da entrega, para o leitor,de formas de observar e interagir com suas redes.
-Uma via menos pedagógica, mas mais fundamental, é
+da entrega, para o leitor, de formas de observar e interagir com suas redes, beneficiando-se.
+Uma direção menos pedagógica, porém mais usual e simples, é
 explorar as estabilidades encontradas: até que número de
-agentes a distribuição dos participantes nos setores e a formação das componentes principais se mantém?
+agentes a distribuição dos participantes nos setores e a
+formação das componentes principais se mantém? Para quais redes?
 Como caracterizar a intermitência dos agentes enquanto a distribuição de
-grau é estável?
+grau é estável? Se o texto produzido pelos setores é diferente,
+em quais aspectos é igual e em quais se diferencia?
+Os resultados se mantém em ambas as línguas português e inglês?
 
 Há, em alguns casos extremos, considerações na base da área,
-com implicações sobre a própria constituição das redes complexas.
-Ao mesmo tempo, os métodos utilizados são potencialmente novos.
-Há diversos trabalhos na bibliografia.
-Caso haja disponibilidade para visitar itens da literatura
+com implicações sobre a própria constituição das redes complexas
+(como na Seção~\ref{}).
+Ao mesmo tempo, os métodos utilizados são potencialmente novos (como na Seção~\ref{}).
+Há diversos trabalhos na bibliografia e,
+caso haja disponibilidade para visitar itens da literatura
 produzida, recomendamos, nesta mesma ordem,~\cite{timeS,pnud5,ensaioAA,gmane,fourHubs}.
 
 \bibliography{biblio}
