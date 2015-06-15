@@ -637,6 +637,7 @@ Exemplos de ambiguidade, sinônimos e delimitações adotadas:
 		Esta setorialização centro, intermediários e periferia gera frações que diferem do previsto pela literatura para as frações de hubs, intermediários e periféricos.
 		Um método apropriado para realizar esta setorialização da rede, com resultados estáveis e significativos, consta na Seção~\ref{sec:set}.
 	\item \emph{Aresta} e \emph{ligação} são usadas como sinônimos. \emph{Nó} e \emph{vértice} também. É comum o uso de outros termos, em geral coerentes com a aplicação, como \emph{agente}, \emph{ator} ou \emph{participante} para vértices de redes observadas em sistemas humanos.
+	\item Laços, \emph{loops}, \emph{selfloops}, \emph{autoloop}, \emph{buckle} são termos usados para arestas de um vértice para ele próprio.
 \end{itemize}
 
 \subsection{Processamento de linguagem natural, dados ligados, participação social}\label{sec:misc}
@@ -724,19 +725,27 @@ padrões encontrados, o método é bastante estabelecido.
 		a exposição neste texto e no artigo~\cite{timeS} serve
 		principalmente ao intuito de formalização do
 		processo.
-	\item A Seção~\ref{sec:sec} é dedicada ao ``Setorialização de Erdös'', para obtenção dos três setores básicos da rede, compostos por: hubs, intermediários e periféricos. O método parece não ter sido aplicado antes para este fim, e é resultado imediato da observação das caudas longas de dados reais contrastadas com a rede Erdös-Rényi~\cite{3setores}.
+	\item A Seção~\ref{sec:sec} é dedicada à ``Setorialização de Erdös'', para obtenção dos três setores básicos da rede, compostos por: hubs, intermediários e periféricos. 
+		O método parece não ter sido aplicado antes para este fim, e é resultado imediato da observação das caudas longas de dados reais contrastadas com o modelo de Erdös-Rényi~\cite{3setores}.
+	\item A Seção~\ref{sec:pca} apresenta o uso mais recorrente da Análise de Componentes Principais (PCA) neste trabalho. Várias redes são observadas, ou a mesma rede é observada em vários momentos, e a concentração
+		de dispersão das componentes principais, e das medidas nas componentes princiais, são observadas através de médias e desvios padrão.
+	\item A Seção~\ref{sec:med} apresenta as medidas utilizadas nas análises, com exposição formal das medidas de simetria potencialmente novas (não encontramos ainda na literatura), mas bastante úteis nas análises.
+	\item A Seção~\ref{sec:kol} apresenta o uso que fazemos do teste de Kolmogorov-Smirnov de amostragem dupla. O método é bem estabelecido, e a contribuição está nos resultados alcançados com ele sobre diferenciação
+		da produção de texto nas redes de interação.
+	\item A Seção~\ref{sec:aud} expõe sobre a utilização dos dados de redes sociais para geração de imagem, música, e animação abstrata.
+	\item A Seção~\ref{sec:tip} explicita a pertinente recorrência de considerações qualitativas e do cânone das ciências humanas.
+	\item A Seção~\ref{sec:web} delineia um pouco as abordagens
+		utilizadas para registrar conceitualizações e vinculá-las
+		aos dados.
 \end{itemize}
 
 
-\section{Estatística temporal e circular}
+\section{Estatística temporal e circular}\label{sec:cir}
 
 Para observação de padrões temporais, foram consideradas escalas diferentes.
 Em cada escala, de segundos e meses, foram construídos histogramas de atividade
 e feitas algumas medidas de estatística circular.
-A fração $\frac{b_h}{b_l}$ entre a maior $b_h $ e a menor $b_l$ incidência nos histogramas
-serviram como pista sobre quão uniforme são as distribuições observadas.
-
-Considere cada $ medida $ (dado pontual) como um número complexo com módulo 1, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, onde $\theta= medida \frac{2\pi}{periodo}$. Os momentos $m_n$, tamanhos dos momentos $R_n$, ângulo médio $\theta_\mu$, e o ângulo médio reescalado $\theta_\mu'$ são definidos assim:
+Considere cada $ medida $ (dado pontual) como um número complexo de módulo 1, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, onde $\theta= medida \frac{2\pi}{periodo}$. Os momentos $m_n$, tamanhos dos momentos $R_n$, ângulo médio $\theta_\mu$, e o ângulo médio reescalado $\theta_\mu'$ são definidos assim:
 \begin{align}\label{eq:cmom}
 	m_n&=\frac{1}{N}\sum_{i=1}^N z_i^n \nonumber\\
 	R_n&=|m_n|\\
@@ -753,11 +762,13 @@ o desvio padrão circular $S(z)$, e a dispersão circular $\delta(z)$:
 	\delta(z)&=\frac{1-R_2}{2 R_1^2} \nonumber
 \end{align}
 
-Como esperado, há uma correlação positiva entre $Var(z)$, $S(z)$ e $\delta(z)$,
-como pode ser notado nas informações de suporte de~\cite{timeS}.
+Como esperado e pode ser notado nas informações de suporte de~\cite{timeS}, há uma correlação positiva entre $Var(z)$, $S(z)$ e $\delta(z)$.
 A medida $\delta(z)$ foi preferida na discussão dos resultados.
+A fração $\frac{b_h}{b_l}$ entre a maior $b_h $ e a menor $b_l$ incidência nos histogramas
+também serviram como pista sobre quão próximas à distribuição uniforme são as distribuições observadas.
 
-\subsection{Formação das redes de interação}\label{sec:intNet}
+
+\section{Formação das redes de interação}\label{sec:intNet}
 Redes de interação podem ser modeladas tanto com quanto sem peso, tanto dirigida quando não dirigida~\cite{bird,newmanCommunityDirected,newmanCommunity2013,newmanBook}.
 Neste trabalho, quando possível, consideramos redes dirigidas e com peso, a mais informativa das possibilidades.
 Nestes casos, desconsideramos as versões dirigidas sem peso, não dirigidas com peso e não dirigidas e sem peso.
@@ -771,8 +782,9 @@ assimilou informação de A, assim $A \rightarrow B$.
 A inversão da direção da aresta produz a rede de status: B leu a mensagem e considerou
 o que A escreveu digno de resposta, dando status para A, portanto $B \rightarrow A$.
 Neste trabalho, as redes de interação são dirigida conforme o fluxo de informação, $A \rightarrow B$.
-A Figura~\ref{formationNetwork} expõe esta formação. Maiores detalhes são:arestas em ambas as direções são consideradas distintas;
-selfloops são consideradas não informativas (para os interesses atuais) e descartadas;  
+A Figura~\ref{formationNetwork} expõe esta formação. Maiores detalhes são:
+arestas em ambas as direções são consideradas distintas;
+laços são consideradas não informativos (para os interesses atuais) e descartados;  
 a primeira interação $A\rightarrow B$ cria a aresta com peso um; 
 a cada nova interação $A\rightarrow B$ um é adicionado ao peso da aresta.
 Estas redes de interação humana constam na literatura como portadoras
@@ -950,7 +962,7 @@ Utilizando as Equações~\ref{eq:part}, estes critérios compostos $C_\delta$, c
 
 No artigo~\cite{timeS}, os critérios $C_1$, $C_3$ e $C_5$ foram chamados exclusivistas, os critérios $C_3$ e $C_4$ de cascata e os critérios $C_5$ e $C_6$ de externos. Note que uma cascata exclusivista $C_3$ é a mesma classificação que uma cascata invertida (considera-se dos periféricos aos hubs) e inclusivista. Estes critérios compostos são especialmente úteis para observar estruturas com poucos participantes ou fruto de pouca atividade (veja as figuras do documento de Supporting Information de~\cite{timeS}).
 
-\section{Média e desvio do PCA ao longo do tempo}
+\section{Média e desvio do PCA ao longo do tempo}\label{sec:pca}
 A Análise de Componentes Principais (PCA é a sigla consagrada, do inglês Principal Component Analysis) foi usada para observar a estabilidade
 na formação das componentes principais.
 A PCA é bastante estabelecida e bem documentada
@@ -1049,8 +1061,6 @@ $c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
 \end{tabular}
 \end{table}
 
-
-
 \subsection{Adaptação}
 
 São calculados $D_{n,n'}$, enquanto $n$ e $n'$ são dados.
@@ -1065,7 +1075,7 @@ Utilizamos $c'(\alpha)$
 como distância entre pares de distribuições empíricas,
 o que é coerente com a teoria~\cite{kol}.
 
-\section{Audiovisualização de dados}
+\section{Audiovisualização de dados}\label{sec:aud}
 Redes foram visualizadas com imagens, videos e engenhocas online para esta pesquisa~\cite{animacoes,galGMANE,appGMANE}. Também foram sonificadas, em especial como faceta sonora de animações abstratas~\cite{preludio,4hubs,gmane,social}.
 Tais ``audiovisualizações'' foram cruciais para guiar a pesquisa para
 características relevantes das redes de interação.
@@ -1073,7 +1083,7 @@ Além disso, os tamanhos relativos dos três setores de Erdös foram visualizado
 A visualização da estrutura em rede foi especialmente útil na inspeção
 dos dados e estruturas das redes de email.
 
-\section{Considerações tipológicas e humanísticas}
+\section{Considerações tipológicas e humanísticas}\label{sec:tip}
 As redes estudadas neste trabalho são constituídas por seres humanos.
 Quando há classificação envolvida, seja dos agentes
 ou dos sistemas em si, reflexões humanísticas são pertinentes,
@@ -1090,8 +1100,7 @@ como as disparadas pelas perguntas:
 Todas estas questões, e muitas outras, estão em constante amadurecimento com grupos de pesquisa~\cite{Nexus}, 
 leituras~\cite{mas}, escrita~\cite{ensaioAA,ap}, e contatos individuais com outros pesquisadores~\cite{massimoTexto,massimoEncontro}.
 
-\section{Web semântica}
-
+\section{Web semântica}\label{sec:web}
 Para a formalização de conceitualizações, e
 para formatos de dados apropriados para armazenamento,
 compartilhamento e referência,
