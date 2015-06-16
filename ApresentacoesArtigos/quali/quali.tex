@@ -43,6 +43,7 @@
 %%%%%%%%%%%%%%%%% Bibliografia
 \usepackage{url}
 \usepackage[bibjustif,abnt-thesis-year=both,num]{abntcite} %%%%%% ABNY
+\providecommand{\ABNTbibliographyname}{Refer\^{e}ncias}
 %%%%%%%%%%%%%%%%% Espacamento
 %\makeatletter  %Espa�amento entre os itens da bibliografia
 %\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
@@ -51,11 +52,11 @@
 %\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Espacaçamento entre as referências
-\makeatletter  %Espa�amento entre os itens da bibliografia
-\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
-\let\ORIGINALlatex@openbib@code=\@openbib@code  
-\renewcommand{\@openbib@code}{\ORIGINALlatex@openbib@code\adjustmybblparameters}
-\makeatother
+%\makeatletter  %Espa�amento entre os itens da bibliografia
+%\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
+%\let\ORIGINALlatex@openbib@code=\@openbib@code  
+%\renewcommand{\@openbib@code}{\ORIGINALlatex@openbib@code\adjustmybblparameters}
+%\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%Symbol footnote
@@ -1684,8 +1685,8 @@ produzida, recomendamos, nesta mesma ordem,~\cite{timeS,pnud5,ensaioAA,gmane,fou
 
 \section*{Agradecimentos}
 CNPq, PNUD/ONU, IEA/USP, Nexus/CNPq, SGPR, labMacambira.sf.net.
-
-\bibliography{biblio}
+\bibliographystyle{plain}
+\bibliography{quali}
 
 \end{document}
 
