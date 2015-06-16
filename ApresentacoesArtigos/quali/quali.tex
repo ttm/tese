@@ -11,7 +11,7 @@
 \let\oldendthebibliography=\endthebibliography
 \renewenvironment{thebibliography}[1]{2%
 	    \oldthebibliography{#1}%
-	        \setcounter{enumiv}{-1}%
+	        \setcounter{enumiv}{0}%
 	}{\oldendthebibliography}
 
 %MEU
@@ -678,7 +678,7 @@ Os livros em geral apresentam um comum e poderoso repertório para a caracteriza
 \end{itemize}
 
 A literatura sobre análise de redes sociais, por exemplo, pode ser frequentemente compreendida como redes complexas em sistemas sociais humanos.
-Uma consideração cuidadosa dos livros e artigos lidos para esta pesquisa está na Seção~\ref{sec:afa}.
+Uma consideração cuidadosa dos livros e artigos lidos para esta pesquisa está na Seção~\ref{sec:chr}.
 
 \subsection{Processamento de linguagem natural, dados ligados, participação social}\label{sec:misc}
 Diversos títulos foram lidos sobre processamento de linguagem natural, mineração de texto,
@@ -1389,7 +1389,7 @@ Muitas engenhocas foram criadas para gerar figuras, vídeos e inspecionar
 estruturas sociais de emails, Facebook, Twitter, Participa.br, AA, IRC e outras
 fontes~\cite{appGMANE,social,ensaaio,ensaio}.
 Outras engenhocas foram criadas para experimentações estéticas e
-informacionais~\cite{mmissa,ocupagov,gmane,mm}.
+informacionais~\cite{mmissa,ocupagov,gmanePack,mm}.
 
 \section{Benefício, utilidade e formalismo}
 Esta seção complementa a monografia neste aspecto:
@@ -1660,12 +1660,12 @@ e física estatística, e confirmar os experimentos percolatórios contínuos (v
     & {\bf feito} & {\bf por fazer} \\\hline
     {\bf escrita}      & artigo de estabilidade em redes de interação humana~\cite{timeS};
     artigo sobre a Ontologia de Participação Social~\cite{ops};
-    ensaio descrevendo simbiose com PNUD/ONU e SG-PR~\cite{ensaioAA};
-    artigo com descrição psicofísica da música no áudio digital~\cite{massa};
+    ensaio descrevendo simbiose com PNUD/ONU e SG-PR~\cite{ensaio};
+    artigo com descrição psicofísica da música no áudio digital~\cite{mass};
     produtos PNUD 3, 4 e 5, descrevendo sistemas de classificação, recomendação, ontologias e triplificações para participação social com métodos de redes complexas e processamento de linguagem natural~\cite{pnud3,pnud4,pnud5};
     artigo sobre AA~\cite{paaper}; 
-    versões iniciais e rascunhos dos artigos sobre física antropológica~\cite{pa},
-    sobre votação contínua por aprovação e participação~\cite{vote},
+    versões iniciais e rascunhos dos artigos sobre física antropológica~\cite{anPhy},
+    sobre votação contínua por aprovação e participação~\cite{continuousV},
     sobre diferenças da produção textual nos setores de Erdös~\cite{rcText},
     sobre visualização de redes de interação em evolução temporal~\cite{versinus},
     sobre audiovisualização de redes de interação em evolução temporal~\cite{versinus},
@@ -1687,7 +1687,7 @@ e física estatística, e confirmar os experimentos percolatórios contínuos (v
                cursos do Coursera, alguns completos;
                literatura de PLN;
                literatura de visualização de dados e mineração de dados;
-               artigos, exemplos especiais são~\cite{} & 
+               artigos, exemplos especiais são~\cite{newmanPower,barabasiEvo,newmanCommunity2013,barabasiHumanDyn} & 
                                estatística e física estatística, talvez manuais de R também;
                        terminar livros referência de redes complexas;
                        absorver uma literatura mínima sobre antropologia;
@@ -1761,6 +1761,19 @@ possuem aplicações diversas e potencialmente benéficas para o participante.
 Por exemplo, os experimentos apresentaram modificações da estrutura social para comportar a pesquisa, e podem ser usados para comportar outros empreendimentos. Os estudos de estabilidade e diferenciação em redes de interação humana apontam na direção de tipologias de redes e de participantes, com base nos setores de Erdös e com componentes principais típicas e estáveis.
 Um legado conceitualizações formalizadas associado a dados ligados e abertos é conveniente para \emph{benchmarks} e para apresentar estes resultados às comunidades acadêmicas e interessadas nas aplicações, para as quais foram adiantadas ontologias, vocabulários, rotinas de conversão de dados relacionais em RDF e os dados em si.
 
+Há, em alguns casos extremos, considerações na base da área,
+com implicações sobre a própria constituição das redes complexas
+(como na Seção~\ref{sec:com}).
+Ao mesmo tempo, os métodos utilizados são potencialmente novos (como na Seção~\ref{sec:sec}).
+Há diversos trabalhos na bibliografia e,
+caso haja disponibilidade para visitar itens da literatura
+produzida, recomendamos, nesta mesma ordem,~\cite{timeS,pnud5,ensaio,gmanePack,4hubs}.
+Dois exemplos de trabalhos de terceiros 
+com influência direta do material nesta monografia, são a 
+tese de doutorado defendida ano passado~\cite{chandra}; e o 
+relatório de consultoria prestada por professores da UnB ao PNUD
+junto à SG-PR~\cite{paulo6}.
+
 Uma direção simples para concluir a pesquisa
 consiste em focar no documento \emph{Complex Networks Gradus ad Parnassum},
 que está planejado como uma apresentação das redes complexas através
@@ -1774,27 +1787,29 @@ grau é estável? Se o texto produzido pelos setores é diferente,
 em quais aspectos é igual e em quais se diferencia?
 Os resultados se mantêm em ambas as línguas português e inglês?
 
-Há, em alguns casos extremos, considerações na base da área,
-com implicações sobre a própria constituição das redes complexas
-(como na Seção~\ref{sec:com}).
-Ao mesmo tempo, os métodos utilizados são potencialmente novos (como na Seção~\ref{sec:sec}).
-Há diversos trabalhos na bibliografia e,
-caso haja disponibilidade para visitar itens da literatura
-produzida, recomendamos, nesta mesma ordem,~\cite{timeS,pnud5,ensaio,gmanePack,4hubs}.
+O orientador solicitou
+ênfase do conteúdo do
+artigo de estabilidade temporal~\cite{timeS}
+nesta monografia, o que me esforcei
+por fazer.
+Os complementos principais ao conteúdo aqui apresentado
+são: a seção de resultados
+do corpo do artigo,
+e o documento de informações de suporte~\cite{timeSS}.
 
-Dois exemplos de trabalhos de terceiros 
-com influência direta do material nesta monografia:
-tese de doutorado defendida ano passado~\cite{chandra};
-relatório de consultoria prestada por professores da UnB ao PNUD
-junto à SG-PR~\cite{paulo6}.
 
-Pela quantidade de assuntos envolvidos,
-e profundados
-há várias documentações sem relação direta com as análises
-de redes sociais ou as ontologias, mas forma corpo com este norte.
+%Pela quantidade de assuntos envolvidos,
+%e profundados
+%há documentações sem relação direta com redes complexas,
+%análises de redes sociais ou as ontologias.
 
 \section*{Agradecimentos}
-CNPq, PNUD/ONU, IEA/USP, Nexus/CNPq, SGPR, labMacambira.sf.net.
+Autores agradecem o apoio financeiro concedido pelo CNPq (140860/2013-4, projeto 870336/1997-5), Programa das Nações Unidas para o Desenvolvimento (contrato 2013/000566, projeto BRA/12/018) e FAPESP; a prestatividade do corpo do IFSC, da CPG e dos funcionários; o  espaço concedido pelo IEASC/USP para algumas reuniões e visitas de parceiros de pesquisa;
+o suporte intelectual e o interesse dos membros do Nexos-Sudeste (Grupo de pesquisa/CNPq~\cite{nexos});
+ao suporte institucional e intelectual da Secretaria Geral da Presidência da República;
+ao suporte intelectual e tecnológico do labMacambira.sf.net
+e todas as comunidades de software e cultura livre direta 
+e indiretamente relacionadas a este trabalho.
 
 \begin{singlespace}
 \vspace{-5cm}
