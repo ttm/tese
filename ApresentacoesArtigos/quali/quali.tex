@@ -1309,6 +1309,20 @@ Dados também foram associados às ontologias
 feitas. Estes dados e ontologias foram em grande parte
 já publicados e estão em uso, mas a grande maioria não
 recebeu artigo científico ainda~\cite{ops,pnud5,pnud4,pnud3,ensaio}.
+Foi publicado no arXiv somente um artigo sobre a OPS~\cite{ops}.
+Este escrito aguarda confluência com orientador para publicação em revista, potencialmente na revista PLOS ONE.
+Foram escritos também os produtos PNUD/ONU,
+publicados em instâncias governamentais
+e em repositórios públicos~\cite{pnud3,pnud4,pnud5}.
+Foram publicados dados em RDF do Participa.br, Cidade
+Democrática e AA no Datahub.io~\cite{datahub}.
+Ontologias e vocabulários foram publicadas junto ao ministério do planejamento
+e em repositórios públicos~\cite{pnud5}.
+\emph{Scripts} para síntese das ontologias e triplificação
+de dados estão também publicamente acessíveis
+e junto aos produtos PNUD da bibliografia.
+
+
 
 \subsection{Síntese de ontologias e vocabulários de estruturas sociais}
 Ontologias OWL feitas neste trabalho:
@@ -1346,27 +1360,9 @@ Roteiros para conversão de dados relacionais em dados RDF enriquecidos semantic
     \item Triplificação dos dados do AA:
         dados do AA encontrados em bancos de dados MySQL
         e MongoDB, e em \emph{logs} de IRC~\cite{ensaaio,pnud5}.
-        Esta triplificação é especialmente útil pela
-        simplicidade do AA, pois permite experimentar
-        abordagens diferentes e escolher a melhor, antes
-        de desenvolver ontologias e triplificações mais complicadas.
-        Esta foi a única triplificação feita depois da ontologia e não aproveitada para a construção da ontologia.
+                Esta foi a única triplificação feita depois da ontologia e não aproveitada para a construção da ontologia.
 \end{itemize}
 
-
-\subsection{Escritos, ontologias e dados publicados}
-Foi publicado no arXiv um artigo sobre a OPS~\cite{ops}.
-Este escrito aguarda confluência com orientador para publicação em revista, potencialmente na revista PLOS ONE.
-Foram escritos também os produtos PNUD/ONU,
-publicados em instâncias governamentais
-e em repositórios públicos~\cite{pnud3,pnud4,pnud5}.
-Foram publicados dados em RDF do Participa.br, Cidade
-Democrática e AA no Datahub.io~\cite{datahub}.
-Ontologias e vocabulários foram publicadas junto ao ministério do planejamento
-e em repositórios públicos~\cite{pnud5}
-\emph{Scripts} para síntese das ontologias e triplificação
-de dados estão também publicamente acessíveis
-e junto aos produtos PNUD da bibliografia.
 
 \subsection{Método de construção de ontologias orientado aos dados}\label{sec:oda}
 Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPa e OCD).
@@ -1396,9 +1392,6 @@ Outras engenhocas foram criadas para experimentações estéticas e
 informacionais~\cite{mmissa,ocupagov,gmane,mm}.
 
 \section{Benefício, utilidade e formalismo}
-A proposta do trabalho é comprovar a demanda e desenvolver algumas formas para o participante se beneficiar de suas redes através do legado das redes complexas.
-Os resultados das seções anteriores servem a este fim, sendo, porém, mais desenvolvimentos científicos e tecnológicos do que formas
-para o participante se beneficiar.
 Esta seção complementa a monografia neste aspecto:
 registra andamentos fronteiriços do trabalho, difíceis de formalizar e até inconclusivos,
 mas cuja utilidade para o participante é latente.
@@ -1437,9 +1430,8 @@ Esta versão recebeu prova de conceito~\cite{pnud4}:
 Foram realizados procedimentos cíclicos e procedimentos efêmeros
 de difusão de informação para observar as reações
 e testar hipóteses de modificação das estruturas sociais.
-Experimentos paradigmáticos:
-\begin{itemize}
-    \item Em dezembro de 2012 foram iniciados ciclos de
+Experimentos paradigmáticos e hipóteses serão expostas nesta seção.
+    Em dezembro de 2012 foram iniciados ciclos de
         coleta e difusão de informação sobre
         as redes sociais e o potencial benéfico para
         o indivíduo civil. Duraram meses e redes diferentes
@@ -1462,37 +1454,35 @@ Experimentos paradigmáticos:
         cada aresta indica uma amizade entre eles), e
         amigo por amigo foi acionado,
 	dos menos conectados aos mais conectados, três vezes~\cite{mit}.
-    \item Analisando redes de amizade do Facebook, percebi que
-        portavam uma característica não intuitiva:
-        em praticamente qualquer rede de tamanho médio ou grande
-        (mais de 500 pessoas), dentre as 50 pessoas com a
+
+    Em outra ocasião, percebi que
+        uma característica não intuitiva:
+        em praticamente qualquer rede de amizades com mais de 500 pessoas, dentre as 50 pessoas com a
         maior intermediação (\emph{betweenness centrality}, mais participa de geodésicas)
-        havia sempre pouquíssimas que constavam entre as 50
+        havia sempre pouquíssimas que constavam também dentre as 50
         com maior closenness centrality (mais perto de todos os outros agentes). 
-        Com base nesta diferenciação inesperada, selecionamos estes dois grupos em minha
-        rede e em redes de parceiros que também fazem experimentos semelhantes.
-        Cada um de nós elaboramos uma mensagem diferente, e a mandamos
-        para nossos respectivos dois grupos, separadamente. Ou seja,
-        cada pessoa enviou uma mensagem diferente, cada grupo de cada pessoa
+        Selecionamos estes dois grupos em minha
+        rede e em redes de parceiros que fazem experimentos semelhantes.
+        Cada pessoa enviou uma mensagem diferente, cada grupo de cada pessoa
         recebeu uma cópia desta mensagem. O grupo com a maior intermediação
-        reagia sempre calorosamente, repassava a mensagem, até interagiam entre si,
+        reagiu sempre calorosamente, repassava a mensagem, os membros até interagiam entre si,
         mesmo sem se conhecerem ou serem próximos.
-        Os grupos de maior \emph{closenness} nunca reagiam, saíam rapidamente 
-        da interface usada para a mensagem. A hipótese mais plausível que surgiu
-        para explicar esta diferença de reação é a de que os de maior intermediação
+        Os grupos de maior \emph{closenness} nunca reagiam, membros saíam rapidamente 
+        da interface. A hipótese mais plausível que surgiu
+        para explicar esta diferença de reação é a de que os membros de maior intermediação
         tinham maior influência sobre
         a rede, enquanto os de maior \emph{closenness} sofriam maior influência.
-\item Em um evento grande em São Paulo sobre transparência e governança na internet (\emph{\#arenaNETmundial}),
+
+	Em um evento grande em São Paulo sobre transparência e governança na internet (\emph{\#arenaNETmundial}),
         foi operacionalizado um telão de streaming de estruturas sociais, escrito
         no percurso desta pesquisa, que expunha em tempo real as três diferentes redes de Twitter
         formada por usuários relacionados por \emph{retweet}, vocabulário e \emph{\#hashtag}.
         A tecnologia pode ser compreendida como ``\emph{streaming} de estruturas sociais'',
         e gerou bastante reflexão com as pessoas que foram ao evento, inclusive
-        com os próprios comunicadores que constavam nas redes de \emph{retweet}.
+	com os próprios comunicadores que constavam nas redes de \emph{retweet}~\cite{ocupagov}.
         Houve confirmação da hipótese de que as pessoas se interessariam e se instruiriam.
         Houve alguns usos a mais da ferramenta, localizados e a pedido do meio, não
         por necessidade da pesquisa.
-\end{itemize}
 
 O segundo experimento foi feito por vários parceiros de pesquisa,
 por onde pôde ser verificado o comportamento constante.
