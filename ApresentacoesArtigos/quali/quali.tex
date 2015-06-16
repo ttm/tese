@@ -5,6 +5,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{braket}
 \usepackage{booktabs}  %Possibilidade de linhas mais grossas nas tabelas.
+\let\oldthebibliography=\thebibliography
+\let\oldendthebibliography=\endthebibliography
+\renewenvironment{thebibliography}[1]{%
+	    \oldthebibliography{#1}%
+	        \setcounter{enumiv}{-2}%
+	}{\oldendthebibliography}
 
 %MEU
 %\usepackage[brazilian, portuguese, activeacute]{babel}
@@ -280,6 +286,7 @@
   {%\titlerule[2pt]
      % \vspace{2ex}
   %\LARGE \thechapter\;-\; }
+	  \vspace{-9ex}
   \LARGE}
   [%\vspace{1ex}%
   {\titlerule[1pt]}]
@@ -598,10 +605,8 @@ Dados ligados. Web semântica. Participação social. Mineração de texto. Proc
   [%\vspace{1ex}%
   {\titlerule[1pt]}]
 
-
 \chapter{Introdução}
-Estudos sobre redes de interação humana foram iniciados bem antes dos computadores modernos,
-datam do século XIX, enquanto a fundação da ``Análise de Redes Sociais''/ARS (ou \emph{Social Network Analysis}/SNA)
+Os primeiros estudos sobre redes de interação humana datam do século XIX. Já a fundação da ``Análise de Redes Sociais''/ARS (ou \emph{Social Network Analysis}/SNA)
 é geralmente atribuída ao psiquiatra Jacob Moreno na metade do século vinte~\cite{newmanBook}.
 Com a crescente disponibilidade de dados relacionados à interação humana, a pesquisa destas redes tem aumentado continuamente.
 Contribuições podem ser encontradas em uma variedade de áreas, de ciências sociais e humanidades~\cite{latour2013}
@@ -1099,18 +1104,6 @@ D_{n,n'} > c(\alpha)\sqrt{\frac{n+n'}{nn'}}
 onde $D_{n,n'}=sup_x[F_{1,n}-F_{2,n'}]$ e $c(\alpha)$ é dado para cada região crítica $\alpha$
 (probabilidade da hipótese nula ser verdadeira) segundo a Tabela~\ref{tab:kol}.
 
-\begin{table}[!h]
-\centering
-\caption{ \footnotesize Relação entre a região crítica $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov
-de amostragem dupla.}\label{tab:kol}
-\begin{tabular}{|l||c|c|c|c|c|c|}\hline
-$\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
-$c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
-\end{tabular}
-\end{table}
-
-\subsection{Adaptação}
-
 São calculados $D_{n,n'}$, enquanto $n$ e $n'$ são dados.
 Todos os termos da Equação~\ref{eq:ks} são positivos
 e $c(\alpha)$ pode ser isolado:
@@ -1122,6 +1115,18 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 Utilizamos $c'(\alpha)$
 como distância entre pares de distribuições empíricas,
 o que é coerente com a teoria~\cite{kol}.
+
+\begin{table}[!h]
+\centering
+\caption{ \footnotesize Relação entre a região crítica $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov
+de amostragem dupla.}\label{tab:kol}
+\begin{tabular}{|l||c|c|c|c|c|c|}\hline
+$\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
+$c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
+\end{tabular}
+\end{table}
+
+
 
 \section{Audiovisualização de dados}\label{sec:aud}
 Redes foram visualizadas com imagens, videos e engenhocas online para esta pesquisa~\cite{animacoes,galGMANE,appGMANE}.
@@ -1754,7 +1759,8 @@ CNPq, PNUD/ONU, IEA/USP, Nexus/CNPq, SGPR, labMacambira.sf.net.
 
 \begin{singlespace}
 \vspace{-5cm}
-\bibliographystyle{plain}
+%\bibliographystyle{plain}
+\bibliographystyle{unsrt}
   \titleformat{\chapter}[display]
   {\normalfont\bfseries\filcenter}
   {-15ex \LARGE\thechapter}
@@ -1763,7 +1769,7 @@ CNPq, PNUD/ONU, IEA/USP, Nexus/CNPq, SGPR, labMacambira.sf.net.
   {%\titlerule[2pt]
      % \vspace{2ex}
   %\LARGE \thechapter\;-\; }
-	  \vspace{-12ex}
+	  \vspace{-9ex}
   \LARGE}
   [%\vspace{1ex}%
   {\titlerule[1pt]}]
@@ -1775,6 +1781,8 @@ CNPq, PNUD/ONU, IEA/USP, Nexus/CNPq, SGPR, labMacambira.sf.net.
   \vspace{-5cm}
   {
 \linespread{1}
+
+  %\addtocounter{\@listctr}{1}
 \bibliography{quali}
 }
 \end{singlespace}
