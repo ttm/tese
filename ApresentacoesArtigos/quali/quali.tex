@@ -106,20 +106,37 @@
 %%%%%%%% Espaçamento entre títulos de seções e linhas anteriores e subsequentes
 \usepackage{titlesec} %[compact]
 \titlespacing{\chapter}{0pt}{0cm}{1.5cm}
-\titlespacing{\section}{0pt}{1.5cm}{1.5cm}
-\titlespacing{\subsection}{0pt}{1.5cm}{1.5cm}
-\titlespacing{\subsubsection}{0pt}{1.5cm}{1.5cm}    
+%\titlespacing{\section}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\section}{0pt}{1.5cm}{0cm}
+%\titlespacing{\subsection}{0pt}{1.5cm}{1.5cm}
+\titlespacing{\subsection}{0pt}{1.5cm}{0cm}
+%\titlespacing{\subsubsection}{0pt}{1.5cm}{1.5cm}    
+\titlespacing{\subsubsection}{0pt}{1.5cm}{0cm}    
 
 %  \usepackage{titlesec}
   \titleformat{\chapter}[display]
   {\normalfont\bfseries\filcenter}
-  {\LARGE\thechapter}
-  {-2ex}
+  %{\LARGE\thechapter}
+  {}
+  {-7ex}
   {%\titlerule[2pt]
-     % \vspace{2ex}%
-  \LARGE}
+     % \vspace{2ex}
+	  \raggedright
+  %\LARGE \thechapter\;-\; }
+  \LARGE \thechapter\;-\;}
   [%\vspace{1ex}%
   {\titlerule[1pt]}]
+
+%  \titleformat{\chapter}[display]
+%  {\normalfont\bfseries\filcenter}
+%  {\LARGE\thechapter}
+%  {-2ex}
+%  {%\titlerule[2pt]
+%     % \vspace{2ex}%
+%  \LARGE}
+%  [%\vspace{1ex}%
+%  {\titlerule[1pt]}]
+
 
 
 %%%%%%%%%% Escreve ``Figura`` e ``Tabela`` nas listas de figuras e tabelas
@@ -235,7 +252,7 @@
 
 %CHCHCH
 %\addtolength{\headheight}{0.5pt} % cria um espaço para linha
-\addtolength{\headheight}{4.0pt} % cria um espaço para linha
+%\addtolength{\headheight}{4.0pt} % cria um espaço para linha
 
 \fancypagestyle{plain}{
     \fancyhead{} % exibir cabeçalho e rodapé
@@ -255,7 +272,21 @@
 
 \pagestyle{empty}
 
-%\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} %CHCHCH %to make tableofcontents empty pagestyle
+  \titleformat{\chapter}[display]
+  {\normalfont\bfseries\filcenter}
+  {\LARGE\thechapter}
+  %{}
+  {-7ex}
+  {%\titlerule[2pt]
+     % \vspace{2ex}
+  %\LARGE \thechapter\;-\; }
+  \LARGE}
+  [%\vspace{1ex}%
+  {\titlerule[1pt]}]
+
+
+
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} %CHCHCH %to make tableofcontents empty pagestyle
 
 
 %CHCHCH TO MAKE TABLEOFCONTENTS PAGESTULE EMPTY
@@ -312,6 +343,8 @@
 \centerline{\LARGE{RENATO FABBRI}}
 
 \vspace{3.0cm}
+
+\linespread{1.3}
 
 
 %\centerline{\Huge{Complex networks for the participant}} 
@@ -551,6 +584,21 @@ Dados ligados. Web semântica. Participação social. Mineração de texto. Proc
 \pagestyle{fancy}
 
 %\chapter{Introduction}
+
+  \titleformat{\chapter}[display]
+  {\normalfont\bfseries\filcenter}
+  %{\LARGE\thechapter}
+  {}
+  {-15ex}
+  {%\titlerule[2pt]
+     % \vspace{2ex}
+	  \raggedright
+  %\LARGE \thechapter\;-\; }
+  \LARGE \thechapter\;-\;}
+  [%\vspace{1ex}%
+  {\titlerule[1pt]}]
+
+
 \chapter{Introdução}
 Estudos sobre redes de interação humana foram iniciados bem antes dos computadores modernos,
 datam do século XIX, enquanto a fundação da ``Análise de Redes Sociais''/ARS (ou \emph{Social Network Analysis}/SNA)
@@ -793,8 +841,7 @@ para (algumas) redes sociais~\cite{bird,newmanBook}.
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.5\textwidth]{figs/criaRede__}
-    \caption{A formação da rede de interação a partir
+    \caption{ \footnotesize A formação da rede de interação a partir
         de mensagens e respostas.
         Cada vértice representa um participante.
         Uma resposta do participante B a uma
@@ -804,6 +851,7 @@ para (algumas) redes sociais~\cite{bird,newmanBook}.
         Múltiplas mensagens adicionam ``peso'' à
         aresta dirigida. Maiores detalhes
         estão na Seção~\ref{sec:intNet}}
+    \includegraphics[width=0.5\textwidth]{figs/criaRede__}
     \label{formationNetwork}
 \end{figure}
 
@@ -862,14 +910,14 @@ e menos abundantes em nas redes reais, são classificados como intermediários.
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.5\textwidth]{figs/fser_}
-    \caption{As distribuições de grau de modelos ideais de redes livres de escala e Erdös-Rényi.
+    \caption{ \footnotesize As distribuições de grau de modelos ideais de redes livres de escala e Erdös-Rényi.
         A segunda possui mais vértices intermediários, enquanto a primeira possui mais vértices
         periféricos e hubs. As bordas dos setores são definidas pelas duas intersecções $k_L$
         e $k_R$ das distribuições de conectividade.
         Os graus característicos estão nos intervalos compactos:
                 $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$
     para os setores de Erdös (periferia, intermediários e hubs).}   
+    \includegraphics[width=0.5\textwidth]{figs/fser_}
         \label{fig:setores}
 \end{figure}
 
@@ -1053,7 +1101,7 @@ onde $D_{n,n'}=sup_x[F_{1,n}-F_{2,n'}]$ e $c(\alpha)$ é dado para cada região 
 
 \begin{table}[!h]
 \centering
-\caption{Relação entre a região crítica $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov
+\caption{ \footnotesize Relação entre a região crítica $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov
 de amostragem dupla.}\label{tab:kol}
 \begin{tabular}{|l||c|c|c|c|c|c|}\hline
 $\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
@@ -1475,11 +1523,11 @@ Considere que, para cada quantidade de recursos $T$, são contadas $f=\frac{R}{T
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.5\textwidth]{figs/rt}
-    \caption{A curva resultante da divisão de uma mesma quantidade
+    \caption{ \footnotesize A curva resultante da divisão de uma mesma quantidade
     R de recursos em $\frac{R}{T}$ partes de tamanho T.
         Utilizada para expor uma potencial causa da ubiquidade da
         propriedade livre de escala.}
+    \includegraphics[width=0.5\textwidth]{figs/rt}
     \label{fig:1T}
 \end{figure}
 
@@ -1511,7 +1559,7 @@ são: propriedades fractais, recursos em número diferente, associações entre 
 
 \begin{table}[h]
 \begin{center}
-  \caption{Cronograma de atividades ao longo dos semestres, descritas na Seção~\ref{sec:cron}.
+  \caption{ \footnotesize Cronograma de atividades ao longo dos semestres, descritas na Seção~\ref{sec:cron}.
       A marcação $\bullet$ indica previsão feita no início do doutorado.
   A marcação [ ] se refere ao relato e previsão, agora no final do $1^{\circ}$ semestre de 2015.
   As principais diferenças do previsto foram: as disciplinas terminaram no primeiro ano; a revisão da literatura, os acréscimos aos modelos atuais com o foco no participante da rede, e a implementação computacional, estas três atividades estão sendo realizadas constantemente e devem durar até a entrega e defesa da tese. }
@@ -1585,7 +1633,7 @@ Considerações sobre estes itens:
 \begin{table}[h]
 \centering
 \footnotesize
-\caption{Relação de tarefas feitas e por fazer. Há literatura pronta e vários documentos escritos e em mãos para serem aprofundados. A literatura a ser consumida é bastante extensa e cursos em vídeo, como do Coursera,
+\caption{ \footnotesize Relação de tarefas feitas e por fazer. Há literatura pronta e vários documentos escritos e em mãos para serem aprofundados. A literatura a ser consumida é bastante extensa e cursos em vídeo, como do Coursera,
 são vistos com frequência (alguns cursos foram vistos inteiros).
 O mais urgente parece fazer uma revisão e aprofundamento de estatística
 e física estatística. Falta confirmar os experimentos percolatórios contínuos (veja Seções~\ref{sec:exp} e~\ref{sec:fan}).
@@ -1642,7 +1690,7 @@ As disciplinas foram terminadas.}\label{tab:afa}
 \begin{table}[!h]
 \centering
 \footnotesize
-\caption{Relação de tarefas feitas e por fazer.
+\caption{ \footnotesize Relação de tarefas feitas e por fazer.
 Há bastante software pronto, principalmente para experimentos
 e provas de conceito, mas também para pesquisa científica.
 A finalização de pacotes oficiais
@@ -1703,10 +1751,33 @@ produzida, recomendamos, nesta mesma ordem,~\cite{timeS,pnud5,ensaioAA,gmane,fou
 
 \section*{Agradecimentos}
 CNPq, PNUD/ONU, IEA/USP, Nexus/CNPq, SGPR, labMacambira.sf.net.
+
+\begin{singlespace}
+\vspace{-5cm}
+\bibliographystyle{plain}
+  \titleformat{\chapter}[display]
+  {\normalfont\bfseries\filcenter}
+  {-15ex \LARGE\thechapter}
+  %{}
+  {-15ex}
+  {%\titlerule[2pt]
+     % \vspace{2ex}
+  %\LARGE \thechapter\;-\; }
+	  \vspace{-12ex}
+  \LARGE}
+  [%\vspace{1ex}%
+  {\titlerule[1pt]}]
+
+  \vspace{-15ex}
 \addcontentsline{toc}{chapter}{Referências}
 \renewcommand{\bibname}{Referências}
-\bibliographystyle{plain}
+  \vspace{-15ex}
+  \vspace{-5cm}
+  {
+\linespread{1}
 \bibliography{quali}
+}
+\end{singlespace}
 
 \end{document}
 
