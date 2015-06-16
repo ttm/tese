@@ -1266,15 +1266,12 @@ Explicitados cuidadosamente em~\cite{timeS}, os principais resultados da estabil
     há uma correlação positiva entre o número de participantes e o número de \emph{threads}.
     Este fato deve estar relacionado a outras características topológicas e textuais da rede e 
     pode servir para uma tipologia das próprias redes.
-    \item Especulações humanísticas, especialmente sobre questões
-        tipológicas e antropológicas, seguem imediatamente
-        dos procedimentos e resultados quantitativos deste trabalho.
-        Em especial, a setorialização de Erdös implica em uma
+    \item A setorialização de Erdös implica em uma
         tipologia de agentes em redes humanas de interação.
         Esta tipologia é, a princípio, não estigmatizante pois os agentes mudam de setor constantemente.
         Além disso, um mesmo agente pertence a todos os setores ao mesmo tempo, mas em redes diferentes.
         Maiores qualificações desta tipologia, decorrente do pertencimento
-        a um setor de Erdös, estão no final dos resultados do artigo.
+	a um setor de Erdös, estão no final dos resultados do artigo~\cite{timeS}.
 \end{itemize}
 
 Com base nestes resultados, foi investigada a produção de texto na rede,
@@ -1288,72 +1285,72 @@ As principais conclusões são:
         de uso de recursos textuais (pontuação, adjetivos, etc) de cada setor
         são tão grandes que as tabelas não registram os valores (veja Seção~\ref{sec:kol}).
         Além disso, as diferenças entre $c(\alpha)$ de setores iguais de redes diferentes são,
-        na grande maioria das vezes, maiores que as encontradas entre setores diferentes de uma mesma rede.
+        na grande maioria das vezes, menores que as encontradas entre setores diferentes de uma mesma rede.
         Isso decorre de uma maior discrepância de massa probabilística entre os histogramas de setores diferentes de uma mesma rede do que entre setores iguais de redes diferentes. 
 
-    \item As características topológicas e textuais de cada agente apresentam correlações não triviais (como entre intermediação e uso de advérbios) e triviais (como entre grau e número de caracteres escritos).
+    \item As características topológicas e textuais de cada agente apresentam correlações não triviais (como entre centralidade de intermediação e uso de advérbios) e triviais (como entre grau e número de caracteres escritos).
         Mesmo assim, são muito menos correlacionadas entre si do que separadamente. Ou seja, as componentes principais possuem tendência
         à prevalência de medidas topológicas {\bf ou} textuais,
         mas a combinação de medidas de ambos os tipos é incidente.
 \end{itemize}
 
 Estes resultados permearam várias outras frentes 
-de pesquisa e desenvolvimento tecnológico~\cite{prod1,prod2,prod3,prod4,prod5,ops,versinus}.
+de pesquisa e desenvolvimento tecnológico~\cite{pnud3,pnud4,pnud5,ops,versinus}.
 
 \section{Criação da nuvem brasileira de dados participativos ligados}
-Iniciada para formalizar as redes e participantes, junto às suas
-propriedades e estruturas.
+Iniciada para formalizar as redes e participantes, estabelecer
+\emph{benchmarks} (valores de referência), e observar
+os aspectos mandatórios, e relativamente estáveis,
+das conceitualizações sobre as estruturas sociais.
 Esta frente rapidamente se voltou para
 as formalizações de conceitualizações referentes às estruturas
 e sistemáticas já em prática e previstas em lei.
-Dados também foram publicados, fazendo uso das ontologias
+Dados também foram associados às ontologias
 feitas. Estes dados e ontologias foram em grande parte
 já publicados e estão em uso, mas a grande maioria não
-recebeu artigo científico ainda.
+recebeu artigo científico ainda~\cite{ops,pnud5,pnud4,pnud3,ensaio}.
 
 \subsection{Síntese de ontologias e vocabulários de estruturas sociais}
 Ontologias OWL feitas neste trabalho:
 \begin{itemize}
-        \item OPS (Ontologia de Participação Social): é uma ontologia fruto de diversos esforços da América Latina, principalmente do Brasil. Nesta pesquisa, revisamos a ontologia e disponibilizamos um código OWL em uso por instâncias diferentes da academia, Estado e sociedade civil.
+	\item OPS (Ontologia de Participação Social, fruto de diversos esforços da América Latina, principalmente do Brasil): nesta pesquisa, revisamos a ontologia e disponibilizamos a versão em uso por instâncias diferentes da academia, Estado e sociedade civil~\cite{ops}.
         \item OPa (Ontologia do Participa.br): esta é uma ontologia feita para e a partir dos dados do Participa.br (Portal Federal de Participação Social, SG-PR).
-        \item OPP (Ontologia de Portais Participativos): esta ontologia foi pensada com a equipe do Participa.br e outros especialistas como esquema geral de portais participativos. Ontologia relativamente complexa, centrada em 3 classes: Participante, Comunidade, Mecanismo Participativo.
-        \item Ontologiaa (Ontologia do AA): é uma pequena ontologia para o minimalista AA (Autorregulação Algorítmica), um software para registrar e compartilhar processos intelectuais como para pesquisa e arte~\cite{paaper, ensaaio}.
-        \item OCD (Ontologia do Cidade Democrática): é uma ontologia extensa para o portal participativo Cidade Democrática, da sociedade civil. Dado o tamanho da ontologia, o processo de sua construção deu origem ao método de construção de ontologia OWL a partir dos dados, descrito na Seção~\ref{} e utilizado também para a construção da OPa (acima).
-        \item OBS (Ontologia da Biblioteca Social): Esta ontologia consiste na verdade em uma coleção de ontologias, uma para cada conceito que precisasse de uma abordagem dedicada, e uma para cada mecanismo ou instância de participação social prevista no Decreto Presidencial nº 8.243 de 23 de maio de 2014, conhecido como decreto da PNPS ou da Política Nacional de Participação Social. Esta ontologia também contou com entrevistas feitas diretamente para este trabalho, além da contribuição de uma oficina na Secretaria Geral da
+        \item OPP (Ontologia de Portais Participativos): pensada com a equipe do Participa.br e outros especialistas como esquema geral de portais participativos. Ontologia relativamente complexa, centrada em 3 classes: Participante, Comunidade, Mecanismo Participativo.
+        \item Ontologiaa (Ontologia do AA): uma pequena ontologia para o minimalista AA (Autorregulação Algorítmica), um software para registrar e compartilhar processos intelectuais como para pesquisa e arte~\cite{pnud5,paaper,ensaaio}.
+        \item OCD (Ontologia do Cidade Democrática): é uma ontologia extensa para o portal participativo Cidade Democrática, da sociedade civil. Dado o tamanho da ontologia, o processo de sua construção deu origem ao método de construção de ontologia OWL a partir dos dados, descrito na Seção~\ref{sec:oda} e utilizado também para a construção da OPa (acima).
+        \item OBS (Ontologia da Biblioteca Social): na verdade em uma coleção de ontologias, uma para cada conceito que precisasse, e uma para cada mecanismo ou instância de participação social prevista no Decreto Presidencial nº 8.243, conhecido como decreto da PNPS ou da Política Nacional de Participação Social. Esta ontologia contou com entrevistas feitas diretamente para construí-la,	e uma atividade especial na Secretaria-Geral da
 Presidência da República, para explicitar a utilidade
 destas formalizações semânticas e coletar informações sobre
 diversos mecanismos e instâncias de participação social previstos
-em lei e praticados.
+em lei e praticados~\cite{pnud5}.
 \end{itemize}
 
 O
 VBS (Vocabulário da Biblioteca Social) é uma adaptação (com complementos)
             da OBS no formato
-            de vocabulário SKOS, principalmente para permitir
-            uso junto ao DSPACE.
+            de vocabulário SKOS, principalmente para facilitar
+            usos junto ao DSPACE.
 
 As ontologias e vocabulários são todas construídas através de scripts, com exceção da
-OPP, feita no Protegé.
+OPP, feita no Protegé~\cite{pnud5}.
 
 \subsection{Obtenção de dados ligados a partir de dados relacionais participativos}
-Três roteiros de conversão de dados foram feitos para conversão de dados relacionais em dados RDF enriquecidos semanticamente:
+Roteiros para conversão de dados relacionais em dados RDF enriquecidos semanticamente~\cite{pnud5}:
 \begin{itemize}
     \item Triplificação do Participa.br: 
-        foi elaborado e disponibilizado um roteiro para formatação em RDF de dados relacionais do Participa.br (originalmente em PostgreSQL)~\cite{triplificaParticipa}. Estes dados foram depois usados, através de buscas SparQL, para auxiliar na construção da OPa~\cite{opaScript}.
-    \item Triplificação dos dados do Cidade Democrática: 
-        foi elaborado um roteiro para formatação em RDF de dados 
-        do Cidade Democrática (originalmente em MySQL)~\cite{cdScript}. Estes
-        dados foram depois utilizados para auxiliar na construção
-        da OCD~\cite{ocdScript}.
+        dados originalmente em PostgreSQL. São usados, através de buscas SparQL, para auxiliar na construção da OPa.
+    \item Triplificação dos dados do Cidade Democrática.
+        Estes
+        dados são utilizados para auxiliar na construção
+        da OCD.
     \item Triplificação dos dados do AA:
-        foi elaborado um roteiro para formatação em RDF de
         dados do AA encontrados em bancos de dados MySQL
-        e MongoDB, e em \emph{logs} de IRC~\cite{aaScript}.
+        e MongoDB, e em \emph{logs} de IRC~\cite{ensaaio,pnud5}.
         Esta triplificação é especialmente útil pela
-        simplicidade do AA, o que permite experimentar
+        simplicidade do AA, pois permite experimentar
         abordagens diferentes e escolher a melhor, antes
         de desenvolver ontologias e triplificações mais complicadas.
-        Esta foi a única triplificação feita depois da ontologia e não aproveitada para a construção da ontologia~\cite{scriptOntologiaa}.
+        Esta foi a única triplificação feita depois da ontologia e não aproveitada para a construção da ontologia.
 \end{itemize}
 
 
@@ -1361,19 +1358,19 @@ Três roteiros de conversão de dados foram feitos para conversão de dados rela
 Foi publicado no arXiv um artigo sobre a OPS~\cite{ops}.
 Este escrito aguarda confluência com orientador para publicação em revista, potencialmente na revista PLOS ONE.
 Foram escritos também os produtos PNUD/ONU,
-em processo de publicação em instâncias governamentais,
-mas já em repositórios públicos~\cite{pnud3,pnud4,pnud5}.
+publicados em instâncias governamentais
+e em repositórios públicos~\cite{pnud3,pnud4,pnud5}.
 Foram publicados dados em RDF do Participa.br, Cidade
 Democrática e AA no Datahub.io~\cite{datahub}.
 Ontologias e vocabulários foram publicadas junto ao ministério do planejamento
-e em repositórios públicos~\cite{opa,opp,ops,obs,vbs}
+e em repositórios públicos~\cite{pnud5}
 \emph{Scripts} para síntese das ontologias e triplificação
 de dados estão também publicamente acessíveis
-e junto aos produtos PNUD citados acima.
+e junto aos produtos PNUD da bibliografia.
 
-\subsection{Método de construção de ontologias orientado aos dados}
-Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPA dados e OCD).
-Resumidamente, o método consiste em: representar os dados de interesse como RDF; realizar buscas SparQL para construir ontologia trivial com as classes e propriedades encontradas; realizar buscas SparQL para inferir restrições de classe e axiomas de propriedade~\cite{pnud5,scriptOCD,scriptOPA}.
+\subsection{Método de construção de ontologias orientado aos dados}\label{sec:oda}
+Um método de levantamento de ontologia orientado aos dados surgiu, potencialmente útil a todos os portais e software em necessidade de ontologias, e foi responsável por 2 ontologias (OPa e OCD).
+Resumidamente, o método consiste em: representar os dados de interesse como RDF; realizar buscas SparQL para construir ontologia trivial com as classes e propriedades encontradas; realizar buscas SparQL para inferir restrições de classe e axiomas de propriedade~\cite{pnud5}.
 
 \section{Aparato em software}
 \emph{Scripts} para verificar as estabilidades topológicas e diferenciações textuais em redes humanas estão reunidos em um pacote oficial da linguagem Python~\cite{gmanePack}.
@@ -1394,9 +1391,9 @@ IPython Notebook. As ontologias estão também disponíveis
 na instalação do Webprotegé da Stanford~\cite{pnud5}.
 Muitas engenhocas foram criadas para gerar figuras, vídeos e inspecionar
 estruturas sociais de emails, Facebook, Twitter, Participa.br, AA, IRC e outras
-fontes~\cite{engeHeraGmane,social,ensaaio,ensaioAA}.
+fontes~\cite{appGMANE,social,ensaaio,ensaio}.
 Outras engenhocas foram criadas para experimentações estéticas e
-informacionais~\cite{mmissa,teloes,gmane,governArt}.
+informacionais~\cite{mmissa,ocupagov,gmane,mm}.
 
 \section{Aproveitamento, utilidade e formalismo}
 A proposta do trabalho é comprovar a demanda e desenvolver algumas formas para o participante se beneficiar de suas redes através do legado das redes complexas.
@@ -1773,6 +1770,14 @@ Ao mesmo tempo, os métodos utilizados são potencialmente novos (como na Seçã
 Há diversos trabalhos na bibliografia e,
 caso haja disponibilidade para visitar itens da literatura
 produzida, recomendamos, nesta mesma ordem,~\cite{timeS,pnud5,ensaioAA,gmane,fourHubs}.
+
+Dois exemplo de trabalhos de terceiros influência direta deste doutorado:
+tese de doutorado defendida ano passado~\cite{chandra};
+relatório de consultoria prestada por professores da UnB ao PNUD
+junto à SG-PR~\cite{paulo6}. Pela quantidade de assuntos envolvidos,
+e profund
+há várias documentações sem relação direta com as análises
+de redes sociais ou as ontologias, mas forma corpo com este norte.
 
 \section*{Agradecimentos}
 CNPq, PNUD/ONU, IEA/USP, Nexus/CNPq, SGPR, labMacambira.sf.net.
