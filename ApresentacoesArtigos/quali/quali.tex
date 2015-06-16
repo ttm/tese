@@ -1,5 +1,7 @@
 \documentclass[a4paper,openright,12pt]{report} %,parskip=full
 
+\usepackage{enumitem}
+\setlist{nosep}
 \usepackage{amssymb,amsmath,textcomp}
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
@@ -7,9 +9,9 @@
 \usepackage{booktabs}  %Possibilidade de linhas mais grossas nas tabelas.
 \let\oldthebibliography=\thebibliography
 \let\oldendthebibliography=\endthebibliography
-\renewenvironment{thebibliography}[1]{%
+\renewenvironment{thebibliography}[1]{2%
 	    \oldthebibliography{#1}%
-	        \setcounter{enumiv}{-2}%
+	        \setcounter{enumiv}{-1}%
 	}{\oldendthebibliography}
 
 %MEU
@@ -48,8 +50,8 @@
 
 %%%%%%%%%%%%%%%%% Bibliografia
 \usepackage{url}
-\usepackage[bibjustif,abnt-thesis-year=both,num]{abntcite} %%%%%% ABNY
-\providecommand{\ABNTbibliographyname}{Refer\^{e}ncias}
+%\usepackage[bibjustif,abnt-thesis-year=both,num]{abntcite} %%%%%% ABNY
+%\providecommand{\ABNTbibliographyname}{Refer\^{e}ncias}
 %%%%%%%%%%%%%%%%% Espacamento
 %\makeatletter  %Espa�amento entre os itens da bibliografia
 %\newcommand{\adjustmybblparameters}{\setlength{\itemsep}{2\baselineskip}\setlength{\parsep}{0.5ex}}
@@ -227,7 +229,7 @@
 \def\Title#1{\begin{center}\noindent{\quiteHuge\color{DarkGreen}#1}\end{center}}
 
 
-\usepackage[twoside,inner=3cm,outer=2cm,top=3cm,bottom=2cm]{geometry}
+\usepackage[twoside,headsep=.3cm,inner=3cm,outer=2cm,top=1.8cm,bottom=2cm]{geometry}
 
 \usepackage{setspace}   %Espacamento entre as linhas
 
@@ -318,6 +320,7 @@
 
 \usepackage{blindtext}
 
+\usepackage{abntcite} %%%%%% ABNY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -621,11 +624,11 @@ e um grande número de vértices pouco conectados.
 
 Há um hiato de conhecimento e tecnologia entre o legado de redes complexas e o usufruto do participante.
 Este hiato é reativo, e há evidência de que conseguirá se manter como um ecossistema de conhecimento, tecnologia
-e empreendimento da sociedade em todas as suas escalas.
+e empreendimento da sociedade em todas as suas escalas, acompanhando uma transição de fase histórica~\cite{pentland1}.
 Deve facilitar, por exemplo:
 elaboração e preparação de documentos, aquisição rápida de conhecimento,
 realização de empreitadas coletivas.
-Em geral: processos de coleta e difusão de informação (e bens)~\cite{pentland1,pentland2}.
+Em geral: processos de coleta e difusão de informação (e bens)~\cite{pentland2}.
 % Argumentar que é tido que o correto entendimento destas estruturas
 % será mais forte que XXX (ver no curso da Melanie/CE).
 
@@ -640,17 +643,18 @@ produzem textos bastante diferentes entre si.
 Este conhecimento é útil para uma tipologia não estigmatizante
 de participantes em redes de interação.
 A audiovisualização e interconexão de dados com arte e engenhocas
-em software deram suporte contínuo à pesquisa científica.
+em software deram suporte contínuo à pesquisa científica, e apresentam inovações.
 Aplicações foram complementadas em parceria com a Presidência da República
 e o Programa das Nações Unidas para o Desenvolvimento.
 
-A próxima seção apresenta considerações gerais sobre a literatura.
+A próxima seção apresenta considerações gerais sobre a literatura de redes complexas.
+A Seção~\ref{sec:misc} faz observações pontuais sobre cada área secundária.
 A Seção~\ref{sec:jar} expõe a proliferação de ambiguidades e sinônimos
-no jargão da área.
+no jargão deste trabalho.
 A Seção~\ref{sec:mat} é dedicada aos dados analisados.
 A Seção~\ref{sec:met} contém os métodos usados para atingir os resultados, que são explicitados na Seção~\ref{sec:res}. O cronograma de atividades e uma comparação entre afazeres planejados e finalizados
 estão na Seção~\ref{sec:chr}.
-A monografia termina com as conclusões na Seção~\ref{sec:con}, seguida de agradecimentos e bibliografia.
+A monografia termina com as conclusões na Seção~\ref{sec:con}, seguida de agradecimentos e referências.
 
 \section{Revisão de literatura}
 A área das redes complexas é relativamente nova ($\approx 25$ anos)
@@ -658,46 +662,28 @@ e a literatura apresenta definições divergentes da área em si.
 Uma definição que tem recebido aceitação crescente
 é da rede complexa como ``um grafo grande com características topológicas
 não triviais''. Esta definição é enganosa ao menos em três pontos.
-Primeiro, há redes de interesse com características topológicas triviais, como as redes de Erdös-Rényi e a Geográfica~\cite{newman}, ou as redes simples usadas para exemplos.
-Segundo, a definição falha ao não emitir a mensagem fundamental de que uma rede complexa não é somente uma estrutura matemática, um grafo isolado. As redes complexas de interesse são redes reais ou modelos idealizados para as entender.
-Além disso, não só grafos grandes são de interesse, mas grafos pequenos são comumente usados como exemplos de propriedades e extensão das estruturas maiores.
+Primeiro, há redes de interesse com características topológicas triviais, como as redes de Erdös-Rényi e a Geográfica~\cite{newmanBook}, ou as redes simples usadas para exemplos.
+Segundo, a definição falha ao não emitir a mensagem fundamental de que uma rede complexa não é somente uma estrutura matemática, um grafo isolado: as redes complexas de interesse são redes reais ou modelos idealizados para as entender.
+Além disso, não só grafos grandes são de interesse, mas grafos pequenos são comumente usados como extensão das estruturas maiores e como exemplos de propriedades.
 Uma definição, ainda longe de perfeita, mas preferida neste trabalho, é considerar a área das redes complexas como interessada em
 ``redes usualmente grandes, consideradas no, ou para consideração do,
 meio em que residem''.
-Esta definição resolve ambas as questões.
+Esta definição resolve ambos os pontos.
 
 Os livros em geral apresentam um comum e poderoso repertório para a caracterização de sistemas complexos através de grafos. Talvez as mais notáveis características deste repertório sejam:
 \begin{itemize}
-    \item O arsenal de medidas: grau, força, betweenness centrality, coeficiente de clusterização, etc.
+    \item O arsenal de medidas: grau, força, betweenness centrality, coeficiente de clusterização, etc. As medidas costumam se referir a um vértice, aresta, rede ou comunidade.
     \item Os paradigmas básicos de redes: Erdös-Rényi, geográfica, de mundo pequeno e livre de escala.
     \item A abordagem transdisciplinar para considerar o meio no qual a rede está inserida, ou que implica na rede.
 \end{itemize}
 
-A literatura sobre análise de redes sociais (ARS, ou \emph{SNA} para \emph{Social Network Analysis}), por exemplo, pode ser frequentemente compreendida como redes complexas em sistemas sociais humanos.
-
-Uma consideração cuidadosa dos livros e artigos lidos para esta pesquisa estão na Seção~\ref{}. As seções a seguir (\ref{sec:jar} e~\ref{sec:misc})
-explicitam peculiaridades do jargão da área e considerações sobre as áreas secundárias.
-
-\section{Ambiguidades e sinônimos no jargão}\label{sec:jar}
-A área de redes complexas é recente e conflui com diversas 
-correntes científicas, como a física, a biologia e a sociologia.
-Portanto, possui termos ambíguos e sinônimos.
-
-Exemplos de ambiguidade, sinônimos e delimitações adotadas:
-\begin{itemize}
-    \item Os vértices mais conectados são, por definição, chamados hubs da rede. O vértice mais conectado é chamado hub da rede. No contexto do algoritmo HITS, o que é bem comum, estes significados mudam: os hubs são os que possuem mais arestas saindo (grau de saída); as autoridades recebem as arestas, ou são referenciados por vários hubs e outras entidades.
-    \item Há uma definição de centro e periferia com relação ao raio e diâmetro da rede~\cite{newman,networkX}.
-        Por extensão os intermediários podem ser considerados os que não são centro nem periferia.
-        Esta setorialização centro, intermediários e periferia gera frações que diferem do previsto pela literatura para as frações de hubs, intermediários e periféricos.
-        Um método apropriado para realizar esta setorialização da rede, com resultados estáveis e significativos, consta na Seção~\ref{sec:set}.
-    \item \emph{Aresta} e \emph{ligação} são usadas como sinônimos. \emph{Nó} e \emph{vértice} também. É comum o uso de outros termos, em geral coerentes com a aplicação, como \emph{agente}, \emph{ator} ou \emph{participante} para vértices de redes observadas em sistemas humanos.
-    \item Laços, \emph{loops}, \emph{selfloops}, \emph{autoloop}, \emph{buckle} são termos usados para arestas de um vértice para ele próprio.
-\end{itemize}
+A literatura sobre análise de redes sociais, por exemplo, pode ser frequentemente compreendida como redes complexas em sistemas sociais humanos.
+Uma consideração cuidadosa dos livros e artigos lidos para esta pesquisa está na Seção~\ref{sec:afa}.
 
 \subsection{Processamento de linguagem natural, dados ligados, participação social}\label{sec:misc}
 Diversos títulos foram lidos sobre processamento de linguagem natural, mineração de texto,
 visualização de dados e web semântica. Estas áreas têm impacto sobre o que está feito, e sendo feito,
-e foram cursadas formalmente uma disciplina sobre cada uma para o doutorado.
+e foram cursadas formalmente uma disciplina sobre cada uma para o doutorado (veja Seção~\ref{sec:chr}).
 Seguem informações pontuais sobre cada área.
 
 Os termos processamento de linguagem natural (PLN) e mineração de
@@ -732,8 +718,29 @@ A participação social tem sido fortalecida no mundo todo,
 e conceitos como transparência, participação direta (participação direta 
 da sociedade civil na tomada de decisões pelo Estado) e
 democracia líquida (atribuição recursiva de competência para tomada
-de decisão), se estabelecendo aos poucos como diretrizes para
+de decisão), se estabelecendo a passos firmes como diretrizes para
 governos, acadêmicos e sociedade civil.
+
+\subsection{Ambiguidades e sinônimos no jargão}\label{sec:jar}
+Além de recente, a área de redes complexas conflui diversas 
+correntes científicas, como a física, a biologia e a sociologia.
+Portanto, possui termos ambíguos e sinônimos.
+
+Exemplos de ambiguidade, sinônimos e delimitações adotadas:
+\begin{itemize}
+    \item Os vértices mais conectados são, por definição, chamados hubs da rede. O vértice mais conectado é chamado hub da rede. No contexto do algoritmo HITS, o que é bem comum, estes significados mudam: os hubs são os que possuem mais arestas saindo (grau de saída); as autoridades recebem as arestas, ou são referenciados por vários hubs e outras entidades.
+    \item Há uma definição de centro e periferia com relação ao raio e diâmetro da rede~\cite{newmanBook,networkX}.
+        Por extensão os intermediários podem ser considerados os que não são centro nem periferia.
+        Esta setorialização centro, intermediários e periferia gera frações que diferem do previsto pela literatura para as frações de hubs, intermediários e periféricos.
+        Um método apropriado para realizar esta setorialização da rede, com resultados estáveis e significativos, consta na Seção~\ref{sec:sec}.
+    \item \emph{Aresta} e \emph{ligação} são usadas como sinônimos. \emph{Nó} e \emph{vértice} também. É comum o uso de outros termos, em geral coerentes com a aplicação, como \emph{agente}, \emph{ator} ou \emph{participante} para vértices de redes observadas em sistemas humanos.
+    \item Laço, \emph{loop}, \emph{selfloop}, \emph{autoloop}, \emph{buckle} são termos usados para designar uma aresta de um vértice para ele próprio.
+\end{itemize}
+
+Neste trabalho, muitas outras questões sobre a nomenclatura
+merecem exposição para evitar entendimentos errados. Por falta
+de espaço, esta discussão ficará de fora desta monografia, mas dever
+á constar em~\cite{gradus}.
 
 \chapter{Materiais}\label{sec:mat}
 \section{O banco Gmane de dados públicos sobre listas de email (benchmark)}
@@ -757,7 +764,7 @@ foram analisadas:
     \item Mecanismos participativos como o Participa.br, Cidade Democrática e o AA. As redes de amizade e de interação do Participa.br foram analisadas em~\cite{timeS}.
 \end{itemize}
 
-\chapter{Métodos}
+\chapter{Métodos}\label{sec:met}
 Para realização desta pesquisa, foram
 necessários métodos consagrados, adequações
 e variantes.
@@ -782,22 +789,22 @@ padrões encontrados, o método é bastante estabelecido.
         O método parece não ter sido aplicado antes para este fim, e é resultado imediato da observação das caudas longas de dados reais contrastadas com o modelo de Erdös-Rényi~\cite{3setores}.
     \item A Seção~\ref{sec:pca} apresenta o uso mais recorrente da Análise de Componentes Principais (PCA) neste trabalho. Várias redes são observadas, ou a mesma rede é observada em vários momentos, e a concentração
         de dispersão das componentes principais, e das medidas nas componentes principais, são observadas através de médias e desvios padrão.
-    \item A Seção~\ref{sec:med} apresenta as medidas utilizadas nas análises, com exposição formal das medidas de simetria potencialmente novas (não encontramos ainda na literatura), mas bastante úteis nas análises.
-    \item A Seção~\ref{sec:kol} apresenta o uso que fazemos do teste de Kolmogorov-Smirnov de amostragem dupla. O método é bem estabelecido, e a contribuição está nos resultados alcançados com ele sobre diferenciação
+    \item A Seção~\ref{sec:med} apresenta as medidas utilizadas nas análises, com exposição formal das medidas de simetria potencialmente novas (não encontramos ainda na literatura), mas bastante relevantes para os resultados.
+    \item A Seção~\ref{sec:kol} apresenta o uso que fazemos do teste de Kolmogorov-Smirnov de amostragem dupla. O método é bem estabelecido, e a contribuição está nos resultados alcançados com ele sobre diferenciação 
         da produção de texto nas redes de interação.
     \item A Seção~\ref{sec:aud} expõe sobre a utilização dos dados de redes sociais para geração de imagem, música, e animação abstrata.
-    \item A Seção~\ref{sec:tip} explicita a pertinente recorrência de considerações qualitativas e do cânone das ciências humanas.
-    \item A Seção~\ref{sec:web} delineia um pouco as abordagens
+    \item A Seção~\ref{sec:tip} explicita a pertinente recorrência nesta pesquisa de considerações qualitativas e do cânone das ciências humanas.
+    \item A Seção~\ref{sec:web} delineia muito brevemente as abordagens
         utilizadas para registrar conceitualizações e vinculá-las
         aos dados.
 \end{itemize}
 
 
 \section{Estatística temporal e circular}\label{sec:cir}
-
 Para observação de padrões temporais, foram consideradas escalas diferentes.
-Em cada escala, de segundos e meses, foram construídos histogramas de atividade
-e feitas algumas medidas de estatística circular.
+Em cada escala, de segundos e meses, foram construídos histogramas de atividade: cada unidade de tempo foi considerado um intervalo em que foram contabilizadas as atividades (e.g. mensagens de email).
+Também foram feitas algumas medidas de estatística circular~\cite{wpCirc}, conforme exposto a seguir.
+
 Considere cada $ medida $ (dado pontual) como um número complexo de módulo 1, $z=e^{i\theta}=\cos(\theta)+i\sin(\theta)$, onde $\theta= medida \frac{2\pi}{periodo}$. Os momentos $m_n$, tamanhos dos momentos $R_n$, ângulo médio $\theta_\mu$, e o ângulo médio reescalado $\theta_\mu'$ são definidos assim:
 \begin{align}\label{eq:cmom}
     m_n&=\frac{1}{N}\sum_{i=1}^N z_i^n \nonumber\\
@@ -815,7 +822,7 @@ o desvio padrão circular $S(z)$, e a dispersão circular $\delta(z)$:
     \delta(z)&=\frac{1-R_2}{2 R_1^2} \nonumber
 \end{align}
 
-Como esperado e pode ser notado nas informações de suporte de~\cite{timeS}, há uma correlação positiva entre $Var(z)$, $S(z)$ e $\delta(z)$.
+Como esperado, e pode ser notado nas informações de suporte de~\cite{timeS}, há uma correlação positiva entre $Var(z)$, $S(z)$ e $\delta(z)$.
 A medida $\delta(z)$ foi preferida na discussão dos resultados.
 A fração $\frac{b_h}{b_l}$ entre a maior $b_h $ e a menor $b_l$ incidência nos histogramas
 também serviram como pista sobre quão próximas à distribuição uniforme são as distribuições observadas.
@@ -824,7 +831,7 @@ também serviram como pista sobre quão próximas à distribuição uniforme sã
 \section{Formação das redes de interação}\label{sec:intNet}
 Redes de interação podem ser modeladas tanto com quanto sem peso, tanto dirigida quando não dirigida~\cite{bird,newmanCommunityDirected,newmanCommunity2013,newmanBook}.
 Neste trabalho, quando possível, consideramos redes dirigidas e com peso, a mais informativa das possibilidades.
-Nestes casos, desconsideramos as versões dirigidas sem peso, não dirigidas com peso e não dirigidas e sem peso.
+Nestes casos, desconsideramos as versões dirigidas sem peso, não dirigidas com peso e não dirigidas sem peso.
 
 Em geral, as redes de interação são obtidas da seguinte forma:
 uma reação direta do participante B a uma mensagem do participante A implica em uma aresta de A para B,
@@ -838,8 +845,8 @@ Neste trabalho, as redes de interação são dirigidas conforme o fluxo de infor
 A Figura~\ref{formationNetwork} expõe esta formação. Maiores detalhes são:
 arestas em ambas as direções são consideradas distintas;
 laços são consideradas não informativos (para os interesses atuais) e descartados;  
-a primeira interação $A\rightarrow B$ cria a aresta com peso um; 
-a cada nova interação $A\rightarrow B$ um é adicionado ao peso da aresta.
+a primeira interação $A\rightarrow B$ cria a aresta com peso 1; 
+a cada nova interação $A\rightarrow B$ é adicionado 1 ao peso da aresta.
 Estas redes de interação humana constam na literatura como portadoras
 de propriedades livres de escala (e pequeno mundo), como esperado
 para (algumas) redes sociais~\cite{bird,newmanBook}.
@@ -869,6 +876,22 @@ Referiremos-nos a este procedimento como \emph{setorialização de Erdös},
 com os setores resultantes chamados \emph{setores de Erdös}
 (ou \emph{setores primitivos}, \emph{setores básicos} da rede).
 
+
+\begin{figure}[!h]
+    \centering
+    \caption{ \footnotesize As distribuições de grau de modelos ideais de redes livres de escala e Erdös-Rényi.
+        A segunda possui mais vértices intermediários, enquanto a primeira possui mais vértices
+        periféricos e hubs. As bordas dos setores são definidas pelas duas intersecções $k_L$
+        e $k_R$ das distribuições de conectividade.
+        Os graus característicos estão nos intervalos compactos:
+                $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$
+    para os setores de Erdös (periferia, intermediários e hubs).}   
+    \includegraphics[width=0.5\textwidth]{figs/fser_}
+        \label{fig:setores}
+\end{figure}
+
+
+
 A distribuição de grau
 $\widetilde{P}(k)$
 de uma rede livre de escala ideal
@@ -878,19 +901,27 @@ vértices com grau médio do que a distribuição $P(k)$
 de uma rede Erdös-Rényi com o mesmo número de vértices e arestas.
 De fato, definimos (neste trabalho) o setor intermediário de uma
 rede como sendo o conjunto de todos os vértices cujo grau é
-menos abundante em uma rede real do que no modelo de Erdös-Rényi:
-\begin{equation}\label{criterio}
-    \widetilde{P}(k)<P(k) \Rightarrow \text{k é grau intermediário}
+menos abundante em uma rede real do que no modelo de Erdös-Rényi.
+Para assegurar a validade estatística dos histogramas, os intervalos podem
+ser escolhidos de forma que contenham ao menos $\eta$ vértices da rede real.
+Assim, cada intervalo, começando no grau $k_i$, estende-se por
+$\Delta_i=[k_{i},k_{j}]$,
+onde $j$ é o menor inteiro tal que há ao menos $\eta$ vértices com grau maior que ou igual a $k_i$,
+e menos que $k_j$.
+Assim, podemos escrever que:
+
+\begin{equation}\label{criterio2}
+    \sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i é intermediário}
 \end{equation}
 
 Se $\mathcal{N}_f$ for dirigida e não possuir laço (aresta de um vértice para ele próprio),
 a probabilidade
 de existência de uma aresta entre dois vértices arbitrários é
 $p_e=\frac{z}{N(N-1)}$.
-Um vértice em um dígrafo de Erdös-Rényi com o mesmo número de vértices e aresta,
+Um vértice em um dígrafo de Erdös-Rényi com o mesmo número de vértices e arestas,
 portanto mesma probabilidade
 $p_e$
-para existência de aresta, terá grau $k$ com probabilidade ditada pela distribuição binomial:
+para existência de aresta, terá grau $k$ com probabilidade $P(k)$ ditada pela distribuição binomial:
 \begin{equation}
     P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
 \end{equation}
@@ -912,31 +943,6 @@ por puro acaso, são atribuídos à periferia.
 Vértices com valores de grau previstos como os mais abundantes caso
 as conexões sejam fruto de puro acaso, valores próximos da média,
 e menos abundantes em nas redes reais, são classificados como intermediários.
-
-\begin{figure}[!h]
-    \centering
-    \caption{ \footnotesize As distribuições de grau de modelos ideais de redes livres de escala e Erdös-Rényi.
-        A segunda possui mais vértices intermediários, enquanto a primeira possui mais vértices
-        periféricos e hubs. As bordas dos setores são definidas pelas duas intersecções $k_L$
-        e $k_R$ das distribuições de conectividade.
-        Os graus característicos estão nos intervalos compactos:
-                $[0,k_L]$, $(k_L,k_R]$, $(k_R,k_{max}]$
-    para os setores de Erdös (periferia, intermediários e hubs).}   
-    \includegraphics[width=0.5\textwidth]{figs/fser_}
-        \label{fig:setores}
-\end{figure}
-
-Para assegurar a validade estatística dos histogramas, os intervalos podem
-ser escolhidos de forma que contenham ao menos $\eta$ vértices da rede real.
-Assim, cada intervalo, começando no grau $k_i$, estende-se por
-$\Delta_i=[k_{i},k_{j}]$,
-onde $j$ é o menor inteiro tal que há ao menos $\eta$ vértices com grau maior que ou igual a $k_i$,
-e menos que $k_j$. Isso altera a equação~\ref{criterio} para:
-
-\begin{equation}\label{criterio2}
-    \sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i é intermediário}
-\end{equation}
-
 Se a força $s$ for usada para comparação, $P$ permanece a mesma, mas
 $P(\kappa_i)$ com $\kappa_i=\frac{s_i}{\overline{w}}$
 deve ser usado na comparação, com
@@ -994,7 +1000,7 @@ como descrito.
 Como métricas diferentes podem ser usadas para identificar
 os três tipos de vértices, critérios compostos podem ser
 definidos. Após uma inspeção cuidadosa das possibilidades,
-os critérios compostos foram reduzidos a 6: $\{C_\delta\}_{\delta=1}^{6}$.
+os critérios compostos foram reduzidos a 6.
 Utilizando as Equações~\ref{eq:part}, estes critérios compostos $C_\delta$, com $\delta$ inteiro no intervalo $1\leq\delta<6$ podem ser descritos como:
 
 \begin{equation}
@@ -1013,14 +1019,16 @@ Utilizando as Equações~\ref{eq:part}, estes critérios compostos $C_\delta$, c
 \end{equation}
 
 
-No artigo~\cite{timeS}, os critérios $C_1$, $C_3$ e $C_5$ foram chamados exclusivistas, os critérios $C_3$ e $C_4$ de cascata e os critérios $C_5$ e $C_6$ de externos. Note que uma cascata exclusivista $C_3$ é a mesma classificação que uma cascata invertida (considera-se dos periféricos aos hubs) e inclusivista. Estes critérios compostos são especialmente úteis para observar estruturas com poucos participantes ou fruto de pouca atividade (veja as figuras do documento de Supporting Information de~\cite{timeS}).
+No artigo~\cite{timeS}, os critérios $C_1$, $C_3$ e $C_5$ foram chamados exclusivistas,
+os critérios $C_2$, $C_4$ e $C_6$ foram chamados inclusivistas,
+os critérios $C_3$ e $C_4$ de cascata e os critérios $C_5$ e $C_6$ de externos. Note que uma cascata exclusivista $C_3$ é a mesma classificação que uma cascata invertida (considera-se dos periféricos aos hubs) e inclusivista. Estes critérios compostos são especialmente úteis para observar estruturas com poucos participantes ou fruto de pouca atividade (veja as figuras do documento de Supporting Information de~\cite{timeS}).
 
 \section{Médias e variâncias nas Análises de Componentes Principais de cada sistema}\label{sec:pca}
 A Análise de Componentes Principais (PCA é a sigla consagrada, do inglês Principal Component Analysis) é bastante estabelecida e bem documentada
 e foi usada para saber: 
 1) quais as medidas que contribuem para cada componente principal e em que proporção;
 2) quanto da dispersão está concentrada em cada componente.
-3) médias e desvios padrão destas quantidades envolvidas para vários
+3) médias e desvios padrão destas quantidades para vários
 sistemas diferentes. Em geral, os diferentes sistemas eram evolução
 temporal um do outro.
 
@@ -1078,9 +1086,9 @@ com uma pequena seleção das medidas mais básicas e fundamentais de cada vért
 
 As seguintes medidas bastante conhecidas foram usadas: grau, grau de entrada, grau de saída,
 força, força de entrada, força de saída, coeficiente de clusterização,
-centralidade de intermediação (\emph{betweenness centrality}).
+centralidade de intermediação (\emph{betweenness centrality})~\cite{newmanBook}.
 Além disso, para apreender as simetrias das atividades dos participantes, as
-seguintes métricas foram introduzidas para o vértice $i$:
+seguintes métricas foram introduzidas para cada vértice $i$:
 
 \begin{itemize}
     \item Assimetria: $asy_i=\frac{k_i^{in}-k_i^{out}}{k_i}$.
@@ -1101,8 +1109,8 @@ rejeita a hipótese nula (rejeita que $F_{1,n}$ seja fruto da mesma distribuiç�
 D_{n,n'} > c(\alpha)\sqrt{\frac{n+n'}{nn'}}
 \end{equation}
 
-onde $D_{n,n'}=sup_x[F_{1,n}-F_{2,n'}]$ e $c(\alpha)$ é dado para cada região crítica $\alpha$
-(probabilidade da hipótese nula ser verdadeira) segundo a Tabela~\ref{tab:kol}.
+\noindent onde $D_{n,n'}=sup_x[F_{1,n}-F_{2,n'}]$ (a maior diferença entre as duas cumulativas) e $c(\alpha)$ é tabelado para cada região crítica $\alpha$
+(probabilidade da hipótese nula ser verdadeira).
 
 São calculados $D_{n,n'}$, enquanto $n$ e $n'$ são dados.
 Todos os termos da Equação~\ref{eq:ks} são positivos
@@ -1114,21 +1122,22 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 
 Utilizamos $c'(\alpha)$
 como distância entre pares de distribuições empíricas,
-o que é coerente com a teoria~\cite{kol}.
+o que é coerente com a teoria~\cite{wpKol}.
 
-\begin{table}[!h]
-\centering
-\caption{ \footnotesize Relação entre a região crítica $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov
-de amostragem dupla.}\label{tab:kol}
-\begin{tabular}{|l||c|c|c|c|c|c|}\hline
-$\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
-$c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
-\end{tabular}
-\end{table}
+%\begin{table}[!h]
+%\centering
+%\caption{ \footnotesize Relação entre a região crítica $\alpha$ e $c(\alpha)$ para o teste de Kolmogorov-Smirnov
+%de amostragem dupla.}\label{tab:kol}
+%\begin{tabular}{|l||c|c|c|c|c|c|}\hline
+%$\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
+%$c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
+%\end{tabular}
+%\end{table}
 
 
 
 \section{Audiovisualização de dados}\label{sec:aud}
+%\section{Audiovisualização de dados e considerações humanísticas}\label{sec:aud}\label{sec:tip}
 Redes foram visualizadas com imagens, videos e engenhocas online para esta pesquisa~\cite{animacoes,galGMANE,appGMANE}.
 Também foram sonificadas, em especial como faceta sonora de animações abstratas~\cite{preludio,4hubs,gmane,social}.
 Tais ``audiovisualizações'' foram cruciais para guiar a pesquisa para
@@ -1142,14 +1151,20 @@ As redes estudadas neste trabalho são constituídas por seres humanos.
 Quando há classificação envolvida, seja dos agentes
 ou dos sistemas em si, reflexões humanísticas são pertinentes,
 como as disparadas pelas perguntas:
+    qual o potencial estigmatizante da classificação?
+    O que mais sabemos sobre o indivíduo ou a rede que é classificada, ou seja, é considerada(o) de um tipo?
+    Quais dados posso usar e que procedimentos posso realizar
+    m desviar a atenção da pesquisa para leis e processos de comitês de ética?
+    Qual a melhor forma de proceder com os dados e conhecimentos frutos da pesquisa?
 
-\begin{itemize}
-    \item Qual o potencial estigmatizante da classificação?
-    \item O que mais sabemos sobre o indivíduo ou a rede que é classificada, ou seja, é considerada(o) de um tipo?
-    \item Quais dados posso usar e que procedimentos posso realizar
-        sem desviar a atenção da pesquisa para leis e processos de comitês de ética?
-    \item Qual a melhor forma de proceder com os dados e conhecimentos frutos da pesquisa?
-\end{itemize}
+
+%\begin{itemize}
+%    \item Qual o potencial estigmatizante da classificação?
+%    \item O que mais sabemos sobre o indivíduo ou a rede que é classificada, ou seja, é considerada(o) de um tipo?
+%    \item Quais dados posso usar e que procedimentos posso realizar
+%        sem desviar a atenção da pesquisa para leis e processos de comitês de ética?
+%    \item Qual a melhor forma de proceder com os dados e conhecimentos frutos da pesquisa?
+%\end{itemize}
 
 Todas estas questões, e muitas outras, estão em constante amadurecimento com grupos de pesquisa~\cite{Nexus}, 
 leituras~\cite{mas}, escrita~\cite{ensaioAA,ap}, e contatos individuais com outros pesquisadores~\cite{massimoTexto,massimoEncontro}.
@@ -1170,11 +1185,14 @@ e o objeto sempre uma classe ou dado. As propriedades podem ter especificidades,
 É uma recomendação da W3C e o padrão acadêmico para dados ligados, i.e. para representação na web semântica.
 
 Utilidades da tecnologia incluem:
-\begin{itemize}
-    \item inferência por máquina através de especificações ontológicas. 
-    \item Interconexão de dados de fontes diferentes.
-    \item Organização ontológica de conhecimento específico para consideração cuidadosa, seja individual ou em grupo.
-\end{itemize}
+    inferência por máquina através de especificações ontológicas;
+    interconexão de dados de fontes diferentes;
+    organização ontológica de conhecimento específico para consideração cuidadosa, seja individual ou em grupo.
+%\begin{itemize}
+%    \item inferência por máquina através de especificações ontológicas. 
+%    \item Interconexão de dados de fontes diferentes.
+%    \item Organização ontológica de conhecimento específico para consideração cuidadosa, seja individual ou em grupo.
+%\end{itemize}
 
 As ontologias são chave dentre as tecnologias de web semântica.
 Uma ontologia é geralmente definida como uma ``especificação de
@@ -1216,7 +1234,7 @@ uma versão com os dados e ontologias, e uma versão
 com os dados, as ontologias e as triplas resultantes da inferência sobre os dados com a ontologia.
 
 
-\chapter{Resultados}
+\chapter{Resultados}\label{sec:res}
 %\section{Time stability in human interaction networks}
 \section{Estabilidade temporal e topológica; diferenciação textual em redes de interação humana}\label{sec:timeS}
 Explicitados cuidadosamente em~\cite{timeS}, os principais resultados da estabilidade temporal e topológica em redes de interação humana são:
@@ -1556,7 +1574,7 @@ Possíveis causas para a distorção do valor exato $\gamma=2$
 são: propriedades fractais, recursos em número diferente, associações entre os recursos. 
 
 %\chapter{Finished and planed tasks, chronogram}
-\chapter{Cronograma e afazeres}
+\chapter{Cronograma e afazeres}\label{sec:chr}
 % Colocar tabela com os comparativos
 % Referenciar para complementos no texto.
 
@@ -1727,7 +1745,7 @@ Arte audiovisual é feita junto às visualizações de dados.}\label{tab:afa}
 
 
 
-\chapter{Conclusões e previsão}
+\chapter{Conclusões e previsão}\label{sec:con}
 Há, a princípio, uma confirmação de que os conhecimentos de redes complexas
 possuem aplicações diversas e potencialmente benéficas para o participante.
 Por exemplo, os experimentos apresentaram modificações da estrutura social para comportar a pesquisa, e podem ser usados para comportar outros empreendimentos. Os estudos de estabilidade e diferenciação em redes de interação humana apontam na direção de tipologias de redes e de participantes, com base nos setores de Erdös e com componentes principais típicas e estáveis.
