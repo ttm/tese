@@ -26,4 +26,10 @@ Var(X+Y)=Var(X)+Var(Y)+Cov(X,Y)
 *) Law of total variance
 *) Com estas leis de esperaça a variancia iteradas, parece que posso modelar as redes de interação, seus agentes e relacionar as médias gerais às médias dos setores, e dar parâmetros para o quanto a média representa somente os hubs ou o quanto dos periféricos ou intermediários precisam ser amostrados para obter uma mostragem da população, não da atividade.
 *) Total variance vem da variancia entre os cenarios e da variancia em cada cenário: var(X) = E[var(X|Y)]+var(E[X|Y])
+*) Geração de amostras de distribuições arbitrárias a partir da cumulativa e de 1 gerador de variavel uniforme.
+*) A convolução de gaussianas independentes dá gaussiana. E a convolução da step? Como fica a sync?
+*) Variance === Incerteza
+*) Hyposthesis testing problems, estimations problems
+*) Point estimates, LMS, MAP, performance metrics, 
+*) Hypothesis testings => the appropriate metric is the probability of error, of making a mistake. For estimating a numerical quantity, an appropriate metric is the square error.
 *) 
