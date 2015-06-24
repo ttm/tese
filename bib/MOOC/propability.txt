@@ -1,0 +1,29 @@
+*) eventos, variáveis randomicas
+*) variaveis discretas, contínuas
+*) Indempendencia, condicionamento
+*) Distribuições uniforme, geométrica/exponencial (memoryless), 
+*) PMF, PDF, joint, conditional, marginal.
+*) IDEIA: notacao condicional para distribuições não condicionais. Assim, unifica-se as pmfs, pdfs, cdfs em sempre condicionadas. No caso "não-condicionado" a condição é que o evento pertença ao conjunto amostral. (óbvio, mas teoricamente vale).
+*) Variáveis mistas
+*) Bivariate distributions (gaussians with dependencies?)
+*) Bayes rule: the foundation of inference. One discrete and one continuous RV ("4 variations").
+*) Bayes, duas interpretações associando o denominador a cada um dos termos do numerador: a chance de ter ocorrido um fato dado uma observação é a chance de ocorrência do fato vezes a razão entre as chances da observação ocorrer dado o fato e sem condição alguma; é a razão entre as chances do fato e da observação vezes a chance da observação dada o fato.
+*) Composite RVs, correlation and covarioation, conditional expectation.
+*) THE PDF OF A GENERAL FUNCTION, Lec. 11, parte 2 do video tem o mapeamento do linear aa lei de potencia com gamma=2.
+*) Deriva df/dt=d(1/t)/dt=1/t^2. Simetrico dt/df=1/f^2, ou seja, a densidade de periodo cai com o quadrado da frequencia, e a densidade de frequencia cai com o quadrado do periodo.
+*) Convolution, Lec 12
+*) Dependence, covariance.
+*) Independencia => Covariance=0
+*) Dependencia pode ambos covariance => 0 ou qualquer.
+*) Covariance>0 => directly proportional
+*) Covariance<0 => inversely proportional
+*) Covariancia é ressonância!
+Var(X+Y)=Var(X)+Var(Y)+Cov(X,Y)
+*) Correlação E [-1.1] com -1,1 => determinismo linear.
+*) Correlação acima de 1/2: mais da metade da variável aleatória tem fator (ou variável aleatória) em comum.
+*) Investimentos não correlacionados são mais seguros! (o desvio padrão da soma dos investimentos é menor)
+*) Law of iterated expectations
+*) Law of total variance
+*) Com estas leis de esperaça a variancia iteradas, parece que posso modelar as redes de interação, seus agentes e relacionar as médias gerais às médias dos setores, e dar parâmetros para o quanto a média representa somente os hubs ou o quanto dos periféricos ou intermediários precisam ser amostrados para obter uma mostragem da população, não da atividade.
+*) Total variance vem da variancia entre os cenarios e da variancia em cada cenário: var(X) = E[var(X|Y)]+var(E[X|Y])
+*) 
