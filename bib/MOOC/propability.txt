@@ -31,5 +31,15 @@ Var(X+Y)=Var(X)+Var(Y)+Cov(X,Y)
 *) Variance === Incerteza
 *) Hyposthesis testing problems, estimations problems
 *) Point estimates, LMS, MAP, performance metrics, 
-*) Hypothesis testings => the appropriate metric is the probability of error, of making a mistake. For estimating a numerical quantity, an appropriate metric is the square error.
-*) 
+*) "Hypothesis testings" => the appropriate metric is the probability of error, of making a mistake. For "estimating a numerical quantity", an appropriate metric is the square error.
+*) Inference and statistics
+*) Model building vs inferring unobserved variables
+*) Relação: "mundo real", "inferência/estatística", "teoria de probabilidade/análise"
+*) MAP estimates são qualificados e otimizam o "conditional prob of error" e o "overall prob of error".
+*) Beta distributions and recursive updates of the posterior of Theta
+*) Linear normal models. Linear regression. 
+*) Em probabilidade, há o erro, há a marginal, peak, joint, cdf, fdp, condicionais. Isso se relacionada à diversidade, cobertura e fronteira de mundo, como transparecido pelas MAP (mapeamentto, contato, recebimento de sinal de existencia sobre) e distribution (análogo de coleta e difusão). Um psiquiatra facilmente observaria a área sobre esta ótica. A probabilidade é a teoria da chance. Não do fixo correto, mas da eterna mudançao, que serve à expansão, informatividade. Este é o papel dos periféricos, aponta para este lado da polaridade. "When we know the join, we can find the marginal".
+*) Bayesian confidence intervals.
+*) Least Mean Squares
+
+
