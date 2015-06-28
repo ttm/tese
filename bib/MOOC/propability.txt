@@ -41,5 +41,33 @@ Var(X+Y)=Var(X)+Var(Y)+Cov(X,Y)
 *) Em probabilidade, há o erro, há a marginal, peak, joint, cdf, fdp, condicionais. Isso se relacionada à diversidade, cobertura e fronteira de mundo, como transparecido pelas MAP (mapeamentto, contato, recebimento de sinal de existencia sobre) e distribution (análogo de coleta e difusão). Um psiquiatra facilmente observaria a área sobre esta ótica. A probabilidade é a teoria da chance. Não do fixo correto, mas da eterna mudançao, que serve à expansão, informatividade. Este é o papel dos periféricos, aponta para este lado da polaridade. "When we know the join, we can find the marginal".
 *) Bayesian confidence intervals.
 *) Least Mean Squares
+*) LLMS
+*) Linear in what? (a_1 * X + a_2 * X^2 +a_3 log (X) ... )
+*) Classival or non-bayesian statistics.
+*) desigualdades de markov e chebichev
+*) Weak law of large numbers (WLLN)
+*) Dualidade frequencia/probabilidade: se f=1/T, qual a relação da probabilidade com o tempo? Prob= 1 / (1+media de eventos entre cada ocorrencia).
+*) Pooling Lec. 18 v5, relação entre exatidão, confiança e amostragem via desigualdade de chebichev.
+*) convergência "na probabilidade"
+*) associação da conv i.p. com o bulbo da distr, enquanto a média é sensível às caldas.
+*) Chernoff bound
+*) Central Limit Theorem
+*) Transforms?
+*) Approximations of the binomial by the normal. Moivre-Laplace approximation***.
+*) Toda aresta é uma variável de bernouli. Toda rede é uma binomial.
+*) Tamanho da amostragem, margem de erro e de confiança através de comparação com a normal. SEGUNDO O VIDEO, AS MARGENS FINAIS SAO COMPATIVEIS COM AS USADAS PELOS JORNAIS. LEC. 19.
+Neste caso, pensaria em advocar o dialoga assim como as pesquisas datafolha e outras pois não temos como saber o quão bem coletadas foram. 
+*) Bayesian vs Classical statistics (random variable vs unknown constant).
+*) Freedom and art in classical statistics.
+*) Estimator and the standard error.
+*) Confidence intervals.
+*)Using normal for finding
+confidence intervals on sampling bernouli variables.
+*)  t-tables. 
+*) unbiased estimator of the variance? (X_i-OMEGA_n)/(n-1)
+*) Maximum likelyhood estimator
+*) Jansen's inequality
+*) Hoeffding's inequality
+
 
 
