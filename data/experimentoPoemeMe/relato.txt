@@ -1,0 +1,66 @@
+Chamado para um hangout underground, com Attraktor,
+Alberto, Aline, Marisse, Marcela e outros atores.
+
+Estávamos no ar (ao vivo) em uma webrádio,
+a audiência alcançava quase uma dezena de pessoas simultâneas.
+
+Em uma interação catalizada por Attraktor,
+foi apontada a necessidade de unidades de atividade e ação
+na própria rede, à semelhança do AARS e MyNSA[1].
+Também caminhou na direção de aproveitamentos dos recursos,
+sob critérios especiais, à semelhança do sistema de recomendação
+como enriquecimento da navegação semântica[2].
+
+Uma questão que chamou atenção foi para a sensação de periféricos que
+todos relataram. Uma justificativa levantada foi de que ~80% são
+sempre periféricos, e são muitas as redes de que cada um participa (família,
+trabalho, família dos amigos, estrangeiros, amigos de infância, etc). Assim,
+somos sempre periféricos na grande maioria das redes de que participamos,
+inevitavelmente.
+
+Aline manifestou impasses sobre como conduzir a interação
+depois de algumas interações em sua rede, acionando
+pessoas que inusitadas (ou que fazia tempo que ela não ativava).
+Foi novamente exposto
+princípio da comunidade mundial de Gnomos, responsáveis pela
+interface gráfica GNOME (e parte das distribuições Ubuntu e Debian, creio)
+para sistemas operacionais Linux:
+quando as pessoas interagem, surge bem-estar. Por ser uma geração
+mesmo, é considerado princípio mágico por alguns participantes
+da comunidade. De forma simples, o raciocínio é de que quando as pessoas
+interagem, surgem bens, ideias, oportunidades, arte, aprendizado, trabalho, vínculos afetivos,
+etc.
+
+[e a radio rolando]
+
+Attraktor sugeriu alguma dinâmica sistemática para interagirmos em nossas redes,
+como mensagens em cadeia. Foi pensado um meme para propagação e tb
+sobre um ``poema conectivo'', no qual o meme estaria permeado e estaria
+recebendo contribuições de cada participante. Surgiu o termo ``antropofagia
+conectiva'', em vários sentidos equivalente à prática dos
+experimentos etnográficos de física antropológica.
+
+[e a radio rolando]
+
+Por fim, foram iniciados alguns chats com periféricos das redes de alguns parceiros.
+Resultados estão por vir. Como os periféricos não estavam online (ao menos na maioria
+dos casos), a prática não correspondeu às expectativas efêmeras do grupo, mas gerou
+discussões sobre como realizar uma interação mais orgânica e satisfatória com a rede. Basicamente, a ideia não evoluiu para além de abrir um chat com alguns periféricos e começar a improvisar poesia. Como dentre os periféricos estão vários hubs muito reativos (e em média possuem mais amigos que nossos hubs nas redes de amizade de cada pessoa), esta direção foi buscada como um avanço na percolação da rede global, não de cada indivíduo.
+
+[e a radio rolando]
+
+Após algumas sessões de improvisação musical e poética dos que estavam
+realizando o experimento, uma direção foi apontada pela Aline,
+muito parecida com o Vivace/freakcoding[3] e o carnaval[gera/vilson]:
+ https://chat.meatspac.es/ (nodejs)
+
+
+
+
+
+
+
+
+
+
+

@@ -17,5 +17,29 @@ de complexidade. Parece mais adequado apontar a direção na qual houve avanços
 *) empoderamento do indivíduo, no reconhecimento do que somos. Neste sentido
 podemos detalhar melhor.
 
+*) terminar a quali discutindo a distribuição k^-alpha:
+==> tem a distribuição espichada, apropriada pra recepção de estímulo temporal (como audição e visão que são oscilações temporais).
+Em complexidade, é ponto muito forte que estes sistemas dinâmicos:
+--------> processam informação
+--------> estão integrados com o meio, sendo eles mesmos componentes de sistemas dinâmicos maiores
+--------> possuem mecanismos de perpetuação
+
+Isso sugere para mim que haja uma integração de sistemas dinâmicos, quando maior
+a escala, provavelmente mais lento pois tem inércia maior. Portanto estas
+cadeias se estendem do tempo desde tempos remotos. Idealmente, pode-se pensar
+em sistemas dinâmicos de escala microscópica até o universo todo (Deus), embora
+P. Almos p2 -> universo n existe.
+Isso dá algumas referências fortes: das as menores partículas a todas elas.
+Teoria: a vida na terra é uma unidade de processamento avançãdo de informação.
+Mantendo o pé no chão: as redes de interação podem ser compreendidas como órgãos
+sensores sobre o assunto ou motivo da interação. A socidade opera com vários
+destes sensores. A hierarquia em geral é continuamente renovada, excessão
+para o caso não haja hierarquia institucionalizada (estruturas familiares, políticas, empresariais, acadêmicas, etc).
+
+Outra questão muito forte: qual a escala destas estruturas? É única ou composta de harmônicos?
+
+
+
+
 
 

@@ -68,6 +68,20 @@ confidence intervals on sampling bernouli variables.
 *) Maximum likelyhood estimator
 *) Jansen's inequality
 *) Hoeffding's inequality
+*) Chernoff's bound
+*) Bernoulli and poisson stochastic (random) processes
+*) Bernoulli process has binomial distribution, poisson process has a poisson distribution.
+*) Poisson, \lambda em prob/duração, tao= duração, k = arrivals, \lambda= k/duração. \lambda é arrival rate ou intensity of the poisson process
+*) Erlang distribution of order k (k outcomes in a poisson dist).
+*) Random incidence "paradox".
+*) What are you sampling? Family size by family or member? Passenger per bus by sampling bus of passengers?
+==Markov processes
+*) Recurrent and transient states.
+*) Convergence and independence of the initial states. Classes and peridiocity.
+*) Balance of states. Balance equations.
+*) Absorving states, recurrent states, transient states.
+*) Expected first passage, mean recurrence time
+*) Gamblers problem.
 
 
 
