@@ -17,10 +17,11 @@ da complexidade).
 3 -
 
 X - Levar caderninho preto para mostrar das ideias ideias.
-X - Levar artigo e quali impressos
-X - Levar ideias ideais e o plano inicial de pesquisa impressos
-X - Levar o percolation impresso
+X - Levar artigo e quali impressos OK
+X - Levar ideias ideais e o plano inicial de pesquisa impressos OK
+X - Levar o percolation impresso OK
 X - Levar escrito de diferenciação textual
 X - Levar impressa lista de MOOCs
 X - Física antropológica
 X - Imprimir este arquivo
+X - Levar minibio para lermos juntos
