@@ -1,11 +1,14 @@
 # Cursos Interessantes
 ## Propabilidade
- * https://courses.edx.org/courses/MITx/6.041x_1/1T2015 (gostei + e vi, é extenso)
- * https://class.coursera.org/probability-001 (ver algum dia para fazer revisao)
+ * [Introduction to Probability - The Science of Uncertainty - edX - MIT] (https://www.edx.org/course/introduction-probability-science-mitx-6-041x-0) (gostei + e vi, é extenso)
+   * [Material da 1a turma de 2015] (https://courses.edx.org/courses/MITx/6.041x_1/1T2015/resources/)
+ * [Probability - Coursera - University of Pennsylvania] (https://class.coursera.org/probability-001) (ver algum dia para fazer revisão)
 
 ## Estatistica
- * 3 do edx da Berkley cobrindo statistica descritiva, probabilidade e inferencia)
- * voltado para ciencias sociais: https://www.coursera.org/course/statistics101
+ * [Introduction to Statistics: Descriptive Statistics - edX - Berkley] (https://www.edx.org/course/introduction-statistics-descriptive-uc-berkeleyx-stat2-1x)
+ * [Introduction to Statistics: Probability - edX - Berkley] (https://www.edx.org/course/introduction-statistics-probability-uc-berkeleyx-stat2-2x)
+ * [Introduction to Statistics: Inference - edX - Berkley] (https://www.edx.org/course/introduction-statistics-inference-uc-berkeleyx-stat2-3x)
+ * [Introduction to Statistics for the Social Sciences - Coursera - University of Zurich] (https://www.coursera.org/course/statistics101)
 
 ## Fisica estatisitca
  * Stanford do Susskind (youtube)
