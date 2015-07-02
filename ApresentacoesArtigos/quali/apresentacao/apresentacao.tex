@@ -100,15 +100,56 @@ Contemplar de redes de interação humana em evolução temporal até Redes comp
 \end{frame}
 \begin{frame}
 \frametitle{Redes de interação}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../figs/criaRede__}
+\end{figure}
 \end{frame}
 \begin{frame}
 \frametitle{Setorialização de Erdös}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=.7\textwidth]{../figs/fser_}
+        \label{fig:setores}
+\end{figure}
+
+\begin{equation}\label{criterio2}
+    \sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i é intermediário}
+\end{equation}
+
+\begin{equation}
+    P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
+\end{equation}
+onde 
+\centering
+$p_e=\frac{z}{N(N-1)}$
+
+
 \end{frame}
 \begin{frame}
 \frametitle{PCA de medidas topológicas}
+Médias e desvios das medidas $j$ nas componentes $k$ fruto de $L$ observações $l$:
+\begin{align}\label{eq:pca}
+\mu_{V'}[j,k]   &=\frac{\sum_l^L V'[j,k,l]}{L}\nonumber\\
+\sigma_{V'}[j,k]&=\sqrt{\frac{(\mu_{V'}-V'[j,k,l])^2}{L}}\\\nonumber
+\mu_{D'}[k]&=\frac{\sum_l^L D'[k,l]}{L}\\\nonumber
+\sigma_{D'}[k]&=\sqrt{\frac{(\mu_{D'}-D'[k,l])^2}{L}}
+\end{align}
+
+Foco nas medidas de centralidade e clusterização mais usuais. 
+Inseridas medidas de simetria potencialmente novas.
+
 \end{frame}
 \begin{frame}
 \frametitle{Kolmogorov-Smirnoff de textos}
+\begin{equation}\label{eq:ks}
+D_{n,n'} > c(\alpha)\sqrt{\frac{n+n'}{nn'}} \Rightarrow F_{1,n} \neq F_{2,n'}
+\end{equation}
+\vspace{2cm}
+\begin{equation}\label{eq:ks}
+c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
+\end{equation}
 \end{frame}
 \begin{frame}
 \frametitle{Web semântica}
