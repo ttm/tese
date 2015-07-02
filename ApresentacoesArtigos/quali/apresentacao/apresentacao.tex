@@ -27,12 +27,16 @@ em redes de interação humana: \\
 redes complexas para o participante\\
 e a física antropológica
 }}
-\author[Renato Fabbri]{\small {Renato Fabbri\\
-Orientador: Prof. Dr. Osvaldo N. O. jr.}}
 \institute{
 % commented by KK (put image if you want)
 %\includegraphics[scale=.08]{Amrita.jpg}\medskip\\ 
 \sc{Instituto de Física de São Carlos}\\  \medskip\sc{Universidade de São Paulo}}
+
+
+\author[Renato Fabbri]{\small {Orientador: Prof. Dr. Osvaldo N. O. jr.\\
+		candidato: Renato Fabbri\\
+}}
+
 \date{\small 24 de Julho, 2015} 
 %--------------------------------------------------------------------------%
 \begin{frame}
@@ -48,7 +52,9 @@ Orientador: Prof. Dr. Osvaldo N. O. jr.}}
 
 \section{Introdução}
 \begin{frame}
-\frametitle{Redes complexas e de interação humana}
+\frametitle{Introdução}
+Redes complexas e de interação humana.
+
 Vídeo versinus, imagens.
 Cada aresta uma variável de Bernoulli.
 $2^{42 \choose 2}$ ultrapassa átomos no universo,
@@ -57,12 +63,19 @@ e das medidas para cada vértice e para a rede.
 \end{frame}
 
 \begin{frame}
-\frametitle{Ontologia do trabalho}
+\frametitle{ - ontologia do trabalho}
 diagrama da ontologia OWL com a formalização das
 áreas envolvidas. Situar alguns indivíduos na ontologia,
 que são alguns dos feitos.
 
 Contemplar de redes de interação humana em evolução temporal até Redes complexas, estatística e ignorância.
+
+\begin{figure}[!h]
+    \includegraphics[width=\textwidth]{../figs/obsPNPS_mesam}
+        \label{fig:mesam}
+\end{figure}
+
+
 \end{frame}
 
 \section{Materiais}
@@ -84,7 +97,7 @@ Contemplar de redes de interação humana em evolução temporal até Redes comp
 \begin{frame}
 \frametitle{Métodos}
 \begin{itemize}
-	\item Medidas circulares
+	\item Estatística circular
 	\item (obtenção das redes de interação)
 	\item Setorialização de Erdös
 	\item PCA de medidas topológicas
@@ -96,17 +109,35 @@ Contemplar de redes de interação humana em evolução temporal até Redes comp
 \end{frame}
 
 \begin{frame}
-\frametitle{Medidas circulares}
+\frametitle{ - statística circular}
+Com $m_n=\frac{1}{N}\sum_{i=1}^N z_i^n$ o n-ésimo momento:
+\begin{align}\label{eq:cmom}
+    R_n&=|m_n| \nonumber \\
+    \theta_\mu&=Arg(m_1) \\
+    \theta_\mu'&=\frac{period}{2\pi} \theta_\mu \nonumber
+\end{align}
+
+\begin{align}
+    Var(z)&=1 - R_1 \nonumber\\
+    S(z)&= \sqrt{-2\ln(R_1)}\\
+    \delta(z)&=\frac{1-R_2}{2 R_1^2} \nonumber
+\end{align}
+
+Usamos também $\frac{b_h}{b_l}$ entre a maior $b_h $ e a menor $b_l$ incidência nos histogramas.
+
+
+
+
 \end{frame}
 \begin{frame}
-\frametitle{Redes de interação}
+\frametitle{- redes de interação}
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.5\textwidth]{../figs/criaRede__}
 \end{figure}
 \end{frame}
 \begin{frame}
-\frametitle{Setorialização de Erdös}
+\frametitle{- setorialização de Erdös}
 
 \begin{figure}[!h]
     \centering
@@ -128,7 +159,7 @@ $p_e=\frac{z}{N(N-1)}$
 
 \end{frame}
 \begin{frame}
-\frametitle{PCA de medidas topológicas}
+\frametitle{- PCA de medidas topológicas}
 Médias e desvios das medidas $j$ nas componentes $k$ fruto de $L$ observações $l$:
 \begin{align}\label{eq:pca}
 \mu_{V'}[j,k]   &=\frac{\sum_l^L V'[j,k,l]}{L}\nonumber\\
@@ -142,7 +173,7 @@ Inseridas medidas de simetria potencialmente novas.
 
 \end{frame}
 \begin{frame}
-\frametitle{Kolmogorov-Smirnoff de textos}
+\frametitle{- Kolmogorov-Smirnoff de incidências em textos}
 \begin{equation}\label{eq:ks}
 D_{n,n'} > c(\alpha)\sqrt{\frac{n+n'}{nn'}} \Rightarrow F_{1,n} \neq F_{2,n'}
 \end{equation}
@@ -152,7 +183,7 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{equation}
 \end{frame}
 \begin{frame}
-\frametitle{Web semântica}
+\frametitle{- web semântica}
 [!Procurar uma notação mais poderosa para os dados ligados.]
 \begin{itemize}
 	\item Formalização de conceitualizações.
@@ -165,7 +196,7 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 
 \end{frame}
 \begin{frame}
-\frametitle{Audiovisualização de dados}
+\frametitle{- audiovisualização de dados}
 \begin{itemize}
 	\item Versinus, imagens, animação abstrata com música, sonificações.
 	\item Roteiros automatizados de realização de arte social.
@@ -174,7 +205,7 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{frame}
 
 \begin{frame}
-\frametitle{Considerações tipológicas e humanísticas}
+\frametitle{- considerações tipológicas e humanísticas}
 \begin{itemize}
 	\item Redes de seres humanos.
 	\item Consideração do fator estigmatizante.
@@ -186,7 +217,7 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 
 \section{Resultados}
 \begin{frame}
-\frametitle{RESULTADOS}
+\frametitle{Resultados}
 \begin{itemize}
 	\item Estabilidade temporal
 	\item Diferenciação textual
@@ -198,7 +229,7 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{frame}
 
 \begin{frame}
-\frametitle{Estabilidade temporal e topológica}
+\frametitle{- estabilidade temporal e topológica}
 \begin{itemize}
 	\item Medidas circulares praticamente iguais para todas as listas e em todas as escalas de segundos a semestres.
 	\item Constância dos tamanhos dos setores de Erdös, compatível com as expectativas da literatura. Ainda não achei formalização para esta expectativa e talvez esta seja a primeira.
@@ -208,7 +239,7 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{frame}
 
 \begin{frame}
-\frametitle{Diferenciação textual}
+\frametitle{- diferenciação textual}
 \begin{itemize}
 	\item O texto produzido por cada setor de Erdös é extremamente diferente um do outro, maiores do que texto produzido por redes diferentes ou mesmo por setores iguais de redes diferentes.
 	\item Hubs produzem mais adjetivos. Periféricos mais substantivos, etc.
@@ -220,7 +251,7 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{frame}
 
 \begin{frame}
-\frametitle{Dados ligados na web semântica brasileira}
+\frametitle{- dados ligados na web semântica brasileira}
 \begin{itemize}
 	\item Síntese de ontologias (OWL) e vocabulários (SKOS) de estruturas sociais. OPS, OPa, OPP, Ontologiaa, OCD, OBS, VBS.
 	\item Formalização de dados ligados a partir de dados relacionais participativos.
@@ -229,7 +260,7 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{frame}
 
 \begin{frame}
-\frametitle{Peças artísticas e mapeamentos sensoriais}
+\frametitle{- peças artísticas e mapeamentos sensoriais}
 \begin{itemize}
 	\item Four hubs dance. Prelúdio social
 	\item Versinus.
@@ -239,7 +270,7 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{frame}
 
 \begin{frame}
-\frametitle{Software}
+\frametitle{- software}
 Pacote oficial da linguagem Python (PyPI) para:
 	\begin{itemize}
 		\item observação das estabilidades topológicas e diferenciações textuais. (Gmane)
@@ -251,7 +282,7 @@ Pacote oficial da linguagem Python (PyPI) para:
 \end{frame}
 
 \begin{frame}
-\frametitle{Beneficiamento}
+\frametitle{- beneficiamento}
 \begin{itemize}
 	\item Recomendação de recursos para enriquecimento da navegação semântica.
 	\item Experimentos percolatórios.
@@ -261,7 +292,7 @@ Pacote oficial da linguagem Python (PyPI) para:
 \end{frame}
 
 \begin{frame}
-\frametitle{Empréstimos antropológicos}
+\frametitle{- empréstimos antropológicos}
 \begin{itemize}
 \item Histórico do termo física antropológica, de Boaz a este trabalho.
 \item Aspectos reflexivos, biográficos. Estudo e exposição de si. Diário. Leitura da curtíssima autobiografia.
@@ -271,7 +302,7 @@ Pacote oficial da linguagem Python (PyPI) para:
 \end{frame}
 
 \begin{frame}
-\frametitle{Ideias ideais}
+\frametitle{- ideias ideais}
 %\includegraphics[scale=.23]{FlowChart.jpg}\\
 \begin{itemize}
 \item O que é.
@@ -297,10 +328,11 @@ Pacote oficial da linguagem Python (PyPI) para:
 	\item Legado em software, ontologias e dados
 	\item Estou aquém de equipe e qualidade de vida do que acredito adequado. 
 	\item Ignorância. Froteira da ilha sempre se ampliando.
+	\item Gostarei de terminar a graduação da física aos poucos se eu tiver a oportunidade. Creio que causará bastante estímulo e isso pode ser conveniente daqui alguns anos. Talvez proficiências para titulação.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Próximos passos}
+\begin{frame}{- próximos passos}
 Meu norte seria já poder estudar diretamente a cadeia de sistemas dinâmicos, do social ao universo. Com sua inércia, deve dar para tirar umas boas propriedades relacionando as frequências de sistemas complexos em escalas diferentes. As referências de escala individual ao universo observável devem implicar em propriedades.
 
 Ou seja:
@@ -308,13 +340,13 @@ Ou seja:
 		\item muita coisa boa para fazer, seria bom delimitar o que vai para pós-doc ou próximo vínculo.
 		\item Isso parece depender de alguma previsão de vínculo apropriado e de onde.
 		\item Prioridade é permanecer em S. Carlos, de preferência relacionado ao IFSC. Possibilidades na UFSCar, IPRJ, UnB, UFABC.
-		\item Trabalhos avulso e relacionamentos com centros culturais como simbióse.
+		\item Acho que é na academia que conseguirei me dedicar para a pesquisa podendo imergir como gosto.
 	\end{itemize}
 \end{frame}
 
 
 
-\begin{frame}{References}
+\begin{frame}{Referências}
   \begin{thebibliography}{99}
   \bibitem{one}
 Anis Das Sharma, Alpa Jain, Kong Yu, " Dynamic Relationship and Event Discvery".
