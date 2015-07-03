@@ -1,42 +1,51 @@
 # Cursos Interessantes
 ## Propabilidade
- * [Introduction to Probability - The Science of Uncertainty - edX - MIT] (https://www.edx.org/course/introduction-probability-science-mitx-6-041x-0) (gostei + e vi, é extenso)
-   * [Material da 1a turma de 2015] (https://courses.edx.org/courses/MITx/6.041x_1/1T2015/resources/)
- * [Probability - Coursera - University of Pennsylvania] (https://class.coursera.org/probability-001) (ver algum dia para fazer revisão)
+ * [Introduction to Probability - The Science of Uncertainty - edX - MIT](https://www.edx.org/course/introduction-probability-science-mitx-6-041x-0) (gostei + e vi, é extenso)
+   * [Material da 1a turma de 2015](https://courses.edx.org/courses/MITx/6.041x_1/1T2015/resources/)
+ * [Probability - Coursera - University of Pennsylvania](https://class.coursera.org/probability-001) (ver algum dia para fazer revisão)
 
 ## Estatistica
- * [Introduction to Statistics: Descriptive Statistics - edX - Berkley] (https://www.edx.org/course/introduction-statistics-descriptive-uc-berkeleyx-stat2-1x)
- * [Introduction to Statistics: Probability - edX - Berkley] (https://www.edx.org/course/introduction-statistics-probability-uc-berkeleyx-stat2-2x)
- * [Introduction to Statistics: Inference - edX - Berkley] (https://www.edx.org/course/introduction-statistics-inference-uc-berkeleyx-stat2-3x)
- * [Introduction to Statistics for the Social Sciences - Coursera - University of Zurich] (https://www.coursera.org/course/statistics101)
+ * [Introduction to Statistics: Descriptive Statistics - edX - Berkley](https://www.edx.org/course/introduction-statistics-descriptive-uc-berkeleyx-stat2-1x)
+ * [Introduction to Statistics: Probability - edX - Berkley](https://www.edx.org/course/introduction-statistics-probability-uc-berkeleyx-stat2-2x)
+ * [Introduction to Statistics: Inference - edX - Berkley](https://www.edx.org/course/introduction-statistics-inference-uc-berkeleyx-stat2-3x)
+ * [Introduction to Statistics for the Social Sciences - Coursera - University of Zurich](https://www.coursera.org/course/statistics101)
 
-## Fisica estatisitca
+## Fisica estatística
  * Stanford do Susskind (youtube)
- * MIT I e II de 2013: https://www.youtube.com/watch?v=hl4c1P9D8IY
- * https://www.coursera.org/course/smac
+   * qual deles? https://www.youtube.com/results?search_query=Stanford+do+Susskind+statistic)
+ * [Statistical Mechanics I: Statistical Mechanics of Particles - MIT OCW](ocw.mit.edu/courses/physics/8-333-statistical-mechanics-i-statistical-mechanics-of-particles-fall-2013/):
+ * [Statistical Mechanics II: Statistical Physics of Fields - MIT OCW](http://ocw.mit.edu/courses/physics/8-334-statistical-mechanics-ii-statistical-physics-of-fields-spring-2014/)
+ * [Statistical Mechanics: Algorithms and Computations - Coursera - École normale supérieure](https://www.coursera.org/course/smac)
 
 ## Teoria da informaçao
- * parece nao ter!!!! o mais proximo: https://www.youtube.com/watch…
+ * [Lecture 1: Introduction to Information Theory - University of Cambridge](https://www.youtube.com/watch?v=BCiZc0n6COY&list=PLruBu5BI5n4aFpG32iMbdWoRVAA-Vcso6) (O mais próximo do assunto que foi encontrado...)
+   * Lecture 1 of the Course on Information Theory, Pattern Recognition, and Neural Networks
 
 ## Redes Complexas
  * complexidade do santa feh
  * redes do coursera (todos, uns 4-7)
- * Netwrks, Crowds and Markets: https://courses.edx.org/…/CornellX%2FINFO2040x_Spring2015%…/
- * Social Physics: https://www.edx.org/c…/big-data-social-physics-mitx-mas-s69x
+ * [Networks, Crowds and Markets - edX - Cornell University](https://www.edx.org/course/networks-crowds-markets-cornellx-info2040x)
+ * [Big Data and Social Physics - edX - MIT](https://www.edx.org/course/big-data-social-physics-mitx-mas-s69x)
 
 ## Algebra linear
- * 2 semanas: https://www.edx.org/…/introduction-linear-models-matrix-har… (parece muito inicial mas bom para ter os fundamentos, parece ter umas chaves)
- * 15 semanas: https://www.edx.org/…/linear-algebra-foundations-frontiers-…
- * Brown+Python => https://class.coursera.org/matrix-002/auth
+ * [Introduction to Linear Models and Matrix Algebra - edX - Harvard University](https://www.edx.org/course/introduction-linear-models-matrix-harvardx-ph525-2x)
+   * parece muito inicial mas bom para ter os fundamentos, parece ter umas chaves.
+   * 2 semanas
+ * [Linear Algebra - Foundations to Frontiers - edX - University of Texas at Austin ](https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-03x)
+   * 15 semanas
+ * [Coding the Matrix: Linear Algebra through Computer Science Applications - Coursera - Brown University](https://class.coursera.org/matrix-002)
+   * 10 semanas
+   * Python como linguagem
 
 ## Algebra nao linear
  * o do Santa fe ta incompleto e rascunhado +-, mas e o unico MOOC parece.
 
 ## PLN/Linguistica
- * Collings: https://www.coursera.org/course/nlangp
- * Radev: https://www.coursera.org/course/nlpintro
- * Jurafsky: https://www.coursera.org/course/nlp
- * ==> https://class.coursera.org/humanlanguage-001/lecture
+ * [Natural Language Processing - Coursera - Columbia University](https://www.coursera.org/course/nlangp)
+   * 10 semanas
+ * [Introduction to Natural Language Processing - Coursera - University of Michigan](https://www.coursera.org/course/nlpintro)
+ * [Natural Language Processing - Coursera - Stanford](https://www.coursera.org/course/nlp)
+ * [Miracles of Human Language: An Introduction to Linguistics - Coursera - University of Leiden](https://www.coursera.org/course/humanlanguage)
 
 ## Metadados
  * visto o do coursera, lido muito ja para o momento
