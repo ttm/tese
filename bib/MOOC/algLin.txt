@@ -1,0 +1,30 @@
+https://courses.edx.org/courses/course-v1:UTAustinX+UT.5.03x+2T2015
+vector, components.
+
+unit basis vectors (standard basis vectors)
+
+L is completely described by how it transforms the unit basis vectors.
+
+Cada coluna c_i da matriz M é a resposta ao impulso da transformação linear que M opera na dimensão i.
+
+Todo grafo com N vértices pode ser representado por uma matriz, que opera uma tranformação linear em N dimensões. Cada coluna apresenta a transformada da resposta ao impulso naquela dimensão.
+
+Cada coluna é a indução sobre o sistema a partir de um vetor unitário na dimensão i.
+
+Upper (unit strict) triangular matrices.
+
+3.2.5
+Traspor como espelhamento com relação à diagonal
+
+conformal sizes
+
+6.3.1
+Gaussian transformations and eliminations
+
+LU factorization of a matrix A
+
+7.3.2
+A is nonsingular == A is invertible == A^-1 exists == AA^1=A^1A=I == A is corresponds to a linear transformation that is a bijection == Ax = b has an unique solution for all b in R^n == determinant of A is nonzero
+
+
+

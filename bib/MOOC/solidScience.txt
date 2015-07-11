@@ -1,0 +1,51 @@
+https://class.coursera.org/solidsciencemethods-001
+nova versão saindo em ~2 meses.
+
+1.02
+Método científico:
+*) passível de testes empíricos ou observável
+*) replicável
+*) objetivo
+*) transparente
+*) falsificável
+*) logicamente consistente
+
+1.03
+*) Observação
+*) Hipóteses
+*) Teorias
+
+1.04
+*) Indução (uso de observs para elaborar explicações ou hipóteses)
+e dedução (uso de observações para fazer previsões)
+
+1.06
+Logical positivism
+Afirmação analítica ou sintética
+Hypothetico-deductive method
+
+1.07
+Ontology - study of being
+Epistemology - study of knowledge
+
+
+1.07
+Ontology - study of being
+Epistemology - study of knowledge
+
+1.09
+Construtivismo-Interpretismo
+Hermeneutica, fenomenologia, verstehen
+observação participativa, métodos qualitativos
+Objetivista-positivista, métodos qualitativos
+Métodos mistos tem ganhado maior popularidade
+
+1.10
+Universalistic research
+Particularistic research
+Fundamental or applyed knowledge
+
+
+
+
+
