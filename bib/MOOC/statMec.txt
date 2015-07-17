@@ -1,0 +1,49 @@
+https://class.coursera.org/smac-002
+
+Monte carlo algorithm
+
+Trials, hits
+
+Metropolis algorithm.
+
+global balance condition
+detailed balance condition
+
+Metropolis acceptance probavility
+
+Exponential convergence
+
+Irreducibility, aperiodicity,
+
+Lec 2
+Alder and Wainwright's molecular dynamics algorithm
+
+Tabula rasa
+
+Equiprobability hypothesis (formulated by Boltzmann)
+
+Equivalence between Newtonian deterministic mechanics and
+statistical mechanics: ergodicity hypothesis.
+
+
+(Time reversal invariance, detailed balance ??)
+
+Potential energy, statistical weight. (f=1/T, compreender a acumulação de recursos ou a probabilidade como energia potencial?)
+
+(Há alguma relação direta: tempo -> energia?)
+
+Thermodynamic properties == properties that do not explicitly depend on time?
+
+Ludwig Boltzmann, the father of statistical mechanics.
+
+Equiprobability principle (or hypothesis?)
+A probabilidade da configuração é uma função da energia da configuração
+
+Random sequential disposition.
+
+Partition funcion
+
+
+
+
+
