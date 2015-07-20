@@ -63,6 +63,7 @@ Digressão teórica:
 	\item contextualiza o seminário
 	\item sintoniza rigor e abstração
 	\item exemplifica consequências e hipóteses
+	\item incentiva a instrução ao invés da refutação
 \end{itemize}
 
 \vspace{.7cm}
@@ -133,14 +134,45 @@ o tempo disponível para cada participante é o mesmo, e a distribuição nas di
 
 
 
-\subsection{- $f=\frac{R}{\lambda}$ está na origem da desigualdade?}
+\subsection{- $f=\frac{v}{\lambda}$ está na origem da desigualdade?}
 \begin{frame}
-\frametitle{$f=\frac{R}{\lambda}$ está na origem da desigualdade?}
+\frametitle{$f=\frac{v}{\lambda}$ está na origem da desigualdade?}
+\begin{equation}
+	f=\frac{v}{\lambda_1 \lambda_2},\;\;\; \lambda \approx \lambda_1 \approx \lambda_2 \Rightarrow log(f) = -2log(\lambda) + log(v)
+\end{equation}
+
+Em uma rede, temos essencialmente $E$ arestas e $N$ vértices.
+Assumindo linearidade:
+\begin{equation}
+	Recursos=\alpha N + \beta E \approx \beta E = \beta N \frac{E}{N} = \beta \frac{N \overline{k}}{2}
+\end{equation}
+
+onde $\overline{k}$ é o grau médio. O termo $\alpha N$ pode ser descartado se assumirmos interesse em rede de interação, onde $N$ participantes que não interagem pode ser considerado o estado de mínimo/nulo emprego de recursos pelo sistema (para a interação de interesse e observável).
+
+\begin{equation}
+	f=\frac{v}{Recurso_i}=\frac{v}{Recurso_i}=\frac{v}{\beta E_i}=\frac{2}{\beta}\frac{v}{N_i . \overline{k_i}} \equiv \frac{v}{\lambda_1 \lambda_2}
+\end{equation}
+% ,\;\;\; \lambda \approx \lambda_1 \approx \lambda_2 \Rightarrow log(f) = -2log(\lambda) + log(v)
+
+$N$ e $\overline{k}$ são sempre diretamente proporcionais à quantidade de recursos alocados se fixados um deles ($N$ ou $\overline{k}$).
+
 \end{frame}
 
 \subsection{- metasensores \;\; - ideias ideais}
 \begin{frame}
 \frametitle{- metasensores}
+
+Cada vértice subsiste no tempo, é um observador, um sensor, uma unidade de processamento de informação e matéria. As arestas correspondem ao relacionamento entre os dois sensores, criando um sensor composto, dual. A associação sucessiva de sensores implica em um meta-sensor. Considerações:
+
+\begin{itemize}
+	\item teoria básica de complexidade sugere isso: sistemas adaptativos para eficiência e sobrevivência, processam informação, interagem entre si, por vezes se replicam (e.g. idosos em uma praça).
+	\item densidade média de esferas no caso tridimensional: $f=\frac{v}{\lambda_1 \lambda_2 \lambda_3}\equiv \frac{3}{4 \pi} \frac{v}{r^3}$
+	\item extensão da percepção também segue a lei de potência: $\Delta_8=2^{}$
+	\item as arestas são criadas através da alocação de tempo pelos participantes. O recurso básico é tempo. A rede é um sensor de sinal temporal quadrático?
+	\item o universo é o sensor máximo?
+\end{itemize}
+
+Exemplo do sensor sobre a Unicamp (geração de conhecimento, ganha amigos, concentração segundo lei de potência, motor dialético, sensor colorido).
 \end{frame}
 
 %\subsection{- ideias ideais}
