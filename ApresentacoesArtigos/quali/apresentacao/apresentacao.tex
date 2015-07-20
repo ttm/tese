@@ -5,7 +5,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{graphics}
+\usepackage[percent]{overpic}
 \usepackage{hyperref}
+\usepackage{multimedia}
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{blocks}[rounded][shadow=true]
 \setbeamertemplate{bibliography item}[text]
@@ -231,6 +233,26 @@ Constituído de várias partes cuja interação implica
 em comportamento emergente. Sistema intrínseco ao meio
 em que subsiste e integrado a outros sistemas dinâmicos.
 \end{frame}
+
+
+\begin{frame}
+\frametitle{Introdução}
+\begin{center}
+\movie[width=0.7\textwidth,showcontrols=true]
+{% placeholder = text or image
+	%\begin{overpic}[width=\textwidth,grid,tics=10]{../figs/ideia2}
+	\begin{overpic}[width=0.7\textwidth]{../figs/CienciasComFronteiras}
+		 \put (00,50) {  
+Obervação em evolução.
+      }
+	 \end{overpic}
+}%
+{final.avi} % video filename
+%{sintel_trailer-480p.mp4} % video filename
+\end{center}
+\end{frame}
+
+
 
 \subsection{- ontologia do trabalho \;\; - vocabulário do trabalho}
 \begin{frame}
