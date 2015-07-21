@@ -242,9 +242,9 @@ em que subsiste e integrado a outros sistemas dinâmicos.
 {% placeholder = text or image
 	%\begin{overpic}[width=\textwidth,grid,tics=10]{../figs/ideia2}
 	\begin{overpic}[width=0.7\textwidth]{../figs/CienciasComFronteiras}
-		 \put (00,50) {  
-Obervação em evolução.
-      }
+		%		 \put (00,50) {  
+		%Obervação em evolução.
+		%      }
 	 \end{overpic}
 }%
 {final.avi} % video filename
@@ -257,22 +257,61 @@ Obervação em evolução.
 \subsection{- ontologia do trabalho \;\; - vocabulário do trabalho}
 \begin{frame}
 \frametitle{- ontologia do trabalho}
-diagrama da ontologia OWL com a formalização das
-áreas envolvidas. Situar alguns indivíduos na ontologia,
-que são alguns dos feitos.
+Formalização dada ontologia OWL com a formalização das
+áreas envolvidas. 
 
-Contemplar de redes de interação humana em evolução temporal até Redes complexas, estatística e ignorância.
+
+\vspace{1cm}
 \begin{figure}[!h]
-    \includegraphics[width=\textwidth]{../figs/obsPNPS_mesam}
-        \label{fig:mesam}
+    \includegraphics[width=.7\textwidth]{../figs/legenda}
 \end{figure}
+
+\vspace{1cm}
+
+Situar alguns indivíduos na ontologia, que são alguns dos feitos.
+
+
+Contemplar de redes de interação humana em evolução temporal até Redes complexas, estatística e ignorância?
+
 \end{frame}
-
-
 %\subsection{- vocabulário do trabalho}
 \begin{frame}
 \frametitle{- vocabulário do trabalho}
-Vocabulário SKOS, compreendendo principais definições, assim como polissemias e poligrafias.
+Vocabulário SKOS, compreendendo principais definições, assim como 
+os casos de ambiguidades, sinônimos e formas preferidas.
+Complementa as definições
+e conceitualização da OT. Termos especiais:
+\begin{itemize}
+	\item Física Antropológica
+	\item Estabilidade temporal
+	\item Setorialização de Erdös, setores de Erdös
+	\item Rede complexa
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{- objetivos e justificativas}
+O objetivo geral é comprovar e aprofundar a utilização das redes complexas
+pelo participante. Objetivos específicos:
+\begin{itemize}
+	\item melhor compreensão sobre nossas estruturas sociais
+	\item entrega de um legado tecnológico para registrar e disponibilizr os desenvolvimentos
+	\item entrega de um legado em dados sociais, de fontes heterodoxas e apropriadas para a análise conjunta
+	\item delineio da prática de estudo das próprias estruturas sociais 
+\end{itemize}
+
+\vspace{.5cm}
+
+A justificativa principal é que há um hiato proeminente
+entre esta frente científica e tecnológica e a utilização que
+os participantes destas redes fazem dela. Justificaticas secundárias são:
+\begin{itemize}
+	\item A área é recente e reconhecidamente útil e potente.
+	\item As instituições já fazem uso destes conhecimentos
+		há séculos (talvez milênios). A frente civil está começando a surgir.
+	\item Tenho um perfil adequado à transdisciplinaridade envolvida.
+\end{itemize}
+
 \end{frame}
 
 
@@ -376,7 +415,7 @@ Inseridas medidas de simetria potencialmente novas.
 \end{frame}
 \begin{frame}
 %\subsection{- Teste de Kolmogorov-Smirnoff para textos}
-\frametitle{- Kolmogorov-Smirnoff para textos}
+\frametitle{- Teste de Kolmogorov-Smirnoff para incidencias em textos}
 \begin{equation}\label{eq:ks}
 D_{n,n'} > c(\alpha)\sqrt{\frac{n+n'}{nn'}} \Rightarrow F_{1,n} \neq F_{2,n'}
 \end{equation}
@@ -388,14 +427,17 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \begin{frame}
 \subsection{- web semântica \;\; - audiovisualização de dados}
 \frametitle{- web semântica / dados ligados}
-[!Procurar uma notação mais poderosa para os dados ligados.]
+	Recomendação da W3C para a formalização de conceitualizações, o relacionamento dos dados a estas conceitualizações, o armazenamento
+	de dados semanticamente enriquecidos, o relacionamento de dados de fontes diferentes, a navegação semântica e a inferência por máquina.
+
+	Observações especiais:
 \begin{itemize}
-	\item Formalização de conceitualizações.
 	\item Redes estáveis em nosso tecido social em certas escalas temporais e de pessoas.
 		Passível de transições de fase, modificações abruptas em outras.
-	\item Permite: análise conjunta de dados de diferentes fontes; inferência por máquina; desenvolvimento conceitual compartilhado.
+	\item Permite: análise conjunta de dados de diferentes fontes; desenvolvimento conceitual compartilhado.
 	\item Recomendação da W3C; padrão acadêmico para dados semânticos etiquetados; melhor formato para entregar os dados para a sociedade como um legado para análise e experimentos.
 	\item Pesado e um pouco complicado. Uso de ferramentas como Fuseki/Jena para facilitar os usos.
+	\item Procurar uma notação mais poderosa para os dados ligados?
 \end{itemize}
 
 \end{frame}
