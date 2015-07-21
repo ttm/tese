@@ -8,6 +8,7 @@
 \usepackage[percent]{overpic}
 \usepackage{hyperref}
 \usepackage{multimedia}
+\usepackage{multirow}
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{blocks}[rounded][shadow=true]
 \setbeamertemplate{bibliography item}[text]
@@ -444,10 +445,16 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \begin{frame}
 %\subsection{- audiovisualização de dados}
 \frametitle{- audiovisualização de dados}
+Permite maior contato com as estruturas de interesse,
+o que facilita a condução da pesquisa para questões mais
+fundamentais e observáveis.
+
+Algumas estratégias utilizadas:
 \begin{itemize}
-	\item Versinus, imagens, animação abstrata com música, sonificações.
-	\item Roteiros automatizados de realização de arte social.
-	\item Arte governamental.
+	\item versinus, imagens, animação abstrata com música, sonificações.
+	\item roteiros automatizados de realização de arte social
+	\item freakcoding (subgênero do livecoding)
+	\item arte governamental
 \end{itemize}
 \end{frame}
 
@@ -455,11 +462,11 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \subsection{- considerações tipológicas e humanísticas}
 \frametitle{- considerações tipológicas e humanísticas}
 \begin{itemize}
-	\item Redes de seres humanos.
-	\item Consideração do fator estigmatizante.
-	\item Apreciação do meio em que a rede é observada.
-	\item Experimentos percolatórios.
-	\item Física antropológica.
+	\item redes de seres humanos
+	\item consideração do fator estigmatizante
+	\item apreciação do meio em que a rede é observada
+	\item experimentos percolatórios
+	\item física antropológica
 \end{itemize}
 \end{frame}
 
@@ -476,8 +483,8 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 \end{itemize}
 \end{frame}
 
-\begin{frame}
 \subsection{- estabilidade temporal e topológica \;\; - diferenciação textual}
+\begin{frame}
 \frametitle{- estabilidade temporal e topológica}
 \begin{itemize}
 	\item Medidas circulares praticamente iguais para todas as listas e em todas as escalas de segundos a semestres.
@@ -485,6 +492,86 @@ c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
 	\item Estabilidade das componentes principais. Prevalência da centralidade, seguida da simetria e então clusterização dos participantes.
 	\item Tipologia não estigmatizante de participante. Tipologia de rede.
 \end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{- estabilidade temporal e topológica}
+
+\vspace{-.2cm}
+\begin{figure} 
+	\centering
+	\includegraphics[width=.75\textwidth]{/home/r/repos/stabilityInteraction/figs/InText-WLAU-S1000}
+\end{figure}
+\vspace{-.2cm}
+
+	\begin{minipage}[t]{0.48\linewidth}
+\begin{table}
+	\tiny
+\begin{center} 
+	\begin{tabular}{| p{.2cm} || p{.37cm} | p{.37cm} | p{.37cm} | p{.37cm} | p{.37cm} | p{.37cm} |}\hline 
+  & 1h & 2h & 3h & 4h & 6h & 12h \\\hline 
+ 0h  &\multirow{1}{*}{3.66 }   &\multirow{2}{*}{6.42 }   &\multirow{3}{*}{8.20 }   &\multirow{4}{*}{9.30 }   &\multirow{6}{*}{10.67 }   &\multirow{12}{*}{33.76 }  \\\cline{2-2} 
+ 1h  &\multirow{1}{*}{2.76 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3} 
+ 2h  &\multirow{1}{*}{1.79 }   &\multirow{2}{*}{2.88 }   &   &   &   &  \\\cline{2-2}\cline{4-4} 
+ 3h  &\multirow{1}{*}{1.10 }   &   &\multirow{3}{*}{2.47 }   &   &   &  \\\cline{2-2}\cline{3-3}\cline{5-5} 
+ 4h  &\multirow{1}{*}{0.68 }   &\multirow{2}{*}{1.37 }   &   &\multirow{4}{*}{3.44 }   &   &  \\\cline{2-2} 
+ 5h  &\multirow{1}{*}{0.69 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{4-4}\cline{6-6} 
+ 6h  &\multirow{1}{*}{0.83 }   &\multirow{2}{*}{2.07 }   &\multirow{3}{*}{4.35 }   &   &\multirow{6}{*}{23.09 }   &  \\\cline{2-2} 
+ 7h  &\multirow{1}{*}{1.24 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{5-5} 
+ 8h  &\multirow{1}{*}{2.28 }   &\multirow{2}{*}{6.80 }   &   &\multirow{4}{*}{21.03 }   &   &  \\\cline{2-2}\cline{4-4} 
+ 9h  &\multirow{1}{*}{4.52 }   &   &\multirow{3}{*}{18.75 }   &   &   &  \\\cline{2-2}\cline{3-3} 
+ 10h  &\multirow{1}{*}{6.62 }   &\multirow{2}{*}{\textbf{14.23} }   &   &   &   &  \\\cline{2-2} 
+ 11h  &\multirow{1}{*}{\textbf{7.61} }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{4-4}\cline{5-5}\cline{6-6}\cline{7-7} 
+ 12h  &\multirow{1}{*}{6.44 }   &\multirow{2}{*}{12.48 }   &\multirow{3}{*}{\textbf{18.95}}   &\multirow{4}{*}{\textbf{25.05\;}}&\multirow{6}{*}{\textbf{37.63}}   &\multirow{12}{*}{\textbf{66.24}}  \\\cline{2-2} 
+ 13h  &\multirow{1}{*}{6.04 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3} 
+ 14h  &\multirow{1}{*}{6.47 }   &\multirow{2}{*}{12.57 }   &   &   &   &  \\\cline{2-2}\cline{4-4} 
+ 15h  &\multirow{1}{*}{6.10 }   &   &\multirow{3}{*}{18.68 }   &   &   &  \\\cline{2-2}\cline{3-3}\cline{5-5} 
+ 16h  &\multirow{1}{*}{6.22 }   &\multirow{2}{*}{12.58 }   &   &\multirow{4}{*}{23.60 }   &   &  \\\cline{2-2} 
+ 17h  &\multirow{1}{*}{6.36 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{4-4}\cline{6-6} 
+ 18h  &\multirow{1}{*}{6.01 }   &\multirow{2}{*}{11.02 }   &\multirow{3}{*}{15.88 }   &   &\multirow{6}{*}{28.61 }   &  \\\cline{2-2} 
+ 19h  &\multirow{1}{*}{5.02 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{5-5} 
+ 20h  &\multirow{1}{*}{4.85 }   &\multirow{2}{*}{9.23 }   &   &\multirow{4}{*}{17.59 }   &   &  \\\cline{2-2}\cline{4-4} 
+ 21h  &\multirow{1}{*}{4.38 }   &   &\multirow{3}{*}{12.73 }   &   &   &  \\\cline{2-2}\cline{3-3} 
+ 22h  &\multirow{1}{*}{4.06 }   &\multirow{2}{*}{8.36 }   &   &   &   &  \\\cline{2-2} 
+ 23h & \multirow{1}{*}{4.30 }  & & & & & \\\cline{2-2}\cline{3-3}\cline{4-4}\cline{5-5}\cline{6-6}\cline{7-7} 
+ \hline\end{tabular} 
+ \end{center}
+\end{table}
+
+
+\end{minipage}
+\hfill%
+	\begin{minipage}[t]{0.48\linewidth}
+\begin{table}[!h]
+		\tiny
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c | c |}\cline{2-7}
+\multicolumn{1}{c|}{} & \multicolumn{2}{c|}{PC1}          & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\cline{2-7}\multicolumn{1}{c|}{} & $\mu$            & $\sigma$ & $\mu$         & $\sigma$ & $\mu$ & $\sigma$  \\\hline
+$cc$ & 0.89  & 0.59  & 1.93  & 1.33  & 21.22  & 2.97 \\\hline
+$s$ & 11.71  & 0.57  & 2.97  & 0.82  & 2.45  & 0.72 \\
+$s^{in}$ & 11.68  & 0.58  & 2.37  & 0.91  & 3.08  & 0.78 \\
+$s^{out}$ & 11.49  & 0.61  & 3.63  & 0.79  & 1.61  & 0.88 \\
+$k$ & 11.93  & 0.54  & 2.58  & 0.70  & 0.52  & 0.44 \\
+$k^{in}$ & 11.93  & 0.52  & 1.19  & 0.88  & 1.41  & 0.71 \\
+$k^{out}$ & 11.57  & 0.61  & 4.34  & 0.70  & 0.98  & 0.66 \\
+$bt$ & 11.37  & 0.55  & 2.44  & 0.84  & 1.37  & 0.77 \\\hline
+$asy$ & 3.14  & 0.98  & 18.52  & 1.97  & 2.46  & 1.69 \\
+$\mu_{asy}$ & 3.32  & 0.99  & 18.23  & 2.01  & 2.80  & 1.82 \\
+$\sigma_{asy}$ & 4.91  & 0.59  & 2.44  & 1.47  & 26.84  & 3.06 \\
+$dis$ & 2.94  & 0.88  & 18.50  & 1.92  & 3.06  & 1.98 \\
+$\mu_{dis}$ & 2.55  & 0.89  & 18.12  & 1.85  & 1.57  & 1.32 \\
+$\sigma_{dis}$ & 0.57  & 0.33  & 2.74  & 1.63  & 30.61  & 2.66 \\\hline\hline
+$\lambda$ & 49.56  & 1.16  & 27.14  & 0.54  & 13.25  & 0.95 \\
+\hline\end{tabular}
+\end{center}
+	\end{table}
+
+
+	\end{minipage}
+
+
+
+
+
 \end{frame}
 
 \begin{frame}
