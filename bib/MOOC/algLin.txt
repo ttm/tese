@@ -27,4 +27,13 @@ LU factorization of a matrix A
 A is nonsingular == A is invertible == A^-1 exists == AA^1=A^1A=I == A is corresponds to a linear transformation that is a bijection == Ax = b has an unique solution for all b in R^n == determinant of A is nonzero
 
 
+======
+9...
+espaço vetorial 
+column space of matrix A, span of a set of vectors
 
+null space of matrix A
+
+base e dimensão de subespaço
+
+ranque da matrícula
