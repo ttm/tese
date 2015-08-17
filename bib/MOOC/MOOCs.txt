@@ -57,7 +57,8 @@ MISC:
 -> do filho do Jacob Moreno: https://www.coursera.org/course/neuroethics
 -> outros do Senado: http://www12.senado.gov.br/…/i…/ead/ead-educacao-a-distancia
 -> U.Lab: Transforming Business, Society, and Self: https://courses.edx.org/courses/MITx/15.S23x/3T2014
--> relatividade restrita: https://class.coursera.org/einstein-001/lecture
+-> relatividade restrita: https://class.coursera.org/einstein
 -> relatividade geral: https://courses.edx.org/courses/CornellX/Astro2290x/1T2014/
+-> sequência sobre astrofísica: https://www.edx.org/xseries/astrophysics
 -> field theory: https://www.edx.org/cour…/effective-field-theory-mitx-8-eftx
 -> Ignorance: https://courses.edx.org/cou…/course-v1:ANUx+Igno101x+2T2015/
