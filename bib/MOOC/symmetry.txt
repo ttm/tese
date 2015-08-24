@@ -1,0 +1,34 @@
+https://class.coursera.org/ntusym-004
+
+point, plain and space symmetry. Cristals and technology
+
+lecture II-1 -
+fazer padrões como do escher, só que sem figurativo ou pouquíssimo.
+Tipo um miró-escher ou mondrian-escher.
+
+5 2D Bravais lattices
+17 plain group, and tables. (the wall paper symbols)
+
+II-5 regular nets, Kagome, Schläfi symbol
+
+II-6 Schafli notation, sólidos de arquimedes e fórmula de Euler
+
+II-7 3D sym
+Screw          
+Roto-inversion 
+Roto-reflection
+Inversion
+
+32 point groups
+14 Bravais lattices 
+7 lattice types
+230 space groups
+
+II - 8
+Triclinic lattice
+monoclinic lattice
+orthorhombic
+tetragonal
+rhombohedral
+hexagonal
+cubic
