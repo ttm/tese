@@ -1,0 +1,14 @@
+http://www.complexityexplorer.org/online-courses/26-fractals-and-scaling
+
+v2 - Intro to fractals
+self-similarity dimension
+dimensionalidade como exponenciação do fator de ampliação para obter o número de cópias
+Number of Small Copies = (Magnification Factor)D
+Sierpinky tem D=2!!!!
+
+1.5 Summary
+7m -> topological dimension
+fractal definitions
+
+
+

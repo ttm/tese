@@ -1,0 +1,26 @@
+http://www.complexityexplorer.org/online-courses/29-nonlinear-dynamics-mathematical-and-computational-approaches-fall-2015
+
+Intro
+most systemas are not linear, most are chaotic (large subset of non linear)
+-> experimental mathematics
+
+v2
+maps discrete
+flows continuous
+
+difference equations for maps
+transiente phase and fixed point
+
+1.3 Transients and attractors
+orbit or trajectory of the dynamics
+state variables 
+attracting/stable vs repelling/unstable fixed points
+basin of attraction
+
+1.4 params and bifurcationss
+periodics orbit r limit cycle
+bifurcation changes the topology of the attractor
+Parameter
+
+
+

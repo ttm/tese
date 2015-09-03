@@ -23,3 +23,13 @@ MN(42)
 2**.5/2
 2**.5
 600*10
+
+n.log(8)/n.log(3)
+r=2.5; x0=0.5; x1=r*x0*(1-x0)# 
+x1
+get_ipython().magic('run logisticMap.py')
+LM()
+get_ipython().magic('run logisticMap.py')
+LM()
+LM(x0=0.5)
+LM(r=2.6,x0=.2,it=10)

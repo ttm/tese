@@ -1,0 +1,49 @@
+https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V
+
+info do curso
+geral histórica,
+começando com Newton em 1666 e o problema dos 3 corpos,
+passando por Poicaré
+
+Edward Lorenz (um dos pais do chaos e do termo butterfly effect)
+@ MIT
+1975 May, iterated map and logistic mapping
+Mandelbrot c fractais
+Winfree nonlinear oscilattors in biology
+Rulle & Takens - chaos and turbulence
+Feigenbaum on universality of chaos through phase transitions in statistical physics. Renormalization group
+1980 boom
+1990 applications, complex systems
+
+autonomous systems
+phase portrait picture of all qualitatively different trajectories
+
+V2
+Linearization
+taylor around the fixed point
+first order systems
+33m->Bifurcação
+
+1) seddle node bifurcation-> basic mechanism for destr or creat of fixed points
+aka turning or folding node
+Normal form = r + x^2/2 + O(x^3) (...?)
+
+2) Transcritical bifurcation or the exchange of estabilities
+x'=xr-x^2
+
+3)Pitchfork bifurcation
+supercritical pitchforkx
+x'=xr-x^3
+
+
+
+
+
+
+O que querem dizer os termos
+"first-order" ou "normal form"?
+
+
+
+
+
