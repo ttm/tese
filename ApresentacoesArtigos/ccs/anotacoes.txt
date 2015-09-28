@@ -57,13 +57,81 @@ Percolation experiments
 Ephemeral (betwenness vs closenness)
 continuant (vaca do fim do mundo)
 
-slide 11 - (5 min)
+
+slide 11 - (2 min)
+Anthropological physics
+What
+Problems
+
+slide 12 - (5 min)
 conceptual considerations on percolatory exp (5 min)
 (questions on chat:
  how many ppl and who knows who;
  which are the real and virtual networks in which they participate?
  Which are the more importat ones? Which meta-networks?);
 
-slide 12 (5 - 10 min)
+slide 13 (2  min)
+Meta-sensors, ubiquitous inequality
+
+slide 14 (5  min)
  implications for self-knowledge: us-army?
  Publicized data. Boudaries for understanding the networks as part of the individual? Resistence and transformative procedures: collective and diffusion of informations and goods. Cyberpunk? Should we at CCS start some open percolation process? Beyond CCS itself?
+
+
+Resources:
+*) Docs enviados pela Marília:
+	ok, visto
+*) emails
+	marilia desabafo
+		ok
+	deborah revisao
+		Modo avançado no capitalismo tardio: sociedade produzida/reproduzida pela IC.
+		visão estereotipada de mundo - semiformação - mentalidade de ticket  - preconceito.
+		novo tipo antropológico de homem com o rádio (?) (e agora com a internet)
+		Estudos sobre a personalidade autoritária - clássico da psicologia social num limbo entre a ciência e a crítica social. Muito a dizer sobre nosso tempo.
+		Escalas - etnocentrismo / conservadorismo / antissemitismo / fascismo - testes projetivos - entrevistas. Interpretação. 
+		Descobertas: relações entre estereotipia (confusão sobre a realidade política e histórica) e ressentimento (IMPORTANTE!) - projetividade (acusação do governo ditatorial e de querer acabar com a democracia) - ódio e escassez - preconceito entre as chamadas minorias - não relação com escolaridade ou adesão à religião. Conservadorismo não necessariamente ligado à estereotipia e ao preconceito - conservador genuíno. 
+		Compreender os fenômenos contemporâneos - relações de ódio, preconceito, intolerância/tolerância repressiva.
+		Compreensão social e histórica da formação da subjetividade do outro e da nossa. Pensar em estratégias de luta polícia na contramão da violência cotidiana - educação histórica, social, política é capaz de liberar nossa imaginação , faculdade criadora de outras possibilidades de existência.
+*) resumos oficial e extenso
+		ok
+		A crítica unifica e impulsiona ambos o rigor lógico e a flexibilidade expressiva no avanço das hipóteses a partir de teorias e dados. Permite relacionar o conteúdo com a forma e superar determinantes de sofrimento para o indivíduo e a espécie humana. Uma metodologia crítica para a pesquisa em redes utiliza e problematiza tanto os instrumentos conceituais da teoria crítica quanto coloca em tensão as metodologias de redes complexas.
+*) quali
+		ok
+*) escrito de física antropológica
+		https://github.com/ttm/anthropologicalPhysics/blob/master/essay.pdf
+		ok
+*) prods pnud
+		ok
+*) Página do grupo Nexos: http://dgp.cnpq.br/dgp/espelhogrupo/5624425913774111
+*) Site ccs:
+	http://cs-dc-15.org/isc/#
+	"""Social cogition is a cognitive process distributed over all members of a society, interacting within a social network. Individual cognition as well might be considered as distributed cognition over a neural network."""
+	http://cs-dc-15.org/papers/cognition/social-psychology/anthropological-physics-and-social-psychology-in-the-critical-research-of-networks/
+
+
+<template name="slide4">
+Slide 4: Intro 3
+Roadmap for the exposition of our work:
+conceptual considerations; topological stability and textual differentiation leading to types
+(of participants, of sectors, of networks; percolatory experiments; anthropological physics;
+conceptual considerations on percolatory exp (questions on chat: how many ppl and how knows who;
+which are the real and virtual networks in which they participate?
+Which are the more importat ones? Which meta-networks?; meta-sensors,
+ubiquitous inequality (ask for help on formalization and problematization), 
+maximization of bandwidth as perception and cochlea;
+implications for self-knowledge: us-army? Publicized data. Boudaries for understanding the networks as part of
+the individual? Resistence and transformative procedures: collective
+and diffusion of informations and goods. Cyberpunk?
+Should we at CCS start some open percolation process?
+Beyond CCS itself?
+</template>
+
+pre:
+*) adiantos depois deste: rever materiais, lapidar imagens e desenvolver textos
+*) plataforma para postar o video
+*) começo com a Deborah, sujeito cativo, industria cultural 2.0, falsa conciencia das massas, pensamento de ticket e potencial antidemocratico
+*) arrematada no final
+
+
+
