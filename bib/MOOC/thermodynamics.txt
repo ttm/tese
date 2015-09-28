@@ -9,4 +9,35 @@ vapor state == gas state
 
 process knowledge
 
+lec 11
+conduction, convection and radiation as 3 classic types of energy transfer
+
+extensive (mass, volume) properties and 
+intensive (temperature, pressure, density, specific volume) proerties
+equilibrium
+process
+
+1.06 work transfer = \int F ds
+
+2.02
+polytropic process are Power Laws!!!
+
+2.03
+first law of thermodynamics
+E= EC + EP + U
+U, the internal energy, is usually the most important
+
+
+2.04
+Saturation state
+Critical Point (critical temperature)
+Phase diagrams
+
+2.06
+quality
+superheated vapor
+subcolled liquid
+isotherms isobars
+
+
 

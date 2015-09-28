@@ -33,3 +33,16 @@ get_ipython().magic('run logisticMap.py')
 LM()
 LM(x0=0.5)
 LM(r=2.6,x0=.2,it=10)
+
+n.log(2)/n.log(5)
+
+n.cos(n.pi)
+n.cos(n.pi/2)
+n.cos(n.pi/4)
+1/2**.5
+n.cos(n.pi/3)
+n.cos(n.pi/6)
+2**.5
+n.cos(n.pi/8)
+n.cos(n.pi/8)**2
+n.cos(n.pi/8)**4
