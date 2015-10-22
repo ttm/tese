@@ -10,14 +10,60 @@ Authors are:
 Institutional support were given us by:
 Hope you enjoy it
 
-
 s1.1
 this is the outlie of our presentation..
 
-s3b
+s3
+potential prejudice
+critical observations
+pushing boudaries
 
+s4
+img fb, tw SI de estab, list email video, part (ipython notebook)
+
+s5
+
+s6
+the cultural industry concept is recurrent in our
+research because it is a deep trace of the late capitalism
+when the the industrial culture permeates the spare time
+of the workers.
+The social organization is also a way to produce subjectivity,
+such as related to ticket/stereotyped thinking and prejudice.
+A new anthropology is yielded by the advent of a new technology
+such as the radio or the internet.
+A strong paradigm for us is "The Authoritarian personality"
+ work (Adorno and collabs) because it is
+a research between science and social critic.
+ We find it a fit for the needs of our time.
+(Deborah)
+
+
+s10
+metasensors UNICAMP
+Liliane Moiteiro, Saldanha, Bras Rocha
+
+feedback images to the communities.
+wiki ARS
+e exposição de mim mesmo
+
+pilula closeness vs betweeness
+
+vaca do fim do mundo
+
+percolation definition and concept in the context
 
 s11
+my network. It is me more than my biological unit with two arms, two eye, etc.
+
+my wife's network
+
+open processes and technologies
+AA - Autoregulation Algorithm,
+self-transparency portal
+for enabling the study of the self
+attenuating potential moral and ethical issues
+
 problems with antrop phys:
 Anthropology acknowledge the observer as influent while
 Physics tends to neglect or minimize it.
@@ -25,6 +71,19 @@ Researchers tend to underestimate its pertinence,
 often pointing to sociophycs, social physics
 and social network analysis
 
+s12
+mini percolation experiment
 
+s13
+UNICAMP metasensor:
+https://www.facebook.com/renato.fabbri/posts/10153537493719430
+
+coclea IMG
+
+equacao power law:
+https://github.com/ttm/ubiquitousInequality/raw/master/essay.pdf
+
+s14
+a ciência converge para qual tellos?
 
 
