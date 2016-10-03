@@ -1,0 +1,667 @@
+\documentclass[10pt]{beamer}
+\setbeamerfont{structure}{family=\rmfamily} 
+\usepackage{amsthm}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage[percent]{overpic}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{multirow}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{caption}[numbered]
+\usetheme{default} 
+\usecolortheme{seahorse}
+\mode<presentation>
+{
+   \setbeamercovered{transparent}
+   \setbeamertemplate{items}[ball]
+   \setbeamertemplate{theorems}[numbered]
+   \setbeamertemplate{footline}[frame number]
+
+}
+
+\titlegraphic{
+\includegraphics[width=2.4cm]{../figs/ifsc}\;\;\;\;
+\includegraphics[width=1.4cm]{../figs/cnpq}\;\;\;\;\;\;
+	%\hspace*{4.75cm}~%
+	      \includegraphics[width=1cm]{../figs/1852}\;\;\;\;\;\;\;\;\;\;\;
+	\includegraphics[width=.5cm]{../figs/undp}\;\;\;\;\;\;\;\;\;\;\;
+	      \includegraphics[width=1.7cm]{../figs/original-logo}\;\;
+   }
+
+\begin{document}
+\title {\bfseries{\sc\large Estabilidade topológica e diferenciação textual
+em redes de interação humana}}
+\institute{
+% commented by KK (put image if you want)
+%\includegraphics[scale=.08]{Amrita.jpg}\medskip\\ 
+	SIFSC 6\\
+\medskip\sc{Instituto de Física de São Carlos}\\
+\medskip\sc{Universidade de São Paulo}}
+
+
+\author[Renato Fabbri]{\small {orientador: Prof. Dr. Osvaldo N. de Oliveira jr.\\
+		candidato: Renato Fabbri\\
+}}
+
+\date{\small 03 de Outubro, 2016} 
+%--------------------------------------------------------------------------%
+\begin{frame}
+\titlepage
+\end{frame}
+%---------------------------------------------------------------------------%
+\section*{Roteiro}
+\begin{frame}
+\frametitle{Roteiro}  
+\tableofcontents
+\end{frame}
+%---------------------------------------------------------------------------
+
+\section{Introdução}
+\subsection{- redes complexas e de interação humana}
+\begin{frame}
+\frametitle{Introdução}
+São $10^{80}$ {\bf átomos no universo observável},
+uma referência de escala.
+Considere o número $N$ de pessoas necessário para
+haver {\bf mais redes possíveis do que átomos no universo}.
+Cada aresta é uma variável de Bernoulli fruto de cada
+par de vértices: a aresta pode estar presente ou não.
+
+\begin{align}
+2^{N \choose 2} > 10^{80} \Rightarrow 
+log_2[2^{N \choose 2}] > log_2(10^{80}) \Rightarrow
+{N \choose 2} > \frac{log_{10}(10^{80})}{log_{10}2} \Rightarrow \nonumber\\
+\Rightarrow \frac{N.(N-1)}{2} > \frac{80}{log_{10}2} \Rightarrow
+	N > 23,5988 \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
+	\nonumber
+\end{align}
+
+Isso justifica a utilidade de {\bf \color{red} paradigmas} para as redes,
+e das {\bf \color{red} medidas genéricas} para cada vértice e para a rede,
+instrumental para as {\bf redes complexas}, incluindo
+as {\bf redes de interação humana}.
+%[fundo é Vídeo do versinus e imagens, redes minhas mesmo]
+
+{\bf Sistema complexo} $\Rightarrow$ 
+Constituído de várias partes cuja interação exibe
+comportamento emergente.
+É usual considerar que um sistema complexo:
+processa informação, exibe mecanismos adaptativos, 
+pode exibir mecanismos de reprodução.
+ Um sistema complexo é integrado a outros sistemas complexos
+e ao meio em que subsiste.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Introdução}
+\begin{center}
+\movie[width=0.7\textwidth,showcontrols=true]
+{% placeholder = text or image
+	%\begin{overpic}[width=\textwidth,grid,tics=10]{../figs/ideia2}
+	\begin{overpic}[width=0.7\textwidth]{../figs/CienciasComFronteiras}
+		%		 \put (00,50) {  
+		%Obervação em evolução.
+		%      }
+	 \end{overpic}
+}%
+{final.avi} % video filename
+%{sintel_trailer-480p.mp4} % video filename
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{- objetivos e justificativas}
+% O objetivo geral é comprovar e aprofundar a utilização das redes complexas
+% pelo participante.
+O objetivo geral é aprofundar a caracterização das redes virtuais de interação humana
+com a teoria das redes complexas.
+Objetivos específicos:
+\begin{itemize}
+	\item melhor compreensão sobre nossas estruturas sociais
+	\item entrega de um legado tecnológico para registrar e disponibilizar os desenvolvimentos
+	\item entrega de um legado em dados sociais com fontes diversas
+	\item delineio da prática de estudo das próprias estruturas sociais do pesquisador
+\end{itemize}
+
+\vspace{.5cm}
+
+% A justificativa principal é que há um hiato proeminente
+% entre o potencial desta frente científica e tecnológica e a utilização que
+% os participantes destas redes fazem dela.
+A justificativa principal é que há um hiato entre a teoria atual de redes complexas
+e a caracterização das estruturas de interação humana representadas como redes complexas.
+Justificaticas secundárias são:
+\begin{itemize}
+	\item a área de redes complexas é recente e reconhecidamente útil
+	\item a caracterização das redes complexas derivadas de estruturas sociais possui aspectos qualitativos passíveis de quantização
+	\item os textos produzidos pelos setores dos hubs, intermediários e periféricos ainda não foram comparados entre si
+% 	\item as instituições já fazem uso destes conhecimentos
+% 		há séculos (talvez milênios). A frente civil está começando a surgir
+	\item tenho um perfil adequado à transdisciplinaridade envolvida
+\end{itemize}
+
+\end{frame}
+
+
+
+\section{Materiais}
+\subsection{- dados de email, Facebook, Twitter, IRC, Participa.br, AA}
+\begin{frame}
+\frametitle{Materiais}
+\begin{itemize}
+	\item mensagens de e-mail, com horário de envio, ID da mensagem, ID da mensagem anterior na thread se existente, ID do remetente, texto do título e corpo
+	\item redes de Facebook: em formato GML ou GDF geralmente baixadas do Graphviz, mas também raspadas de minha própria conta. As únicas informações da rede são: nome e ID de cada amigo, aresta entre cada par de amigos que forem amigos entre si. Nas redes de interação constam arestas dirigidas. As redes eram de pessoas que me mandavam elas de suas contas ou minhas pessoais ou de grupos dos quais participava
+	\item IRC: logs de canais de IRC podem auxiliar na generalização dos resultados
+	\item Twitter: milhares (talves milhões) de tweets permitiram observação de redes de interação (retweet), relacionamentos por vocabulário e hashtags, e padrões do vocabulário em si
+	\item Participa.br: redes de amizade e de interação, texto de postagens, comentários, etc
+% 	\item materiais coletados com entrevistas e oficinas com especialistas
+% 	\item estruturas semânticas e dados etiquetados
+% 	\item estruturas sociais do qual faço parte
+\end{itemize}
+\end{frame}
+
+
+\section{Métodos}
+\begin{frame}
+\frametitle{Métodos}
+\begin{itemize}
+	\item estatística circular
+	\item obtenção das redes de interação
+	\item setorialização de Erdös
+	\item PCA de medidas topológicas
+	\item testes de Kolmogorov-Smirnov dos textos
+% 	\item web semântica de dados ligados
+	\item audiovisualização de dados
+	\item considerações tipológicas e humanísticas
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\subsection{- estatística circular \;\; - redes de interação \;\; - setorialização de Erdös}
+\frametitle{- estatística circular}
+Considere $\theta=2\pi \frac{medida}{periodo}$, $z_i= e^{i\theta}$ e $m_n=\frac{1}{N}\sum_{i=1}^N z_i^n$ o n-ésimo momento:
+\begin{align}\label{eq:cmom}
+    R_n&=|m_n| \nonumber \\
+    \theta_\mu&=Arg(m_1) \\
+    \theta_\mu'&=\frac{period}{2\pi} \theta_\mu \nonumber
+\end{align}
+
+\begin{align}
+    Var(z)&=1 - R_1 \nonumber\\
+    S(z)&= \sqrt{-2\ln(R_1)}\\
+    \delta(z)&=\frac{1-R_2}{2 R_1^2} \nonumber
+\end{align}
+
+Usamos também $\frac{b_h}{b_l}$ entre a maior $b_h $ e a menor $b_l$ incidência nos histogramas.
+
+\end{frame}
+\begin{frame}
+%\subsection{- redes de interação}
+\frametitle{- redes de interação}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../figs/criaRede__}
+\end{figure}
+\end{frame}
+\begin{frame}
+%\subsection{- setorialização de Erdös \;\;\;\;\;  - PCA de medidas topológicas}
+%\subsection{- setorialização de Erdös \;\;\;\;\;  - PCA de medidas topológicas}
+\frametitle{- setorialização de Erdös}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=.7\textwidth]{../figs/fser_}
+        \label{fig:setores}
+\end{figure}
+
+\begin{equation}\label{criterio2}
+    \sum_{x=k_i}^{k_j} \widetilde{P}(x) < \sum_{x=k_i}^{k_j} P(x) \Rightarrow \text{i é intermediário}
+\end{equation}
+
+\begin{equation}
+    P(k)=\binom{2(N-1)}{k}p_e^k(1-p_e)^{2(N-1)-k}
+\end{equation}
+onde 
+\centering
+$p_e=\frac{z}{N(N-1)}$
+
+
+\end{frame}
+\begin{frame}
+%\subsection{- PCA de medidas topológicas}
+\subsection{- PCA de medidas topológicas \;\; - Kolmogorov-Smirnov para textos}
+\frametitle{- PCA de medidas topológicas}
+Médias e desvios das medidas $j$ nas componentes $k$ fruto de $L$ observações $l$:
+\begin{align}\label{eq:pca}
+\mu_{V'}[j,k]   &=\frac{\sum_l^L V'[j,k,l]}{L}\nonumber\\
+\sigma_{V'}[j,k]&=\sqrt{\frac{(\mu_{V'}-V'[j,k,l])^2}{L}}\\\nonumber
+\mu_{D'}[k]&=\frac{\sum_l^L D'[k,l]}{L}\\\nonumber
+\sigma_{D'}[k]&=\sqrt{\frac{(\mu_{D'}-D'[k,l])^2}{L}}
+\end{align}
+
+Foco nas medidas de centralidade e clusterização mais usuais. 
+Inseridas medidas de simetria potencialmente novas.
+
+\end{frame}
+\begin{frame}
+%\subsection{- Teste de Kolmogorov-Smirnoff para textos}
+\frametitle{- teste de Kolmogorov-Smirnov para incidências em textos}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.3\textwidth]{../figs/300px-KS2_Example}
+\end{figure}
+
+
+
+\begin{equation}\label{eq:ks}
+D_{n,n'} > c(\alpha)\sqrt{\frac{n+n'}{nn'}} \Rightarrow F_{1,n} \neq F_{2,n'}
+\end{equation}
+%\vspace{1cm}
+\begin{equation}\label{eq:ks}
+c(\alpha) < \frac{D_{n,n'}}{\sqrt{\frac{n+n'}{nn'}}} = c'(\alpha)
+\end{equation}
+%\vspace{1cm}
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|l||c|c|c|c|c|c|}\hline
+$\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
+$c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
+\end{tabular}
+\end{table}
+\end{frame}
+% \begin{frame}
+% % \subsection{- web semântica \;\; - audiovisualização de dados}
+% \frametitle{- web semântica / dados ligados}
+% 	Recomendação da W3C para a formalização de conceitualizações, o relacionamento dos dados a estas conceitualizações, o armazenamento
+% 	de dados semanticamente enriquecidos, o relacionamento de dados de fontes diferentes, a navegação semântica e a inferência por máquina.
+% 
+% 	Observações especiais:
+% \begin{itemize}
+% 	\item permite a formalização de redes relativamente estáveis em nosso tecido social (em certas escalas temporais e de população).
+% 		%Passível de transições de fase, modificações abruptas e modificações lentas
+% 	\item permite a análise conjunta de dados de diferentes fontes; desenvolvimento conceitual compartilhado
+% 	\item padrão acadêmico para dados semânticos etiquetados; melhor formato para entregar os dados para a sociedade como um legado para análise e experimentos
+% 	\item expressão em triplas "sujeito objeto predicado"
+% 	\item pesado e um pouco complicado. Uso de ferramentas como Fuseki/Jena para facilitar os usos
+% 	\item procurar uma notação mais poderosa para os dados ligados?
+% \end{itemize}
+% 
+% \end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{../figs/arteRede.jpg}
+
+FONTE: Pedro Rocha, 2014
+}%
+
+\begin{frame}
+\subsection{- audiovisualização de dados}
+%\subsection{- audiovisualização de dados}
+\frametitle{- audiovisualização de dados}
+\vspace{5cm}
+Permite maior contato com as estruturas de interesse,
+o que facilita a condução da pesquisa para questões mais
+fundamentais e observáveis.
+
+Algumas estratégias utilizadas:
+\begin{itemize}
+	\item versinus, imagens, animação abstrata com música, sonificações
+	\item roteiros automatizados de realização de arte social
+	\item freakcoding (subgênero do livecoding)
+	\item arte governamental
+\end{itemize}
+\end{frame}
+}
+
+\begin{frame}
+\subsection{- considerações tipológicas e humanísticas}
+\frametitle{- considerações tipológicas e humanísticas}
+\begin{itemize}
+	\item redes de seres humanos
+	\item consideração do fator estigmatizante
+	\item apreciação do meio em que a rede é observada
+	\item experimentos percolatórios
+	\item física antropológica
+\end{itemize}
+\end{frame}
+
+\section{Resultados}
+\begin{frame}
+\frametitle{Resultados}
+\begin{itemize}
+	\item estabilidade temporal
+	\item diferenciação textual
+	\item iniciação da nuvem brasileira de dados ligados participativos
+	\item aparato em software
+% 	\item beneficiamento
+% 	\item ideias ideais (teoria física das ideias)
+\end{itemize}
+\end{frame}
+
+\subsection{- estabilidade temporal e topológica \;\; - diferenciação textual}
+\begin{frame}
+\frametitle{- estabilidade temporal e topológica}
+\begin{itemize}
+	\item medidas circulares praticamente iguais para todas as listas e em todas as escalas de segundos a semestres
+	\item constância dos tamanhos dos setores de Erdös, compatível com as expectativas da literatura. Ainda não achamos formalização para esta expectativa e talvez esta seja a primeira
+	\item estabilidade das componentes principais.
+	\item tipologia não estigmatizante de participante.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{- estabilidade temporal e topológica}
+
+\vspace{-.2cm}
+\begin{figure} 
+	\centering
+	\includegraphics[width=.75\textwidth]{/home/r/repos/articleStabilityInteractionNetworks/figs/InText-WLAU-S1000}
+\end{figure}
+\vspace{-.2cm}
+
+	\begin{minipage}[t]{0.48\linewidth}
+\begin{table}
+	\tiny
+\begin{center} 
+	\begin{tabular}{| p{.2cm} || p{.37cm} | p{.37cm} | p{.37cm} | p{.37cm} | p{.37cm} | p{.37cm} |}\hline 
+  & 1h & 2h & 3h & 4h & 6h & 12h \\\hline 
+ 0h  &\multirow{1}{*}{3.66 }   &\multirow{2}{*}{6.42 }   &\multirow{3}{*}{8.20 }   &\multirow{4}{*}{9.30 }   &\multirow{6}{*}{10.67 }   &\multirow{12}{*}{33.76 }  \\\cline{2-2} 
+ 1h  &\multirow{1}{*}{2.76 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3} 
+ 2h  &\multirow{1}{*}{1.79 }   &\multirow{2}{*}{2.88 }   &   &   &   &  \\\cline{2-2}\cline{4-4} 
+ 3h  &\multirow{1}{*}{1.10 }   &   &\multirow{3}{*}{2.47 }   &   &   &  \\\cline{2-2}\cline{3-3}\cline{5-5} 
+ 4h  &\multirow{1}{*}{0.68 }   &\multirow{2}{*}{1.37 }   &   &\multirow{4}{*}{3.44 }   &   &  \\\cline{2-2} 
+ 5h  &\multirow{1}{*}{0.69 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{4-4}\cline{6-6} 
+ 6h  &\multirow{1}{*}{0.83 }   &\multirow{2}{*}{2.07 }   &\multirow{3}{*}{4.35 }   &   &\multirow{6}{*}{23.09 }   &  \\\cline{2-2} 
+ 7h  &\multirow{1}{*}{1.24 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{5-5} 
+ 8h  &\multirow{1}{*}{2.28 }   &\multirow{2}{*}{6.80 }   &   &\multirow{4}{*}{21.03 }   &   &  \\\cline{2-2}\cline{4-4} 
+ 9h  &\multirow{1}{*}{4.52 }   &   &\multirow{3}{*}{18.75 }   &   &   &  \\\cline{2-2}\cline{3-3} 
+ 10h  &\multirow{1}{*}{6.62 }   &\multirow{2}{*}{\textbf{14.23} }   &   &   &   &  \\\cline{2-2} 
+ 11h  &\multirow{1}{*}{\textbf{7.61} }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{4-4}\cline{5-5}\cline{6-6}\cline{7-7} 
+ 12h  &\multirow{1}{*}{6.44 }   &\multirow{2}{*}{12.48 }   &\multirow{3}{*}{\textbf{18.95}}   &\multirow{4}{*}{\textbf{25.05\;}}&\multirow{6}{*}{\textbf{37.63}}   &\multirow{12}{*}{\textbf{66.24}}  \\\cline{2-2} 
+ 13h  &\multirow{1}{*}{6.04 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3} 
+ 14h  &\multirow{1}{*}{6.47 }   &\multirow{2}{*}{12.57 }   &   &   &   &  \\\cline{2-2}\cline{4-4} 
+ 15h  &\multirow{1}{*}{6.10 }   &   &\multirow{3}{*}{18.68 }   &   &   &  \\\cline{2-2}\cline{3-3}\cline{5-5} 
+ 16h  &\multirow{1}{*}{6.22 }   &\multirow{2}{*}{12.58 }   &   &\multirow{4}{*}{23.60 }   &   &  \\\cline{2-2} 
+ 17h  &\multirow{1}{*}{6.36 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{4-4}\cline{6-6} 
+ 18h  &\multirow{1}{*}{6.01 }   &\multirow{2}{*}{11.02 }   &\multirow{3}{*}{15.88 }   &   &\multirow{6}{*}{28.61 }   &  \\\cline{2-2} 
+ 19h  &\multirow{1}{*}{5.02 }   &   &   &   &   &  \\\cline{2-2}\cline{3-3}\cline{5-5} 
+ 20h  &\multirow{1}{*}{4.85 }   &\multirow{2}{*}{9.23 }   &   &\multirow{4}{*}{17.59 }   &   &  \\\cline{2-2}\cline{4-4} 
+ 21h  &\multirow{1}{*}{4.38 }   &   &\multirow{3}{*}{12.73 }   &   &   &  \\\cline{2-2}\cline{3-3} 
+ 22h  &\multirow{1}{*}{4.06 }   &\multirow{2}{*}{8.36 }   &   &   &   &  \\\cline{2-2} 
+ 23h & \multirow{1}{*}{4.30 }  & & & & & \\\cline{2-2}\cline{3-3}\cline{4-4}\cline{5-5}\cline{6-6}\cline{7-7} 
+ \hline\end{tabular} 
+ \end{center}
+\end{table}
+
+
+\end{minipage}
+\hfill%
+	\begin{minipage}[t]{0.48\linewidth}
+\begin{table}[!h]
+		\tiny
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c | c |}\cline{2-7}
+\multicolumn{1}{c|}{} & \multicolumn{2}{c|}{PC1}          & \multicolumn{2}{c|}{PC2} & \multicolumn{2}{c|}{PC3}  \\\cline{2-7}\multicolumn{1}{c|}{} & $\mu$            & $\sigma$ & $\mu$         & $\sigma$ & $\mu$ & $\sigma$  \\\hline
+$cc$ & 0.89  & 0.59  & 1.93  & 1.33  & 21.22  & 2.97 \\\hline
+$s$ & 11.71  & 0.57  & 2.97  & 0.82  & 2.45  & 0.72 \\
+$s^{in}$ & 11.68  & 0.58  & 2.37  & 0.91  & 3.08  & 0.78 \\
+$s^{out}$ & 11.49  & 0.61  & 3.63  & 0.79  & 1.61  & 0.88 \\
+$k$ & 11.93  & 0.54  & 2.58  & 0.70  & 0.52  & 0.44 \\
+$k^{in}$ & 11.93  & 0.52  & 1.19  & 0.88  & 1.41  & 0.71 \\
+$k^{out}$ & 11.57  & 0.61  & 4.34  & 0.70  & 0.98  & 0.66 \\
+$bt$ & 11.37  & 0.55  & 2.44  & 0.84  & 1.37  & 0.77 \\\hline
+$asy$ & 3.14  & 0.98  & 18.52  & 1.97  & 2.46  & 1.69 \\
+$\mu_{asy}$ & 3.32  & 0.99  & 18.23  & 2.01  & 2.80  & 1.82 \\
+$\sigma_{asy}$ & 4.91  & 0.59  & 2.44  & 1.47  & 26.84  & 3.06 \\
+$dis$ & 2.94  & 0.88  & 18.50  & 1.92  & 3.06  & 1.98 \\
+$\mu_{dis}$ & 2.55  & 0.89  & 18.12  & 1.85  & 1.57  & 1.32 \\
+$\sigma_{dis}$ & 0.57  & 0.33  & 2.74  & 1.63  & 30.61  & 2.66 \\\hline\hline
+$\lambda$ & 49.56  & 1.16  & 27.14  & 0.54  & 13.25  & 0.95 \\
+\hline\end{tabular}
+\end{center}
+	\end{table}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}
+%\subsection{- diferenciação textual}
+\frametitle{- diferenciação textual}
+\begin{itemize}
+	\item o texto produzido por cada setor de Erdös é extremamente diferente um do outro, maiores do que a diferença entre texto produzido por redes diferentes ou mesmo por setores iguais de redes diferentes
+	\item hubs produzem mais adjetivos. Periféricos mais substantivos, etc
+	\item correlações não triviais
+	\item combinação moderada de medidas topológicas e textuais; prevalência (não extrema) de componentes de texto ou topologia
+	\item constância da existência - incidência nos textos observados
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{- diferenciação textual}
+
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|l||c|c|c|c|c|c|}\hline
+$\alpha$    & 0.1  & 0.05 & 0.025 & 0.01 & 0.005 & 0.001 \\\hline
+$c(\alpha)$ & 1.22 & 1.36 & 1.48  & 1.63 & 1.73  & 1.95  \\\hline
+\end{tabular}
+\end{table}
+\vfill
+\begin{minipage}[t]{0.4\linewidth}
+\begin{table}
+    \tiny
+\begin{center} 
+\setlength{\tabcolsep}{.26667em}
+  \begin{tabular}{|l|| c|c|c|}\hline
+list$\setminus$measure & H-P & H-I & I-P \\\hline
+CPP & 5.58 & 2.54 & 7.82 \\\hline
+LAD & 7.67 & 2.07 & 8.35 \\\hline
+LAU & 6.23 & 1.63 & 5.98 \\\hline
+ELE & 3.42 & 0.77 & 2.81 \\\hline
+  \end{tabular}
+ \end{center}
+\end{table}
+\end{minipage}
+%\hfill%
+\hspace{1cm}%
+	\begin{minipage}[t]{0.4\linewidth}
+\begin{table}[!h]
+\tiny
+\begin{center}
+\setlength{\tabcolsep}{.06667em}
+  \begin{tabular}{|l|| c|c|c|c|c|c|}\hline
+& CPP-LAD & CPP-LAU & CPP-ELE & LAD-LAU & LAD-ELE & LAU-ELE \\\hline
+P & 1.35 & 4.05 & 5.80 & 3.00 & 5.41 & 4.94 \\\hline
+I & 1.27 & 0.78 & 4.01 & 0.84 & 3.84 & 3.94 \\\hline
+H & 0.98 & 1.94 & 3.17 & 1.32 & 3.82 & 4.47 \\\hline
+  \end{tabular}
+\end{center}
+\end{table}
+\end{minipage}
+\vfill
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.7\textwidth]{/home/r/repos/artigoTextoNasRedes/figs/kw}
+\end{figure}
+
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\subsection{- dados sociais ligados \;\; - peças artísticas e mapeamentos sensoriais}
+\frametitle{- dados sociais ligados}
+\begin{itemize}
+	\item síntese de ontologias (OWL) e vocabulários (SKOS) de estruturas sociais. OPS, OPa, OPP, Ontologiaa, OCD, OBS, VBS
+	\item formalização de dados ligados a partir de dados relacionais participativos
+	\item método de construção de ontologias orientado aos dados
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{/home/r/repos/vocabulario-participacao/figs/obsPNPS_mesam}
+\end{figure}
+
+
+\end{frame}
+
+\begin{frame}
+%\subsection{- peças artísticas e mapeamentos sensoriais}
+\frametitle{- peças artísticas e mapeamentos sensoriais}
+\begin{itemize}
+	\item four hubs dance. Prelúdio social
+	\item versinus (linha+senóide)
+	\item outros casos: app online (PHP+python) para imagens do GMANE, sonificações
+	\item apresentações artísticas: Crânio de Rilke (grupo de teoria crítica e fechamento do congresso internacional), Freakcoding
+\end{itemize}
+
+\begin{center}
+	% figura do freakcoding, video do preludio social
+\movie[width=0.7\textwidth,showcontrols=true]
+{% placeholder = text or image
+	%\begin{overpic}[width=\textwidth,grid,tics=10]{../figs/ideia2}
+	\begin{overpic}[width=0.7\textwidth]{../figs/fig_novela}
+		%		 \put (00,50) {  
+		%Obervação em evolução.
+		%      }
+	 \end{overpic}
+}%
+{mixedVideo.webm} % video filename
+%{sintel_trailer-480p.mp4} % video filename
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+% \subsection{- software \;\; - beneficiamento \;\; - empréstimos antropológicos}
+% \subsection{- software \;\; - beneficiamento}
+\subsection{- software}
+\frametitle{- software}
+Pacotes oficiais da linguagem Python (PyPI) para compartilhamento
+preciso e eficiente dos desenvolvimentos. Mais especificamente:
+	\begin{itemize}
+		\item observação das estabilidades topológicas e diferenciações textuais. (Percolation)
+		\item roteiros de triplificação de dados participativos brasileiros do Participabr, Cidade Democrática e AA (Participation)
+		\item roteiros de triplificação de dados provenientes do Facebook, Twitter, e IRC (Social)
+		\item roteiros de triplificação de dados provenientes de listas de email (Gmane)
+	\end{itemize}
+\end{frame}
+
+% \begin{frame}
+% %\subsection{- beneficiamento}
+% \frametitle{- beneficiamento}
+% \begin{itemize}
+% 	\item recomendação de recursos para enriquecimento da navegação semântica.
+% 	\item experimentos percolatórios
+% 	\item geração de arte a partir das estruturas sociais
+% 	\item formalização de estruturas de governança (gerenciais) da sociedade
+% 	\item sistema de construção de ontologias OWL orientado aos dados
+% 	\item enriquecimento semântico de dados relacionais e sua tradução para dados ligados
+% 	\item compreensão sobre as estruturas sociais: estabilidades, diferenciações
+% 	\item fundamentação da origem da lei de potência nestes contextos
+% 	\item contribuição ao cânone de tipologias humanas e sociais, que é humanístico, através da física
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+% %\subsection{- empréstimos antropológicos}
+% \frametitle{- empréstimos antropológicos}
+% \begin{itemize}
+% \item histórico do termo física antropológica, de Boaz a este trabalho
+% \item aspectos reflexivos, biográficos. Estudo e exposição de si. Diário. Leitura da curtíssima autobiografia
+% \item comparação entre física e antropologia. Considerações sobre uma ciência sólida
+% \item \emph{Social Physics} do Pentland (co-fundador e diretor do MIT Media Lab)
+% \end{itemize}
+% \end{frame}
+% 
+% \begin{frame}
+% %\subsection{- ideias ideais}
+% \frametitle{- ideias ideais}
+% %\includegraphics[scale=.23]{FlowChart.jpg}\\
+% \begin{itemize}
+% \item o que é
+% \item como é formada a rede de uma ideia
+% %\item livre de escala na forma principal, possui diversos harmônicos
+% \item pelo mesmo raciocínio da origem da propriedade livre de escala, podem ser considerados sensores abstratos
+% \item {\bf \color{red} ideias ideais como unificação das redes sociais formadas por indivíduos e por conceitos.} Sensores imateriais de informação?
+% \item {\bf \color{red} ontologias são Rich Clubs?}
+% \item exemplos de 2002. Discussão de algum caso partindo do sistema axiomático
+% \end{itemize}
+% \end{frame}
+% 
+\section{Conclusões}
+\begin{frame}{Conclusões}
+\begin{itemize}
+% 	\item gradus ad parnassum unificando:
+% 		\begin{itemize}
+% 			\item  apresentação breve e instrumental da área para o indivíduo. Conceitos fundamentais. Paradigmas de redes. Sinonímias, e ambiquidades. Caracterização de redes humanas e beneficiamento para o indivíduo através de experimentos antropológicos, análise e navegação
+% 			\item consideração da física antropológica (ou como esta conceituação se resolver)
+% 			\item Apêndice com listagens úteis, como medidas, software, trabalhos de referência, protocolos, dados, etc.
+% 		\end{itemize}
+	\item estabilidade temporal das redes de interação humana estão melhor quantizadas e são fortes: estatística da atividade ao longo do tempo, componentes principais e setores dos hubs, intermediários e periféricos
+	\item o texto produzido por cada um dos setores é bastante diferente, com os intermediários se destacando dos setores dos hubs e periféricos
+	\item legado em software, ontologias e dados
+	\item possibilidades de tipologias com o aprofundamento das análises de estabilidade temporal e diferenciação textual
+%	\item estou aquém de equipe e qualidade de vida do que acredito adequado
+	\item 2 artigos publicados (não relacionados ao doutorado)
+	\item 1 artigo submetido ao Physica A
+	\item finalizar artigo de diferenciação textual
+	\item finalizar o artigo explicitando de abertos e o método de construção de ontologias orientado aos dados
+%	\item ignorância. Froteira da ilha sempre se ampliando
+%	\item gostarei de terminar a graduação da física aos poucos se eu tiver a oportunidade. Creio que causará bastante estímulo e isso pode ser conveniente daqui alguns anos. Talvez proficiências para titulação
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusões}
+\begin{itemize}
+	\item tempo decorrido no projeto: 3 anos e 8 meses
+	\item prazo máximo para defesa: Mar/2017
+\end{itemize}
+\end{frame}
+%
+%\subsection{- próximos passos \;\; - ideiais ideias \;\; - agradecimentos e referências}
+%\begin{frame}{- próximos passos}
+%Resumo:
+%	\begin{itemize}
+%		\item muita coisa boa para fazer, seria bom delimitar o que vai para pós-doc ou próximo vínculo
+%		\item sugestão atual: finalizar artigo de diferenciação textual, escrever o gradus e um artigo explicitando o método de construção de ontologias orientado aos dados
+%		\item isso parece depender de alguma previsão de vínculo apropriado e de onde
+%		\item a prioridade é permanecer em S. Carlos, de preferência relacionado ao IFSC. Possibilidades na UFSCar, IPRJ, UnB, UFABC
+%		\item acho que é na academia que conseguirei me dedicar para a pesquisa podendo imergir como gosto
+%	\end{itemize}
+%\end{frame}
+%
+
+
+\begin{frame}{Referências}
+  \begin{thebibliography}{99}
+  \bibitem{one}
+	  Renato Fabbri, \emph{Estabilidade topológica e diferenciação textual em redes de interação humana: redes complexas para o participante e a física antropológica} (monografia de qualificação). Online em
+	  \url{https://github.com/ttm/tese/raw/master/ApresentacoesArtigos/quali/qualiFinal.pdf}
+
+  \bibitem{two}
+	  Renato Fabbri, \emph{Slides da apresentação sobre estabilidade topológica e diferenciação textual em redes de interação humana: redes complexas para o participante e a física antropológica} (seminário de qualificação). Online em
+	  \url{https://github.com/ttm/tese/raw/master/ApresentacoesArtigos/quali/apresentacao/apresentacao.pdf}
+
+  \end{thebibliography}
+\end{frame}
+
+\begin{frame}
+\Large
+\begin{center}
+ \sc {Obrigado \ldots} 
+\end{center}
+\end{frame}
+%---------------------------------------------------------------------------%
+\end{document}
+
